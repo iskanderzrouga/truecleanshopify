@@ -79,47 +79,23 @@
     {% comment %} {% assign number_of_items = variant.metafields.custom.product_count %} {% endcomment %}
 
     <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
-      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-center border-2 border-[#D9DDE0] bg-white rounded-[8px] relative px-4 py-2 cursor-pointer transition-all duration-200 hover:border-[#00B7A2]">
-        {% if variant.metafields.custom.badge %}
-          <div
-            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% endif %}
+      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-center gap-2 border-2 border-[#E0E0E0] bg-[#F8F8F8] rounded-[8px] relative px-4 py-3 cursor-pointer transition-all duration-200 hover:border-[#00B7A2] hover:bg-white hover:shadow-sm">
 
-        <div class="flex flex-col gap-1 flex-1">
-          <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-medium !text-[14px] md:!text-[15px] tracking-normal justify-center text-center">
-            {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
-            {{ label_unavailable }}
-            {% assign price = variant.price %}
-            {% assign compare_price = variant.compare_at_price %}
-
-            {% if compare_price > price %}
-              {% assign discount = compare_price | minus: price %}
-              {% assign percent_off_raw = discount | times: 100.0 | divided_by: compare_price %}
-              {% assign percent_off = percent_off_raw | ceil %}
-
-              {% comment %}
-                <span class="price-item price-item--savings !text-[#007820] !text-[16px] md:!text-[16px] font-extrabold tracking-normal">
-                  (Save {{ percent_off }}% OFF)
-                </span>
-              {% endcomment %}
+        <div class="flex items-center gap-2">
+          {% if value == 'Lemon Fresh' %}
+            <span class="text-[18px]">🍋</span>
+          {% elsif value == 'Unscented' %}
+            <span class="text-[18px]">✨</span>
+          {% endif %}
+          <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-semibold !text-[14px] md:!text-[15px] tracking-normal">
+            {% if value == 'Unscented' %}
+              Pure Clean
+            {% else %}
+              {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
             {% endif %}
+            {{ label_unavailable }}
           </div>
         </div>
-
-        {% comment %}
-          <div class="new-lp-variant-price text-[#000] font-bold !text-[16px] md:!text-[16px] tracking-normal flex flex-col md:flex-row items-end md:items-center justify-center gap-1">
-            {% if variant.compare_at_price > variant.price %}
-              <div
-                class="text-[#747474] font-normal !text-[16px] md:!text-[16px] !leading-tight line-through text-right"
-              >
-                {{ variant.compare_at_price | money -}}
-              </div>
-            {% endif %}
-          </div>
-        {% endcomment %}
       </div>
     </label>
   </div>
