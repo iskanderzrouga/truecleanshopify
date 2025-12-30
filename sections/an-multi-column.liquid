@@ -1,0 +1,339 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_m }}px;
+    padding-bottom: {{ section.settings.padding_bottom_m }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }}-padding .section-main-image {
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class="section-{{ section.id }}-padding px-5"
+  style="background-color: {{ section.settings.bgcolor }};"
+>
+  <div class="mx-auto w-full" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
+      <div class="flex flex-col w-full gap-4">
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[28px] md:text-[32px] font-bold !leading-tight text-[#000] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.heading_color }};"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[18px] md:text-[18px] font-normal !leading-tight text-[#000] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.description_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% assign max_width = section.settings.max_width %}
+      {% assign max_width_px = max_width | append: 'px' %}
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: max_width
+          | image_tag: class: 'w-full section-main-image', sizes: max_width_px
+        }}
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="splide mb-10 lg:mb-0 an-multi-column__carousel w-full">
+          <div class="splide__track">
+            <div class="splide__list md:!grid md:grid-cols-3 md:gap-8">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'row' %}
+                    <div class="splide__slide h-auto">
+                      <div class="flex flex-col items-center gap-2 text-center h-full">
+                        {% if block.settings.image != blank %}
+                          {{
+                            block.settings.image
+                            | image_url: width: 500
+                            | image_tag: class: 'w-full mb-2', sizes: '500px'
+                          }}
+                        {% endif %}
+
+                        {% if block.settings.heading != blank %}
+                          <div class="text-[18px] md:text-[18px] font-bold !leading-tight text-[#000]">
+                            {{ block.settings.heading }}
+                          </div>
+                        {% endif %}
+
+                        {% if block.settings.description != blank %}
+                          <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]">
+                            {{ block.settings.description }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <div class="w-full md:w-fit mx-auto">
+          <a
+            href="{{ section.settings.button_url }}"
+            class="new-button--primary"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__pagination  {
+    margin-bottom: -32px;
+  }
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__pagination__page.is-active  {
+    opacity: 1;
+    background: black;
+    transform: unset;
+  }
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow {
+    background: black;
+    opacity: 1;
+  }
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow svg {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+  }
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow--prev {
+    left: -48px;
+  }
+  .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow--next {
+    right: -48px;
+  }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow--prev {
+      bottom: -60px;
+      left: calc(50% - 50px);
+      top: auto;
+    }
+    .section-{{ section.id }}-padding .an-multi-column__carousel .splide__arrow--next {
+      bottom: -60px;
+      top: auto;
+      right: calc(50% - 50px);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.section-{{ section.id }}-padding .an-multi-column__carousel', {
+      perPage: 1,
+      perMove: 1,
+      rewind: true,
+      gap: '15px',
+      trimSpace: false,
+      pagination: false,
+      mediaQuery: 'min',
+      arrows: true,
+      padding: { right: '0' },
+      breakpoints: {
+        767: {
+          destroy: true,
+        },
+      },
+    });
+    splide.mount();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "AN Multi Column",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_m_center",
+      "label": "Heading Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_d_center",
+      "label": "Heading Desktop Center",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#121212"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_m_center",
+      "label": "Description Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "description_d_center",
+      "label": "Description Desktop Center",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#121212"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Image Right",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AN Multi Column"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center justify-center gap-2 px-1 py-3 border-b" style="border-color: {{ border_color }};">
+  {% if image != blank %}
+    {{ image | image_url: width: 100 | image_tag: class: 'w-full max-w-[80px] md:max-w-[100px]', sizes: '100px' }}
+  {% endif %}
+  {% if text != blank %}
+    <div
+      class="text-[13px] md:text-[14px] font-bold !leading-tight text-[#001C19]"
+    >
+      {{ text }}
+    </div>
+  {% endif %}
+  {% if icon != blank %}
+    {{ icon | image_url: width: 24 | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]', sizes: '24px' }}
+  {% endif %}
+</div>

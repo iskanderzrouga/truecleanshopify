@@ -1,0 +1,11 @@
+<a
+  href="{{ section.settings.button_url }}"
+  class="new-button--{{section.settings.button_type}}"
+>
+  {{ section.settings.button_label }}
+  {% if section.settings.button_type == 'primary' %}
+    {%- render 'icon-arrow-right--orange' -%}
+  {% else %}
+    {%- render 'icon-arrow-right' -%}
+  {% endif %}
+</a>

@@ -1,0 +1,182 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  {% comment %}
+    {% assign default_variant = product.metafields.custom.default_variant
+      | remove: 'gid://shopify/ProductVariant/'
+      | plus: 0
+    %}
+  {% endcomment %}
+
+  {% assign forloop_index = forloop.index | minus: 1 %}
+  {% assign variant = product.variants[forloop_index] %}
+
+  {% comment %}
+    {% assign is_default_variant = false %}
+    {% if variant.id = default_variant %}
+      {% assign is_default_variant = true %}
+    {% endif %}
+  {% endcomment %}
+
+  <div class="product-variant-options-secondary">
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    <label for="{{ input_id }}" class="group !m-0 w-full bg-white border border-[#84A191] !rounded-[5px] !p-0 relative duration-100">
+      {% if variant.metafields.custom.badge %}
+        <div
+          class="nl-variant-option__badge bg-[#84A191] border border-[#84A191] duration-100 rounded-[3px] px-3 py-1 text-[10px] md:text-[10px] font-normal !leading-tight text-[#fff] absolute right-1 -top-[11px]"
+        >
+          {{ variant.metafields.custom.badge }}
+        </div>
+      {% endif %}
+
+      <div class="flex items-center gap-2 px-3 md:px-5 py-[10px]">
+        <div class="!flex items-center justify-center w-[10%] min-w-[10%] max-w-[10%]">
+          <div class="w-5 h-5 rounded-[20px] border border-[#84A191] !flex items-center justify-center">
+            <div class="w-3 h-3 rounded-[20px] bg-white !block"></div>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-start text-left gap-1">
+          <div class="nl-variant-option__title text-xl md:text-xl font-bold !leading-tight text-[#121212] text-left duration-100">
+            {{ variant.title }}
+          </div>
+          {% if variant.metafields.custom.sticker_text %}
+            <div
+              class="nl-variant-option__sticker-text text-xs md:text-xs font-normal !leading-tight text-[#757E85] duration-100"
+            >
+              {{ variant.metafields.custom.sticker_text }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <div class="nl-variant-option__price text-lg md:text-lg font-bold !leading-tight text-[#121212] duration-100">
+            {{- variant.price | money -}}
+          </div>
+          <div>
+            {% assign product_count_number = variant.metafields.custom.product_count_number %}
+            <span class="nl-variant-option__per-price text-xs md:text-xs font-normal !leading-tight text-[#757E85] duration-100">
+              {{- variant.price | divided_by: product_count_number | money -}}
+              {% unless product_count_number == '1' %}
+                <span class=""> / bottle</span>
+              {% endunless %}
+            </span>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+{%- endfor -%}
+
+<style>
+  .product-form__input--pill .product-variant-options-secondary input[type='radio']:checked + label {
+    background-color: #247042;
+    color: #fff;
+    border: 1px solid #247042;
+  }
+  .product-form__input--pill
+    .product-variant-options-secondary
+    input[type='radio']:checked
+    + label
+    .nl-variant-option__title {
+    color: #fff;
+  }
+  .product-form__input--pill
+    .product-variant-options-secondary
+    input[type='radio']:checked
+    + label
+    .nl-variant-option__sticker-text {
+    color: #fff;
+  }
+  .product-form__input--pill
+    .product-variant-options-secondary
+    input[type='radio']:checked
+    + label
+    .nl-variant-option__price {
+    color: #fff;
+  }
+  .product-form__input--pill
+    .product-variant-options-secondary
+    input[type='radio']:checked
+    + label
+    .nl-variant-option__per-price {
+    color: #fff;
+  }
+  .product-form__input--pill
+    .product-variant-options-secondary
+    input[type='radio']:checked
+    + label
+    .nl-variant-option__badge {
+    color: #247042;
+    background-color: #fff;
+    border: 1px solid #247042;
+  }
+</style>

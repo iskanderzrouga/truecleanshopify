@@ -1,0 +1,59 @@
+<script>
+  const dynamicLinkMain = document.querySelector('[data-dynamic]');
+  const mobileStickyButtonWrapper = document.querySelector('[mobile-sticky-button-wrapper]');
+  const sections = document.querySelectorAll('.shopify-section section');
+
+  window.addEventListener('scroll', () => {
+    let currentSectionId = '';
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        currentSectionId = section.id;
+      }
+    });
+
+    let endSectionReached = false;
+
+    if (currentSectionId) {
+      const match = currentSectionId.match(/section_(\d+)/);
+      if (match) {
+        let nextNum = parseInt(match[1]) + 1;
+        let newSectionId = `#section_${nextNum}`;
+        if (document.querySelector(`${newSectionId}`)) {
+          dynamicLinkMain.href = newSectionId;
+        } else {
+          newSectionId = `#section_${nextNum + 1}`;
+          dynamicLinkMain.href = newSectionId;
+        }
+        
+        console.log('nextNum', nextNum);
+        if (nextNum == 10) {
+          endSectionReached = true;
+        }
+      }
+    } else {
+      endSectionReached = true;
+    }
+
+    console.log('endSectionReached', endSectionReached);
+    
+
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 650) {
+      if (endSectionReached) {
+        dynamicLinkMain.textContent = "View Solution";
+        dynamicLinkMain.href = "/products/pawprint-lab";
+      } else {
+        dynamicLinkMain.textContent = "Continue";
+      }
+    } else {
+      dynamicLinkMain.textContent = "Learn More";
+    }
+
+    if (endSectionReached) {
+      mobileStickyButtonWrapper.classList.add('end-reached');
+    } else {
+      mobileStickyButtonWrapper.classList.remove('end-reached');
+    }
+  });
+</script>

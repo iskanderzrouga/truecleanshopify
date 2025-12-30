@@ -1,0 +1,54 @@
+<div class="flex gap-2 md:gap-3 items-start p-4 md:p-5 rounded-[12px] border border-[#E2F3F3] bg-[#E2F3F3]">
+  {% if block.settings.avatar != blank %}
+    {{
+      block.settings.avatar
+      | image_url: width: 100
+      | image_tag: class: 'w-full max-w-[70px] md:max-w-[100px] h-auto', sizes: '100px', preload: true
+    }}
+  {% endif %}
+
+  <div class="flex flex-col gap-[10px] flex-1">
+    {% if block.settings.stars != blank %}
+      {{
+        block.settings.stars
+        | image_url: width: 100
+        | image_tag: class: 'w-full max-w-[100px] h-auto', sizes: '100px', preload: true
+      }}
+    {% endif %}
+
+    {% if block.settings.heading != blank %}
+      <div class="text-[16px] md:text-[20px] font-bold !leading-tight text-[#001C19]">
+        {{ block.settings.heading }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="text-[14px] md:text-[17px] font-normal !leading-tight text-[#001C19]">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+
+    <div class="flex items-center justify-between gap-3">
+      {% if block.settings.name != blank %}
+        <div class="text-[13px] md:text-[17px] font-bold !leading-tight text-[#001C19]">
+          {{ block.settings.name }}
+        </div>
+      {% endif %}
+
+      <div class="flex-1 flex items-center gap-2">
+        {% if block.settings.icon != blank %}
+          {{
+            block.settings.icon
+            | image_url: width: 20
+            | image_tag: class: 'w-full max-w-[20px] h-auto', sizes: '20px', preload: true
+          }}
+        {% endif %}
+        {% if block.settings.verified != blank %}
+          <div class="text-[12px] md:text-[14px] font-normal !leading-tight text-[#001C19]">
+            {{ block.settings.verified }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

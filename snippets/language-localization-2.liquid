@@ -1,0 +1,72 @@
+{%- if localization.available_countries.size > 1 -%}
+  <noscript>
+    {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
+      <div class="relative">
+        <select
+          class="block w-full appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+          name="country_code"
+          aria-labelledby="CountryListLabel"
+        >
+          {%- for country in localization.available_countries -%}
+            <option
+              value="{{ country.iso_code }}"
+              {%- if country.iso_code == localization.country.iso_code %}
+                selected
+              {% endif %}
+            >
+              {{ country.name }} ({{ country.currency.iso_code }}
+              {{ country.currency.symbol }})
+            </option>
+          {%- endfor -%}
+        </select>
+        <span class="absolute top-1/2 right-4 -translate-y-1/2">
+          {% render 'icon-caret' %}
+        </span>
+      </div>
+      <button class="mt-4 block w-full text-center">{{ 'localization.update_country' | t }}</button>
+    {%- endform -%}
+  </noscript>
+  <localization-form class="no-js:hidden" client:visible>
+    {% form 'localization', class: 'relative' %}
+      <button
+        type="button"
+        class="mt-4 mb-6 flex items-center justify-between rounded-lg border border-[rgba(255,255,255,0.5)] py-2 px-3 gap-2"
+        aria-expanded="false"
+        aria-controls="CountryListFooter"
+        aria-describedby="CountryListLabel"
+      >
+        {{ localization.country | image_url: height: 24 | image_tag: loading: 'lazy' }}
+        {{ localization.country.currency.iso_code }}
+        {%- render 'icon-caret' -%}
+      </button>
+      <ul
+        id="CountryListFooter"
+        role="list"
+        class="absolute bottom-12 z-10 max-h-48 w-full overflow-y-auto rounded-t border border-white border-t-contrast/30 bg-contrast px-2 py-2 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b"
+        hidden
+      >
+        {% for country in localization.available_countries %}
+          <li tabindex="-1">
+            <a
+              class="flex w-full cursor-pointer items-center justify-start rounded bg-contrast p-2 text-left text-primary"
+              href="#"
+              {% if country.iso_code == localization.country.iso_code %}
+                aria-current="true"
+              {% endif %}
+              data-value="{{ country.iso_code }}"
+            >
+              {{ country.name }} ({{ country.currency.iso_code }}
+              {{ country.currency.symbol }})
+              {%- if country.iso_code == localization.country.iso_code -%}
+                <span class="ml-2">
+                  {%- render 'icon-check' -%}
+                </span>
+              {%- endif -%}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+    {% endform %}
+  </localization-form>
+{%- endif -%}

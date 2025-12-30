@@ -1,0 +1,23 @@
+{% assign now = 'now' | date: '%s' | plus: 0 %}
+{% assign two_days = 2 | times: 86400 %}
+{% assign shipped_start_date = now | plus: two_days | date: '%b %d' %}
+
+<div class="ship-by flex items-center justify-between gap-3">
+  <div class="ship-by__left flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1.75C3 2.41675 3.08633 2.5 3.77778 2.5H4.55556V4.508C4.55556 6.80675 4.96078 7.9775 6.17515 9.1875L6.99052 10L6.17515 10.8125C4.96078 12.0225 4.55556 13.1933 4.55556 15.492V17.5H3.77778C3.08633 17.5 3 17.5833 3 18.25V19H10H17V18.25C17 17.5833 16.9137 17.5 16.2222 17.5H15.4444V15.492C15.4444 13.1933 15.0392 12.0225 13.8249 10.8125L13.0095 10L13.8249 9.1875C15.0392 7.9775 15.4444 6.80675 15.4444 4.508V2.5H16.2222C16.9137 2.5 17 2.41675 17 1.75V1H10H3V1.75ZM6.11111 4.296C6.11111 6.69925 6.759 8.02375 8.28267 8.735C9.66893 9.382 10.3311 9.382 11.7173 8.735C13.241 8.02375 13.8889 6.69925 13.8889 4.296V2.5H10H6.11111V4.296ZM6.88889 5.149C6.88889 7.08925 8.19841 8.5 10 8.5C11.8016 8.5 13.1111 7.08925 13.1111 5.149V4H10H6.88889V5.149ZM8.26322 11.27C6.75563 11.9895 6.11111 13.3175 6.11111 15.704V17.5H10H13.8889V15.704C13.8889 13.3008 13.241 11.9763 11.7173 11.265C10.328 10.6165 9.6303 10.6175 8.26322 11.27Z" fill="currentColor"></path>
+    </svg>
+    {% liquid
+      assign difference_2 = 40 | minus: 15
+      assign random_2 = 'now' | date: '%N' | modulo: difference_2 | plus: 15
+    %}
+    <span class="ship-by__left--visitor-count">{{ random_2 }}/10000</span>
+    <span><strong>Discounted Pieces Left</strong></span>
+  </div>
+
+  <div class="ship-by__right">
+    <span class="ship-by__right--dot"></span>
+    <span><strong>Ships by</strong></span>
+    <span>{{ shipped_start_date }}</span>
+  </div>
+</div>

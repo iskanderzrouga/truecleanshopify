@@ -1,0 +1,314 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_m }}px;
+    padding-bottom: {{ section.settings.padding_bottom_m }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class="section-{{ section.id }}-padding px-5 relative"
+  style="background-color: {{ section.settings.bgcolor }}"
+>
+  <div
+    class="mx-auto w-full max-w-[1420px] flex flex-col items-center justify-center gap-8 relative"
+    style="max-width: {{ section.settings.max_width }}px;"
+  >
+    <div class="flex flex-col items-center justify-center gap-6 md:gap-12 w-full">
+      <div
+        class="flex flex-col gap-6 md:gap-8"
+      >
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[28px] md:text-[32px] font-bold !leading-tight text-[#000]"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[17px] md:text-[18px] font-normal !leading-[1.5] text-[#000]"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="w-full flex flex-col">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'row' %}
+                <div
+                  data-index="{{ forloop.index }}"
+                  class="{% if block.settings.open %} active {% endif %} group dropdown-parent flex flex-col border-b border-[#D7D3D0]"
+                >
+                  {% if block.settings.heading != blank %}
+                    <div
+                      data-index="{{ forloop.index }}"
+                      class="dropdown-heading flex items-center justify-between p-[10px] md:p-[15px] cursor-pointer [&>svg]:min-w-[32px] gap-2"
+                    >
+                      <div
+                        class="text-[16px] md:text-[16px] font-bold !leading-tight text-[#000]"
+                        style="color: {{ section.settings.text_color }};"
+                      >
+                        {{ block.settings.heading }}
+                      </div>
+                      <span class="group-[.active]:rotate-180">
+                        {% render 'icon-plus-black' %}
+                      </span>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.description != blank %}
+                    <div
+                      class="dropdown-content group-[.active]:block hidden text-[16px] md:text-[16px] font-normal !leading-[1.5] text-[#000] p-3 md:p-5 rounded-b-[11px]"
+                      style="color: {{ section.settings.text_color }};"
+                    >
+                      {{ block.settings.description }}
+                    </div>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center gap-[10px] relative">
+      {% if section.settings.button_label != blank %}
+        <div class="w-full md:w-fit mx-auto flex flex-col items-center justify-center gap-3">
+          <a
+            href="{{ section.settings.button_url }}"
+            class="new-button--primary"
+          >
+            {{ section.settings.button_label }}
+          </a>
+          {% if section.settings.product_bottom_label != blank %}
+            <div
+              class="text-[13px] md:text-[13px] font-medium !leading-tight text-[#001C19] flex items-center justify-center gap-2 {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+              style="color: {{ section.settings.btn_bottom_text_color }};"
+            >
+              {% if section.settings.bottom_label_icon != blank %}
+                {{
+                  section.settings.bottom_label_icon
+                  | image_url: width: 16
+                  | image_tag: class: 'w-full max-w-[16px] h-fit object-contain', sizes: '16px'
+                }}
+              {% endif %}
+              {{ section.settings.product_bottom_label }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdownHeadings = document.querySelectorAll('.section-{{ section.id }}-padding .dropdown-heading');
+
+    dropdownHeadings.forEach((heading) => {
+      heading.addEventListener('click', () => {
+        const index = heading.getAttribute('data-index');
+
+        // Find parent dropdown-parent with matching data-index
+        const parentDropdown = document.querySelector(
+          `.section-{{ section.id }}-padding .dropdown-parent[data-index="${index}"]`
+        );
+
+        let dropdownIsOpened = false;
+        if (parentDropdown && parentDropdown.classList.contains('active')) {
+          dropdownIsOpened = true;
+        }
+
+        // Remove "active" from all dropdown parents
+        document.querySelectorAll('.section-{{ section.id }}-padding .dropdown-parent').forEach((parent) => {
+          parent.classList.remove('active');
+        });
+
+        // Add "active" to the clicked dropdown parent
+        if (parentDropdown) {
+          if (dropdownIsOpened) {
+            parentDropdown.classList.remove('active');
+          } else {
+            parentDropdown.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "AN Faqs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "primary",
+      "label": "Button Type"
+    },
+    {
+      "type": "text",
+      "id": "product_bottom_label",
+      "label": "Product Bottom Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_label_icon",
+      "label": "Bottom Label Icon"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open as Default",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AN Faqs"
+    }
+  ]
+}
+{% endschema %}

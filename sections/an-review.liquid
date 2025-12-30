@@ -1,0 +1,476 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_m }}px;
+    padding-bottom: {{ section.settings.padding_bottom_m }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }}-padding .section-main-image {
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class="section-{{ section.id }}-padding px-4"
+  style="background-color: {{ section.settings.bgcolor }};"
+>
+  <div class="mx-auto w-full" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="w-full flex flex-col md:grid md:grid-cols-4 items-center gap-6 md:gap-12">
+      <div class="w-full flex flex-col items-center justify-center gap-2">
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[18px] md:text-[20px] font-bold !leading-tight text-[#000] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.heading_color }};"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 136
+            | image_tag: class: 'w-full max-w-[136px]', sizes: '136px'
+          }}
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[14px] md:text-[16px] font-normal !leading-tight text-[#000] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.description_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="w-full md:col-span-3">
+          <div class="splide lg:mb-8 an-review__carousel">
+            <div class="splide__track">
+              <div class="splide__list">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'row' %}
+                      <div class="splide__slide">
+                        <div
+                          class="flex flex-col h-full justify-between gap-[15px] md:gap-5 rounded-[10px] p-4 md:p-5"
+                          style="background-color: {{ block.settings.bgcolor }};"
+                        >
+                          <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                              {% if block.settings.name != blank %}
+                                <div
+                                  class="text-[16px] md:text-[18px] font-bold !leading-tight text-[#000]"
+                                  style="color: {{ block.settings.name_color }};"
+                                >
+                                  {{ block.settings.name }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.stars != blank %}
+                                {{
+                                  block.settings.stars
+                                  | image_url: width: 100
+                                  | image_tag: class: 'w-full max-w-[100px]', sizes: '100px'
+                                }}
+                              {% endif %}
+                            </div>
+                            <div class="flex items-center gap-1">
+                              {% if block.settings.icon != blank %}
+                                {{
+                                  block.settings.icon
+                                  | image_url: width: 16
+                                  | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                                }}
+                              {% endif %}
+                              {% if block.settings.verified != blank %}
+                                <div
+                                  class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#000]"
+                                  style="color: {{ block.settings.verified_color }};"
+                                >
+                                  {{ block.settings.verified }}
+                                </div>
+                              {% endif %}
+                            </div>
+                            {% if block.settings.description != blank %}
+                              <div
+                                class="mt-4 {% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                                style="color: {{ block.settings.description_color }};"
+                              >
+                                {{ block.settings.description }}
+                              </div>
+                            {% endif %}
+                          </div>
+
+                          {% if block.settings.bottom != blank %}
+                            <div
+                              class="mt-3 text-[14px] md:text-[16px] font-normal !leading-tight text-[#000] text-right"
+                              style="color: {{ block.settings.bottom_color }};"
+                            >
+                              {{ block.settings.bottom }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <div class="w-full md:w-fit mx-auto">
+          <a
+            href="{{ section.settings.button_url }}"
+            class="new-button--primary"
+          >
+            {{ section.settings.button_label }}
+            {% comment %} {%- render 'icon-arrow-right' -%} {% endcomment %}
+          </a>
+          {% if section.settings.btn_bottom_text != blank %}
+            <div
+              class="text-[14px] md:text-[16px] font-normal !leading-tight text-[#000] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+              style="color: {{ section.settings.btn_bottom_text_color }};"
+            >
+              {{ section.settings.btn_bottom_text }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.section-{{ section.id }}-padding .an-review__carousel', {
+      perPage: 3,
+      perMove: 1,
+      arrows: true,
+      rewind: true,
+      pagination: false,
+      gap: '20px',
+      trimSpace: false,
+      //   padding: { left: '0px', right: '60px' },
+      breakpoints: {
+        768: {
+          perPage: 1,
+          arrows: true,
+          pagination: false,
+          //   padding: { left: '0px', right: '20px' },
+        },
+      },
+    });
+    splide.mount();
+  });
+</script>
+
+<style>
+    .section-{{ section.id }}-padding .an-review__carousel .splide__arrow {
+    background: black;
+    opacity: 1;
+  }
+  .section-{{ section.id }}-padding .an-review__carousel .splide__arrow svg {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+  }
+  .section-{{ section.id }}-padding .an-review__carousel .splide__arrow--prev {
+    left: -48px;
+  }
+  .section-{{ section.id }}-padding .an-review__carousel .splide__arrow--next {
+    right: -48px;
+  }
+   @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .an-review__carousel .splide__arrow--prev {
+      bottom: -60px;
+    left: calc(50% - 50px);
+    top: auto;
+  }
+  .section-{{ section.id }}-padding .an-review__carousel .splide__arrow--next {
+     bottom: -60px;
+     top: auto;
+    right: calc(50% - 50px);
+  }
+   }
+</style>
+
+{% schema %}
+{
+  "name": "AN Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_m_center",
+      "label": "Heading Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_d_center",
+      "label": "Heading Desktop Center",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_m_center",
+      "label": "Description Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "description_d_center",
+      "label": "Description Desktop Center",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Image Right",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "richtext",
+      "id": "btn_bottom_text",
+      "label": "Btn Bottom Text"
+    },
+    {
+      "type": "color",
+      "id": "btn_bottom_text_color",
+      "label": "Buttom Bottom Text Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1920,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bgcolor",
+          "label": "Background Color",
+          "default": "#F9F9F9"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "color",
+          "id": "name_color",
+          "label": "Name Color",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "stars",
+          "label": "Stars"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Verified"
+        },
+        {
+          "type": "color",
+          "id": "verified_color",
+          "label": "Verified Color",
+          "default": "#000"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_m_center",
+          "label": "Heading Mobile Center",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_d_center",
+          "label": "Heading Desktop Center",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "description_m_center",
+          "label": "Description Mobile Center",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "description_d_center",
+          "label": "Description Desktop Center",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "small_description",
+          "label": "Description Small",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#000000"
+        },
+        {
+          "type": "text",
+          "id": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "type": "color",
+          "id": "bottom_color",
+          "label": "Bottom Color",
+          "default": "#000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AN Review"
+    }
+  ]
+}
+{% endschema %}

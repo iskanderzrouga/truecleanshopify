@@ -1,0 +1,176 @@
+<div class="product-thumbnail-slider">
+  <div id="product-main-slider" class="splide" style="margin-bottom: 12px;">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for media in product.media %}
+          {% if media.media_type == 'image' %}
+            {% if media.alt contains 'carousel-hidden' %}
+            {% else %}
+              <li class="splide__slide">
+                {{ media.src | image_url: width: 600 | image_tag: class: '' }}
+              </li>
+            {% endif %}
+          {% elsif media.media_type == 'video' %}
+            <li class="splide__slide">
+              {% render 'product-thumbnail-2',
+                media: media,
+                media_count: 0,
+                position: 1,
+                desktop_layout: 'thumbnail_slider',
+                mobile_layout: 'show',
+                loop: false,
+                modal_id: section.id,
+                xr_button: true,
+                media_width: media_width,
+                media_fit: 'cover',
+                constrain_to_viewport: true,
+                lazy_load: false
+              %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div id="product-thumbnail-slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for media in product.media %}
+          {% if media.media_type == 'image' %}
+            {% if media.alt contains 'carousel-hidden' %}
+            {% else %}
+              <li class="splide__slide">
+                <img src="{{ media.src | image_url }}" width="90" height="90" alt="{{ media.alt }}">
+              </li>
+            {% endif %}
+          {% elsif media.media_type == 'video' %}
+            {% comment %}
+              <video class="w-full" muted>
+                <source src="{{ media.sources[0].url }}" type="video/mp4">
+              </video>
+            {% endcomment %}
+            <li class="splide__slide">
+              <img src="{{ media.preview_image | image_url }}" width="90" height="90" alt="{{ media.alt }}">
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-thumbnail-slider {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+    position: sticky;
+    top: 20px;
+  }
+
+  #product-thumbnail-slider {
+    padding: 40px 0;
+  }
+  #product-thumbnail-slider .splide__track--nav > .splide__list > .splide__slide {
+    border: 2px solid #084c2533;
+    border-radius: 10px;
+  }
+  #product-thumbnail-slider .splide__track--nav > .splide__list > .splide__slide.is-active {
+    border: 2px solid #000C38;
+  }
+  #product-thumbnail-slider .splide__arrow {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 1px solid #000C38;
+  }
+  #product-thumbnail-slider .splide__arrow svg {
+    fill: #000C38;
+    height: 10px;
+    width: 10px;
+  }
+
+  #product-main-slider .splide__arrow {
+    background: unset;
+    width: 28px;
+    height: 28px;
+    background-color: #001C19;
+    opacity: 1;
+  }
+  #product-main-slider .splide__arrow svg {
+    fill: #fff;
+    height: 13px;
+    width: 13px;
+  }
+  #product-main-slider .splide__slide img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 750px) {
+    #product-main-slider .splide__slide img {
+      border-radius: 0;
+    }
+    .product-thumbnail-slider {
+      display: block;
+    }
+    #product-thumbnail-slider {
+      padding: 0 40px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var main = new Splide('#product-main-slider', {
+      type: 'slide',
+      rewind: true,
+      pagination: false,
+      arrows: true,
+      breakpoints: {
+        750: {
+          arrows: true,
+        },
+      },
+    });
+
+    var thumbnails = new Splide('#product-thumbnail-slider', {
+      fixedWidth: 90,
+      fixedHeight: 90,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      arrows: false,
+      cover: true,
+      isNavigation: true,
+      direction: 'ttb',
+      height: 455,
+      breakpoints: {
+        750: {
+          fixedWidth: 60,
+          fixedHeight: 60,
+          gap: 4,
+          direction: 'ltr',
+        },
+      },
+    });
+
+    main.sync(thumbnails);
+    main.mount();
+    thumbnails.mount();
+
+    document.querySelectorAll('[nl-product-secondary-card]').forEach((card) => {
+      card.addEventListener('click', function () {
+        const position = parseInt(this.getAttribute('data-position'), 10);
+        if (!isNaN(position)) {
+          thumbnails.go(position); // Splide index starts at 0
+        }
+      });
+    });
+  });
+</script>

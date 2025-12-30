@@ -1,0 +1,646 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_m }}px;
+    padding-bottom: {{ section.settings.padding_bottom_m }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class="image-text section-{{ section.id }}-padding px-5"
+  style="background-color: {{ section.settings.bgcolor }}"
+>
+  <div class="mx-auto w-full" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
+      <div class="flex flex-col w-full gap-4">
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[28px] md:text-[32px] font-bold !leading-tight text-[#000] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.heading_color }};"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[18px] md:text-[18px] font-normal !leading-tight text-[#000] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center max-w-[700px] mx-auto {% endif %}"
+            style="color: {{ section.settings.description_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="flex {% if section.settings.image_position == 'left' %} flex-col {% else %} flex-col-reverse {% endif %} md:grid {% if section.settings.content_large %} md:grid-cols-7 {% else %} md:grid-cols-2 {% endif %} gap-6 md:gap-10 md:items-center">
+        {% if section.settings.image_position == 'left' %}
+          {% if section.settings.image != blank %}
+            <div class="w-full gp-image-text--image relative image-text--image {% if section.settings.content_large %} md:col-span-3 {% endif %}">
+              {{
+                section.settings.image
+                | image_url: width: 600
+                | image_tag: class: 'w-full object-cover', sizes: '600px'
+              }}
+            </div>
+          {% endif %}
+          {% if section.settings.video_url != blank %}
+            <div class="w-full gp-image-text--image relative {% if section.settings.content_large %} md:col-span-3 {% endif %}">
+              <video
+                src="{{ section.settings.video_url }}"
+                type="video/mp4"
+                class="w-full object-cover border border-[#000C38] rounded-[16px]"
+                loop
+                muted
+                playsinline
+                autoplay
+                disablepictureinpicture
+                controlslist="nodownload"
+                height="auto"
+                style="width:100%;"
+              ></video>
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="flex flex-col gap-5 md:gap-[30px] image-text--content {% if section.settings.content_large %} md:col-span-4 {% endif %}">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'row' %}
+                  <div class="flex flex-col items-center justify-center gap-[10px] md:gap-[20x]">
+                    {% if block.settings.heading != blank %}
+                      <div
+                        class="text-[15px] md:text-[20px] font-bold !leading-tight text-[#333]"
+                        style="color: {{ block.settings.heading_color }};"
+                      >
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.description != blank %}
+                      <div
+                        class="text-[15px] md:text-[20px] font-normal !leading-tight text-[#333] {% if block.settings.mobile_center %} text-center md:text-left {% endif %}"
+                        style="color: {{ block.settings.description_color }};"
+                      >
+                        {{ block.settings.description }}
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.image != blank %}
+                      {{
+                        block.settings.image
+                        | image_url: width: 600
+                        | image_tag: class: 'w-[80%] mx-auto py-5', sizes: '600px'
+                      }}
+                    {% endif %}
+                  </div>
+
+                {% when 'list' %}
+                  <div class="grid w-full gap-[10px]">
+                    {% for i in (1..7) %}
+                      {% assign description_name = 'text' | append: i %}
+                      {% assign description = block.settings[description_name] %}
+                      {% if description != blank %}
+                        <div
+                          class="flex items-center gap-2 {% if block.settings.box_style %} px-3 md:px-5 py-2 md:py-4 rounded-[12px] bg-white {% endif %}"
+                          {% if block.settings.box_style %}
+                            style="box-shadow: 3px 3px 4px 0px #0000001A;"
+                          {% endif %}
+                        >
+                          {% if block.settings.image != blank %}
+                            {{
+                              block.settings.image
+                              | image_url: width: 20
+                              | image_tag: class: 'w-full h-fit object-contain max-w-[20px]'
+                            }}
+                          {% endif %}
+                          <div
+                            class="text-[14px] md:text-[18px] font-normal !leading-tight text-[#333]"
+                            style="color: {{ block.settings.color }};"
+                          >
+                            {{ description }}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+
+                {% when 'review' %}
+                  <div class="border border-[#000C38] rounded-[16px] flex flex-col gap-2 p-5 items-center justify-center text-center bg-white">
+                    {% if block.settings.heading != blank %}
+                      <div class="text-[24px] md:text-[32px] font-bold !leading-tight text-[#000C38]">
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.description != blank %}
+                      <div class="text-[16px] md:text-[24px] font-normal !leading-tight text-[#333]">
+                        {{ block.settings.description }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.name != blank %}
+                      <div class="flex items-center gap-2 mt-5">
+                        <div class="text-[20px] md:text-[32px] font-bold !leading-tight text-[#000C38]">
+                          {{ block.settings.name }}
+                        </div>
+                        {% if block.settings.icon != blank %}
+                          {{
+                            block.settings.icon
+                            | image_url: width: 24
+                            | image_tag:
+                              class: 'w-full h-fit object-contain max-w-[24px] md:max-w-[32px] mb-[6px] md:mb-2'
+                          }}
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.job != blank %}
+                      <div class="text-[14px] md:text-[18px] font-normal !leading-tight text-[#333]">
+                        {{ block.settings.job }}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                {% when 'feature' %}
+                  {% assign parent_block = block %}
+                  <div class="grid {% if parent_block.settings.mobile_horizontal %} grid-cols-2 {% else %} grid-cols-4 {% endif %} md:grid-cols-1 gap-x-[10px] gap-y-5">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'feature_item' %}
+                        <div
+                          id="{{ block.id }}"
+                          class="gp-image-text__feature-item--{{forloop.index}} flex {% if parent_block.settings.mobile_horizontal %} flex-row text-left gap-4 items-start {% else %} flex-col text-center gap-2 items-center {% endif %}  md:flex-row md:text-left md:gap-4 col-span-2 md:col-span-1"
+                        >
+                          {% if block.settings.image != blank %}
+                            {{
+                              block.settings.image
+                              | image_url: width: 80
+                              | image_tag: class: 'w-full h-auto max-w-[60px] md:max-w-[80px]'
+                            }}
+                          {% endif %}
+                          <div class="flex flex-col gap-1">
+                            {% if block.settings.heading != blank %}
+                              <div
+                                class="text-[18px] md:text-[18px] font-bold !leading-tight text-[#000]"
+                                style="color: {{ block.settings.heading_color }};"
+                              >
+                                {{ block.settings.heading }}
+                              </div>
+                            {% endif %}
+                            {% if block.settings.description != blank %}
+                              <div
+                                class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]"
+                                style="color: {{ block.settings.description_color }};"
+                              >
+                                {{ block.settings.description }}
+                              </div>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.image_position == 'right' %}
+          {% if section.settings.image != blank %}
+            <div class="w-full gp-image-text--image relative {% if section.settings.content_large %} md:col-span-3 {% endif %}">
+              {{ section.settings.image | image_url: width: 600 | image_tag: class: 'w-full', sizes: '600px' }}
+            </div>
+          {% endif %}
+          {% if section.settings.video_url != blank %}
+            <div class="w-full gp-image-text--image relative {% if section.settings.content_large %} md:col-span-3 {% endif %}">
+              <video
+                src="{{ section.settings.video_url }}"
+                type="video/mp4"
+                class="w-full object-cover border border-[#000C38] rounded-[16px]"
+                loop
+                muted
+                playsinline
+                autoplay
+                disablepictureinpicture
+                controlslist="nodownload"
+                height="auto"
+                style="width:100%;"
+              ></video>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% if section.settings.button_label != blank %}
+        <div class="w-full md:w-fit mx-auto md:min-w-[450px]">
+          <a
+            href="{{ section.settings.button_url }}"
+            class="new-button--primary"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+    {% if section.settings.bottom_gradient %}
+      .section-{{ section.id }}-padding .gp-image-text--image::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 1), transparent);
+        pointer-events: none;
+      }
+    {% endif %}
+
+  {% if section.settings.right_gradient %}
+    .section-{{ section.id }}-padding .gp-image-text--image::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
+      pointer-events: none;
+    }
+  {% endif %}
+
+  {% if section.settings.left_gradient %}
+    .section-{{ section.id }}-padding .gp-image-text--image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 100%;
+      background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1));
+      pointer-events: none;
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "AN Image Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_m_center",
+      "label": "Heading Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_d_center",
+      "label": "Heading Desktop Center",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000C38"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_m_center",
+      "label": "Description Mobile Center",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "description_d_center",
+      "label": "Description Desktop Center",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#333333"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "content_large",
+      "label": "Desktop Content Long",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "left_gradient",
+      "label": "Left Gradient",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "right_gradient",
+      "label": "Right Gradient",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_gradient",
+      "label": "Bottom Gradient",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right",
+      "label": "Image Position"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#333333"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#333333"
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile_center",
+          "label": "Mobile Center",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "job",
+          "label": "Job"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "name": "List",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "box_style",
+          "label": "Box Style",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#333333"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "text1",
+          "label": "Text 1"
+        },
+        {
+          "type": "richtext",
+          "id": "text2",
+          "label": "Text 2"
+        },
+        {
+          "type": "richtext",
+          "id": "text3",
+          "label": "Text 3"
+        },
+        {
+          "type": "richtext",
+          "id": "text4",
+          "label": "Text 4"
+        },
+        {
+          "type": "richtext",
+          "id": "text5",
+          "label": "Text 5"
+        },
+        {
+          "type": "richtext",
+          "id": "text6",
+          "label": "Text 6"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "mobile_horizontal",
+          "label": "Mobile Horizontal",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "feature_item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#000C38"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#333333"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AN Image Text"
+    }
+  ]
+}
+{% endschema %}

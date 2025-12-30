@@ -1,0 +1,7 @@
+<ul class="flex items-center justify-center gap-1 flex-wrap w-full" role="list">
+  {%- for type in shop.enabled_payment_types -%}
+    <li class="w-[28px] [&>svg]:w-[28px]">
+      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    </li>
+  {%- endfor -%}
+</ul>

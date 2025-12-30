@@ -1,0 +1,32 @@
+<script>
+  function addZeroToEnd(n) {
+    return n > 9 ? '' + n : '0' + n;
+  }
+
+  var countDownTimer = setInterval(function () {
+    var esternToday = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+    var now = new Date(esternToday).getTime();
+
+    let esternTomorrow = new Date();
+    esternTomorrow.setDate(esternTomorrow.getDate() + 1);
+    const easternTimeTomorrow = esternTomorrow.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+    var tomorrowMorning = new Date(easternTimeTomorrow + ', {{resetTime}} AM').getTime();
+
+    var distance = tomorrowMorning - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    for (const oneElement of document.querySelectorAll('.countdown-hours')) {
+      oneElement.innerHTML = addZeroToEnd(hours);
+    }
+    for (const oneElement of document.querySelectorAll('.countdown-minutes')) {
+      oneElement.innerHTML = addZeroToEnd(minutes);
+    }
+    for (const oneElement of document.querySelectorAll('.countdown-seconds')) {
+      oneElement.innerHTML = addZeroToEnd(seconds);
+    }
+  }, 1000);
+</script>

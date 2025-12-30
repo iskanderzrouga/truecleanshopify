@@ -1,0 +1,24 @@
+{% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+{% assign date_final = 'now' | date: '%s' | plus: seconds | date: '%b %d' %}
+<div class="text-[#262626] text-[13px] text-center !leading-tight font-bold mt-3">
+  Ships <span class="text-[#5395ff]"> Tomorrow, {{ date_final }} </span> if Ordered Within
+  <span class="text-[#5395ff]" id="dateDrawer"></span>
+</div>
+
+<script>
+  setInterval(function time() {
+    var d = new Date();
+    var hours = 24 - d.getHours();
+    var min = 60 - d.getMinutes();
+    if ((min + '').length == 1) {
+      min = '0' + min;
+    }
+    var sec = 60 - d.getSeconds();
+    if ((sec + '').length == 1) {
+      sec = '0' + sec;
+    }
+    if (document.querySelector('#dateDrawer')) {
+      document.querySelector('#dateDrawer').innerHTML = hours + ' hr ' + min + ' mins';
+    }
+  }, 1000);
+</script>

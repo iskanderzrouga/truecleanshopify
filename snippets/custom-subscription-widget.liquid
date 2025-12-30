@@ -1,0 +1,360 @@
+<style>
+  .nl-subscription-widget-card.active {
+    background-color: #247042;
+  }
+  .nl-subscription-widget-card.active .nl-subscription-widget-card__heading {
+    color: #fff;
+  }
+  .nl-subscription-widget-card.active .nl-subscription-widget-card__description {
+    color: #fff;
+  }
+  .nl-subscription-widget-card.active .nl-subscription-widget-card__radio {
+    border-color: #fff;
+  }
+
+  .nl-subscription-widget-variant-card.active {
+    background-color: #247042;
+  }
+  .nl-subscription-widget-variant-card.active .nl-subscription-widget-variant-card__heading {
+    color: #fff;
+  }
+  .nl-subscription-widget-variant-card.active .nl-subscription-widget-variant-card__price {
+    color: #fff;
+  }
+</style>
+
+<div class="custom-subscription-widget flex flex-col w-full gap-3">
+  <div class="text-sm md:text-base font-bold text-[#000] !leading-tight">Buying Options:</div>
+
+  <div>
+    {% for block in section.blocks %}
+      {% if block.type == 'subscription_widget_child' %}
+
+        {% assign product = block.settings.product %}
+        {% assign current_variant = product.variants[0] %}
+
+        <div product-id="{{ product.id }}" class="nl-subscription-widget {% if block.settings.default %} active {% endif %} hidden [&.active]:flex w-full flex-col gap-1">
+          <div card-type="subscription" class="nl-subscription-widget-card active cursor-pointer border border-[#84A191] rounded-[5px] px-4 py-2 flex flex-col w-full gap-2 bg-white">
+            <div class="flex items-center gap-2">
+              <div class="nl-subscription-widget-card__radio w-5 h-5 min-w-5 min-h-5 rounded-[30px] border border-[#84A191] !flex items-center justify-center">
+                <div class="w-3 h-3 min-w-3 min-h-3 rounded-[30px] bg-white !block"></div>
+              </div>
+
+              <div class="flex flex-col gap-1 flex-1">
+                <div class="nl-subscription-widget-card__heading text-base font-bold text-[#121212] !leading-tight">Subscribe & Save</div>
+              </div>
+
+              <div class="flex flex-col items-center justify-center gap-1">
+                {% assign raw_discount = block.settings.discount | plus: 0 %}
+                {% assign inverse_discount = 100 | minus: raw_discount %}
+                {% assign discount_index = inverse_discount | times: 0.01 %}
+
+                <div class="nl-subscription-widget-card__description text-lg md:text-xl font-bold text-[#121212] !leading-tight">
+                  {{- current_variant.price | times: discount_index | money -}} / month
+                </div>
+
+                <div class="flex justify-center items-center gap-1">
+                  <div class="nl-subscription-widget-card__description text-xs md:text-sm font-normal text-[#121212] !leading-tight line-through">
+                    {{- current_variant.price | money -}}
+                  </div>
+                  <div class="text-[10px] md:text-xs font-normal text-[#fff] !leading-tight bg-[#EBA12F] px-1 py-[2px] rounded-[2px] w-fit">
+                  SAVE {{- block.settings.discount -}} %
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-3 py-1 bg-white rounded-[50px] border border-[#247042]">
+                <select class="nl-subscription-widget-card__plans w-full !outline-0 !shadow-none">
+                  <option value="{{ block.settings.id_1 }}" selected>Deliver every 1 month</option>
+                  <option value="{{ block.settings.id_2 }}">Deliver every 2 months</option>
+                  <option value="{{ block.settings.id_3 }}">Deliver every 3 months</option>
+                </select>
+            </div>
+          </div>
+
+          <div card-type="onetime" class="nl-subscription-widget-card cursor-pointer border border-[#84A191] rounded-[5px] px-4 py-2 flex flex-col w-full gap-2 bg-white">
+            <div class="flex items-center gap-2">
+              <div class="nl-subscription-widget-card__radio w-5 h-5 min-w-5 min-h-5 rounded-[30px] border border-[#84A191] !flex items-center justify-center"">
+                <div class="w-3 h-3 min-w-3 min-h-3 rounded-[30px] bg-white !block"></div>
+              </div>
+
+              <div class="flex flex-col gap-1 flex-1">
+                <div class="nl-subscription-widget-card__heading text-base font-bold text-[#121212] !leading-tight">One-Time Delivery</div>
+                <div class="nl-subscription-widget-card__description text-xs font-normal text-[#757E85] !leading-tight">No Discount</div>
+              </div>
+
+              <div class="flex flex-col gap-1 items-center">
+                <div class="nl-subscription-widget-card__heading text-base font-bold text-[#121212] !leading-tight">{{- current_variant.price | money -}}</div>
+                <div class="nl-subscription-widget-card__description text-xs font-normal text-[#757E85] !leading-tight">plus shipping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="text-sm md:text-base font-bold text-[#000] !leading-tight">Bottles:</div>
+
+  <div class="nl-subscription-widget-variant grid grid-cols-3 gap-2">
+    {% for block in section.blocks %}
+      {% if block.type == 'subscription_widget_child' %}
+
+        {% assign product = block.settings.product %}
+        {% assign current_variant = product.variants[0] %}
+
+        <div product-id="{{ product.id }}" variant-id="{{ current_variant.id }}" class="nl-subscription-widget-variant-card card-subscription group {% if block.settings.default %} active {% endif %} border border-[#84A191] rounded-[5px] w-full h-full px-3 pt-6 pb-4 flex flex-col items-center gap-1 text-center cursor-pointer relative">
+          {% if current_variant.metafields.custom.custom_badge != blank %}
+            <div class="absolute w-full left-0 -top-[10px] flex items-center justify-center">
+              <span class="text-[10px] font-normal text-[#fff] !leading-tight p-1 rounded-[3px] bg-[#84A191] w-fit border border-[#84A191] group-[.active]:text-[#247042] group-[.active]:bg-[#fff] group-[.active]:border-[#247042]">{{ current_variant.metafields.custom.custom_badge }}</span>
+            </div>
+          {% endif %}
+
+          {% if current_variant.metafields.custom.custom_title != blank %}
+            <div class="nl-subscription-widget-variant-card__heading text-base md:text-lg font-bold text-[#121212] !leading-tight">{{ current_variant.metafields.custom.custom_title }}</div>
+          {% endif %}
+
+          {% assign product_count_number = current_variant.metafields.custom.product_count_number %}
+          <span class="nl-subscription-widget-variant-card__price hidden group-[.card-onetime]:block text-[12px] md:text-[14px] font-normal text-[#121212] !leading-tight">
+            {{- current_variant.price | divided_by: product_count_number | money -}}
+            {% unless product_count_number == '1' %} Each {% endunless %}
+          </span>
+
+          {% assign raw_discount = block.settings.discount | plus: 0 %}
+          {% assign inverse_discount = 100 | minus: raw_discount %}
+          {% assign discount_index = inverse_discount | times: 0.01 %}
+          <span class="nl-subscription-widget-variant-card__price hidden group-[.card-subscription]:block text-[12px] md:text-[14px] font-normal text-[#121212] !leading-tight">
+            {{- current_variant.price | times: discount_index | divided_by: product_count_number | money -}}
+            {% unless product_count_number == '1' %} Each {% endunless %}
+          </span>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="w-full" {{ block.shopify_attributes }}>
+    {% for block in section.blocks %}
+      {% if block.type == 'subscription_widget_child' %}
+        {% if block.settings.default %}
+          {% assign default_subscription_id = block.settings.id_1 %}
+          {% assign product = block.settings.product %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {%- if product != blank -%}
+      <product-form
+        class="product-form !m-0 w-full"
+        data-hide-errors="{{ gift_card_recipient_feature_active }}"
+        data-section-id="{{ section.id }}"
+      >
+        <div class="product-form__error-message-wrapper" role="alert" hidden>
+          <span class="svg-wrapper">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+          </span>
+          <span class="product-form__error-message"></span>
+        </div>
+
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form w-full',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.variants[0].id }}"
+            {% if product.variants[0].available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+            class="product-variant-id"
+          >
+
+          <input
+            re-sub-widget__selling-plan-input
+            class=""
+            name="selling_plan"
+            type="hidden"
+            value="{{default_subscription_id}}"
+          >
+
+          <div class="product-form__buttons">
+            {%- liquid
+              assign check_against_inventory = true
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                assign check_against_inventory = false
+              endif
+              if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                assign quantity_rule_soldout = true
+              endif
+            -%}
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="!m-0 !w-full product-form__submit button button--full-width button--primary new-button--primary"
+              {% if product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+                or product.selected_or_first_available_variant == null
+              %}
+                disabled
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant == null -%}
+                  {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {% if block.settings.custom_text != blank %}
+                    {{ block.settings.custom_text }} -
+                    {{ product.selected_or_first_available_variant.price | money_with_currency }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endif %}
+                {%- endif -%}
+              </span>
+              {%- render 'icon-arrow-right' -%}
+              {%- render 'loading-spinner' -%}
+            </button>
+          </div>
+        {%- endform -%}
+      </product-form>
+    {%- else -%}
+      <div class="product-form">
+        <div class="product-form__buttons form">
+          <button
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width button--primary new-button--primary"
+            disabled
+          >
+            {{ 'products.product.sold_out' | t }}
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nl-subscription-widget-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const parentSub = card.closest('.nl-subscription-widget');
+            parentSub.querySelectorAll('.nl-subscription-widget-card').forEach(c => {
+              c.classList.remove('active');
+            });
+            card.classList.add('active');
+            
+            const subscriptionWidget = card.closest('.custom-subscription-widget');
+            const activeVariantCard = subscriptionWidget.querySelector('.nl-subscription-widget-variant-card.active');
+            const productId = activeVariantCard.getAttribute('product-id');
+            const variantId = activeVariantCard.getAttribute('variant-id');
+            const formVariantInput = subscriptionWidget.querySelector('form .product-variant-id');
+            const formProductInput = subscriptionWidget.querySelector('form input[name="product-id"]');
+            if (productId && formProductInput) {
+              formProductInput.value = productId;
+            }
+            if (variantId && formVariantInput) {
+              formVariantInput.value = variantId;
+            }
+
+            const cardType = card.getAttribute('card-type');
+            const variantSection = parentSub.querySelector('.nl-subscription-widget-card__plans');
+            const sellingPlanInput = subscriptionWidget.querySelector('input[name="selling_plan"]');
+            if (cardType === 'onetime') {
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-variant-card').forEach(cd => {
+                cd.classList.add('card-onetime');
+                cd.classList.remove('card-subscription');
+              });
+              if (variantSection && sellingPlanInput) {
+                sellingPlanInput.value = '';
+              }
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-card[card-type="subscription"]').forEach(c => {
+                c.classList.remove('active');
+              });
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-card[card-type="onetime"]').forEach(c => {
+                c.classList.add('active');
+              });
+            } else if (cardType === 'subscription') {
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-variant-card').forEach(cd => {
+                cd.classList.remove('card-onetime');
+                cd.classList.add('card-subscription');
+              });
+              if (variantSection && sellingPlanInput) {
+                sellingPlanInput.value = variantSection.value;
+              }
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-card[card-type="subscription"]').forEach(c => {
+                c.classList.add('active');
+              });
+              subscriptionWidget.querySelectorAll('.nl-subscription-widget-card[card-type="onetime"]').forEach(c => {
+                c.classList.remove('active');
+              });
+            }
+        });
+    });
+
+    document.querySelectorAll('.nl-subscription-widget-variant-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const parentSub = card.closest('.nl-subscription-widget-variant');
+            parentSub.querySelectorAll('.nl-subscription-widget-variant-card').forEach(c => {
+              c.classList.remove('active');
+            });
+            card.classList.add('active');
+
+            const subscriptionWidget = card.closest('.custom-subscription-widget');
+            subscriptionWidget.querySelectorAll('.nl-subscription-widget').forEach(c => {
+              c.classList.remove('active');
+            });
+            const productId = card.getAttribute('product-id');
+            subscriptionWidget.querySelector(`.nl-subscription-widget[product-id="${productId}"]`).classList.add('active');
+
+            const variantId = card.getAttribute('variant-id');
+            const formVariantInput = subscriptionWidget.querySelector('form .product-variant-id');
+            const formProductInput = subscriptionWidget.querySelector('form input[name="product-id"]');
+            if (productId && formProductInput) {
+              formProductInput.value = productId;
+            }
+            if (variantId && formVariantInput) {
+              formVariantInput.value = variantId;
+            }
+
+            const subscriptionSelectElement = subscriptionWidget.querySelector('.nl-subscription-widget.active .nl-subscription-widget-card__plans');
+            const sellingPlanInput = subscriptionWidget?.querySelector('input[name="selling_plan"]');
+            if (subscriptionSelectElement && sellingPlanInput) {
+              sellingPlanInput.value = subscriptionSelectElement.value;
+            }
+        });
+    });
+
+    document.querySelectorAll('.nl-subscription-widget-card__plans').forEach(select => {
+      select.addEventListener('change', () => {
+        const subscriptionWidget = select.closest('.custom-subscription-widget');
+        const sellingPlanInput = subscriptionWidget?.querySelector('input[name="selling_plan"]');
+        const selectedOption = select.options[select.selectedIndex];
+        const selectedText = selectedOption.textContent.trim();
+
+        if (sellingPlanInput) {
+          sellingPlanInput.value = select.value;
+        }
+
+        // Update all other selects within the same widget
+        subscriptionWidget?.querySelectorAll('.nl-subscription-widget-card__plans').forEach(otherSelect => {
+          if (otherSelect === select) return; // Skip the one that triggered the change
+
+          const matchingOption = Array.from(otherSelect.options).find(
+            option => option.textContent.trim() === selectedText
+          );
+
+          if (matchingOption) {
+            otherSelect.value = matchingOption.value;
+          }
+        });
+      });
+    });
+  });
+</script>

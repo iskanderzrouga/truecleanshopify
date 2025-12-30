@@ -1,0 +1,96 @@
+<div product-id="{{ product.id }}" class="nl-p-variants-sub px-5 w-full flex flex-col gap-1">
+  <div card-type="subscription" class="nl-p-variants-sub-card active border border-[#84A191] rounded-[5px] px-4 py-2 flex flex-col w-full gap-2 bg-white">
+    <div class="flex gap-2">
+      <div class="nl-p-variants-sub-card__radio w-5 h-5 min-w-5 min-h-5 rounded-[30px] border border-[#84A191] !flex items-center justify-center">
+        <div class="w-3 h-3 min-w-3 min-h-3 rounded-[30px] bg-white !block"></div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <div class="nl-p-variants-sub-card__heading text-base font-bold text-[#121212] !leading-tight">Subscribe & Save</div>
+        <div class="nl-p-variants-sub-card__description text-xs font-normal text-[#757E85] !leading-tight">modify, skip, or cancel anytime!</div>
+      </div>
+    </div>
+
+    <div class="px-3 py-1 bg-white rounded-[50px] border border-[#247042]">
+        <select class="nl-p-variants-sub-card__plans w-full !outline-0 !shadow-none">
+          <option value="{{ block.settings.id_1 }}" selected>Deliver every 1 month</option>
+          <option value="{{ block.settings.id_2 }}">Deliver every 2 months</option>
+          <option value="{{ block.settings.id_3 }}">Deliver every 3 months</option>
+        </select>
+    </div>
+  </div>
+
+  <div card-type="onetime" class="nl-p-variants-sub-card border border-[#84A191] rounded-[5px] px-4 py-2 flex flex-col w-full gap-2 bg-white">
+    <div class="flex gap-2">
+      <div class="nl-p-variants-sub-card__radio w-5 h-5 min-w-5 min-h-5 rounded-[30px] border border-[#84A191] !flex items-center justify-center"">
+        <div class="w-3 h-3 min-w-3 min-h-3 rounded-[30px] bg-white !block"></div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <div class="nl-p-variants-sub-card__heading text-base font-bold text-[#121212] !leading-tight">One-Time Delivery</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .nl-p-variants-sub-card.active {
+    background-color: #247042;
+  }
+  .nl-p-variants-sub-card.active .nl-p-variants-sub-card__heading {
+    color: #fff;
+  }
+  .nl-p-variants-sub-card.active .nl-p-variants-sub-card__description {
+    color: #fff;
+  }
+  .nl-p-variants-sub-card.active .nl-p-variants-sub-card__radio {
+    border-color: #fff;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nl-p-variants-sub-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const parentSub = card.closest('.nl-p-variants-sub');
+            parentSub.querySelectorAll('.nl-p-variants-sub-card').forEach(c => {
+              c.classList.remove('active');
+            });
+            card.classList.add('active');
+
+            const cardType = card.getAttribute('card-type');
+            const variantSection = card.closest('.nl-product-variants__variant');
+            const sellingPlanInput = variantSection?.querySelector('input[name="selling_plan"]');
+
+            const oneTimePricingWidget = variantSection.querySelector('.nl-product-variants__variant--price-widget[data-type="onetime"]');
+            const subscriptionPricingWidget = variantSection.querySelector('.nl-product-variants__variant--price-widget[data-type="subscription"]');
+
+            if (cardType === 'onetime') {
+              if (sellingPlanInput) {
+                sellingPlanInput.value = '';
+                oneTimePricingWidget?.classList.add('active');
+                subscriptionPricingWidget?.classList.remove('active');
+              }
+            } else if (cardType === 'subscription') {
+              const planSelect = card.querySelector('.nl-p-variants-sub-card__plans');
+              if (planSelect && sellingPlanInput) {
+                sellingPlanInput.value = planSelect.value;
+              }
+              oneTimePricingWidget?.classList.remove('active');
+              subscriptionPricingWidget?.classList.add('active');
+            }
+        });
+    });
+
+    document.querySelectorAll('.nl-p-variants-sub-card__plans').forEach(select => {
+      select.addEventListener('change', () => {
+        const variantSection = select.closest('.nl-product-variants__variant');
+        const sellingPlanInput = variantSection?.querySelector('input[name="selling_plan"]');
+
+        if (sellingPlanInput) {
+          sellingPlanInput.value = select.value;
+        }
+      });
+    });
+  });
+</script>

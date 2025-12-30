@@ -1,0 +1,39 @@
+<div
+  id=""
+  class="rounded-[2px] p-1 text-[#FFFFFA] text-xs md:text-sm font-normal !leading-tight bg-[#084C25]"
+>
+  <div>
+    <span class="featured-product-countdown-hours">00</span>
+    <span>:</span>
+    <span class="featured-product-countdown-minutes">00</span>
+    <span>:</span>
+    <span class="featured-product-countdown-seconds">00</span>
+  </div>
+</div>
+
+<script>
+  function addZero(n) {
+    return n > 9 ? '' + n : '0' + n;
+  }
+
+  var x = setInterval(function () {
+    var esternToday = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+    var now = new Date(esternToday).getTime();
+
+    let esternTomorrow = new Date();
+    esternTomorrow.setDate(esternTomorrow.getDate() + 1);
+    const easternTimeTomorrow = esternTomorrow.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+    var tomorrowMorning = new Date(easternTimeTomorrow + ', {{ resetTime }} AM').getTime();
+
+    var distance = tomorrowMorning - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.querySelector('.featured-product-countdown-hours').innerHTML = addZero(hours);
+    document.querySelector('.featured-product-countdown-minutes').innerHTML = addZero(minutes);
+    document.querySelector('.featured-product-countdown-seconds').innerHTML = addZero(seconds);
+  }, 1000);
+</script>

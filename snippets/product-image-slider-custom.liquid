@@ -1,0 +1,82 @@
+<div class="product-thumbnail-slider-custom">
+  <div id="product-main-slider-custom" class="splide mb-1">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {% when 'carousel_image' %}
+              <li class="splide__slide">
+                <img src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="{{ media.alt }}">
+              </li>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div id="product-thumbnail-slider-custom" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {% when 'carousel_image' %}
+              <li class="splide__slide">
+                <img src="{{ block.settings.image | image_url }}" width="100" height="100" alt="{{ media.alt }}">
+              </li>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-thumbnail-slider-custom .splide__arrow {
+    background: white;
+    width: 30px;
+    height: 30px;
+    opacity: 1 !important;
+    border: 2px solid #FFC845;
+  }
+  .product-thumbnail-slider-custom .splide__arrow svg {
+    fill: #FFC845;
+    width: 12px;
+    height: 12px;
+  }
+  .product-thumbnail-slider-custom .splide__track--nav > .splide__list > .splide__slide.is-active {
+    border: 1px solid #FFC845;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var main = new Splide('#product-main-slider-custom', {
+      type: 'fade',
+      rewind: true,
+      pagination: false,
+      arrows: true,
+    });
+
+    var thumbnails = new Splide('#product-thumbnail-slider-custom', {
+      fixedWidth: 100,
+      fixedHeight: 100,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      arrows: false,
+      cover: true,
+      isNavigation: true,
+      breakpoints: {
+        600: {
+          fixedWidth: 40,
+          fixedHeight: 40,
+          gap: 4,
+        },
+      },
+    });
+
+    main.sync(thumbnails);
+    main.mount();
+    thumbnails.mount();
+  });
+</script>

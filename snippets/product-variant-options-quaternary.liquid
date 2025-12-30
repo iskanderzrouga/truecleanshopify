@@ -1,0 +1,149 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    {% assign forloop_index = forloop.index | minus: 1 %}
+    {% assign variant = product.variants[forloop_index] %}
+    {% assign number_of_items = variant.metafields.custom.product_count %}
+
+    <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+      <div class="new-lp-variant-content flex items-center justify-between gap-2 border border-[#333333] rounded-[16px] relative p-2 md:p-[15px]">
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
+        {% if variant.metafields.custom.badge_image %}
+          {{
+            variant.metafields.custom.badge_image
+            | image_url: width: 50
+            | image_tag:
+            class: 'w-full h-fit object-contain max-w-[40px] md:max-w-[50px] absolute -top-1 -left-1',
+            sizes: '50px',
+            preload: true
+          }}
+        {% endif %}
+
+        <div class="border-[1.6px] border-[#000C38] w-[22px] min-w-[22px] h-[22px] rounded-[22px] !flex items-center justify-center ">
+          <div class="bg-[#000C38] w-[14px] h-[14px] rounded-[14px] !block"></div>
+        </div>
+
+        {% if variant.metafields.custom.variant_image %}
+          <div class="relative pr-3 md:pr-6">
+            {% if variant.metafields.custom.free_shipping %}
+              {{
+                variant.metafields.custom.free_shipping_image
+                | image_url: width: 60
+                | image_tag:
+                  class: 'w-full max-w-[28px] md:max-w-[35px] h-fit object-contain absolute top-0  right-0',
+                  sizes: '60px',
+                  preload: true
+              }}
+            {% endif %}
+            {{
+              variant.metafields.custom.variant_image
+              | image_url: width: 300
+              | image_tag:
+                class: 'w-full h-full max-h-[50px] md:max-h-[70px] object-contain mx-auto',
+                sizes: '300px',
+                preload: true
+            }}
+          </div>
+        {% endif %}
+
+        <div class="flex flex-col gap-1">
+          <div class="new-lp-variant-title text-[#333333] font-bold !text-[18px] md:!text-[24px] [&>strong]:text-[#D30101] tracking-normal text-left">
+            {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+            {{ label_unavailable }}
+          </div>
+          {% if variant.metafields.custom.sub_badge %}
+            <div
+              class="rounded-[4px] text-[10px] md:text-[12px] font-normal bg-[#000C38] !leading-tight text-[#fff] px-[6px] py-[2px] tracking-normal w-fit whitespace-nowrap"
+            >
+              {{ variant.metafields.custom.sub_badge }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="new-lp-variant-price text-[#333333] font-bold !text-[20px] md:!text-[24px] mt-2 md:mt-3 tracking-normal flex flex-col items-center justify-center gap-1">
+          {{ variant.price | divided_by: number_of_items | money -}}
+          <br>
+          {%- unless number_of_items == 1 %}<span class="text-xs md:text-base font-normal">each</span>{% endunless %}
+        </div>
+      </div>
+    </label>
+  </div>
+{%- endfor -%}

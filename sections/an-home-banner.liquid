@@ -1,0 +1,259 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_m }}px;
+      padding-bottom: {{ section.settings.padding_bottom_m }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    #{{ section.settings.section_id }} .section-main-image {
+      border-radius: {{ section.settings.border_radius }}px;
+    }
+  #{{ section.settings.section_id }} .section-main-image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, {{ section.settings.bgcolor }} 0%, transparent 100%);
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section.settings.section_id }} .section-main-image-container::after {
+      top: auto;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, {{ section.settings.bgcolor }} 0%, transparent 100%);
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class=""
+>
+  <div class="mx-auto w-full" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      {% assign max_width = section.settings.max_width | divided_by: 2 %}
+      {% assign max_width_px = max_width | append: 'px' %}
+      {% if section.settings.image != blank %}
+        <div class="section-main-image-container relative">
+          {{
+            section.settings.image
+            | image_url: width: max_width
+            | image_tag: class: 'w-full section-main-image w-full h-full object-cover', sizes: max_width_px
+          }}
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div
+          class="section-{{ section.id }}-padding px-4 md:px-10"
+          style="background-color: {{ section.settings.bgcolor }};"
+        >
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'row' %}
+                <div class="flex flex-col w-full gap-2 max-w-[500px]">
+                  {% if block.settings.heading != blank %}
+                    <h2
+                      class="text-[26px] md:text-[40px] font-bold leading-tight! text-black{% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                      style="color: {{ block.settings.heading_color }};"
+                    >
+                      {{ block.settings.heading }}
+                    </h2>
+                  {% endif %}
+
+                  {% if block.settings.description != blank %}
+                    <div
+                      class="text-[17px] md:text-[20px] font-normal !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                      style="color: {{ block.settings.description_color }};"
+                    >
+                      {{ block.settings.description }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.button_label != blank %}
+                    <div class="w-full md:w-fit mt-5 md:mt-8 lg:min-w-[450px]">
+                      <a
+                        href="{{ block.settings.button_url }}"
+                        class="new-button--primary"
+                      >
+                        {{ block.settings.button_label }}
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AN Home Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1920,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_m_center",
+          "label": "Heading Mobile Center",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_d_center",
+          "label": "Heading Desktop Center",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#121212"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "description_m_center",
+          "label": "Description Mobile Center",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "description_d_center",
+          "label": "Description Desktop Center",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#121212"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AN Home Banner"
+    }
+  ]
+}
+{% endschema %}

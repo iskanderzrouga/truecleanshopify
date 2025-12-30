@@ -1,0 +1,29 @@
+<div
+  class="rounded-[4px] p-4 flex flex-col gap-4 flex-1"
+  style="background-color: {{ block.settings.card_bgcolor }}"
+>
+  {% if block.settings.stars != blank %}
+    {{
+      block.settings.stars
+      | image_url: width: 100
+      | image_tag: class: 'w-full max-w-[100px] mx-auto', sizes: '100px'
+    }}
+  {% endif %}
+
+  {% if block.settings.description != blank %}
+    <div class="text-[16px] md:text-[16px] font-normal text-center !leading-[1.5] text-[#000000]">
+      {{ block.settings.description }}
+    </div>
+  {% endif %}
+
+  <div class="flex gap-3 w-full">
+    {% if block.settings.image != blank %}
+      {{ block.settings.image | image_url: width: 32 | image_tag: class: 'w-full max-w-[32px] rounded-[60px]', sizes: '32px' }}
+    {% endif %}
+    {% if block.settings.name != blank %}
+      <div class="text-[16px] md:text-[16px] font-bold !leading-[1.5] text-[#000000]">
+        {{ block.settings.name }}
+      </div>
+    {% endif %}
+  </div>
+</div>

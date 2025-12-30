@@ -1,0 +1,43 @@
+{% if template == 'page.advertorial' %}
+  <style>
+    /* Font Inter */
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      src: url('{{ 'Inter-Bold.woff2.woff2' | asset_url }}') format('woff2');
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      src: url('{{ 'Inter-Regular.woff2.woff2' | asset_url }}') format('woff2');
+    }
+
+    .font-inter, 
+    .font-inter * {
+      font-family: 'Inter', sans-serif!important;
+    }
+    /* Font Inter */
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    p,
+    button,
+    div,
+    ul,
+    li,
+    ol {
+      font-family: 'Inter', sans-serif!important;
+    }
+  </style>
+{% endif %}

@@ -1,0 +1,280 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+
+  Usage:
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+{% endcomment %}
+
+<div class="nl-product-variants__variant nl-product-variants__variant-{{index}} group [&.active]:opacity-100 [&.inactive]:opacity-80 cursor-pointer duration-100 w-full bg-white border border-[#3F5348] rounded-[12px] flex flex-col gap-5 pb-6">
+  {% assign current_variant = product.variants[0] %}
+
+  <div
+    class="group-[.active]:!bg-[#247042] group-[.inactive]:!bg-[#eeeeee] px-5 flex flex-col items-center justify-center gap-1 text-center p-4 rounded-[9px] duration-100"
+    style="background-color: {{ current_variant.metafields.custom.badge_background }};"
+  >
+    {% if current_variant.metafields.custom.badge %}
+      <div
+        class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
+        style="color: {{ current_variant.metafields.custom.badge_color }};"
+      >
+        {{ current_variant.metafields.custom.badge }}
+      </div>
+    {% endif %}
+    {% if current_variant.metafields.custom.badge_description %}
+      <div
+        class="text-[17px] md:text-[20px] font-normal !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
+        style="color: {{ current_variant.metafields.custom.badge_color }};"
+      >
+        {{ current_variant.metafields.custom.badge_description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="px-5 flex justify-center">
+    {% if current_variant.metafields.custom.custom_variant_image != blank %}
+      <div class="relative w-fit">
+        {{
+          current_variant.metafields.custom.custom_variant_image
+          | image_url: width: 300
+          | image_tag: class: 'h-[150px] w-auto max-w-full object-contain'
+        }}
+
+        {% if current_variant.metafields.custom.sticker != blank %}
+          {{
+            current_variant.metafields.custom.sticker
+            | image_url: width: 148
+            | image_tag: class: 'absolute top-0 -right-[30px] max-w-[74px]'
+          }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div data-type="subscription" class="nl-product-variants__variant--price-widget active hidden [&.active]:flex flex-col items-center text-center gap-5">
+    {% assign raw_discount = block.settings.discount | plus: 0 %}
+    {% assign inverse_discount = 100 | minus: raw_discount %}
+    {% assign discount_index = inverse_discount | times: 0.01 %}
+
+    <div class="px-5 text-center">
+      {% assign product_count_number = current_variant.metafields.custom.product_count_number %}
+      <span class="text-[30px] md:text-[36px] font-bold text-black !leading-tight">
+        {{- current_variant.price | times: discount_index | divided_by: product_count_number | money -}}
+        {% unless product_count_number == '1' %}
+          <span class="text-[17px] md:text-[30px] font-normal"> / bottle</span>
+        {% endunless %}
+      </span>
+    </div>
+
+    <div
+      class="px-5 flex flex-col items-center justify-center text-center gap-1"
+    >
+      <div class="text-[20px] md:text-[24px] font-normal text-black !leading-tight">
+        Total: <span class="font-medium">{{- current_variant.price | times: discount_index | money -}}</span>
+      </div>
+
+      <div>
+        <div class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+          Or 4 installments of
+          <span class="font-medium">{{- current_variant.price | times: discount_index | divided_by: 4 | money -}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-type="onetime" class="nl-product-variants__variant--price-widget hidden [&.active]:flex flex-col items-center text-center gap-5">
+    <div class="px-5 text-center">
+      {% assign product_count_number = current_variant.metafields.custom.product_count_number %}
+      <span class="text-[30px] md:text-[36px] font-bold text-black !leading-tight">
+        {{- current_variant.price | divided_by: product_count_number | money -}}
+        {% unless product_count_number == '1' %}
+          <span class="text-[17px] md:text-[30px] font-normal"> / bottle</span>
+        {% endunless %}
+      </span>
+    </div>
+
+    <div class="px-5 flex flex-col items-center justify-center text-center gap-1">
+      <div class="text-[20px] md:text-[24px] font-normal text-black !leading-tight">
+        Total: <span class="font-medium">{{- current_variant.price | money -}}</span>
+      </div>
+
+      <div>
+        <div class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+          Or 4 installments of <span class="font-medium">{{- current_variant.price | divided_by: 4 | money -}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% render 'nl-product-variants-subscription', block: block, product: product %}
+
+  <div class="px-5 w-full" {{ block.shopify_attributes }}>
+    {%- if product != blank -%}
+      {%- liquid
+        assign gift_card_recipient_feature_active = false
+        if block.settings.show_gift_card_recipient and product.gift_card?
+          assign gift_card_recipient_feature_active = true
+        endif
+
+        assign show_dynamic_checkout = false
+        if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+          assign show_dynamic_checkout = true
+        endif
+      -%}
+
+      <product-form
+        class="product-form !m-0 w-full"
+        data-hide-errors="{{ gift_card_recipient_feature_active }}"
+        data-section-id="{{ section.id }}"
+      >
+        <div class="product-form__error-message-wrapper" role="alert" hidden>
+          <span class="svg-wrapper">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+          </span>
+          <span class="product-form__error-message"></span>
+        </div>
+
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form w-full',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.variants[0].id }}"
+            {% if product.variants[0].available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+            class="product-variant-id"
+          >
+
+          <input
+            re-sub-widget__selling-plan-input
+            class=""
+            name="selling_plan"
+            type="hidden"
+            value="{{block.settings.id_1}}"
+          >
+
+          {%- if gift_card_recipient_feature_active -%}
+            {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+          {%- endif -%}
+
+          <div class="product-form__buttons">
+            {%- liquid
+              assign check_against_inventory = true
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                assign check_against_inventory = false
+              endif
+              if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                assign quantity_rule_soldout = true
+              endif
+            -%}
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="!m-0 !w-full product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} new-button--primary"
+              {% if product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+                or product.selected_or_first_available_variant == null
+              %}
+                disabled
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant == null -%}
+                  {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {% if block.settings.custom_text != blank %}
+                    {{ block.settings.custom_text }} -
+                    {{ product.selected_or_first_available_variant.price | money_with_currency }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endif %}
+                {%- endif -%}
+              </span>
+              {%- render 'icon-arrow-right' -%}
+              {%- render 'loading-spinner' -%}
+            </button>
+            {%- if show_dynamic_checkout -%}
+              {{ form | payment_button }}
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </product-form>
+    {%- else -%}
+      <div class="product-form">
+        <div class="product-form__buttons form">
+          <button
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width button--primary new-button--primary"
+            disabled
+          >
+            {{ 'products.product.sold_out' | t }}
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {% assign total_text_count = 0 %}
+
+  {% if current_variant.metafields.custom.bottom_text_1 != blank %}
+    {% assign total_text_count = total_text_count | plus: 1 %}
+  {% endif %}
+
+  {% if current_variant.metafields.custom.bottom_text_2 != blank %}
+    {% assign total_text_count = total_text_count | plus: 1 %}
+  {% endif %}
+
+  {% if current_variant.metafields.custom.bottom_text_3 != blank %}
+    {% assign total_text_count = total_text_count | plus: 1 %}
+  {% endif %}
+
+  <div class="px-5 grid grid-cols-{{total_text_count}} items-center gap-2">
+    {% if current_variant.metafields.custom.bottom_text_1 != blank %}
+      <div class="flex gap-1 items-center justify-center">
+        {% if current_variant.metafields.custom.bottom_icon_1 != blank %}
+          {{ current_variant.metafields.custom.bottom_icon_1 | image_url: width: 20 | image_tag: class: '' }}
+        {% endif %}
+        <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+          {{- current_variant.metafields.custom.bottom_text_1 -}}
+        </span>
+      </div>
+    {% endif %}
+
+    {% if current_variant.metafields.custom.bottom_text_2 != blank %}
+      <div class="flex gap-1 items-center justify-center">
+        {% if current_variant.metafields.custom.bottom_icon_2 != blank %}
+          {{ current_variant.metafields.custom.bottom_icon_2 | image_url: width: 20 | image_tag: class: '' }}
+        {% endif %}
+        <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+          {{- current_variant.metafields.custom.bottom_text_2 -}}
+        </span>
+      </div>
+    {% endif %}
+
+    {% if current_variant.metafields.custom.bottom_text_3 != blank %}
+      <div class="flex gap-1 items-center justify-center">
+        {% if current_variant.metafields.custom.bottom_icon_3 != blank %}
+          {{ current_variant.metafields.custom.bottom_icon_3 | image_url: width: 20 | image_tag: class: '' }}
+        {% endif %}
+        <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+          {{- current_variant.metafields.custom.bottom_text_3 -}}
+        </span>
+      </div>
+    {% endif %}
+  </div>
+</div>
