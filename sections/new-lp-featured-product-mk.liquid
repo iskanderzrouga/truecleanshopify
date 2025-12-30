@@ -12,7 +12,7 @@
   {% if section.settings.image_zoom == 'hover' %}
     data-zoom-on-hover
   {% endif %}
-  style="background: linear-gradient(180deg, rgba(232, 255, 51, 0.08) 0%, rgba(0, 183, 162, 0.05) 50%, rgba(255, 255, 255, 1) 100%);"
+  style="background: linear-gradient(180deg, rgba(232, 255, 51, 0.03) 0%, rgba(0, 183, 162, 0.02) 50%, rgba(255, 255, 255, 1) 100%);"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
@@ -45,12 +45,12 @@
 
     .section-{{ section.id }}-padding .product-form__input--pill input[type=radio]:checked+label .new-lp-variant-content {
       border-color: #00B7A2;
-      background-color: #F0FFFD;
-      box-shadow: 0 2px 8px rgba(0, 183, 162, 0.15);
+      background-color: #F5FFFE;
     }
     .section-{{ section.id }}-padding .product-form__input--pill input[type=radio]:checked+label .new-lp-variant-content--main {
       border-color: #001C19;
       background-color: #E8FF33;
+      border-width: 2px;
     }
     .section-{{ section.id }}-padding .product-form__input--pill input[type=radio]:checked+label .new-lp-variant-content--main .new-lp-variant-title--main {
       font-weight: bold;

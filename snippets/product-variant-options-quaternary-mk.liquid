@@ -79,7 +79,7 @@
     {% comment %} {% assign number_of_items = variant.metafields.custom.product_count %} {% endcomment %}
 
     <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
-      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#F9F9F9] rounded-[50px] relative p-2 md:p-[15px]">
+      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-center border-2 border-[#D9DDE0] bg-white rounded-[8px] relative px-4 py-2 cursor-pointer transition-all duration-200 hover:border-[#00B7A2]">
         {% if variant.metafields.custom.badge %}
           <div
             class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
@@ -89,7 +89,7 @@
         {% endif %}
 
         <div class="flex flex-col gap-1 flex-1">
-          <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-medium !text-[16px] md:!text-[14px] [&>strong]:text-[#D30101] tracking-normal justify-center text-center flex flex-col md:flex-row gap-1 md:gap-2 md:items-center">
+          <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-medium !text-[14px] md:!text-[15px] tracking-normal justify-center text-center">
             {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
             {{ label_unavailable }}
             {% assign price = variant.price %}
