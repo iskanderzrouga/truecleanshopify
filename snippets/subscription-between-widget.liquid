@@ -32,7 +32,7 @@
       & Save
     </div>
   </div>
- <div class="sub-only-content text-[14px] md:text-[14px] font-normal !leading-tight text-[#001C19] text-center">
+ <div class="sub-only-content text-[15px] md:text-[15px] font-normal !leading-snug text-[#001C19] text-center">
       <span class="font-bold underline">Ships every 3 months.</span> Pause or cancel anytime.
     </div>
 
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div class="sub-only-content bg-[#EFF6F6] rounded-[10px] px-4 py-4 md:py-5 grid md:grid-cols-2 gap-2">
+  <div class="sub-only-content bg-[#EFF6F6] rounded-[10px] px-4 py-4 md:py-5 grid md:grid-cols-2 gap-3">
     {% for i in (1..8) %}
       {% assign description_name = 'sub_feature' | append: i %}
       {% assign description = block.settings[description_name] %}
