@@ -79,7 +79,12 @@
     {% comment %} {% assign number_of_items = variant.metafields.custom.product_count %} {% endcomment %}
 
     <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
-      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-center gap-2 border-2 border-[#ccc] bg-white rounded-[8px] relative px-5 py-3 cursor-pointer transition-all duration-200 hover:border-[#00B7A2] hover:shadow-md shadow-sm">
+      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-center gap-2 border-2 border-[#ddd] bg-white rounded-[8px] relative px-5 py-3 cursor-pointer transition-all duration-200 hover:border-[#00B7A2] hover:shadow-md shadow-sm">
+        {% if value == 'Lemon Fresh' %}
+          <span class="text-[16px]">🍋</span>
+        {% elsif value == 'Unscented' %}
+          <span class="text-[16px]">💧</span>
+        {% endif %}
         <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-semibold !text-[14px] md:!text-[15px] tracking-normal">
           {% if value == 'Unscented' %}
             Pure Clean
