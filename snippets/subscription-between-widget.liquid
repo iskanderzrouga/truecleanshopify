@@ -1,6 +1,6 @@
-<div class="flex flex-col w-full gap-0">
+<div class="flex flex-col w-full gap-0 max-w-[500px] mx-auto">
   <!-- Toggle Section -->
-  <div class="flex items-center gap-6 justify-center text-center bg-[#F0FAF9] border border-[#00B7A2] rounded-t-[10px] py-4 px-4">
+  <div class="flex items-center gap-6 justify-center text-center bg-[#E5F5F3] border border-[#00B7A2] rounded-t-[10px] py-4 px-4">
     <div class="text-[15px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
       One-Time<br>Purchase
     </div>
@@ -15,7 +15,7 @@
   </div>
 
   <!-- How It Works Section -->
-  <div class="sub-only-content bg-[#F0FAF9] border-x border-[#00B7A2] p-4 flex justify-between items-center gap-4">
+  <div class="sub-only-content bg-[#E5F5F3] border-x border-b border-[#00B7A2] p-4 flex justify-between items-center gap-4">
     <div class="flex flex-col gap-1 text-center items-center flex-1">
       <div class="bg-[#00B7A2] w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold text-white">1</div>
       <div class="text-[14px] md:text-[15px] font-bold text-[#001C19] leading-tight">First Order</div>
@@ -34,7 +34,7 @@
   </div>
 
   <!-- Features Section -->
-  <div class="sub-only-content bg-[#F0FAF9] rounded-b-[10px] border border-t-0 border-[#00B7A2] px-4 py-3 grid grid-cols-2 gap-x-3 gap-y-2">
+  <div class="sub-only-content bg-[#E5F5F3] rounded-b-[10px] border border-t-0 border-[#00B7A2] px-4 py-3 grid grid-cols-2 gap-x-3 gap-y-2">
     {% for i in (1..8) %}
       {% assign description_name = 'sub_feature' | append: i %}
       {% assign description = block.settings[description_name] %}
