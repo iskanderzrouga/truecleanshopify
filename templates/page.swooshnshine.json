@@ -21,7 +21,7 @@
           "settings": {
             "name": "",
             "image": "shopify:\/\/shop_images\/Group_46485.png",
-            "heading": "<p><strong>4.85\/5<\/strong> from <strong>50,173<\/strong> Happy Customers<\/p>"
+            "heading": "<p>4.85\/5 from 50,173 Happy Customers<\/p>"
           }
         },
         "heading_KRif3P": {
@@ -65,7 +65,7 @@
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Installs in 60 seconds<\/p>"
+            "description": "<p>60-second install. No tools.<\/p>"
           }
         },
         "feature_HBPTJk": {
