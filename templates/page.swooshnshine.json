@@ -21,7 +21,7 @@
           "settings": {
             "name": "",
             "image": "shopify:\/\/shop_images\/Group_46485.png",
-            "heading": "<p>4.85\/5 from 50,173 Happy Customers<\/p>"
+            "heading": "<p>Rated 4.85\/5 \u2022 50,173+ Reviews<\/p>"
           }
         },
         "heading_KRif3P": {
@@ -54,13 +54,6 @@
             "description": "<p>No rings, slime, or stains<\/p>"
           }
         },
-        "feature_XCqr98": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Guest-ready 24\/7<\/p>"
-          }
-        },
         "feature_8Yte4B": {
           "type": "feature",
           "settings": {
@@ -72,7 +65,14 @@
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>90 days no scrubbing<\/p>"
+            "description": "<p>Safe for septic systems<\/p>"
+          }
+        },
+        "feature_XCqr98": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-ready 24\/7<\/p>"
           }
         },
         "variant_picker_X3mg6k": {
@@ -181,9 +181,9 @@
         "ship_by_zf66Rh",
         "feature_wrapper_icKPBw",
         "feature_HiXeDc",
-        "feature_XCqr98",
         "feature_8Yte4B",
         "feature_HBPTJk",
+        "feature_XCqr98",
         "variant_picker_X3mg6k",
         "ship_by_yH4HbV",
         "price_JdP3yx",
