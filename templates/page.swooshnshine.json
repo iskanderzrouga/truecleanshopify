@@ -51,7 +51,7 @@
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Prevents rings, slime, and stains automatically<\/p>"
+            "description": "<p>No rings, slime, or stains<\/p>"
           }
         },
         "feature_XCqr98": {
@@ -65,14 +65,14 @@
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>60 seconds to install, zero tools<\/p>"
+            "description": "<p>Installs in 60 seconds<\/p>"
           }
         },
         "feature_HBPTJk": {
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>One cartridge = 90 days no scrubbing<\/p>"
+            "description": "<p>90 days no scrubbing<\/p>"
           }
         },
         "variant_picker_X3mg6k": {
