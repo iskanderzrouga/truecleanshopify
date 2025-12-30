@@ -82,7 +82,7 @@
     {% assign inverted_percent_plus = 1 | plus: sub_percent %}
 
     <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
-      <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#F9F9F9] rounded-[10px] relative p-2 md:p-[15px]">
+      <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border-2 border-[#E5E7EB] bg-white rounded-[12px] relative p-3 md:p-4 transition-all duration-200 hover:border-[#00B7A2]/50">
         {% if variant.metafields.custom.badge %}
           <div
             class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
