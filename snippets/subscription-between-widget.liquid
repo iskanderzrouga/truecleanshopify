@@ -1,79 +1,54 @@
-<div class="flex flex-col w-full gap-4">
-  <div class="flex items-center gap-6 justify-center text-center">
-    <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
-      One-Time
-      <br>
-      Purchase
+<div class="flex flex-col w-full gap-0">
+  <!-- Toggle Section -->
+  <div class="flex items-center gap-6 justify-center text-center bg-[#F0FAF9] border border-[#00B7A2] rounded-t-[10px] py-4 px-4">
+    <div class="text-[15px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
+      One-Time<br>Purchase
     </div>
     <div class="toggle sub-onetime-toggle group cursor-pointer select-none active">
-      <div
-        class="
-          toggle-box
-          w-16 h-8 rounded-full !block
-          bg-gray-300
-          group-[.active]:bg-[#00B7A2]
-          relative transition-all duration-300
-        "
-      >
-        <div
-          class="
-            toggle-knob
-            w-7 h-7 bg-white rounded-full !block
-            absolute top-0.5 left-0.5
-            transition-all duration-300
-            group-[.active]:translate-x-8
-          "
-        ></div>
+      <div class="toggle-box w-16 h-8 rounded-full !block bg-gray-300 group-[.active]:bg-[#00B7A2] relative transition-all duration-300">
+        <div class="toggle-knob w-7 h-7 bg-white rounded-full !block absolute top-0.5 left-0.5 transition-all duration-300 group-[.active]:translate-x-8"></div>
       </div>
     </div>
-    <div class="text-[16px] md:text-[16px] font-bold !leading-tight text-[#001C19]">
-      Subscribe
-      <br>
-      & Save
+    <div class="text-[15px] md:text-[16px] font-bold !leading-tight text-[#001C19]">
+      Subscribe<br>& Save
     </div>
   </div>
- <div class="sub-only-content text-[15px] md:text-[15px] font-normal !leading-snug text-[#001C19] text-center">
-      <span class="font-bold underline">Ships every 3 months.</span> Pause or cancel anytime.
-    </div>
 
-  <div class="sub-only-content border border-[#00B7A2] rounded-[10px] p-4 md:p-5 flex justify-between items-center gap-4 bg-[#F8FFFF]">
+  <!-- How It Works Section -->
+  <div class="sub-only-content bg-[#F0FAF9] border-x border-[#00B7A2] p-4 flex justify-between items-center gap-4">
     <div class="flex flex-col gap-1 text-center items-center flex-1">
-      <div class="bg-[#00B7A2] w-9 h-9 rounded-full flex items-center justify-center text-[16px] font-bold text-white">1</div>
-      <div class="text-[16px] md:text-[17px] font-bold text-[#001C19] leading-tight">First Order</div>
-      <div class="text-[14px] md:text-[15px] text-[#666] leading-tight">Dispensers + Cartridges</div>
+      <div class="bg-[#00B7A2] w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold text-white">1</div>
+      <div class="text-[14px] md:text-[15px] font-bold text-[#001C19] leading-tight">First Order</div>
+      <div class="text-[12px] md:text-[13px] text-[#666] leading-tight">Dispensers + Cartridges</div>
     </div>
 
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-[#00B7A2] flex-shrink-0">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-[#00B7A2] flex-shrink-0">
       <path d="M13.172 12L8.222 7.05L9.636 5.636L16 12L9.636 18.364L8.222 16.95L13.172 12Z" fill="currentColor"/>
     </svg>
 
     <div class="flex flex-col gap-1 text-center items-center flex-1">
-      <div class="bg-[#00B7A2] w-9 h-9 rounded-full flex items-center justify-center text-[16px] font-bold text-white">2+</div>
-      <div class="text-[16px] md:text-[17px] font-bold text-[#001C19] leading-tight">Every 3 Months</div>
-      <div class="text-[14px] md:text-[15px] text-[#666] leading-tight">Refill cartridges only</div>
+      <div class="bg-[#00B7A2] w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold text-white">2+</div>
+      <div class="text-[14px] md:text-[15px] font-bold text-[#001C19] leading-tight">Every 3 Months</div>
+      <div class="text-[12px] md:text-[13px] text-[#666] leading-tight">Refill Cartridges Only</div>
     </div>
   </div>
 
-  <div class="sub-only-content bg-[#EFF6F6] rounded-[10px] px-4 py-4 md:py-5 grid md:grid-cols-2 gap-2">
+  <!-- Features Section -->
+  <div class="sub-only-content bg-[#F0FAF9] rounded-b-[10px] border border-t-0 border-[#00B7A2] px-4 py-3 grid grid-cols-2 gap-x-3 gap-y-2">
     {% for i in (1..8) %}
       {% assign description_name = 'sub_feature' | append: i %}
       {% assign description = block.settings[description_name] %}
       {% if description != blank %}
-        <div
-          class="flex items-center gap-2"
-        >
+        <div class="flex items-center gap-2">
           {% if block.settings.feature_icon != blank %}
             {{
               block.settings.feature_icon
-              | image_url: width: 16
-              | image_tag: class: 'w-full h-fit object-contain max-w-[16px]'
+              | image_url: width: 14
+              | image_tag: class: 'w-[14px] h-[14px] object-contain flex-shrink-0'
             }}
           {% endif %}
-          <div
-            class="text-[15px] md:text-[16px] font-medium !leading-normal text-[#001C19]"
-            style="color: {{ block.settings.color }};"
-          >
-            {{ description }}
+          <div class="text-[12px] md:text-[13px] font-medium !leading-snug text-[#001C19]">
+            {{ description | capitalize }}
           </div>
         </div>
       {% endif %}
