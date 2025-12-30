@@ -361,24 +361,26 @@
                 </div>
 
               {% when 'feature_wrapper' %}
-                <div class="flex flex-col gap-[8px] md:gap-[10px] !my-5">
-                  {% for block in section.blocks %}
-                    {% if block.type == 'feature' %}
-                      <div class="flex items-center gap-2">
-                        {{
-                          block.settings.icon
-                          | image_url: width: 30
-                          | image_tag: class: 'w-full max-w-[20px] md:max-w-[20px]', preload: true
-                        }}
-                        <div
-                          class="text-[#001C19] text-[16px] md:text-[17px] font-semibold !leading-snug"
-                          style="color: {{section.settings.color_primary}};"
-                        >
-                          {{ block.settings.description }}
+                <div class="bg-gradient-to-br from-[#f0faf9] to-[#e6f4f2] border border-[#00B7A2]/25 rounded-xl p-4 !my-4">
+                  <div class="flex flex-col gap-[8px] md:gap-[10px]">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'feature' %}
+                        <div class="flex items-center gap-2">
+                          {{
+                            block.settings.icon
+                            | image_url: width: 30
+                            | image_tag: class: 'w-full max-w-[20px] md:max-w-[20px]', preload: true
+                          }}
+                          <div
+                            class="text-[#001C19] text-[16px] md:text-[17px] font-semibold !leading-snug"
+                            style="color: {{section.settings.color_primary}};"
+                          >
+                            {{ block.settings.description }}
+                          </div>
                         </div>
-                      </div>
-                    {% endif %}
-                  {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 </div>
 
               {% when 'button' %}
