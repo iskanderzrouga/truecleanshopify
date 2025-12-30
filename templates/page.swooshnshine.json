@@ -75,6 +75,13 @@
             "description": "<p>Guest-Ready 24\/7<\/p>"
           }
         },
+        "feature_UnivFit": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Universal Fit Guaranteed<\/p>"
+          }
+        },
         "variant_picker_X3mg6k": {
           "type": "variant_picker",
           "settings": {
@@ -184,6 +191,7 @@
         "feature_8Yte4B",
         "feature_HBPTJk",
         "feature_XCqr98",
+        "feature_UnivFit",
         "variant_picker_X3mg6k",
         "ship_by_yH4HbV",
         "price_JdP3yx",
