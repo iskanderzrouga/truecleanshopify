@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div class="sub-only-content bg-[#EFF6F6] rounded-[10px] px-4 py-4 md:py-5 grid md:grid-cols-2 gap-3">
+  <div class="sub-only-content bg-[#EFF6F6] rounded-[10px] px-4 py-4 md:py-5 grid md:grid-cols-2 gap-2">
     {% for i in (1..8) %}
       {% assign description_name = 'sub_feature' | append: i %}
       {% assign description = block.settings[description_name] %}
@@ -74,7 +74,7 @@
             }}
           {% endif %}
           <div
-            class="text-[15px] md:text-[15px] font-normal !leading-snug text-[#001C19]"
+            class="text-[15px] md:text-[15px] font-medium !leading-snug text-[#001C19]"
             style="color: {{ block.settings.color }};"
           >
             {{ description }}
