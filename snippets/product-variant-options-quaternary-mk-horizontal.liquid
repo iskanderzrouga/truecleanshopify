@@ -121,25 +121,6 @@
           </div>
         </div>
 
-        <div class="md:pr-6">
-          {% assign price = variant.price %}
-          {% assign price_sub = variant.price | times: inverted_percent %}
-          {% assign compare_price = variant.compare_at_price %}
-
-          {% if compare_price > price %}
-            {% assign discount = compare_price | minus: price %}
-            {% assign discount_sub = compare_price | minus: price_sub %}
-            <span class="price-item price-item--savings !text-[#000] !text-[12px] md:!text-[14px] font-bold bg-[#E8FF33] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
-              <span class="onetimecard-element">
-                Save {{ discount | money_without_trailing_zeros }}
-              </span>
-              <span class="subscription-element">
-                Save {{ discount_sub | money_without_trailing_zeros }}
-              </span>
-            </span>
-          {% endif %}
-        </div>
-
         {% assign variant_count = variant.metafields.custom.count | default: 1 %}
         <div class="flex flex-col items-end gap-0">
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
@@ -150,7 +131,9 @@
               {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
           </div>
-          <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
+          {% if variant_count > 1 %}
+            <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
+          {% endif %}
         </div>
       </div>
     </label>

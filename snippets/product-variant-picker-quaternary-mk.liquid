@@ -9,8 +9,6 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
-{% render 'subscription-between-widget', block: block %}
-
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
@@ -68,6 +66,9 @@
               <p class="text-[14px] text-[#666] m-0 mb-1">Total today</p>
               <p class="tc-total-price text-[24px] md:text-[28px] font-bold text-[#001C19] m-0">$69</p>
             </div>
+
+            <!-- Subscription toggle moved below bundles -->
+            {% render 'subscription-between-widget', block: block %}
           {% else %}
             <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">
               {% render 'product-variant-options-quaternary-mk',
