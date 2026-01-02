@@ -59,6 +59,7 @@
   {%- endcapture -%}
 
   <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
+    {% assign is_one_toilet = value | downcase | contains: '1 toilet' %}
     <input
       type="radio"
       class="new-lp-variant--inut-sub"
@@ -66,7 +67,7 @@
       name="{{ input_name | escape }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
-      {% if value.selected %}
+      {% if is_one_toilet %}
         checked
       {% endif %}
       {% if option_disabled %}
@@ -152,21 +153,9 @@
     subscribe(PUB_SUB_EVENTS.variantChange, updateDisplays);
   }
 
-  // Initial setup
+  // Initial update on page load
   document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
-      const oneToiletInput = Array.from(variantInputs).find(input =>
-        input.value.toLowerCase().includes('1 toilet')
-      );
-
-      if (oneToiletInput) {
-        variantInputs.forEach(input => input.checked = false);
-        oneToiletInput.checked = true;
-      }
-
-      updateDisplays();
-    }, 150);
+    updateDisplays();
   });
 })();
 </script>
