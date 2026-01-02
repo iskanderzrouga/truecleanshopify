@@ -124,37 +124,37 @@
 {%- endfor -%}
 
 <script>
-(function() {
-  window.updateDisplays = function() {
-    const totalDisplay = document.querySelector('.tc-total-price');
-    const monthlyDisplay = document.querySelector('.tc-monthly-price');
-    const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
-
-    if (checked) {
-      const label = checked.nextElementSibling;
-      if (label && label.dataset) {
-        const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
-
-        if (totalDisplay) {
-          const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
-          if (price) totalDisplay.textContent = price;
-        }
-
-        if (monthlyDisplay && label.dataset.monthlyPrice) {
-          monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
-        }
-      }
-    }
-  }
-
-  // Subscribe to Shopify's variantChange event (fires AFTER HTML is updated)
-  if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-    subscribe(PUB_SUB_EVENTS.variantChange, window.updateDisplays);
-  }
-
-  // Initial setup - runs once on page load only
+  // Only initialize once - prevents duplicate listeners/subscribers on re-renders
   if (!window.tcBundleInitialized) {
     window.tcBundleInitialized = true;
+
+    window.updateDisplays = function() {
+      const totalDisplay = document.querySelector('.tc-total-price');
+      const monthlyDisplay = document.querySelector('.tc-monthly-price');
+      const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
+
+      if (checked) {
+        const label = checked.nextElementSibling;
+        if (label && label.dataset) {
+          const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
+
+          if (totalDisplay) {
+            const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+            if (price) totalDisplay.textContent = price;
+          }
+
+          if (monthlyDisplay && label.dataset.monthlyPrice) {
+            monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+          }
+        }
+      }
+    };
+
+    // Subscribe once to Shopify's variantChange event
+    if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+      subscribe(PUB_SUB_EVENTS.variantChange, window.updateDisplays);
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       // Select 1 toilet on initial page load only
       const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
@@ -168,5 +168,4 @@
       window.updateDisplays();
     });
   }
-})();
 </script>
