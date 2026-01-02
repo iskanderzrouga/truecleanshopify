@@ -28,6 +28,11 @@
   #productsVariants.show-onetime .tc-subscription-only {
     display: none !important;
   }
+
+  /* Hide one-time-only elements when in subscription mode */
+  #productsVariants.show-subscription .tc-onetime-only {
+    display: none !important;
+  }
 </style>
 
 {% comment %} JavaScript moved to assets/tc-bundle-selector.js for clean, single-source logic {% endcomment %}
