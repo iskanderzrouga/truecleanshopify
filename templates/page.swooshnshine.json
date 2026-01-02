@@ -61,13 +61,6 @@
             "description": "<p>60-Second Install. No Tools.<\/p>"
           }
         },
-        "feature_HBPTJk": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Safe For Septic Systems<\/p>"
-          }
-        },
         "feature_XCqr98": {
           "type": "feature",
           "settings": {
@@ -189,7 +182,6 @@
         "feature_wrapper_icKPBw",
         "feature_HiXeDc",
         "feature_8Yte4B",
-        "feature_HBPTJk",
         "feature_XCqr98",
         "feature_UnivFit",
         "variant_picker_X3mg6k",
