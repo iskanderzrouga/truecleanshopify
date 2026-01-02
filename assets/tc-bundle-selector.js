@@ -31,6 +31,7 @@
     sellingPlanInput: 'input[re-sub-widget__selling-plan-input]',
     totalPrice: '.tc-total-price',
     monthlyPrice: '.tc-monthly-price',
+    perToilet: '.tc-per-toilet',
     subOnlyContent: '.sub-only-content'
   };
 
@@ -106,6 +107,13 @@
     // Update monthly price in header
     if (monthlyDisplay && label.dataset.monthlyPrice) {
       monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+    }
+
+    // Show/hide "per toilet" based on selection (hide for 1 toilet)
+    const perToiletEl = document.querySelector(SELECTORS.perToilet);
+    if (perToiletEl) {
+      const isOneToilet = checkedInput.value.toLowerCase().includes('1 toilet');
+      perToiletEl.style.display = isOneToilet ? 'none' : '';
     }
   }
 
