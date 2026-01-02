@@ -49,6 +49,11 @@
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill !mb-0 {% if option.name == 'Scent' %}hidden{% endif %}">
           {% if option.name == 'Bathrooms' %}
+            <!-- Header before bundles -->
+            <div class="text-center mb-4">
+              <p class="text-[16px] md:text-[18px] text-[#001C19] m-0">Less than <span class="font-bold text-[#00B7A2]">$9.60/month</span> per toilet</p>
+            </div>
+
             <div class="flex flex-col-reverse w-full gap-3">
               {% render 'product-variant-options-quaternary-mk-horizontal',
                 product: product,
@@ -56,6 +61,12 @@
                 block: block,
                 picker_type: picker_type
               %}
+            </div>
+
+            <!-- Total display below bundles -->
+            <div class="text-center mt-4 pt-4 border-t border-[#E5E5E5]">
+              <p class="text-[14px] text-[#666] m-0 mb-1">Total today</p>
+              <p class="tc-total-price text-[24px] md:text-[28px] font-bold text-[#001C19] m-0">$69</p>
             </div>
           {% else %}
             <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">

@@ -81,7 +81,7 @@
     {% assign inverted_percent = 1 | minus: sub_percent %}
     {% assign inverted_percent_plus = 1 | plus: sub_percent %}
 
-    <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+    <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} data-total-price="{{ variant.price | times: inverted_percent | money_without_trailing_zeros }}" data-total-price-onetime="{{ variant.price | money_without_trailing_zeros }}" class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
       <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
           <div
@@ -140,22 +140,43 @@
           {% endif %}
         </div>
 
-        <div class="flex flex-col items-end gap-1">
+        {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+        <div class="flex flex-col items-end gap-0">
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
             <span class="onetimecard-element">
-              {{- variant.price | money_without_trailing_zeros -}}
+              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
             <span class="subscription-element">
-              {{- variant.price | times: inverted_percent | money_without_trailing_zeros -}}
+              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
           </div>
-          {% if variant.compare_at_price > variant.price %}
-            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
-              {{ variant.compare_at_price | money_without_trailing_zeros }}
-            </div>
-          {% endif %}
+          <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
         </div>
       </div>
     </label>
   </div>
 {%- endfor -%}
+
+<script>
+(function() {
+  const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
+  const totalDisplay = document.querySelector('.tc-total-price');
+
+  function updateTotal() {
+    const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
+    if (checked && totalDisplay) {
+      const label = checked.nextElementSibling;
+      const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
+      const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+      totalDisplay.textContent = price;
+    }
+  }
+
+  variantInputs.forEach(input => {
+    input.addEventListener('change', updateTotal);
+  });
+
+  // Initial update
+  updateTotal();
+})();
+</script>
