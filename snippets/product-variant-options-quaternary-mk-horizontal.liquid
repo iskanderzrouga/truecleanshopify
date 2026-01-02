@@ -59,7 +59,7 @@
   {%- endcapture -%}
 
   <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
-    {% assign is_one_toilet = value | downcase | contains: '1 toilet' %}
+    {% assign value_lower = value | downcase %}
     <input
       type="radio"
       class="new-lp-variant--inut-sub"
@@ -67,7 +67,7 @@
       name="{{ input_name | escape }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
-      {% if is_one_toilet %}
+      {% if value_lower contains '1 toilet' %}
         checked
       {% endif %}
       {% if option_disabled %}
