@@ -135,13 +135,11 @@
       if (label && label.dataset) {
         const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
 
-        // Update total price
         if (totalDisplay) {
           const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
           if (price) totalDisplay.textContent = price;
         }
 
-        // Update monthly price header
         if (monthlyDisplay && label.dataset.monthlyPrice) {
           monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
         }
@@ -149,17 +147,14 @@
     }
   }
 
-  // Use event delegation on document - this survives DOM changes
-  document.addEventListener('change', function(e) {
-    if (e.target.classList.contains('new-lp-variant--inut-sub')) {
-      updateDisplays();
-    }
-  });
+  // Subscribe to Shopify's variant selection change event
+  if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+    subscribe(PUB_SUB_EVENTS.optionValueSelectionChange, updateDisplays);
+  }
 
-  // Initial setup after page loads
+  // Initial setup
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-      // Find and select "1 Toilet" option by value
       const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
       const oneToiletInput = Array.from(variantInputs).find(input =>
         input.value.toLowerCase().includes('1 toilet')
@@ -170,7 +165,6 @@
         oneToiletInput.checked = true;
       }
 
-      // Initial update
       updateDisplays();
     }, 150);
   });
