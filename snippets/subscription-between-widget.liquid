@@ -1,32 +1,62 @@
-<div class="flex flex-col w-full gap-0 max-w-[400px] mx-auto">
+<div class="flex flex-col w-full gap-0 max-w-[500px] mx-auto">
 
-  <!-- Main Card -->
-  <div class="bg-[#F8FAFA] border border-[#E5EDED] rounded-2xl p-6">
+  <!-- Header -->
+  <div class="text-center mb-4">
+    <div class="text-[13px] text-[#666] mb-1">Refills auto-ship every 3 months. Cancel anytime.</div>
+  </div>
 
-    <!-- 3 Month Supply Badge -->
-    <div class="text-center mb-5">
-      <span class="inline-block bg-[#00B7A2] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-        3 Month Supply
-      </span>
+  <!-- Toggle Section -->
+  <div class="flex items-center gap-6 justify-center text-center bg-[#F5F5F5] border border-[#E0E0E0] rounded-[10px] py-3 px-4 mb-2">
+    <div class="text-[14px] md:text-[15px] font-normal !leading-tight text-[#001C19]">
+      One-Time<br>Purchase
     </div>
-
-    <!-- Toilet Quantity Selector -->
-    <div class="text-center mb-5">
-      <p class="text-[14px] text-[#666] mb-3 m-0">How many toilets?</p>
-      <div class="flex items-center justify-center gap-5">
-        <button type="button" class="toilet-minus w-11 h-11 rounded-full border-2 border-[#00B7A2] bg-white text-[#00B7A2] text-2xl font-bold flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-all cursor-pointer">−</button>
-        <span class="toilet-qty-display text-[40px] font-bold text-[#001C19] w-14 text-center leading-none">1</span>
-        <button type="button" class="toilet-plus w-11 h-11 rounded-full border-2 border-[#00B7A2] bg-white text-[#00B7A2] text-2xl font-bold flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-all cursor-pointer">+</button>
+    <div class="toggle sub-onetime-toggle group cursor-pointer select-none active">
+      <div class="toggle-box w-14 h-7 rounded-full !block bg-gray-300 group-[.active]:bg-[#00B7A2] relative transition-all duration-300">
+        <div class="toggle-knob w-6 h-6 bg-white rounded-full !block absolute top-0.5 left-0.5 transition-all duration-300 group-[.active]:translate-x-7 shadow-sm"></div>
       </div>
     </div>
-
-    <!-- Price Display -->
-    <div class="text-center">
-      <div class="toilet-price-total text-[36px] font-bold text-[#001C19] leading-none">$29</div>
-      <div class="toilet-price-breakdown text-[14px] text-[#666] mt-2">$9.67 per toilet / month</div>
-      <div class="toilet-price-savings text-[13px] font-semibold text-[#00873C] mt-1">Save $20</div>
+    <div class="text-[14px] md:text-[15px] font-bold !leading-tight text-[#001C19]">
+      Subscribe<br>& Save 20%
     </div>
+  </div>
 
+  <!-- Free Shipping Bar -->
+  <div class="sub-only-content bg-[#F5F5F5] border border-[#E0E0E0] rounded-[10px] py-2 px-4 text-center mb-4">
+    <span class="text-[14px] text-[#001C19]">✓ Free fast shipping</span>
+  </div>
+
+  <!-- Mini FAQs -->
+  <div class="sub-only-content flex flex-col gap-1 mb-4">
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
+        <span>What exactly do I get?</span>
+        <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="px-4 pb-3 text-[13px] text-[#666] leading-relaxed">
+        <strong>Today:</strong> Dispenser(s) + 3-month cartridges.<br>
+        <strong>In 3 months:</strong> Refill cartridges only (20% off).
+      </div>
+    </details>
+
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
+        <span>Can I cancel anytime?</span>
+        <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="px-4 pb-3 text-[13px] text-[#666] leading-relaxed">
+        Yes! Cancel, skip, or pause with one click. No commitments.
+      </div>
+    </details>
+
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
+        <span>What if it doesn't fit my toilet?</span>
+        <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="px-4 pb-3 text-[13px] text-[#666] leading-relaxed">
+        Fits 95% of toilets. Full refund within 90 days if not.
+      </div>
+    </details>
   </div>
 
 </div>
@@ -35,74 +65,44 @@
   #productsVariants variant-selects + variant-selects {
     display: none !important;
     height: 0;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-
-  #productsVariants .product-form__input--pill {
-    display: none !important;
-  }
-
-  .toilet-minus, .toilet-plus {
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
+    opacity: 0!important;
+    visibility: invisible!important;
   }
 </style>
 
 <script>
-(function() {
-  const priceData = {
-    1: { price: 29, compare: 49, perMonth: 9.67 },
-    2: { price: 49, compare: 98, perMonth: 8.17 },
-    3: { price: 69, compare: 147, perMonth: 7.67 },
-    4: { price: 89, compare: 196, perMonth: 7.42 }
-  };
+    const toggle = document.querySelector('.toggle');
+    if (toggle) {
+      const subOnlyElements = document.querySelectorAll('.sub-only-content');
 
-  let currentQty = 1;
+      toggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const isActive = this.classList.contains('active');
+        const productsVariants = document.querySelector('#productsVariants');
 
-  const qtyDisplay = document.querySelector('.toilet-qty-display');
-  const priceTotal = document.querySelector('.toilet-price-total');
-  const priceBreakdown = document.querySelector('.toilet-price-breakdown');
-  const priceSavings = document.querySelector('.toilet-price-savings');
-  const minusBtn = document.querySelector('.toilet-minus');
-  const plusBtn = document.querySelector('.toilet-plus');
-
-  function updateDisplay() {
-    const data = priceData[currentQty];
-    const savings = data.compare - data.price;
-
-    qtyDisplay.textContent = currentQty;
-    priceTotal.textContent = '$' + data.price;
-    priceBreakdown.textContent = '$' + data.perMonth.toFixed(2) + ' per toilet / month';
-    priceSavings.textContent = 'Save $' + savings;
-
-    // Sync with hidden variant selector
-    const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
-    if (variantInputs[currentQty - 1]) {
-      variantInputs[currentQty - 1].checked = true;
-      variantInputs[currentQty - 1].dispatchEvent(new Event('change', { bubbles: true }));
+        if (!isActive) {
+          const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+          if (input) input.value = '';
+          if (productsVariants) {
+            productsVariants.classList.remove('show-subscription');
+            productsVariants.classList.add('show-onetime');
+          }
+          subOnlyElements.forEach(el => el.style.display = 'none');
+        } else {
+          const selectedLabel = document.querySelector(
+            '.product-form__input--pill input[type=radio].new-lp-variant--inut-sub:checked+label.new-lp-variant--label-sub'
+          );
+          if (selectedLabel) {
+            const subId = selectedLabel.getAttribute('data-subscription-id');
+            const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+            if (input) input.value = subId;
+          }
+          if (productsVariants) {
+            productsVariants.classList.remove('show-onetime');
+            productsVariants.classList.add('show-subscription');
+          }
+          subOnlyElements.forEach(el => el.style.display = '');
+        }
+      });
     }
-  }
-
-  if (minusBtn) {
-    minusBtn.addEventListener('click', function() {
-      if (currentQty > 1) {
-        currentQty--;
-        updateDisplay();
-      }
-    });
-  }
-
-  if (plusBtn) {
-    plusBtn.addEventListener('click', function() {
-      if (currentQty < 4) {
-        currentQty++;
-        updateDisplay();
-      }
-    });
-  }
-
-  updateDisplay();
-})();
 </script>
