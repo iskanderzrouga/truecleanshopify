@@ -23,6 +23,11 @@
     opacity: 0!important;
     visibility: invisible!important;
   }
+
+  /* Hide subscription-only elements when in one-time mode */
+  #productsVariants.show-onetime .tc-subscription-only {
+    display: none !important;
+  }
 </style>
 
 {% comment %} JavaScript moved to assets/tc-bundle-selector.js for clean, single-source logic {% endcomment %}
