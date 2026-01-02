@@ -62,45 +62,6 @@
         </div>
       {%- endif -%}
       <div class="drawer__header !px-5 bg-[#00B7A2] border-b-[6px] border-[#E8FF33]">
-        <div class="w-full flex flex-col gap-2">
-          <h2 class="drawer__heading !text-[#fff] font-bold uppercase !text-sm !mb-0 text-center">
-            {{ 'sections.cart.title_secondary' | t }}
-          </h2>
-
-          {% unless cart == empty %}
-            <div class="flex flex-col items-center justify-center gap-4">
-              {% assign free_shipping_price = 7500 %}
-              {% assign show_free_shipping = false %}
-              {% if cart.total_price > free_shipping_price %}
-                {% assign show_free_shipping = true %}
-              {% endif %}
-
-              {% assign target_price = free_shipping_price | times: 1.0 %}
-              {% assign current_cart_total = cart.total_price | times: 1.0 %}
-              {% assign to_reach_price = target_price | minus: current_cart_total %}
-              {% assign progress_percent = current_cart_total | divided_by: target_price | times: 100 %}
-
-              {% if progress_percent >= 100 %}
-                {% assign progress_percent = 100 %}
-              {% endif %}
-
-              <p class="text-base text-[#fff] font-bold !leading-tight text-center">
-                {% if show_free_shipping %}
-                  FREE SHIPPING UNLOCKED!
-                {% else %}
-                  <strong
-                    >ADD <span class="text-[#E8FF33]">{{ to_reach_price | money_without_trailing_zeros }}</span> FOR FREE
-                    SHIPPING!</strong
-                  >
-                {% endif %}
-              </p>
-              {% comment %} <div class="h-2 bg-[#fff] border border-[#000] rounded-[8px] relative w-full">
-                <div class="h-2 bg-[#000] rounded-[8px] !block" style="width: {{ progress_percent }}%;"></div>
-              </div> {% endcomment %}
-            </div>
-          {% endunless %}
-        </div>
-        
         <button
           class="drawer__close !right-0"
           type="button"
