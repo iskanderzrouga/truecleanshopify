@@ -126,6 +126,13 @@
   const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
   const totalDisplay = document.querySelector('.tc-total-price');
 
+  // Select first option (1 toilet) by default
+  if (variantInputs.length > 0) {
+    variantInputs.forEach(input => input.checked = false);
+    variantInputs[0].checked = true;
+    variantInputs[0].dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
   function updateTotal() {
     const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
     if (checked && totalDisplay) {
