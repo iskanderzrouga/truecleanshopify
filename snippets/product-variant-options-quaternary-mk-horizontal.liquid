@@ -109,18 +109,13 @@
             3 Months Supply
           </div>
           {% assign variant_count = variant.metafields.custom.count | default: 1 %}
-          <div class="flex flex-col items-end gap-0">
-          <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
+          <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal whitespace-nowrap">
             <span class="onetimecard-element">
-              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
+              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
             </span>
             <span class="subscription-element">
-              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
+              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
             </span>
-          </div>
-          {% if variant_count > 1 %}
-            <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
-          {% endif %}
           </div>
         </div>
       </div>
