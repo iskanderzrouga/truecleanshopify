@@ -81,7 +81,9 @@
     {% assign inverted_percent = 1 | minus: sub_percent %}
     {% assign inverted_percent_plus = 1 | plus: sub_percent %}
 
-    <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} data-total-price="{{ variant.price | times: inverted_percent | money_without_trailing_zeros }}" data-total-price-onetime="{{ variant.price | money_without_trailing_zeros }}" class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+    {% assign variant_count_for_monthly = variant.metafields.custom.count | default: 1 %}
+    {% assign monthly_price_cents = variant.price | times: inverted_percent | divided_by: variant_count_for_monthly | divided_by: 3 %}
+    <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} data-total-price="{{ variant.price | times: inverted_percent | money_without_trailing_zeros }}" data-total-price-onetime="{{ variant.price | money_without_trailing_zeros }}" data-monthly-price="{{ monthly_price_cents | money }}" class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
       <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
           <div
@@ -125,27 +127,38 @@
 (function() {
   const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
   const totalDisplay = document.querySelector('.tc-total-price');
+  const monthlyDisplay = document.querySelector('.tc-monthly-price');
 
-  // Select first option (1 toilet) by default
-  if (variantInputs.length > 0 && !document.querySelector('.new-lp-variant--inut-sub:checked')) {
+  // Force select first option (1 toilet) by default
+  if (variantInputs.length > 0) {
+    variantInputs.forEach(input => input.checked = false);
     variantInputs[0].checked = true;
   }
 
-  function updateTotal() {
+  function updateDisplays() {
     const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
-    if (checked && totalDisplay) {
+    if (checked) {
       const label = checked.nextElementSibling;
       const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
-      const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
-      totalDisplay.textContent = price;
+
+      // Update total price
+      if (totalDisplay) {
+        const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+        totalDisplay.textContent = price;
+      }
+
+      // Update monthly price header
+      if (monthlyDisplay && label.dataset.monthlyPrice) {
+        monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+      }
     }
   }
 
   variantInputs.forEach(input => {
-    input.addEventListener('change', updateTotal);
+    input.addEventListener('change', updateDisplays);
   });
 
   // Initial update
-  updateTotal();
+  updateDisplays();
 })();
 </script>
