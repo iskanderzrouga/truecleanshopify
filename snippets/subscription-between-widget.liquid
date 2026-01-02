@@ -1,11 +1,6 @@
 <div class="flex flex-col w-full gap-0 max-w-[500px] mx-auto">
-  <!-- Ships Every 3 Months Header -->
-  <div class="sub-only-content text-center py-2">
-    <span class="text-[15px] md:text-[16px] font-bold text-[#001C19]">Ships Every 3 Months</span>
-  </div>
-
   <!-- Toggle Section -->
-  <div class="flex items-center gap-6 justify-center text-center bg-[#E5F5F3] border border-[#00B7A2] rounded-[10px] py-4 px-4">
+  <div class="flex items-center gap-6 justify-center text-center bg-[#E5F5F3] border border-[#00B7A2] rounded-t-[10px] py-4 px-4">
     <div class="text-[15px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
       One-Time<br>Purchase
     </div>
@@ -19,16 +14,45 @@
     </div>
   </div>
 
-  <!-- Simple Value Prop - Subscribe Only -->
-  <div class="sub-only-content bg-[#E5F5F3] rounded-b-[10px] border border-t-0 border-[#00B7A2] mt-[-10px] pt-[18px] pb-3 px-4">
-    <div class="flex flex-col gap-2 text-center">
-      <div class="text-[14px] md:text-[15px] font-medium text-[#001C19]">
-        ✓ Free fast shipping, always
-      </div>
-      <div class="text-[13px] text-[#666] leading-snug">
-        Cancel anytime • Skip or pause whenever you want
-      </div>
+  <!-- How It Works Section -->
+  <div class="sub-only-content bg-[#E5F5F3] border-x border-b border-[#00B7A2] p-4 flex justify-between items-center gap-4">
+    <div class="flex flex-col gap-1 text-center items-center flex-1">
+      <div class="bg-[#00B7A2] w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold text-white">1</div>
+      <div class="text-[14px] md:text-[15px] font-bold text-[#001C19] leading-tight">First Order</div>
+      <div class="text-[14px] md:text-[15px] text-[#666] leading-tight">Dispensers + Cartridges</div>
     </div>
+
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-[#00B7A2] flex-shrink-0">
+      <path d="M13.172 12L8.222 7.05L9.636 5.636L16 12L9.636 18.364L8.222 16.95L13.172 12Z" fill="currentColor"/>
+    </svg>
+
+    <div class="flex flex-col gap-1 text-center items-center flex-1">
+      <div class="bg-[#00B7A2] w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold text-white">2+</div>
+      <div class="text-[14px] md:text-[15px] font-bold text-[#001C19] leading-tight">Every 3 Months</div>
+      <div class="text-[14px] md:text-[15px] text-[#666] leading-tight">Refill Cartridges Only</div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="sub-only-content bg-[#E5F5F3] rounded-b-[10px] border border-t-0 border-[#00B7A2] px-4 py-3 grid grid-cols-2 gap-x-3 gap-y-2">
+    {% for i in (1..8) %}
+      {% assign description_name = 'sub_feature' | append: i %}
+      {% assign description = block.settings[description_name] %}
+      {% if description != blank %}
+        <div class="flex items-center gap-2">
+          {% if block.settings.feature_icon != blank %}
+            {{
+              block.settings.feature_icon
+              | image_url: width: 14
+              | image_tag: class: 'w-[14px] h-[14px] object-contain flex-shrink-0'
+            }}
+          {% endif %}
+          <div class="text-[12px] md:text-[13px] font-medium !leading-snug text-[#001C19]">
+            {{ description | capitalize }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 
