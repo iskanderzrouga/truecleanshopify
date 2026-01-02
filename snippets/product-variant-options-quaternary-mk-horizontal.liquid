@@ -114,7 +114,7 @@
               {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
           </div>
-          <div class="text-[12px] md:text-[13px] text-[#666]">{% if variant_count > 1 %}Each {% endif %}Every 3 Months</div>
+          <div class="text-[12px] md:text-[13px] text-[#666] font-medium">{% if variant_count > 1 %}Each {% endif %}Every 3 Months</div>
         </div>
       </div>
     </label>
