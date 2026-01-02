@@ -26,46 +26,40 @@
 </style>
 
 <script>
-    const toggle = document.querySelector('.toggle');
-    if (toggle) {
-      // Get the elements to show/hide
-      const subOnlyElements = document.querySelectorAll('.sub-only-content');
+  // Use event delegation so it survives DOM re-renders
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('.sub-onetime-toggle');
+    if (!toggle) return;
 
-      toggle.addEventListener('click', function () {
-        this.classList.toggle('active');
-        const isActive = this.classList.contains('active');
-        const productsVariants = document.querySelector('#productsVariants');
+    toggle.classList.toggle('active');
+    const isActive = toggle.classList.contains('active');
+    const productsVariants = document.querySelector('#productsVariants');
+    const subOnlyElements = document.querySelectorAll('.sub-only-content');
 
-        if (!isActive) {
-          // One-Time Purchase selected - HIDE subscription content
-          const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
-          if (input) input.value = '';
-          if (productsVariants) {
-            productsVariants.classList.remove('show-subscription');
-            productsVariants.classList.add('show-onetime');
-          }
-
-          // Hide subscription-only elements
-          subOnlyElements.forEach(el => el.style.display = 'none');
-
-        } else {
-          // Subscribe & Save selected - SHOW subscription content
-          const selectedLabel = document.querySelector(
-            '.product-form__input--pill input[type=radio].new-lp-variant--inut-sub:checked+label.new-lp-variant--label-sub'
-          );
-          if (selectedLabel) {
-            const subId = selectedLabel.getAttribute('data-subscription-id');
-            const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
-            if (input) input.value = subId;
-          }
-          if (productsVariants) {
-            productsVariants.classList.remove('show-onetime');
-            productsVariants.classList.add('show-subscription');
-          }
-
-          // Show subscription-only elements
-          subOnlyElements.forEach(el => el.style.display = '');
-        }
-      });
+    if (!isActive) {
+      // One-Time Purchase selected
+      const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+      if (input) input.value = '';
+      if (productsVariants) {
+        productsVariants.classList.remove('show-subscription');
+        productsVariants.classList.add('show-onetime');
+      }
+      subOnlyElements.forEach(el => el.style.display = 'none');
+    } else {
+      // Subscribe & Save selected
+      const selectedLabel = document.querySelector(
+        '.product-form__input--pill input[type=radio].new-lp-variant--inut-sub:checked+label.new-lp-variant--label-sub'
+      );
+      if (selectedLabel) {
+        const subId = selectedLabel.getAttribute('data-subscription-id');
+        const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+        if (input) input.value = subId;
+      }
+      if (productsVariants) {
+        productsVariants.classList.remove('show-onetime');
+        productsVariants.classList.add('show-subscription');
+      }
+      subOnlyElements.forEach(el => el.style.display = '');
     }
-  </script>
+  });
+</script>
