@@ -47,15 +47,7 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill !mb-0">
-          {% comment %} <legend class="form__label text-[#001C19] font-normal uppercase !leading-tight !text-[14px] !flex relative w-full my-4">
-            {{ option.name }}
-          </legend> {% endcomment %}
-          {% if option.name == 'Scent' %}
-            <legend class="form__label text-[#001C19] font-bold uppercase !leading-tight !text-[14px] !flex relative w-full my-4">
-              Choose Your Scent
-            </legend>
-          {% endif %}
+        <fieldset class="js product-form__input product-form__input--pill !mb-0 {% if option.name == 'Scent' %}hidden{% endif %}">
           {% if option.name == 'Bathrooms' %}
             <div class="flex flex-col-reverse w-full gap-3">
               {% render 'product-variant-options-quaternary-mk-horizontal',
