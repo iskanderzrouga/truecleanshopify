@@ -20,7 +20,6 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
-<div class="max-w-[420px] mx-auto w-full">
 {%- for value in option.values -%}
   {%- liquid
     assign swatch_focal_point = null
@@ -97,34 +96,49 @@
         </div>
 
         <div class="flex flex-col gap-1 flex-1">
-          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal">
-            <div class="whitespace-nowrap text-[15px] md:text-[17px]">
-              {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
-              {{ label_unavailable }}
+          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal flex flex-col items-start gap-[6px]">
+            <div class="flex items-center gap-2">
+              <div class="whitespace-nowrap text-[15px] md:text-[17px]">
+                {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+                {{ label_unavailable }}
+              </div>
+              <div class="text-white font-bold text-[11px] md:text-[12px] bg-[#1273B7] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
+                3 Months Supply
+              </div>
             </div>
+
+            {% assign variant_count = variant.metafields.custom.count %}
+            {% if variant_count > 0 %}
+              <span class="price-item price-item--savings !text-[#8E8E8E] !text-[14px] md:!text-[16px] font-normal tracking-normal">
+                <span class="onetimecard-element">
+                  {{ variant.price | divided_by: variant_count | money }} per toilet
+                </span>
+                <span class="subscription-element">
+                  {{ variant.price | times: inverted_percent | divided_by: variant_count | money }} per toilet
+                </span>
+              </span>
+            {% endif %}
           </div>
         </div>
 
-        <!-- Right side: badge + price -->
-        <div class="flex items-center gap-2">
-          <div class="text-white font-bold text-[10px] md:text-[11px] bg-[#00B7A2] leading-tight px-2 py-1 rounded-[5px] text-center tracking-normal whitespace-nowrap">
-            3 Mo Supply
-          </div>
-          {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+        {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+        <div class="flex flex-col items-end gap-0">
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
-          <span class="onetimecard-element">
-            {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
-          </span>
-          <span class="subscription-element">
-            {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
-          </span>
+            <span class="onetimecard-element">
+              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
+            </span>
+            <span class="subscription-element">
+              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
+            </span>
           </div>
+          {% if variant_count > 1 %}
+            <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
+          {% endif %}
         </div>
       </div>
     </label>
   </div>
 {%- endfor -%}
-</div>
 
 <script>
 (function() {
