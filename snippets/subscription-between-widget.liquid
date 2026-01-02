@@ -1,55 +1,45 @@
 <div class="flex flex-col w-full gap-0 max-w-[500px] mx-auto">
 
-  <!-- NOT MONTHLY CHARGE - Big Clear Callout -->
-  <div class="sub-only-content bg-[#FFF9E6] border-2 border-[#F5A623] rounded-lg p-3 mb-3 text-center">
-    <div class="text-[15px] md:text-[16px] font-bold text-[#001C19] leading-snug">
-      This is NOT a monthly charge
-    </div>
-    <div class="text-[13px] md:text-[14px] text-[#666] mt-1">
-      You pay <strong>once today</strong> for a 3-month supply.<br>
-      Refills auto-ship every 3 months. Cancel anytime.
-    </div>
+  <!-- Header -->
+  <div class="text-center mb-4">
+    <div class="text-[13px] text-[#666] mb-1">Refills auto-ship every 3 months. Cancel anytime.</div>
   </div>
 
   <!-- Toggle Section -->
-  <div class="flex items-center gap-6 justify-center text-center bg-[#E5F5F3] border border-[#00B7A2] rounded-[10px] py-4 px-4">
-    <div class="text-[15px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
+  <div class="flex items-center gap-6 justify-center text-center bg-[#F5F5F5] border border-[#E0E0E0] rounded-[10px] py-3 px-4 mb-2">
+    <div class="text-[14px] md:text-[15px] font-normal !leading-tight text-[#001C19]">
       One-Time<br>Purchase
     </div>
     <div class="toggle sub-onetime-toggle group cursor-pointer select-none active">
-      <div class="toggle-box w-16 h-8 rounded-full !block bg-gray-300 group-[.active]:bg-[#00B7A2] relative transition-all duration-300">
-        <div class="toggle-knob w-7 h-7 bg-white rounded-full !block absolute top-0.5 left-0.5 transition-all duration-300 group-[.active]:translate-x-8"></div>
+      <div class="toggle-box w-14 h-7 rounded-full !block bg-gray-300 group-[.active]:bg-[#00B7A2] relative transition-all duration-300">
+        <div class="toggle-knob w-6 h-6 bg-white rounded-full !block absolute top-0.5 left-0.5 transition-all duration-300 group-[.active]:translate-x-7 shadow-sm"></div>
       </div>
     </div>
-    <div class="text-[15px] md:text-[16px] font-bold !leading-tight text-[#001C19]">
+    <div class="text-[14px] md:text-[15px] font-bold !leading-tight text-[#001C19]">
       Subscribe<br>& Save 20%
     </div>
   </div>
 
-  <!-- Simple Value Prop - Subscribe Only -->
-  <div class="sub-only-content bg-[#E5F5F3] rounded-b-[10px] border border-t-0 border-[#00B7A2] mt-[-10px] pt-[18px] pb-3 px-4">
-    <div class="flex flex-col gap-2 text-center">
-      <div class="text-[14px] md:text-[15px] font-medium text-[#001C19]">
-        ✓ Free fast shipping
-      </div>
-    </div>
+  <!-- Free Shipping Bar -->
+  <div class="sub-only-content bg-[#F5F5F5] border border-[#E0E0E0] rounded-[10px] py-2 px-4 text-center mb-4">
+    <span class="text-[14px] text-[#001C19]">✓ Free fast shipping</span>
   </div>
 
-  <!-- Inline Mini FAQs -->
-  <div class="sub-only-content flex flex-col gap-2 mt-4">
-    <details class="group bg-white border border-[#e0e0e0] rounded-lg">
-      <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-[14px] font-medium text-[#001C19] list-none">
+  <!-- Mini FAQs -->
+  <div class="sub-only-content flex flex-col gap-1 mb-4">
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
         <span>What exactly do I get?</span>
         <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </summary>
       <div class="px-4 pb-3 text-[13px] text-[#666] leading-relaxed">
-        <strong>Today:</strong> Dispenser(s) + 3-month cleaning cartridges.<br>
-        <strong>In 3 months:</strong> Just refill cartridges arrive (20% off).
+        <strong>Today:</strong> Dispenser(s) + 3-month cartridges.<br>
+        <strong>In 3 months:</strong> Refill cartridges only (20% off).
       </div>
     </details>
 
-    <details class="group bg-white border border-[#e0e0e0] rounded-lg">
-      <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-[14px] font-medium text-[#001C19] list-none">
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
         <span>Can I cancel anytime?</span>
         <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </summary>
@@ -58,16 +48,17 @@
       </div>
     </details>
 
-    <details class="group bg-white border border-[#e0e0e0] rounded-lg">
-      <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-[14px] font-medium text-[#001C19] list-none">
+    <details class="group bg-white border border-[#E0E0E0] rounded-lg">
+      <summary class="flex items-center justify-between cursor-pointer px-4 py-2.5 text-[14px] font-medium text-[#001C19] list-none">
         <span>What if it doesn't fit my toilet?</span>
         <svg class="w-4 h-4 text-[#00B7A2] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </summary>
       <div class="px-4 pb-3 text-[13px] text-[#666] leading-relaxed">
-        Fits 95% of toilets. Full refund within 90 days if it doesn't work for you.
+        Fits 95% of toilets. Full refund within 90 days if not.
       </div>
     </details>
   </div>
+
 </div>
 
 <style>
@@ -82,7 +73,6 @@
 <script>
     const toggle = document.querySelector('.toggle');
     if (toggle) {
-      // Get the elements to show/hide
       const subOnlyElements = document.querySelectorAll('.sub-only-content');
 
       toggle.addEventListener('click', function () {
@@ -91,19 +81,14 @@
         const productsVariants = document.querySelector('#productsVariants');
 
         if (!isActive) {
-          // One-Time Purchase selected - HIDE subscription content
           const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
           if (input) input.value = '';
           if (productsVariants) {
             productsVariants.classList.remove('show-subscription');
             productsVariants.classList.add('show-onetime');
           }
-
-          // Hide subscription-only elements
           subOnlyElements.forEach(el => el.style.display = 'none');
-
         } else {
-          // Subscribe & Save selected - SHOW subscription content
           const selectedLabel = document.querySelector(
             '.product-form__input--pill input[type=radio].new-lp-variant--inut-sub:checked+label.new-lp-variant--label-sub'
           );
@@ -116,10 +101,8 @@
             productsVariants.classList.remove('show-onetime');
             productsVariants.classList.add('show-subscription');
           }
-
-          // Show subscription-only elements
           subOnlyElements.forEach(el => el.style.display = '');
         }
       });
     }
-  </script>
+</script>

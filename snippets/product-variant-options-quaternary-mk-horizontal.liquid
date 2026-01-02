@@ -1,20 +1,11 @@
 {% comment %}
-  Renders product variant options
+  Renders product variant options - Minimalist design with price breakdowns
 
   Accepts:
   - product: {Object} product object.
   - option: {Object} current product_option object.
   - block: {Object} block object.
-  - picker_type: {String} type of picker to dispay
-
-
-  Usage:
-  {% render 'product-variant-options',
-    product: product,
-    option: option,
-    block: block
-    picker_type: picker_type
-  %}
+  - picker_type: {String} type of picker to display
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
@@ -79,85 +70,85 @@
 
     {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
     {% assign inverted_percent = 1 | minus: sub_percent %}
-    {% assign inverted_percent_plus = 1 | plus: sub_percent %}
+
+    {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+    {% assign price = variant.price %}
+    {% assign price_sub = variant.price | times: inverted_percent %}
+    {% assign compare_price = variant.compare_at_price %}
+
+    {%- comment -%} Calculate per toilet per month (3 months supply) {%- endcomment -%}
+    {% assign price_per_toilet = price | divided_by: variant_count %}
+    {% assign price_per_toilet_sub = price_sub | divided_by: variant_count %}
+    {% assign price_per_toilet_per_month = price_per_toilet | divided_by: 3 %}
+    {% assign price_per_toilet_per_month_sub = price_per_toilet_sub | divided_by: 3 %}
+    {% assign price_per_toilet_per_day = price_per_toilet | divided_by: 90 %}
+    {% assign price_per_toilet_per_day_sub = price_per_toilet_sub | divided_by: 90 %}
 
     <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
-      <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
-        {% if variant.metafields.custom.badge %}
-          <div
-            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% endif %}
+      <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-2 border-2 border-[#E0E0E0] bg-white rounded-[12px] relative p-3 md:p-4 transition-all duration-200 hover:border-[#00B7A2]">
 
-        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] border-[#ccc] rounded-[20px] group-[.active]:border-[#00B7A2] !flex items-center justify-center">
-          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2] hidden group-[.active]:!block"></div>
+        {%- comment -%} Radio + Toilet Count {%- endcomment -%}
+        <div class="flex items-center gap-3">
+          <div class="new-lp-variant-radio w-6 h-6 min-w-6 border-[2px] border-[#ccc] rounded-full group-[.active]:border-[#00B7A2] !flex items-center justify-center">
+            <div class="new-lp-variant-radio__circle w-3 h-3 min-w-3 rounded-full bg-[#00B7A2] hidden group-[.active]:!block"></div>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="text-[18px] md:text-[20px] font-bold text-[#001C19] leading-tight">
+              {{ value }}{{ label_unavailable }}
+            </div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-white font-semibold text-[10px] md:text-[11px] bg-[#00B7A2] leading-tight px-2 py-0.5 rounded-[4px] uppercase tracking-wide">
+                3 Months Supply
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div class="flex flex-col gap-1 flex-1">
-          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal flex flex-col items-start gap-[6px]">
-            <div class="flex items-center gap-2">
-              <div class="whitespace-nowrap text-[15px] md:text-[17px]">
-                {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
-                {{ label_unavailable }}
-              </div>
-              <div class="text-white font-bold text-[11px] md:text-[12px] bg-[#1273B7] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
-                3 Months Supply
-              </div>
-            </div>
+        {%- comment -%} Price Breakdown {%- endcomment -%}
+        <div class="flex flex-col items-end gap-0.5">
+          {%- comment -%} Per toilet per month {%- endcomment -%}
+          <div class="text-[12px] md:text-[13px] text-[#666]">
+            <span class="onetimecard-element">
+              {{ price_per_toilet_per_month | money }}/toilet/mo
+            </span>
+            <span class="subscription-element">
+              {{ price_per_toilet_per_month_sub | money }}/toilet/mo
+            </span>
+          </div>
 
-            {% assign variant_count = variant.metafields.custom.count %}
-            {% if variant_count > 0 %}
-              <span class="price-item price-item--savings !text-[#8E8E8E] !text-[14px] md:!text-[16px] font-normal tracking-normal">
-                <span class="onetimecard-element">
-                  {{ variant.price | divided_by: variant_count | money }} per toilet
-                </span>
-                <span class="subscription-element">
-                  {{ variant.price | times: inverted_percent | divided_by: variant_count | money }} per toilet
-                </span>
+          {%- comment -%} Main Price {%- endcomment -%}
+          <div class="flex items-center gap-2">
+            <div class="text-[22px] md:text-[26px] font-bold text-[#001C19] leading-none">
+              <span class="onetimecard-element">
+                {{- price | money_without_trailing_zeros -}}
               </span>
+              <span class="subscription-element">
+                {{- price_sub | money_without_trailing_zeros -}}
+              </span>
+            </div>
+            {% if compare_price > price %}
+              <div class="text-[14px] md:text-[16px] text-[#999] line-through">
+                {{ compare_price | money_without_trailing_zeros }}
+              </div>
             {% endif %}
           </div>
-        </div>
 
-        <div class="md:pr-6">
-          {% assign price = variant.price %}
-          {% assign price_sub = variant.price | times: inverted_percent %}
-          {% assign compare_price = variant.compare_at_price %}
-
+          {%- comment -%} Savings Badge {%- endcomment -%}
           {% if compare_price > price %}
             {% assign discount = compare_price | minus: price %}
             {% assign discount_sub = compare_price | minus: price_sub %}
-            <span class="price-item price-item--savings !text-[#000] !text-[12px] md:!text-[14px] font-bold bg-[#E8FF33] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
+            <div class="text-[11px] md:text-[12px] font-bold text-[#00873C] bg-[#E8FFE8] px-2 py-0.5 rounded-[4px]">
               <span class="onetimecard-element">
                 Save {{ discount | money_without_trailing_zeros }}
               </span>
               <span class="subscription-element">
                 Save {{ discount_sub | money_without_trailing_zeros }}
               </span>
-            </span>
-          {% endif %}
-        </div>
-
-        <div class="flex flex-col items-end gap-1">
-          <div class="text-[11px] md:text-[12px] font-medium text-[#00B7A2] uppercase tracking-wide">
-            Pay Today
-          </div>
-          <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
-            <span class="onetimecard-element">
-              {{- variant.price | money_without_trailing_zeros -}}
-            </span>
-            <span class="subscription-element">
-              {{- variant.price | times: inverted_percent | money_without_trailing_zeros -}}
-            </span>
-          </div>
-          {% if variant.compare_at_price > variant.price %}
-            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
-              {{ variant.compare_at_price | money_without_trailing_zeros }}
             </div>
           {% endif %}
         </div>
+
       </div>
     </label>
   </div>
