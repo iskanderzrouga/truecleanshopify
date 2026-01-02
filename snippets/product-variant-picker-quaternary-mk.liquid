@@ -124,4 +124,7 @@
       {{ product.selected_or_first_available_variant | json }}
     </script>
   </variant-selects>
+
+  {% comment %} Load bundle selector JavaScript once {% endcomment %}
+  <script src="{{ 'tc-bundle-selector.js' | asset_url }}" defer></script>
 {%- endunless -%}
