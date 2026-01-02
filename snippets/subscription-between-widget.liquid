@@ -1,33 +1,30 @@
-<div class="flex flex-col w-full max-w-[380px] mx-auto">
+<div class="flex flex-col w-full gap-0 max-w-[400px] mx-auto">
 
-  <div class="bg-white rounded-xl p-8 shadow-sm border border-[#eee]">
+  <!-- Main Card -->
+  <div class="bg-[#F8FAFA] border border-[#E5EDED] rounded-2xl p-6">
 
-    <!-- Badge -->
-    <div class="text-center mb-8">
-      <span class="bg-[#00B7A2] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+    <!-- 3 Month Supply Badge -->
+    <div class="text-center mb-5">
+      <span class="inline-block bg-[#00B7A2] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
         3 Month Supply
       </span>
     </div>
 
-    <!-- How Many Toilets -->
-    <div class="text-center mb-8">
-      <p class="text-[15px] text-[#888] mb-4">How many toilets?</p>
-      <div class="flex items-center justify-center gap-6">
-        <button type="button" class="toilet-minus w-14 h-14 rounded-full border-2 border-[#00B7A2] text-[#00B7A2] text-3xl font-light flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-colors cursor-pointer bg-transparent">−</button>
-        <span class="toilet-qty-display text-[56px] font-bold text-[#001C19] w-20 text-center leading-none">2</span>
-        <button type="button" class="toilet-plus w-14 h-14 rounded-full border-2 border-[#00B7A2] text-[#00B7A2] text-3xl font-light flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-colors cursor-pointer bg-transparent">+</button>
+    <!-- Toilet Quantity Selector -->
+    <div class="text-center mb-5">
+      <p class="text-[14px] text-[#666] mb-3 m-0">How many toilets?</p>
+      <div class="flex items-center justify-center gap-5">
+        <button type="button" class="toilet-minus w-11 h-11 rounded-full border-2 border-[#00B7A2] bg-white text-[#00B7A2] text-2xl font-bold flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-all cursor-pointer">−</button>
+        <span class="toilet-qty-display text-[40px] font-bold text-[#001C19] w-14 text-center leading-none">1</span>
+        <button type="button" class="toilet-plus w-11 h-11 rounded-full border-2 border-[#00B7A2] bg-white text-[#00B7A2] text-2xl font-bold flex items-center justify-center hover:bg-[#00B7A2] hover:text-white transition-all cursor-pointer">+</button>
       </div>
     </div>
 
-    <!-- Price -->
+    <!-- Price Display -->
     <div class="text-center">
-      <div class="toilet-price-total text-[48px] font-bold text-[#001C19] leading-none">$69</div>
-      <div class="text-[18px] text-[#666] mt-1">every 3 months</div>
-
-      <div class="mt-6 pt-6 border-t border-[#eee]">
-        <div class="toilet-price-breakdown text-[20px] font-semibold text-[#001C19]">$11.50 per toilet / month</div>
-        <div class="toilet-price-savings text-[16px] text-[#00B7A2] font-semibold mt-2">You save $29</div>
-      </div>
+      <div class="toilet-price-total text-[36px] font-bold text-[#001C19] leading-none">$29</div>
+      <div class="toilet-price-breakdown text-[14px] text-[#666] mt-2">$9.67 per toilet / month</div>
+      <div class="toilet-price-savings text-[13px] font-semibold text-[#00873C] mt-1">Save $20</div>
     </div>
 
   </div>
@@ -37,49 +34,75 @@
 <style>
   #productsVariants variant-selects + variant-selects {
     display: none !important;
+    height: 0;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
+
   #productsVariants .product-form__input--pill {
     display: none !important;
   }
+
   .toilet-minus, .toilet-plus {
-    outline: none;
     -webkit-appearance: none;
+    appearance: none;
+    outline: none;
   }
 </style>
 
 <script>
 (function() {
   const priceData = {
-    1: { price: 39, compare: 49, perMonth: 13.00 },
-    2: { price: 69, compare: 98, perMonth: 11.50 },
-    3: { price: 99, compare: 147, perMonth: 11.00 },
-    4: { price: 119, compare: 196, perMonth: 9.92 }
+    1: { price: 29, compare: 49, perMonth: 9.67 },
+    2: { price: 49, compare: 98, perMonth: 8.17 },
+    3: { price: 69, compare: 147, perMonth: 7.67 },
+    4: { price: 89, compare: 196, perMonth: 7.42 }
   };
 
-  let qty = 2;
+  let currentQty = 1;
 
-  const qtyEl = document.querySelector('.toilet-qty-display');
-  const priceEl = document.querySelector('.toilet-price-total');
-  const breakdownEl = document.querySelector('.toilet-price-breakdown');
-  const savingsEl = document.querySelector('.toilet-price-savings');
+  const qtyDisplay = document.querySelector('.toilet-qty-display');
+  const priceTotal = document.querySelector('.toilet-price-total');
+  const priceBreakdown = document.querySelector('.toilet-price-breakdown');
+  const priceSavings = document.querySelector('.toilet-price-savings');
+  const minusBtn = document.querySelector('.toilet-minus');
+  const plusBtn = document.querySelector('.toilet-plus');
 
-  function update() {
-    const d = priceData[qty];
-    qtyEl.textContent = qty;
-    priceEl.textContent = '$' + d.price;
-    breakdownEl.textContent = '$' + d.perMonth.toFixed(2) + ' per toilet / month';
-    savingsEl.textContent = 'You save $' + (d.compare - d.price);
+  function updateDisplay() {
+    const data = priceData[currentQty];
+    const savings = data.compare - data.price;
 
-    const inputs = document.querySelectorAll('.new-lp-variant--inut-sub');
-    if (inputs[qty - 1]) {
-      inputs[qty - 1].checked = true;
-      inputs[qty - 1].dispatchEvent(new Event('change', { bubbles: true }));
+    qtyDisplay.textContent = currentQty;
+    priceTotal.textContent = '$' + data.price;
+    priceBreakdown.textContent = '$' + data.perMonth.toFixed(2) + ' per toilet / month';
+    priceSavings.textContent = 'Save $' + savings;
+
+    // Sync with hidden variant selector
+    const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
+    if (variantInputs[currentQty - 1]) {
+      variantInputs[currentQty - 1].checked = true;
+      variantInputs[currentQty - 1].dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
 
-  document.querySelector('.toilet-minus')?.addEventListener('click', () => { if (qty > 1) { qty--; update(); } });
-  document.querySelector('.toilet-plus')?.addEventListener('click', () => { if (qty < 4) { qty++; update(); } });
+  if (minusBtn) {
+    minusBtn.addEventListener('click', function() {
+      if (currentQty > 1) {
+        currentQty--;
+        updateDisplay();
+      }
+    });
+  }
 
-  update();
+  if (plusBtn) {
+    plusBtn.addEventListener('click', function() {
+      if (currentQty < 4) {
+        currentQty++;
+        updateDisplay();
+      }
+    });
+  }
+
+  updateDisplay();
 })();
 </script>
