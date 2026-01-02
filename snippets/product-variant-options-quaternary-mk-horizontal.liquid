@@ -124,41 +124,47 @@
 {%- endfor -%}
 
 <script>
-(function() {
-  const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
-  const totalDisplay = document.querySelector('.tc-total-price');
-  const monthlyDisplay = document.querySelector('.tc-monthly-price');
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
+    const totalDisplay = document.querySelector('.tc-total-price');
+    const monthlyDisplay = document.querySelector('.tc-monthly-price');
 
-  // Force select first option (1 toilet) by default
-  if (variantInputs.length > 0) {
-    variantInputs.forEach(input => input.checked = false);
-    variantInputs[0].checked = true;
-  }
+    // Find and select "1 Toilet" option by value
+    const oneToiletInput = Array.from(variantInputs).find(input =>
+      input.value.toLowerCase().includes('1 toilet')
+    );
 
-  function updateDisplays() {
-    const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
-    if (checked) {
-      const label = checked.nextElementSibling;
-      const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
+    if (oneToiletInput) {
+      variantInputs.forEach(input => input.checked = false);
+      oneToiletInput.checked = true;
+    }
 
-      // Update total price
-      if (totalDisplay) {
-        const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
-        totalDisplay.textContent = price;
-      }
+    function updateDisplays() {
+      const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
+      if (checked) {
+        const label = checked.nextElementSibling;
+        const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
 
-      // Update monthly price header
-      if (monthlyDisplay && label.dataset.monthlyPrice) {
-        monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+        // Update total price
+        if (totalDisplay) {
+          const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+          totalDisplay.textContent = price;
+        }
+
+        // Update monthly price header
+        if (monthlyDisplay && label.dataset.monthlyPrice) {
+          monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+        }
       }
     }
-  }
 
-  variantInputs.forEach(input => {
-    input.addEventListener('change', updateDisplays);
-  });
+    variantInputs.forEach(input => {
+      input.addEventListener('change', updateDisplays);
+    });
 
-  // Initial update
-  updateDisplays();
-})();
+    // Initial update
+    updateDisplays();
+  }, 100);
+});
 </script>
