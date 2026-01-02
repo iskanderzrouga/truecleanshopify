@@ -104,12 +104,8 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          <div class="text-white font-bold text-[11px] md:text-[12px] bg-[#1273B7] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
-            3 Months Supply
-          </div>
-          {% assign variant_count = variant.metafields.custom.count | default: 1 %}
-          <div class="flex flex-col items-end gap-0">
+        {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+        <div class="flex flex-col items-end gap-0">
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
             <span class="onetimecard-element">
               {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
@@ -118,10 +114,7 @@
               {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
           </div>
-          {% if variant_count > 1 %}
-            <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
-          {% endif %}
-          </div>
+          <div class="text-[12px] md:text-[13px] text-[#666]">{% if variant_count > 1 %}Each {% endif %}Every 3 Months</div>
         </div>
       </div>
     </label>
