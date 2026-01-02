@@ -1,143 +1,45 @@
-<div class="tc-selector">
+<div class="text-center py-4">
 
-  <div class="tc-selector__question">How many toilets?</div>
+  <p class="text-sm text-[#888] mb-6">How many toilets?</p>
 
-  <div class="tc-selector__picker">
-    <button type="button" class="tc-selector__btn tc-minus" aria-label="Decrease">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-    <span class="tc-selector__qty">2</span>
-    <button type="button" class="tc-selector__btn tc-plus" aria-label="Increase">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+  <div class="flex items-center justify-center gap-8 mb-8">
+    <button type="button" class="toilet-minus w-12 h-12 rounded-full border border-[#ddd] text-[#001C19] text-2xl hover:border-[#00B7A2] hover:text-[#00B7A2] transition-colors cursor-pointer bg-transparent">−</button>
+    <span class="toilet-qty-display text-6xl font-bold text-[#001C19]">2</span>
+    <button type="button" class="toilet-plus w-12 h-12 rounded-full border border-[#ddd] text-[#001C19] text-2xl hover:border-[#00B7A2] hover:text-[#00B7A2] transition-colors cursor-pointer bg-transparent">+</button>
   </div>
 
-  <div class="tc-selector__price">$69</div>
-  <div class="tc-selector__period">every 3 months</div>
-
-  <div class="tc-selector__breakdown">
-    <span class="tc-selector__permonth">$11.50</span> per toilet per month
-  </div>
+  <div class="toilet-price-total text-4xl font-bold text-[#001C19] mb-1">$69</div>
+  <div class="text-sm text-[#888]">every 3 months</div>
+  <div class="toilet-price-breakdown text-lg font-medium text-[#00B7A2] mt-3">$11.50/toilet/month</div>
 
 </div>
 
 <style>
-.tc-selector {
-  text-align: center;
-  padding: 2rem 0;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.tc-selector__question {
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.tc-selector__picker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.tc-selector__btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid #E0E0E0;
-  background: transparent;
-  color: #001C19;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.tc-selector__btn:hover {
-  border-color: #00B7A2;
-  color: #00B7A2;
-}
-
-.tc-selector__qty {
-  font-size: 72px;
-  font-weight: 700;
-  color: #001C19;
-  line-height: 1;
-  min-width: 80px;
-}
-
-.tc-selector__price {
-  font-size: 42px;
-  font-weight: 700;
-  color: #001C19;
-  line-height: 1;
-}
-
-.tc-selector__period {
-  font-size: 16px;
-  color: #888;
-  margin-top: 4px;
-}
-
-.tc-selector__breakdown {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #E8E8E8;
-  font-size: 16px;
-  color: #666;
-}
-
-.tc-selector__permonth {
-  font-weight: 600;
-  color: #00B7A2;
-}
-
-#productsVariants variant-selects,
-#productsVariants .product-form__input--pill {
-  display: none !important;
-}
+  #productsVariants variant-selects,
+  #productsVariants .product-form__input--pill {
+    display: none !important;
+  }
+  .toilet-minus, .toilet-plus { outline: none; }
 </style>
 
 <script>
 (function() {
-  const data = {
-    1: { price: 39, monthly: 13.00 },
-    2: { price: 69, monthly: 11.50 },
-    3: { price: 99, monthly: 11.00 },
-    4: { price: 119, monthly: 9.92 }
-  };
+  const prices = { 1: [39,13], 2: [69,11.50], 3: [99,11], 4: [119,9.92] };
+  let q = 2;
+  const qEl = document.querySelector('.toilet-qty-display');
+  const pEl = document.querySelector('.toilet-price-total');
+  const bEl = document.querySelector('.toilet-price-breakdown');
 
-  let qty = 2;
-  const qtyEl = document.querySelector('.tc-selector__qty');
-  const priceEl = document.querySelector('.tc-selector__price');
-  const monthlyEl = document.querySelector('.tc-selector__permonth');
-
-  function render() {
-    const d = data[qty];
-    qtyEl.textContent = qty;
-    priceEl.textContent = '$' + d.price;
-    monthlyEl.textContent = '$' + d.monthly.toFixed(2);
-
-    // Sync variant
+  function u() {
+    qEl.textContent = q;
+    pEl.textContent = '$' + prices[q][0];
+    bEl.textContent = '$' + prices[q][1].toFixed(2) + '/toilet/month';
     const inputs = document.querySelectorAll('.new-lp-variant--inut-sub');
-    if (inputs[qty - 1]) {
-      inputs[qty - 1].checked = true;
-      inputs[qty - 1].dispatchEvent(new Event('change', { bubbles: true }));
-    }
+    if (inputs[q-1]) { inputs[q-1].checked = true; inputs[q-1].dispatchEvent(new Event('change', {bubbles:true})); }
   }
 
-  document.querySelector('.tc-minus')?.addEventListener('click', () => {
-    if (qty > 1) { qty--; render(); }
-  });
-
-  document.querySelector('.tc-plus')?.addEventListener('click', () => {
-    if (qty < 4) { qty++; render(); }
-  });
-
-  render();
+  document.querySelector('.toilet-minus')?.addEventListener('click', () => { if(q>1){q--;u();} });
+  document.querySelector('.toilet-plus')?.addEventListener('click', () => { if(q<4){q++;u();} });
+  u();
 })();
 </script>
