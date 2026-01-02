@@ -125,7 +125,7 @@
 
 <script>
 (function() {
-  function updateDisplays() {
+  window.updateDisplays = function() {
     const totalDisplay = document.querySelector('.tc-total-price');
     const monthlyDisplay = document.querySelector('.tc-monthly-price');
     const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
@@ -149,7 +149,7 @@
 
   // Subscribe to Shopify's variantChange event (fires AFTER HTML is updated)
   if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-    subscribe(PUB_SUB_EVENTS.variantChange, updateDisplays);
+    subscribe(PUB_SUB_EVENTS.variantChange, window.updateDisplays);
   }
 
   // Initial setup - runs once on page load only
@@ -165,7 +165,7 @@
         variantInputs.forEach(input => input.checked = false);
         oneToiletInput.checked = true;
       }
-      updateDisplays();
+      window.updateDisplays();
     });
   }
 })();

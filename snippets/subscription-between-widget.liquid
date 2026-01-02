@@ -26,27 +26,46 @@
 </style>
 
 <script>
-  // Use event delegation so it survives DOM re-renders
-  document.addEventListener('click', function(e) {
-    const toggle = e.target.closest('.sub-onetime-toggle');
-    if (!toggle) return;
+  // Store toggle state globally so it persists across re-renders
+  if (typeof window.tcSubscriptionMode === 'undefined') {
+    window.tcSubscriptionMode = true; // Default to subscription
+  }
 
-    toggle.classList.toggle('active');
-    const isActive = toggle.classList.contains('active');
+  function applyToggleState() {
+    const toggle = document.querySelector('.sub-onetime-toggle');
     const productsVariants = document.querySelector('#productsVariants');
     const subOnlyElements = document.querySelectorAll('.sub-only-content');
 
-    if (!isActive) {
-      // One-Time Purchase selected
-      const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
-      if (input) input.value = '';
+    if (!toggle) return;
+
+    if (window.tcSubscriptionMode) {
+      toggle.classList.add('active');
+      if (productsVariants) {
+        productsVariants.classList.remove('show-onetime');
+        productsVariants.classList.add('show-subscription');
+      }
+      subOnlyElements.forEach(el => el.style.display = '');
+    } else {
+      toggle.classList.remove('active');
       if (productsVariants) {
         productsVariants.classList.remove('show-subscription');
         productsVariants.classList.add('show-onetime');
       }
       subOnlyElements.forEach(el => el.style.display = 'none');
-    } else {
-      // Subscribe & Save selected
+    }
+  }
+
+  // Use event delegation for toggle clicks
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('.sub-onetime-toggle');
+    if (!toggle) return;
+
+    // Toggle the state
+    window.tcSubscriptionMode = !window.tcSubscriptionMode;
+    applyToggleState();
+
+    // Update subscription ID
+    if (window.tcSubscriptionMode) {
       const selectedLabel = document.querySelector(
         '.product-form__input--pill input[type=radio].new-lp-variant--inut-sub:checked+label.new-lp-variant--label-sub'
       );
@@ -55,11 +74,22 @@
         const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
         if (input) input.value = subId;
       }
-      if (productsVariants) {
-        productsVariants.classList.remove('show-onetime');
-        productsVariants.classList.add('show-subscription');
-      }
-      subOnlyElements.forEach(el => el.style.display = '');
+    } else {
+      const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+      if (input) input.value = '';
+    }
+
+    // Update total price display
+    if (typeof updateDisplays === 'function') {
+      updateDisplays();
     }
   });
+
+  // Restore toggle state after Shopify re-renders
+  if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+    subscribe(PUB_SUB_EVENTS.variantChange, applyToggleState);
+  }
+
+  // Apply initial state
+  document.addEventListener('DOMContentLoaded', applyToggleState);
 </script>
