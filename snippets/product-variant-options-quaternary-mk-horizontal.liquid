@@ -147,9 +147,9 @@
     }
   }
 
-  // Subscribe to Shopify's variant selection change event
+  // Subscribe to Shopify's variantChange event (fires AFTER HTML is updated)
   if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-    subscribe(PUB_SUB_EVENTS.optionValueSelectionChange, updateDisplays);
+    subscribe(PUB_SUB_EVENTS.variantChange, updateDisplays);
   }
 
   // Initial setup
