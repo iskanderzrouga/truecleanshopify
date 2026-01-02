@@ -106,18 +106,6 @@
                 3 Months Supply
               </div>
             </div>
-
-            {% assign variant_count = variant.metafields.custom.count %}
-            {% if variant_count > 0 %}
-              <span class="price-item price-item--savings !text-[#8E8E8E] !text-[14px] md:!text-[16px] font-normal tracking-normal">
-                <span class="onetimecard-element">
-                  {{ variant.price | divided_by: variant_count | money }} per toilet
-                </span>
-                <span class="subscription-element">
-                  {{ variant.price | times: inverted_percent | divided_by: variant_count | money }} per toilet
-                </span>
-              </span>
-            {% endif %}
           </div>
         </div>
 
