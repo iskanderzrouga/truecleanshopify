@@ -130,6 +130,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalDisplay = document.querySelector('.tc-total-price');
     const monthlyDisplay = document.querySelector('.tc-monthly-price');
 
+    function updateDisplays() {
+      const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
+      if (checked) {
+        const label = checked.nextElementSibling;
+        if (label && label.dataset) {
+          const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
+
+          // Update total price
+          if (totalDisplay) {
+            const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+            if (price) totalDisplay.textContent = price;
+          }
+
+          // Update monthly price header
+          if (monthlyDisplay && label.dataset.monthlyPrice) {
+            monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
+          }
+        }
+      }
+    }
+
     // Find and select "1 Toilet" option by value
     const oneToiletInput = Array.from(variantInputs).find(input =>
       input.value.toLowerCase().includes('1 toilet')
@@ -140,31 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
       oneToiletInput.checked = true;
     }
 
-    function updateDisplays() {
-      const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
-      if (checked) {
-        const label = checked.nextElementSibling;
-        const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
-
-        // Update total price
-        if (totalDisplay) {
-          const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
-          totalDisplay.textContent = price;
-        }
-
-        // Update monthly price header
-        if (monthlyDisplay && label.dataset.monthlyPrice) {
-          monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
-        }
-      }
-    }
-
+    // Add event listeners
     variantInputs.forEach(input => {
       input.addEventListener('change', updateDisplays);
     });
 
-    // Initial update
+    // Initial update after selection
     updateDisplays();
-  }, 100);
+  }, 150);
 });
 </script>
