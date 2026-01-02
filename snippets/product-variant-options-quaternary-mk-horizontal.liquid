@@ -1,13 +1,38 @@
 {% comment %}
   Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
-<div class="max-w-[400px] mx-auto flex flex-col gap-2">
 {%- for value in option.values -%}
   {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
     assign option_disabled = true
     if value.available
       assign option_disabled = false
@@ -22,84 +47,119 @@
     {{ option.name }}-{{ option.position }}
   {%- endcapture -%}
 
-  {% assign forloop_index = forloop.index | times: 2 | minus: 1 %}
-  {% assign variant = product.variants[forloop_index] %}
-  {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
-  {% assign inverted_percent = 1 | minus: sub_percent %}
-  {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
 
-  <div class="product-variant--{{forloop.index}}">
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
     <input
       type="radio"
-      class="new-lp-variant--inut-sub hidden"
+      class="new-lp-variant--inut-sub"
       id="{{ input_id }}"
       name="{{ input_name | escape }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
-      {% if value.selected %}checked{% endif %}
-      {% if option_disabled %}disabled{% endif %}
-      data-product-url="{{ value.product_url }}"
-      data-option-value-id="{{ value.id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
     >
+    {% assign forloop_index = forloop.index | times: 2 | minus: 1 %}
+    {% assign variant = product.variants[forloop_index] %}
 
-    <label
-      for="{{ input_id }}"
-      {% if variant.metafields.custom.subscription_id != blank %}data-subscription-id="{{ variant.metafields.custom.subscription_id }}"{% endif %}
-      data-total-price="{{ variant.price | times: inverted_percent | money_without_trailing_zeros }}"
-      data-total-price-onetime="{{ variant.price | money_without_trailing_zeros }}"
-      class="new-lp-variant--label-sub block cursor-pointer"
-    >
-      <div class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#E0E0E0] bg-white rounded-lg p-3 transition-all duration-200 hover:border-[#00B7A2]">
+    {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+    {% assign inverted_percent = 1 | minus: sub_percent %}
+    {% assign inverted_percent_plus = 1 | plus: sub_percent %}
 
-        <!-- Radio + Title -->
-        <div class="flex items-center gap-3">
-          <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-2 border-[#ccc] rounded-full flex items-center justify-center">
-            <div class="new-lp-variant-radio__circle w-2.5 h-2.5 rounded-full bg-[#00B7A2] hidden"></div>
+    <label for="{{ input_id }}" {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} data-total-price="{{ variant.price | times: inverted_percent | money_without_trailing_zeros }}" data-total-price-onetime="{{ variant.price | money_without_trailing_zeros }}" class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+      <div {% if variant.metafields.custom.subscription_id != blank %} data-subscription-id="{{ variant.metafields.custom.subscription_id }}" {% endif %} class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
+          >
+            {{ variant.metafields.custom.badge }}
           </div>
-          <span class="text-[16px] md:text-[17px] font-semibold text-[#001C19]">
-            {{ value }}
-          </span>
+        {% endif %}
+
+        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] border-[#ccc] rounded-[20px] group-[.active]:border-[#00B7A2] !flex items-center justify-center">
+          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2] hidden group-[.active]:!block"></div>
         </div>
 
-        <!-- 3 Months Supply Badge + Price -->
-        <div class="flex items-center gap-3">
-          <span class="text-white font-bold text-[10px] md:text-[11px] bg-[#00B7A2] leading-tight px-2 py-1 rounded uppercase tracking-wide whitespace-nowrap">
-            3 Mo Supply
-          </span>
-          <span class="text-[18px] md:text-[20px] font-bold text-[#001C19]">
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal flex flex-col items-start gap-[6px]">
+            <div class="flex items-center gap-2">
+              <div class="whitespace-nowrap text-[15px] md:text-[17px]">
+                {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+                {{ label_unavailable }}
+              </div>
+              <div class="text-white font-bold text-[11px] md:text-[12px] bg-[#1273B7] leading-tight px-2 py-1 rounded-[5px] w-fit text-center tracking-normal whitespace-nowrap">
+                3 Months Supply
+              </div>
+            </div>
+
+            {% assign variant_count = variant.metafields.custom.count %}
+            {% if variant_count > 0 %}
+              <span class="price-item price-item--savings !text-[#8E8E8E] !text-[14px] md:!text-[16px] font-normal tracking-normal">
+                <span class="onetimecard-element">
+                  {{ variant.price | divided_by: variant_count | money }} per toilet
+                </span>
+                <span class="subscription-element">
+                  {{ variant.price | times: inverted_percent | divided_by: variant_count | money }} per toilet
+                </span>
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
+        {% assign variant_count = variant.metafields.custom.count | default: 1 %}
+        <div class="flex flex-col items-end gap-0">
+          <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
             <span class="onetimecard-element">
-              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
+              {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
             <span class="subscription-element">
-              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}{% if variant_count > 1 %}/ea{% endif %}
+              {{- variant.price | times: inverted_percent | divided_by: variant_count | money_without_trailing_zeros -}}
             </span>
-          </span>
+          </div>
+          {% if variant_count > 1 %}
+            <div class="text-[12px] md:text-[13px] text-[#666]">each</div>
+          {% endif %}
         </div>
-
       </div>
     </label>
   </div>
 {%- endfor -%}
-</div>
 
 <script>
 (function() {
-  const inputs = document.querySelectorAll('.new-lp-variant--inut-sub');
+  const variantInputs = document.querySelectorAll('.new-lp-variant--inut-sub');
   const totalDisplay = document.querySelector('.tc-total-price');
 
   function updateTotal() {
     const checked = document.querySelector('.new-lp-variant--inut-sub:checked');
     if (checked && totalDisplay) {
-      const label = checked.closest('.product-variant--1, .product-variant--2, .product-variant--3, .product-variant--4')?.querySelector('label');
-      if (label) {
-        const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
-        const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
-        totalDisplay.textContent = price;
-      }
+      const label = checked.nextElementSibling;
+      const isSubscription = document.querySelector('#productsVariants')?.classList.contains('show-subscription');
+      const price = isSubscription !== false ? label.dataset.totalPrice : label.dataset.totalPriceOnetime;
+      totalDisplay.textContent = price;
     }
   }
 
-  inputs.forEach(input => input.addEventListener('change', updateTotal));
+  variantInputs.forEach(input => {
+    input.addEventListener('change', updateTotal);
+  });
+
+  // Initial update
   updateTotal();
 })();
 </script>
