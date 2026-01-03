@@ -149,5 +149,20 @@
   .new-lp-variant--input:checked + label .new-lp-variant-radio__circle {
     display: block;
   }
+
+  /* CRITICAL: Hide duplicate variant-selects during Shopify viewTransition
+     When HTML is swapped, new element is inserted before old, causing flash.
+     This hides any sibling variant-selects (the old one being replaced) */
+  variant-selects ~ variant-selects {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Also hide fieldsets that might appear as siblings during transition */
+  .product-form__input--pill ~ .product-form__input--pill[style*="display: none"] + .product-form__input--pill {
+    display: none !important;
+  }
 </style>
 
