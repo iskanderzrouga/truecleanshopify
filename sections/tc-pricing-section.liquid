@@ -72,9 +72,9 @@
 
     <!-- Urgency Banner -->
     {% if section.settings.show_urgency_banner %}
-      <div class="bg-[#D30101] text-white text-center py-3 px-4 mb-6 rounded-lg">
-        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1">{{ section.settings.urgency_heading }}</p>
-        <p class="text-[14px] md:text-[16px] m-0 opacity-90">{{ section.settings.urgency_subheading }}</p>
+      <div class="text-center py-3 px-4 mb-6 rounded-lg" style="background-color: #D30101 !important; color: #ffffff !important;">
+        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1" style="color: #ffffff !important;">{{ section.settings.urgency_heading }}</p>
+        <p class="text-[14px] md:text-[16px] m-0" style="color: rgba(255,255,255,0.9) !important;">{{ section.settings.urgency_subheading }}</p>
       </div>
     {% endif %}
 
