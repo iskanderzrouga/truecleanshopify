@@ -9,11 +9,12 @@
   data-product-id="{{ product.id }}"
   data-update-url="false"
   data-url="{{ product.url }}"
-  style="background-color: {{ section.settings.bgcolor }};"
+  style="background: linear-gradient(180deg, rgba(232, 255, 51, 0.12) 0%, rgba(0, 183, 162, 0.06) 40%, rgba(255, 255, 255, 1) 100%);"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -67,102 +68,158 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-  <div class="mx-auto w-full relative px-4" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex flex-col items-center justify-center gap-6 md:gap-8">
-      {% if section.settings.heading != blank %}
-        <h2
-          class="text-[24px] md:text-[32px] font-bold !leading-tight text-center"
-          style="color: {{ section.settings.heading_color }};"
-        >
-          {{ section.settings.heading }}
-        </h2>
-      {% endif %}
+  <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
 
-      <div class="w-full max-w-[600px]">
-        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+    <!-- Urgency Banner -->
+    {% if section.settings.show_urgency_banner %}
+      <div class="bg-[#D30101] text-white text-center py-3 px-4 mb-6 rounded-lg">
+        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1">{{ section.settings.urgency_heading }}</p>
+        <p class="text-[14px] md:text-[16px] m-0 opacity-90">{{ section.settings.urgency_subheading }}</p>
+      </div>
+    {% endif %}
 
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'variant_picker' -%}
-              <div id="productsVariants" class="show-subscription w-full">
-                {% if block.settings.horizontal_type %}
-                  {% render 'product-variant-picker-quaternary-mk',
-                    product: product,
-                    block: block,
-                    product_form_id: product_form_id
-                  %}
-                {% elsif block.settings.updated_version %}
-                  {% render 'product-variant-picker-quinary',
-                    product: product,
-                    block: block,
-                    product_form_id: product_form_id
-                  %}
-                {% else %}
-                  {% render 'product-variant-picker-tertiary',
-                    product: product,
-                    block: block,
-                    product_form_id: product_form_id
-                  %}
-                {% endif %}
-              </div>
+    <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[80px] px-4 md:px-0">
 
-            {%- when 'ship_by' -%}
-              <div class="flex gap-2 md:gap-4 items-center justify-center pb-4 !my-2 md:!my-4">
-                {% if block.settings.icon != blank %}
-                  {{
-                    block.settings.icon
-                    | image_url: width: 24
-                    | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px', preload: true
-                  }}
-                {% endif %}
+      <!-- Product Images Column -->
+      <div class="md:col-span-5">
+        <div class="w-full">
+          {% render 'product-image-slider-vertical', product: product %}
+        </div>
+      </div>
 
-                {% if block.settings.text != blank %}
-                  {% assign date_day = 'now' | date: '%d' %}
-                  {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
-                  {% assign date_year = 'now' | date: '%Y' %}
-                  {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year  %}
-                  <div class="text-xs md:text-[16px] font-normal !leading-tight text-[#001C19]">
-                    {{ block.settings.text |  highlight: "DATEPLACEHOLDER" | replace: 'DATEPLACEHOLDER', date_string }}
-                  </div>
-                {% endif %}
-              </div>
+      <!-- Product Info Column -->
+      <div class="md:!col-span-4 max-md:pt-6 !w-full !max-w-none !px-0 md:!p-0">
+        <section id="ProductInfo-{{ section.id }}" class="product__info-container">
+          {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-            {%- when 'buy_buttons' -%}
-              <div class="flex flex-col gap-4">
-                <div class="w-full">
-                  {%- render 'buy-buttons--secondary-mk',
-                    block: block,
-                    product: product,
-                    product_form_id: product_form_id,
-                    section_id: section.id,
-                    show_pickup_availability: true
-                  -%}
+          <!-- Review Badge -->
+          {% for block in section.blocks %}
+            {% if block.type == 'review' %}
+              <div class="mb-2">
+                <div class="flex items-center gap-2">
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 56 | image_tag: class: 'w-full max-w-[56px]', sizes: '56px' }}
+                  {% endif %}
+                  {% if block.settings.heading != blank %}
+                    <div class="text-[16px] font-medium !leading-tight text-[#001C19]">{{ block.settings.heading }}</div>
+                  {% endif %}
                 </div>
               </div>
-              <div class="flex gap-2 justify-center mt-4">
-                {% for i in (1..3) %}
-                  {% assign icon_name = 'icon' | append: i %}
-                  {% assign icon = block.settings[icon_name] %}
-                  {% assign description_name = 'text' | append: i %}
-                  {% assign description = block.settings[description_name] %}
-                  {% if description != blank %}
-                    <div class="flex items-center gap-2">
-                      {% if icon != blank %}
-                        {{
-                          icon
-                          | image_url: width: 28
-                          | image_tag: class: 'w-full h-fit object-contain max-w-[24px] md:max-w-[28px]'
-                        }}
-                      {% endif %}
-                      <div class="text-[12px] font-normal !leading-tight text-[#001C19]">
-                        {{ description }}
-                      </div>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Heading -->
+          {% if section.settings.heading != blank %}
+            <h2 class="text-[20px] lg:text-[22px] font-bold !leading-tight text-[#001C19] !mt-2 !mb-2">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          <!-- Description -->
+          {% if section.settings.description != blank %}
+            <div class="text-[14px] md:text-[14px] font-normal !leading-snug text-[#4a5555] !m-0 mb-4">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          <!-- Feature Bullets -->
+          {% assign has_features = false %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              {% assign has_features = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          {% if has_features %}
+            <div class="flex flex-col gap-2 !my-4 rounded-lg p-3 md:p-4" style="background: linear-gradient(135deg, #f7fcfb 0%, #f0f9f7 100%);">
+              {% for block in section.blocks %}
+                {% if block.type == 'feature' %}
+                  <div class="flex items-start gap-2">
+                    {{ block.settings.icon | image_url: width: 30 | image_tag: class: 'w-5 h-5 mt-0.5 object-contain flex-shrink-0' }}
+                    <div class="text-[#001C19] text-[15px] md:text-[16px] font-bold !leading-normal">
+                      {{ block.settings.description }}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <!-- Variant Picker & Buy Buttons -->
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'variant_picker' -%}
+                <div id="productsVariants" class="show-subscription w-full">
+                  {% if block.settings.horizontal_type %}
+                    {% render 'product-variant-picker-quaternary-mk',
+                      product: product,
+                      block: block,
+                      product_form_id: product_form_id
+                    %}
+                  {% elsif block.settings.updated_version %}
+                    {% render 'product-variant-picker-quinary',
+                      product: product,
+                      block: block,
+                      product_form_id: product_form_id
+                    %}
+                  {% else %}
+                    {% render 'product-variant-picker-tertiary',
+                      product: product,
+                      block: block,
+                      product_form_id: product_form_id
+                    %}
+                  {% endif %}
+                </div>
+
+              {%- when 'ship_by' -%}
+                <div class="flex gap-2 md:gap-4 items-center justify-center pb-4 !my-2 md:!my-4">
+                  {% if block.settings.icon != blank %}
+                    {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px' }}
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    {% assign date_day = 'now' | date: '%d' %}
+                    {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
+                    {% assign date_year = 'now' | date: '%Y' %}
+                    {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year %}
+                    <div class="text-xs md:text-[16px] font-normal !leading-tight text-[#001C19]">
+                      {{ block.settings.text | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
                   {% endif %}
-                {% endfor %}
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
+                </div>
+
+              {%- when 'buy_buttons' -%}
+                <div class="flex flex-col gap-4">
+                  <div class="w-full">
+                    {%- render 'buy-buttons--secondary-mk',
+                      block: block,
+                      product: product,
+                      product_form_id: product_form_id,
+                      section_id: section.id,
+                      show_pickup_availability: true
+                    -%}
+                  </div>
+                </div>
+                <div class="flex gap-2 justify-center mt-4">
+                  {% for i in (1..3) %}
+                    {% assign icon_name = 'icon' | append: i %}
+                    {% assign icon = block.settings[icon_name] %}
+                    {% assign description_name = 'text' | append: i %}
+                    {% assign description = block.settings[description_name] %}
+                    {% if description != blank %}
+                      <div class="flex items-center gap-2">
+                        {% if icon != blank %}
+                          {{ icon | image_url: width: 28 | image_tag: class: 'w-full h-fit object-contain max-w-[24px] md:max-w-[28px]' }}
+                        {% endif %}
+                        <div class="text-[12px] font-normal !leading-tight text-[#001C19]">{{ description }}</div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+
+        </section>
       </div>
     </div>
   </div>
@@ -178,10 +235,42 @@
       "label": "Product"
     },
     {
+      "type": "header",
+      "content": "Urgency Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_urgency_banner",
+      "label": "Show Urgency Banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "urgency_heading",
+      "label": "Urgency Heading",
+      "default": "GET UP TO 50% OFF WITH YOUR ORDER TODAY!"
+    },
+    {
+      "type": "text",
+      "id": "urgency_subheading",
+      "label": "Urgency Subheading",
+      "default": "Hurry! This special offer is only available while supplies last!"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Ready to Stop Scrubbing?"
+      "default": "Keep Your Toilet Sparkling Clean With Every Flush."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>"
     },
     {
       "type": "color",
@@ -190,20 +279,18 @@
       "default": "#001C19"
     },
     {
-      "type": "color",
-      "id": "bgcolor",
-      "label": "Background Color",
-      "default": "#ffffff"
+      "type": "header",
+      "content": "Layout"
     },
     {
       "type": "range",
       "id": "max_width",
-      "min": 600,
+      "min": 800,
       "max": 1400,
       "step": 20,
       "unit": "px",
       "label": "Max Width",
-      "default": 800
+      "default": 1280
     },
     {
       "type": "range",
@@ -248,6 +335,41 @@
   ],
   "blocks": [
     {
+      "type": "review",
+      "name": "Review Badge",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Stars Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Review Text",
+          "default": "<p>Rated 4.85/5 • 50,173+ Reviews</p>"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature Bullet",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>No Rings, Slime, Or Stains</p>"
+        }
+      ]
+    },
+    {
       "type": "variant_picker",
       "name": "Variant Picker",
       "limit": 1,
@@ -256,14 +378,8 @@
           "type": "select",
           "id": "picker_type",
           "options": [
-            {
-              "value": "dropdown",
-              "label": "Dropdown"
-            },
-            {
-              "value": "button",
-              "label": "Button"
-            }
+            { "value": "dropdown", "label": "Dropdown" },
+            { "value": "button", "label": "Button" }
           ],
           "default": "button",
           "label": "Picker Type"
@@ -366,7 +482,7 @@
           "type": "checkbox",
           "id": "redirect_checkout",
           "label": "Redirect to Checkout",
-          "default": true
+          "default": false
         },
         {
           "type": "checkbox",
@@ -400,7 +516,7 @@
           "type": "text",
           "id": "text2",
           "label": "Text 2",
-          "default": "Free U.S. Shipping on orders $75+"
+          "default": "Free Fast Shipping"
         },
         {
           "type": "image_picker",
@@ -420,15 +536,14 @@
     {
       "name": "TC Pricing Section",
       "blocks": [
-        {
-          "type": "variant_picker"
-        },
-        {
-          "type": "ship_by"
-        },
-        {
-          "type": "buy_buttons"
-        }
+        { "type": "review" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "variant_picker" },
+        { "type": "ship_by" },
+        { "type": "buy_buttons" }
       ]
     }
   ]

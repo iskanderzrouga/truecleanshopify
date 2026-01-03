@@ -1263,6 +1263,41 @@
     "tc_pricing_section_below_guarantee": {
       "type": "tc-pricing-section",
       "blocks": {
+        "review_below": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p>Rated 4.85\/5 \u2022 50,173+ Reviews<\/p>"
+          }
+        },
+        "feature_1_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
+          }
+        },
+        "feature_2_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
+          }
+        },
+        "feature_3_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
+          }
+        },
+        "feature_4_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
+          }
+        },
         "variant_picker_below": {
           "type": "variant_picker",
           "settings": {
@@ -1304,16 +1339,24 @@
         }
       },
       "block_order": [
+        "review_below",
+        "feature_1_below",
+        "feature_2_below",
+        "feature_3_below",
+        "feature_4_below",
         "variant_picker_below",
         "ship_by_below",
         "buy_buttons_below"
       ],
       "settings": {
         "product": "trueclean",
-        "heading": "Ready to Stop Scrubbing?",
+        "show_urgency_banner": true,
+        "urgency_heading": "GET UP TO 50% OFF WITH YOUR ORDER TODAY!",
+        "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
+        "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
         "heading_color": "#001C19",
-        "bgcolor": "#fafaf8",
-        "max_width": 800,
+        "max_width": 1280,
         "padding_top": 72,
         "padding_bottom": 72,
         "padding_top_m": 36,

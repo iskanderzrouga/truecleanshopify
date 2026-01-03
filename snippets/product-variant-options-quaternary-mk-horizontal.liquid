@@ -99,8 +99,24 @@
 
         <div class="flex flex-col gap-1 flex-1">
           <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal flex flex-col items-start gap-[6px]">
-            <div class="whitespace-nowrap text-[15px] md:text-[17px]">
-              {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+            <div class="text-[15px] md:text-[17px]">
+              {%- comment -%} Custom labels for TrueClean bundles {%- endcomment -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <span class="font-bold">1 Dispenser + 2 Cartridges</span>
+                  <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 1 toilet</span>
+                {%- when 2 -%}
+                  <span class="font-bold">2 Dispensers + 4 Cartridges</span>
+                  <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 2 toilets</span>
+                {%- when 3 -%}
+                  <span class="font-bold">3 Dispensers + 6 Cartridges</span>
+                  <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 3 toilets</span>
+                {%- when 4 -%}
+                  <span class="font-bold">4 Dispensers + 8 Cartridges</span>
+                  <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 4 toilets</span>
+                {%- else -%}
+                  {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+              {%- endcase -%}
               {{ label_unavailable }}
             </div>
           </div>
