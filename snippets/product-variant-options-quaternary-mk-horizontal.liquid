@@ -79,7 +79,16 @@
         <div class="flex flex-col gap-1 flex-1">
           <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] tracking-normal flex flex-col items-start gap-[6px]">
             <div class="text-[15px] md:text-[17px]">
-              {%- case forloop.index -%}
+              {%- liquid
+                assign value_str = value | downcase
+                assign bathroom_num = 1
+                if value_str contains '3'
+                  assign bathroom_num = 3
+                elsif value_str contains '2'
+                  assign bathroom_num = 2
+                endif
+              -%}
+              {%- case bathroom_num -%}
                 {%- when 1 -%}
                   <span class="font-bold">1 Dispenser + 2 Cartridges</span>
                   <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 1 toilet</span>
@@ -89,8 +98,6 @@
                 {%- when 3 -%}
                   <span class="font-bold">3 Dispensers + 6 Cartridges</span>
                   <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 3 toilets</span>
-                {%- else -%}
-                  {{ value -}}
               {%- endcase -%}
             </div>
           </div>
