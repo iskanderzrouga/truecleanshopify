@@ -1,5 +1,6 @@
+{%- assign slider_id = section.id | default: 'default' -%}
 <div class="product-thumbnail-slider">
-  <div id="product-main-slider" class="splide" style="margin-bottom: 12px;">
+  <div id="product-main-slider-{{ slider_id }}" class="splide product-main-slider" style="margin-bottom: 12px;">
     <div class="splide__track">
       <ul class="splide__list">
         {% for media in product.media %}
@@ -33,7 +34,7 @@
     </div>
   </div>
 
-  <div id="product-thumbnail-slider" class="splide">
+  <div id="product-thumbnail-slider-{{ slider_id }}" class="splide product-thumbnail-slider-nav">
     <div class="splide__track">
       <ul class="splide__list">
         {% for media in product.media %}
@@ -69,41 +70,41 @@
     top: 20px;
   }
 
-  #product-thumbnail-slider {
+  .product-thumbnail-slider-nav {
     padding: 40px 0;
   }
-  #product-thumbnail-slider .splide__track--nav > .splide__list > .splide__slide {
+  .product-thumbnail-slider-nav .splide__track--nav > .splide__list > .splide__slide {
     border: 2px solid #084c2533;
     border-radius: 10px;
   }
-  #product-thumbnail-slider .splide__track--nav > .splide__list > .splide__slide.is-active {
+  .product-thumbnail-slider-nav .splide__track--nav > .splide__list > .splide__slide.is-active {
     border: 2px solid #000C38;
   }
-  #product-thumbnail-slider .splide__arrow {
+  .product-thumbnail-slider-nav .splide__arrow {
     width: 20px;
     height: 20px;
     background: transparent;
     border: 1px solid #000C38;
   }
-  #product-thumbnail-slider .splide__arrow svg {
+  .product-thumbnail-slider-nav .splide__arrow svg {
     fill: #000C38;
     height: 10px;
     width: 10px;
   }
 
-  #product-main-slider .splide__arrow {
+  .product-main-slider .splide__arrow {
     background: unset;
     width: 48px;
     height: 48px;
     background-color: #001C19;
     opacity: 1;
   }
-  #product-main-slider .splide__arrow svg {
+  .product-main-slider .splide__arrow svg {
     fill: #fff;
     height: 22px;
     width: 22px;
   }
-  #product-main-slider .splide__slide img {
+  .product-main-slider .splide__slide img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -113,7 +114,7 @@
   }
 
   @media screen and (max-width: 750px) {
-    #product-main-slider .splide__slide img {
+    .product-main-slider .splide__slide img {
       border-radius: 0;
       max-height: 420px;
       width: auto;
@@ -122,14 +123,14 @@
     .product-thumbnail-slider {
       display: block;
     }
-    #product-thumbnail-slider {
+    .product-thumbnail-slider-nav {
       padding: 0 40px;
     }
-    #product-thumbnail-slider .splide__track {
+    .product-thumbnail-slider-nav .splide__track {
       display: flex;
       justify-content: center;
     }
-    #product-thumbnail-slider .splide__list {
+    .product-thumbnail-slider-nav .splide__list {
       justify-content: center;
     }
   }
@@ -137,7 +138,12 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var main = new Splide('#product-main-slider', {
+    var mainEl = document.getElementById('product-main-slider-{{ slider_id }}');
+    var thumbEl = document.getElementById('product-thumbnail-slider-{{ slider_id }}');
+
+    if (!mainEl || !thumbEl) return;
+
+    var main = new Splide(mainEl, {
       type: 'slide',
       rewind: true,
       pagination: false,
@@ -149,7 +155,7 @@
       },
     });
 
-    var thumbnails = new Splide('#product-thumbnail-slider', {
+    var thumbnails = new Splide(thumbEl, {
       fixedWidth: 90,
       fixedHeight: 90,
       gap: 10,
@@ -173,14 +179,5 @@
     main.sync(thumbnails);
     main.mount();
     thumbnails.mount();
-
-    document.querySelectorAll('[nl-product-secondary-card]').forEach((card) => {
-      card.addEventListener('click', function () {
-        const position = parseInt(this.getAttribute('data-position'), 10);
-        if (!isNaN(position)) {
-          thumbnails.go(position); // Splide index starts at 0
-        }
-      });
-    });
   });
 </script>
