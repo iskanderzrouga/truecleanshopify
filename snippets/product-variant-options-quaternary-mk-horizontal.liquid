@@ -124,9 +124,6 @@
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
             {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
           </div>
-          {% if variant_count > 1 %}
-            <div class="text-[12px] md:text-[13px] text-[#666] font-medium">Each</div>
-          {% endif %}
         </div>
       </div>
     </label>
