@@ -1,194 +1,79 @@
 /**
  * TrueClean Bundle Selector
- *
- * Clean, single-source JavaScript for bundle selection with subscription toggle.
- * Works WITH Shopify's variant system, not against it.
- *
- * Architecture:
- * - Liquid renders all price data as data attributes
- * - CSS classes control visibility (.show-subscription / .show-onetime)
- * - This JS only handles: toggle state, selling_plan input, calculated displays
+ * Simple variant selection without subscription logic
  */
 
 (function() {
   'use strict';
 
-  // Prevent multiple initializations (in case script tag is re-inserted on re-render)
+  // Prevent multiple initializations
   if (window.tcBundleSelectorInitialized) return;
   window.tcBundleSelectorInitialized = true;
 
-  // State
-  const state = {
-    isSubscription: true  // Default to subscription mode
-  };
-
-  // Selectors (centralized for easy maintenance)
   const SELECTORS = {
-    toggle: '.sub-onetime-toggle',
-    productsVariants: '#productsVariants',
-    variantInput: '.new-lp-variant--inut-sub',
-    variantLabel: '.new-lp-variant--label-sub',
-    sellingPlanInput: 'input[re-sub-widget__selling-plan-input]',
-    totalPrice: '.tc-total-price',
-    monthlyPrice: '.tc-monthly-price',
-    perToilet: '.tc-per-toilet',
-    subOnlyContent: '.sub-only-content'
+    variantInput: '.new-lp-variant--input',
+    variantContent: '.new-lp-variant-content',
+    radioCircle: '.new-lp-variant-radio__circle'
   };
 
   /**
-   * Apply the current subscription/one-time state to the UI
+   * Update visual state of variant options
    */
-  function applyToggleState() {
-    const toggle = document.querySelector(SELECTORS.toggle);
-    const productsVariants = document.querySelector(SELECTORS.productsVariants);
-    const subOnlyElements = document.querySelectorAll(SELECTORS.subOnlyContent);
+  function updateVariantVisuals() {
+    const inputs = document.querySelectorAll(SELECTORS.variantInput);
 
-    if (!toggle) return;
+    inputs.forEach(input => {
+      const label = input.nextElementSibling;
+      if (!label) return;
 
-    if (state.isSubscription) {
-      toggle.classList.add('active');
-      if (productsVariants) {
-        productsVariants.classList.remove('show-onetime');
-        productsVariants.classList.add('show-subscription');
-      }
-      subOnlyElements.forEach(el => el.style.display = '');
-    } else {
-      toggle.classList.remove('active');
-      if (productsVariants) {
-        productsVariants.classList.remove('show-subscription');
-        productsVariants.classList.add('show-onetime');
-      }
-      subOnlyElements.forEach(el => el.style.display = 'none');
-    }
-  }
+      const content = label.querySelector(SELECTORS.variantContent);
+      const circle = label.querySelector(SELECTORS.radioCircle);
 
-  /**
-   * Update the selling plan input based on current state and selected variant
-   */
-  function updateSellingPlanInput() {
-    const input = document.querySelector(SELECTORS.sellingPlanInput);
-    if (!input) return;
-
-    if (state.isSubscription) {
-      const checkedInput = document.querySelector(`${SELECTORS.variantInput}:checked`);
-      if (checkedInput) {
-        const label = checkedInput.nextElementSibling;
-        if (label) {
-          const subId = label.getAttribute('data-subscription-id');
-          input.value = subId || '';
+      if (input.checked) {
+        if (content) {
+          content.style.borderColor = '#00B7A2';
+          content.style.backgroundColor = '#F5FFFE';
+        }
+        if (circle) {
+          circle.style.display = 'block';
+        }
+      } else {
+        if (content) {
+          content.style.borderColor = '#D9DDE0';
+          content.style.backgroundColor = '#FAFAFA';
+        }
+        if (circle) {
+          circle.style.display = 'none';
         }
       }
-    } else {
-      input.value = '';
-    }
+    });
   }
 
   /**
-   * Update the calculated price displays (total and monthly)
-   */
-  function updatePriceDisplays() {
-    const totalDisplay = document.querySelector(SELECTORS.totalPrice);
-    const monthlyDisplay = document.querySelector(SELECTORS.monthlyPrice);
-    const checkedInput = document.querySelector(`${SELECTORS.variantInput}:checked`);
-
-    if (!checkedInput) return;
-
-    const label = checkedInput.nextElementSibling;
-    if (!label || !label.dataset) return;
-
-    // Update total price
-    if (totalDisplay) {
-      const price = state.isSubscription
-        ? label.dataset.totalPrice
-        : label.dataset.totalPriceOnetime;
-      if (price) totalDisplay.textContent = price;
-    }
-
-    // Update monthly price in header
-    if (monthlyDisplay && label.dataset.monthlyPrice) {
-      monthlyDisplay.textContent = label.dataset.monthlyPrice + '/month';
-    }
-
-    // Show/hide "per toilet" based on selection (hide for 1 toilet)
-    const perToiletEl = document.querySelector(SELECTORS.perToilet);
-    if (perToiletEl) {
-      const isOneToilet = checkedInput.value.toLowerCase().includes('1 toilet');
-      perToiletEl.style.display = isOneToilet ? 'none' : '';
-    }
-  }
-
-  /**
-   * Handle toggle click
-   */
-  function handleToggleClick(e) {
-    const toggle = e.target.closest(SELECTORS.toggle);
-    if (!toggle) return;
-
-    state.isSubscription = !state.isSubscription;
-    applyToggleState();
-    updateSellingPlanInput();
-    updatePriceDisplays();
-  }
-
-  /**
-   * Handle variant change (called after Shopify re-renders the HTML)
+   * Handle variant selection change
    */
   function handleVariantChange() {
-    // Re-apply toggle state (the toggle HTML was re-rendered)
-    applyToggleState();
-    // Update selling plan for the newly selected variant
-    updateSellingPlanInput();
-    // Update price displays
-    updatePriceDisplays();
+    updateVariantVisuals();
   }
 
   /**
-   * Set default selection to "1 toilet" on initial page load
-   */
-  function setDefaultSelection() {
-    const variantInputs = document.querySelectorAll(SELECTORS.variantInput);
-    const oneToiletInput = Array.from(variantInputs).find(input =>
-      input.value.toLowerCase().includes('1 toilet')
-    );
-
-    if (oneToiletInput && !oneToiletInput.checked) {
-      // Uncheck all, then check the 1 toilet option
-      variantInputs.forEach(input => input.checked = false);
-      oneToiletInput.checked = true;
-
-      // Trigger Shopify's variant change to sync everything
-      oneToiletInput.dispatchEvent(new Event('change', { bubbles: true }));
-    }
-  }
-
-  /**
-   * Initialize the bundle selector
+   * Initialize
    */
   function init() {
-    // Use event delegation for toggle clicks (survives DOM re-renders)
-    document.addEventListener('click', handleToggleClick);
+    // Listen for changes on variant inputs
+    document.addEventListener('change', function(e) {
+      if (e.target.matches(SELECTORS.variantInput)) {
+        handleVariantChange();
+      }
+    });
 
-    // Subscribe to Shopify's variant change event
-    if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-      subscribe(PUB_SUB_EVENTS.variantChange, handleVariantChange);
-    }
-
-    // Initial setup when DOM is ready
+    // Initial update
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        applyToggleState();
-        setDefaultSelection();
-        updatePriceDisplays();
-      });
+      document.addEventListener('DOMContentLoaded', updateVariantVisuals);
     } else {
-      // DOM already loaded
-      applyToggleState();
-      setDefaultSelection();
-      updatePriceDisplays();
+      updateVariantVisuals();
     }
   }
 
-  // Initialize once
   init();
-
 })();

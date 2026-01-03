@@ -22,17 +22,6 @@
 
 {%- for value in option.values limit: 3 -%}
   {%- liquid
-    assign swatch_focal_point = null
-    if value.swatch.image
-      assign image_url = value.swatch.image | image_url: width: 50
-      assign swatch_value = 'url(' | append: image_url | append: ')'
-      assign swatch_focal_point = value.swatch.image.presentation.focal_point
-    elsif value.swatch.color
-      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
-    else
-      assign swatch_value = null
-    endif
-
     assign option_disabled = true
     if value.available
       assign option_disabled = false
@@ -52,16 +41,19 @@
     data-option-value-id="{{ value.id }}"
   {%- endcapture -%}
 
-  {%- capture label_unavailable -%}
-    <span class="visually-hidden label-unavailable">
-      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
-    </span>
-  {%- endcapture -%}
+  {%- comment -%} Get the variant for this option value {%- endcomment -%}
+  {%- assign variant = null -%}
+  {%- for v in product.variants -%}
+    {%- if v.title contains value -%}
+      {%- assign variant = v -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
 
   <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
     <input
       type="radio"
-      class="new-lp-variant--inut-sub"
+      class="new-lp-variant--input"
       id="{{ input_id }}"
       name="{{ input_name | escape }}"
       value="{{ value | escape }}"
@@ -74,33 +66,16 @@
       {% endif %}
       {{ input_dataset }}
     >
-    {% assign forloop_index = forloop.index | times: 2 | minus: 1 %}
-    {% assign variant = product.variants[forloop_index] %}
-
-    {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
-    {% assign inverted_percent = 1 | minus: sub_percent %}
-    {% assign inverted_percent_plus = 1 | plus: sub_percent %}
-
-    {% assign variant_count_for_monthly = variant.metafields.custom.count | default: 1 %}
-    {% assign monthly_price_cents = variant.price | times: inverted_percent | divided_by: variant_count_for_monthly | divided_by: 3 %}
-    <label for="{{ input_id }}" data-total-price="{{ variant.price | money_without_trailing_zeros }}" class="new-lp-variant--label-sub !p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+    <label for="{{ input_id }}" data-total-price="{{ variant.price | money_without_trailing_zeros }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 cursor-pointer">
       <div class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
-        {% if variant.metafields.custom.badge %}
-          <div
-            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% endif %}
 
-        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] border-[#ccc] rounded-[20px] group-[.active]:border-[#00B7A2] !flex items-center justify-center">
-          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2] hidden group-[.active]:!block"></div>
+        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] border-[#ccc] rounded-[20px] flex items-center justify-center">
+          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2] hidden"></div>
         </div>
 
         <div class="flex flex-col gap-1 flex-1">
-          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] [&>strong]:text-[#D30101] tracking-normal flex flex-col items-start gap-[6px]">
+          <div class="new-lp-variant-title text-[#001C19] text-left font-bold !text-[16px] md:!text-[18px] tracking-normal flex flex-col items-start gap-[6px]">
             <div class="text-[15px] md:text-[17px]">
-              {%- comment -%} Custom labels for TrueClean bundles {%- endcomment -%}
               {%- case forloop.index -%}
                 {%- when 1 -%}
                   <span class="font-bold">1 Dispenser + 2 Cartridges</span>
@@ -112,17 +87,15 @@
                   <span class="font-bold">3 Dispensers + 6 Cartridges</span>
                   <span class="block text-[12px] md:text-[13px] font-normal text-[#666] mt-1">6 months supply for 3 toilets</span>
                 {%- else -%}
-                  {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+                  {{ value -}}
               {%- endcase -%}
-              {{ label_unavailable }}
             </div>
           </div>
         </div>
 
-        {% assign variant_count = variant.metafields.custom.count | default: 1 %}
         <div class="flex flex-col items-end gap-0">
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
-            {{- variant.price | divided_by: variant_count | money_without_trailing_zeros -}}
+            {{- variant.price | money_without_trailing_zeros -}}
           </div>
         </div>
       </div>
