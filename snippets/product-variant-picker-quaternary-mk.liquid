@@ -45,7 +45,8 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill !mb-0 {% if option.name == 'Scent' %}hidden{% endif %}">
+        {% comment %} Use inline style for Scent to prevent flash during HTML swap {% endcomment %}
+        <fieldset class="js product-form__input product-form__input--pill !mb-0" {% if option.name == 'Scent' %}style="display: none !important;"{% endif %}>
           {% if option.name == 'Bathrooms' %}
             <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
               {% render 'product-variant-options-quaternary-mk-horizontal',
@@ -66,10 +67,6 @@
             </div>
           {% endif %}
         </fieldset>
-
-        {% if option.name == 'Bathrooms' %}
-          {% comment %} {% render 'subscription-between-widget', block: block %} {% endcomment %}
-        {% endif %}
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
