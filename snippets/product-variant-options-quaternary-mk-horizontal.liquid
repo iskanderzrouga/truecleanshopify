@@ -20,7 +20,7 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
-{%- for value in option.values limit: 3 -%}
+{%- for value in option.values reversed limit: 3 -%}
   {%- liquid
     assign option_disabled = true
     if value.available

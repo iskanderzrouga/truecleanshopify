@@ -60,15 +60,7 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        {% if product.selected_or_first_available_variant.metafields.custom.subscription_id != blank %}
-          <input
-            re-sub-widget__selling-plan-input
-            class=""
-            name="selling_plan"
-            type="hidden"
-            value="{{product.selected_or_first_available_variant.metafields.custom.subscription_id}}"
-          >
-        {% endif %}
+        {% comment %} Subscription input removed - one-time purchase only {% endcomment %}
 
         <div class="product-form__buttons">
           {%- liquid
