@@ -72,8 +72,8 @@
     <label for="{{ input_id }}" data-total-price="{{ variant.price | money_without_trailing_zeros }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 cursor-pointer">
       <div class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
 
-        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] border-[#ccc] rounded-[20px] flex items-center justify-center">
-          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2] hidden"></div>
+        <div class="new-lp-variant-radio w-5 h-5 min-w-5 border-[2px] rounded-[20px] flex items-center justify-center">
+          <div class="new-lp-variant-radio__circle w-[10px] h-[10px] min-w-[10px] rounded-[10px] bg-[#00B7A2]"></div>
         </div>
 
         <div class="flex flex-col gap-1 flex-1">
@@ -113,5 +113,41 @@
   </div>
 {%- endfor -%}
 
-{% comment %} JavaScript moved to assets/tc-bundle-selector.js for clean, single-source logic {% endcomment %}
+{% comment %} CSS-only checked state styling - no JavaScript needed {% endcomment %}
+<style>
+  /* Hide radio inputs visually */
+  .new-lp-variant--input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Default unchecked state */
+  .new-lp-variant--input + label .new-lp-variant-content {
+    border-color: #D9DDE0;
+    background-color: #FAFAFA;
+  }
+
+  .new-lp-variant--input + label .new-lp-variant-radio {
+    border-color: #ccc;
+  }
+
+  .new-lp-variant--input + label .new-lp-variant-radio__circle {
+    display: none;
+  }
+
+  /* Checked state */
+  .new-lp-variant--input:checked + label .new-lp-variant-content {
+    border-color: #00B7A2;
+    background-color: #F5FFFE;
+  }
+
+  .new-lp-variant--input:checked + label .new-lp-variant-radio {
+    border-color: #00B7A2;
+  }
+
+  .new-lp-variant--input:checked + label .new-lp-variant-radio__circle {
+    display: block;
+  }
+</style>
 
