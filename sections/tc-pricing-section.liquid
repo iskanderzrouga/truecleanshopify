@@ -84,7 +84,7 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'variant_picker' -%}
-              <div id="productsVariants-{{ section.id }}" class="show-subscription w-full">
+              <div id="productsVariants" class="show-subscription w-full">
                 {% if block.settings.horizontal_type %}
                   {% render 'product-variant-picker-quaternary-mk',
                     product: product,
