@@ -77,6 +77,7 @@
         },
         "variant_picker_X3mg6k": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle",
@@ -99,6 +100,7 @@
         },
         "ship_by_yH4HbV": {
           "type": "ship_by",
+          "disabled": true,
           "settings": {
             "text": "Ships by DATEPLACEHOLDER",
             "icon": "shopify:\/\/shop_images\/ship-icon.png"
@@ -116,6 +118,7 @@
         },
         "buy_buttons_eLzg7L": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "quantity_selector": false,
             "redirect_checkout": false,
@@ -1257,6 +1260,66 @@
         "padding_bottom_m": 36
       }
     },
+    "tc_pricing_section_below_guarantee": {
+      "type": "tc-pricing-section",
+      "blocks": {
+        "variant_picker_below": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "horizontal_type": true,
+            "updated_version": false,
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "sub_feature1": "Free dispensers with first order",
+            "sub_feature2": "Free fast shipping, always",
+            "sub_feature3": "Dispenser breaks? We replace it free",
+            "sub_feature4": "Priority support",
+            "sub_feature5": "Never run out - auto-delivery",
+            "sub_feature6": "Price locked in forever",
+            "sub_feature7": "",
+            "sub_feature8": ""
+          }
+        },
+        "ship_by_below": {
+          "type": "ship_by",
+          "settings": {
+            "text": "Ships by DATEPLACEHOLDER",
+            "icon": "shopify:\/\/shop_images\/ship-icon.png"
+          }
+        },
+        "buy_buttons_below": {
+          "type": "buy_buttons",
+          "settings": {
+            "quantity_selector": false,
+            "redirect_checkout": false,
+            "show_dynamic_checkout": false,
+            "custom_text": "ADD TO CART",
+            "text1": "90-Day Money-Back Guarantee",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
+            "text2": "Free Fast Shipping",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
+            "text3": "Secure Checkout",
+            "icon3": "shopify:\/\/shop_images\/image_8.png"
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker_below",
+        "ship_by_below",
+        "buy_buttons_below"
+      ],
+      "settings": {
+        "product": "trueclean",
+        "heading": "Ready to Stop Scrubbing?",
+        "heading_color": "#001C19",
+        "bgcolor": "#fafaf8",
+        "max_width": 800,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "tc_reviews_C7Brhn": {
       "type": "tc-reviews",
       "blocks": {
@@ -2031,6 +2094,7 @@
     "tc_information_CbWNzM",
     "tc_comparison_dhkbUk",
     "tc_guarantee_iB3X4t",
+    "tc_pricing_section_below_guarantee",
     "tc_reviews_C7Brhn",
     "an_faqs_grt6N6",
     "tc_product_cards_RzYfgz"
