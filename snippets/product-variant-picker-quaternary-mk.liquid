@@ -47,11 +47,6 @@
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill !mb-0 {% if option.name == 'Scent' %}hidden{% endif %}">
           {% if option.name == 'Bathrooms' %}
-            <!-- Header before bundles (subscription only) -->
-            <div class="text-center mb-4 tc-subscription-only">
-              <p class="text-[16px] md:text-[18px] text-[#001C19] m-0">Less than <span class="tc-monthly-price font-bold text-[#00B7A2]">$9.60/month</span><span class="tc-per-toilet"> per toilet</span></p>
-            </div>
-
             <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
               {% render 'product-variant-options-quaternary-mk-horizontal',
                 product: product,
@@ -65,11 +60,7 @@
             <div class="flex items-center justify-center gap-2 mt-4 pt-4 border-t border-[#E5E5E5]">
               <span class="text-[14px] text-[#666]">Total today</span>
               <span class="tc-total-price text-[20px] md:text-[24px] font-bold text-[#001C19]">$69</span>
-              <span class="text-[14px] text-[#666] tc-subscription-only">· Ships every 3 months</span>
             </div>
-
-            <!-- Subscription toggle moved below bundles -->
-            {% render 'subscription-between-widget', block: block %}
           {% else %}
             <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">
               {% render 'product-variant-options-quaternary-mk',
