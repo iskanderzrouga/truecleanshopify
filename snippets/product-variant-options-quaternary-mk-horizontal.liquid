@@ -107,6 +107,11 @@
           <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
             {{- variant.price | money_without_trailing_zeros -}}
           </div>
+          {% if variant.compare_at_price > variant.price %}
+            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
+              {{ variant.compare_at_price | money_without_trailing_zeros }}
+            </div>
+          {% endif %}
         </div>
       </div>
     </label>
