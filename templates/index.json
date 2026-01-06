@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "new_lp_featured_product_NMieYc": {
@@ -136,7 +145,7 @@
           "settings": {
             "heading": "Is it difficult to use?",
             "icon": "none",
-            "content": "<p>Not at all! The AutoCurl\u2122 is designed for complete beginners. Just place a section of hair in the chamber, press the button, and release when it beeps. There's no technique to master - the automatic rotation does all the work for you. Most users report being comfortable with the device within the first 5 minutes, even those who have never successfully used a traditional curling iron.</p>",
+            "content": "<p>Not at all! The AutoCurl™ is designed for complete beginners. Just place a section of hair in the chamber, press the button, and release when it beeps. There's no technique to master - the automatic rotation does all the work for you. Most users report being comfortable with the device within the first 5 minutes, even those who have never successfully used a traditional curling iron.</p>",
             "page": ""
           }
         },
@@ -146,7 +155,7 @@
           "settings": {
             "heading": "Will it damage my hair?",
             "icon": "none",
-            "content": "<p>The AutoCurl\u2122 is engineered with hair health as a priority. The ceramic-coated barrel distributes heat evenly to prevent hot spots, while the precision timer ensures hair is never exposed to heat longer than necessary. With three temperature settings (150\u00b0C/300\u00b0F, 170\u00b0C/340\u00b0F, and 190\u00b0C/375\u00b0F), you can use the lowest effective heat for your hair type, minimizing potential damage. Always use a heat protectant spray for maximum protection.</p>",
+            "content": "<p>The AutoCurl™ is engineered with hair health as a priority. The ceramic-coated barrel distributes heat evenly to prevent hot spots, while the precision timer ensures hair is never exposed to heat longer than necessary. With three temperature settings (150°C/300°F, 170°C/340°F, and 190°C/375°F), you can use the lowest effective heat for your hair type, minimizing potential damage. Always use a heat protectant spray for maximum protection.</p>",
             "page": ""
           }
         },
@@ -156,7 +165,7 @@
           "settings": {
             "heading": "How long will the curls last?",
             "icon": "none",
-            "content": "<p>The ionic technology in the AutoCurl\u2122 seals the hair cuticle, creating defined curls that typically last 12+ hours, even in humid conditions. Many users report their curls maintaining shape into the next day. For maximum longevity, allow curls to cool completely before brushing or styling, and a light-hold hairspray can extend wear even further.</p>",
+            "content": "<p>The ionic technology in the AutoCurl™ seals the hair cuticle, creating defined curls that typically last 12+ hours, even in humid conditions. Many users report their curls maintaining shape into the next day. For maximum longevity, allow curls to cool completely before brushing or styling, and a light-hold hairspray can extend wear even further.</p>",
             "page": ""
           }
         },
@@ -251,8 +260,8 @@
         "description_m_center": true,
         "description_d_center": false,
         "description_color": "#001c19",
-        "image": "shopify://shop_images/Group_1321314772.png",
-        "image_mobile": "shopify://shop_images/Group_2607838.png",
+        "image": "shopify://shop_images/Group_1321314772_2db518ab-a99e-4465-b6cd-3c0ccb3cf1f5.png",
+        "image_mobile": "shopify://shop_images/Group_2607838_3e4b28b9-0d39-46e3-8c57-fc162dbdc14d.png",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
@@ -534,7 +543,7 @@
         "heading_d_center": true,
         "heading_color": "#001c19",
         "subheading1": "How TrueClean Works:",
-        "subheading2": "What\u2019s Inside",
+        "subheading2": "What’s Inside",
         "subheading_color": "#001c19",
         "description": "<p>TrueClean works automatically with every flush to prevent stains before they form.</p>",
         "description_m_center": true,
@@ -543,7 +552,7 @@
         "text": "<p>Simply replace the easy-click cartridge every 90 days to maintain a consistently clean toilet without scrubbing!</p>",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "STOP SCRUBBING NOW \u2192",
+        "button_label": "STOP SCRUBBING NOW →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -568,7 +577,7 @@
             "heading_d_center": true,
             "heading_color": "#001c19",
             "icon": "shopify://shop_images/verified.png",
-            "description": "<p>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean is different\u2014the cleaner flows directly to the bowl without touching tank components. It's the <strong>only automatic system I confidently recommend to my customers.</strong>\"</p>",
+            "description": "<p>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean is different—the cleaner flows directly to the bowl without touching tank components. It's the <strong>only automatic system I confidently recommend to my customers.</strong>\"</p>",
             "description_m_center": true,
             "description_d_center": false,
             "small_description": false,
@@ -626,14 +635,14 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p>TrueClean's cleaning solution never touches your tank. It flows <strong>directly to the bowl</strong>\u2014only when you flush so your flappers, seals, and valves stay protected.</p>",
+        "description": "<p>TrueClean's cleaning solution never touches your tank. It flows <strong>directly to the bowl</strong>—only when you flush so your flappers, seals, and valves stay protected.</p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
         "text": "",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "PROTECT YOUR PLUMBING \u2192",
+        "button_label": "PROTECT YOUR PLUMBING →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_7.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -781,7 +790,7 @@
       "settings": {
         "section_id": "",
         "product": "",
-        "heading": "TrueClean\u2019s Promise",
+        "heading": "TrueClean’s Promise",
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#ffffff",
@@ -815,11 +824,11 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Linda \u2013 California\u2028<br/>Timeframe: 2 weeks\u2028<br/>Water type: City hard water</p>",
+            "heading": "<p>Linda – California <br/>Timeframe: 2 weeks <br/>Water type: City hard water</p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>\u201cI live in California where hard water combined with water use restrictions (\u2018If it\u2019s yellow, let it mellow\u2026\u2019) leads to hard-to-clean toilet bowl stains. Two weeks in and I am amazed! No new stains. I highly recommend TrueClean.\u201d</p>",
+            "description": "<p>“I live in California where hard water combined with water use restrictions (‘If it’s yellow, let it mellow…’) leads to hard-to-clean toilet bowl stains. Two weeks in and I am amazed! No new stains. I highly recommend TrueClean.”</p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
@@ -839,11 +848,11 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Simon - Desborough\u2028<br/>Timeframe: 1 week\u2028<br/>Water type: Community well</p>",
+            "heading": "<p>Simon - Desborough <br/>Timeframe: 1 week <br/>Water type: Community well</p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>\u201cTrueClean has been in place for only a week and the change is amazing. We have hard well water and nothing else has worked. Clean isn't the issue. Hard water staining is. Even the tanks were solid brown and encrusted. Not anymore!\u201d</p>",
+            "description": "<p>“TrueClean has been in place for only a week and the change is amazing. We have hard well water and nothing else has worked. Clean isn't the issue. Hard water staining is. Even the tanks were solid brown and encrusted. Not anymore!”</p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
@@ -863,11 +872,11 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Jane Wilson \u2013 Washington State\u2028<br/>Timeframe: 3 weeks\u2028<br/>Water type: Very hard city water</p>",
+            "heading": "<p>Jane Wilson – Washington State <br/>Timeframe: 3 weeks <br/>Water type: Very hard city water</p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>\u201cI used to live in Washington state and the water is so hard on toilets. I was having to use a pumice stone every time. It sucked. Clipped these into the tanks 3 weeks ago and haven't had any hard water deposited since.\u201d</p>",
+            "description": "<p>“I used to live in Washington state and the water is so hard on toilets. I was having to use a pumice stone every time. It sucked. Clipped these into the tanks 3 weeks ago and haven't had any hard water deposited since.”</p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
@@ -887,11 +896,11 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Unknown \u2013 Well Water Home\u2028<br/>Timeframe: 3\u20134 weeks\u2028<br/>Water type: Well water</p>",
+            "heading": "<p>Unknown – Well Water Home <br/>Timeframe: 3–4 weeks <br/>Water type: Well water</p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>\u201cWe have well water and get black slime in our toilets. These do come with an extra tube that\u2019s longer, which I appreciated. It worked out and the water line stains are finally under control.\u201d</p>",
+            "description": "<p>“We have well water and get black slime in our toilets. These do come with an extra tube that’s longer, which I appreciated. It worked out and the water line stains are finally under control.”</p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
@@ -911,7 +920,7 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Jared Claxton - Florida\u2028<br/>Timeframe: 1 month\u2028<br/>Water type: Humid area</p>",
+            "heading": "<p>Jared Claxton - Florida <br/>Timeframe: 1 month <br/>Water type: Humid area</p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
@@ -949,7 +958,7 @@
         "description_color": "#001c19",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "BUY NOW & SAVE \u2192",
+        "button_label": "BUY NOW & SAVE →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -1000,7 +1009,7 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p><strong>Vacation Home?</strong><br/>Arrive to already clean\u2014not to cleaning.</p>",
+            "description": "<p><strong>Vacation Home?</strong><br/>Arrive to already clean—not to cleaning.</p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
@@ -1048,15 +1057,15 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p>One bathroom or four, <strong>60 second install </strong>once per toilet. <strong>No tools or plumbers required</strong>. Every <strong>flush cleans automatically</strong> so you don\u2019t have to.</p>",
+        "description": "<p>One bathroom or four, <strong>60 second install </strong>once per toilet. <strong>No tools or plumbers required</strong>. Every <strong>flush cleans automatically</strong> so you don’t have to.</p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
         "image": "shopify://shop_images/image_19.png",
-        "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!</strong>\u00a0 The more bathrooms, the more you save.</p>",
+        "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!</strong>  The more bathrooms, the more you save.</p>",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "BUNDLE & SAVE \u2192",
+        "button_label": "BUNDLE & SAVE →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -1215,7 +1224,7 @@
         "text": "",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "STOP SCRUBBING NOW \u2192",
+        "button_label": "STOP SCRUBBING NOW →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -1237,14 +1246,14 @@
         "heading_m_center": false,
         "heading_d_center": false,
         "heading_color": "#ffffff",
-        "description": "<p>We\u2019re so confident TrueClean will transform constant scrubbing into sparkling-clean toilets on autopilot that we offer an <strong>unconditional 90-day money-back guarantee.<br/></strong><br/>If you don\u2019t see visible results.\u2028<br/>If you don\u2019t scrub less.\u2028<br/>Or if for any reason at all it doesn\u2019t fit your toilet.<br/><br/>Simply return TrueClean for a <strong>full refund</strong>. No questions asked.<br/><br/>You have <strong>nothing to lose</strong>, just a cleaner, easier life to gain.</p>",
+        "description": "<p>We’re so confident TrueClean will transform constant scrubbing into sparkling-clean toilets on autopilot that we offer an <strong>unconditional 90-day money-back guarantee.<br/></strong><br/>If you don’t see visible results. <br/>If you don’t scrub less. <br/>Or if for any reason at all it doesn’t fit your toilet.<br/><br/>Simply return TrueClean for a <strong>full refund</strong>. No questions asked.<br/><br/>You have <strong>nothing to lose</strong>, just a cleaner, easier life to gain.</p>",
         "description_m_center": false,
         "description_d_center": false,
         "description_color": "#ffffff",
         "image": "shopify://shop_images/Layer_1_7f7c119f-8b73-46fb-ad57-0094dc46bf59.png",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "TRY TRUECLEAN RISK-FREE \u2192",
+        "button_label": "TRY TRUECLEAN RISK-FREE →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6_2.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -1313,7 +1322,7 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I've got really hard water so it's been a struggle to keep the mineral deposits at bay. I clean the toilets 1\u20132x a week and still needed pumice. I gave this system a try and it actually really works.\"</p>",
+            "description": "<p>\"I've got really hard water so it's been a struggle to keep the mineral deposits at bay. I clean the toilets 1–2x a week and still needed pumice. I gave this system a try and it actually really works.\"</p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
@@ -1703,7 +1712,7 @@
       "name": "TC Reviews",
       "settings": {
         "section_id": "",
-        "heading": "Join 50,000 Home Owners Who\u2019ve Stopped Scrubbing",
+        "heading": "Join 50,000 Home Owners Who’ve Stopped Scrubbing",
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
@@ -1714,7 +1723,7 @@
         "image": "shopify://shop_images/Group_48098358.png",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "Read More Reviews \u2192",
+        "button_label": "Read More Reviews →",
         "button_url": "",
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001c19",
@@ -1735,7 +1744,7 @@
             "open": true,
             "label": "",
             "heading": "How long until I see results?",
-            "description": "<p>You'll notice prevention of new stains immediately\u2014no new rings will form after installation. Existing hard water stains will gradually fade over 1-2 weeks. Optimal performance and complete stain removal typically occurs within 30 days of use.</p>"
+            "description": "<p>You'll notice prevention of new stains immediately—no new rings will form after installation. Existing hard water stains will gradually fade over 1-2 weeks. Optimal performance and complete stain removal typically occurs within 30 days of use.</p>"
           }
         },
         "row_aT9VzP": {
@@ -1835,7 +1844,7 @@
       "name": "AN Faqs",
       "settings": {
         "section_id": "",
-        "heading": "Questions? We\u2019ve Got Answers",
+        "heading": "Questions? We’ve Got Answers",
         "description": "",
         "button_label": "",
         "button_url": "#productsVariants",
@@ -1906,7 +1915,7 @@
             "compare_price_color": "#8e8e8e",
             "description": "<p>You Save $10</p>",
             "description_color": "#001c19",
-            "button_label": "ADD TO CART \u2192"
+            "button_label": "ADD TO CART →"
           }
         },
         "card_6wLY9M": {
@@ -1929,7 +1938,7 @@
             "compare_price_color": "#8e8e8e",
             "description": "<p>You Save $29</p>",
             "description_color": "#001c19",
-            "button_label": "ADD TO CART \u2192"
+            "button_label": "ADD TO CART →"
           }
         },
         "card_GXrjBQ": {
@@ -1952,7 +1961,7 @@
             "compare_price_color": "#8e8e8e",
             "description": "<p>You Save $48</p>",
             "description_color": "#001c19",
-            "button_label": "ADD TO CART \u2192"
+            "button_label": "ADD TO CART →"
           }
         },
         "card_xEDkLe": {
@@ -1975,7 +1984,7 @@
             "compare_price_color": "#8e8e8e",
             "description": "<p>You Save $77</p>",
             "description_color": "#001c19",
-            "button_label": "ADD TO CART \u2192"
+            "button_label": "ADD TO CART →"
           }
         }
       },
@@ -1996,7 +2005,7 @@
       "settings": {
         "section_id": "",
         "product": "trueclean",
-        "heading": "Stop Scrubbing Stains \u2014 and Start Preventing Them",
+        "heading": "Stop Scrubbing Stains — and Start Preventing Them",
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
@@ -2006,7 +2015,7 @@
         "description_color": "#001c19",
         "border_radius": 0,
         "image_right": false,
-        "button_label": "Eliminate Scrubbing \u2192",
+        "button_label": "Eliminate Scrubbing →",
         "button_url": "#productsVariants",
         "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
