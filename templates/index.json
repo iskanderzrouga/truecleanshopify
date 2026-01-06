@@ -141,31 +141,28 @@
         },
         "collapsible_tab_98w9hT": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
-            "heading": "Is it difficult to use?",
+            "heading": "How does subscription work?",
             "icon": "none",
-            "content": "<p>Not at all! The AutoCurl™ is designed for complete beginners. Just place a section of hair in the chamber, press the button, and release when it beeps. There's no technique to master - the automatic rotation does all the work for you. Most users report being comfortable with the device within the first 5 minutes, even those who have never successfully used a traditional curling iron.</p>",
+            "content": "<p>Your first order includes the dispenser + 3-month cartridge. Every 90 days, we send just the refill cartridge so you never run out. Skip or cancel anytime - no commitments, no hassle. </p>",
             "page": ""
           }
         },
         "collapsible_tab_kjGiJ7": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
-            "heading": "Will it damage my hair?",
+            "heading": "Will it fit my toilet?",
             "icon": "none",
-            "content": "<p>The AutoCurl™ is engineered with hair health as a priority. The ceramic-coated barrel distributes heat evenly to prevent hot spots, while the precision timer ensures hair is never exposed to heat longer than necessary. With three temperature settings (150°C/300°F, 170°C/340°F, and 190°C/375°F), you can use the lowest effective heat for your hair type, minimizing potential damage. Always use a heat protectant spray for maximum protection.</p>",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
             "page": ""
           }
         },
         "collapsible_tab_bqBJYJ": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
-            "heading": "How long will the curls last?",
+            "heading": "What if it doesn't work for me?",
             "icon": "none",
-            "content": "<p>The ionic technology in the AutoCurl™ seals the hair cuticle, creating defined curls that typically last 12+ hours, even in humid conditions. Many users report their curls maintaining shape into the next day. For maximum longevity, allow curls to cool completely before brushing or styling, and a light-hold hairspray can extend wear even further.</p>",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
             "page": ""
           }
         },
