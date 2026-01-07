@@ -111,7 +111,7 @@
     <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[80px] product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="md:col-span-5">
         <div class="w-full">
-          {% render 'product-image-slider-vertical', product: product %}
+          {% render 'product-image-slider-vertical', product: product, section: section %}
         </div>
 
         {% comment %}
