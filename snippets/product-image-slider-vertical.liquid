@@ -8,7 +8,7 @@
             {% if media.alt contains 'carousel-hidden' %}
             {% else %}
               <li class="splide__slide">
-                {{ media.src | image_url: width: 600 | image_tag: class: 'aspect-[1/1] object-cover' }}
+                {{ media.src | image_url: width: 600 | image_tag: class: '' }}
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
