@@ -13,20 +13,22 @@
             {% endif %}
           {% elsif media.media_type == 'video' %}
             <li class="splide__slide">
-              {% render 'product-thumbnail-2',
-                media: media,
-                media_count: 0,
-                position: 1,
-                desktop_layout: 'thumbnail_slider',
-                mobile_layout: 'show',
-                loop: false,
-                modal_id: section.id,
-                xr_button: true,
-                media_width: media_width,
-                media_fit: 'cover',
-                constrain_to_viewport: true,
-                lazy_load: false
-              %}
+              <div class="aspect-[1/1]">
+                {% render 'product-thumbnail-2',
+                  media: media,
+                  media_count: 0,
+                  position: 1,
+                  desktop_layout: 'thumbnail_slider',
+                  mobile_layout: 'show',
+                  loop: false,
+                  modal_id: section.id,
+                  xr_button: true,
+                  media_width: media_width,
+                  media_fit: 'cover',
+                  constrain_to_viewport: true,
+                  lazy_load: false
+                %}
+              </div>
             </li>
           {% endif %}
         {% endfor %}
