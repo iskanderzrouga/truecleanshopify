@@ -1951,6 +1951,11 @@ html {
       padding-inline: calc(var(--spacing) * 2) !important;
     }
   }
+  .max-md\:px-5 {
+    @media (width < 48rem) {
+      padding-inline: calc(var(--spacing) * 5);
+    }
+  }
   .max-md\:\!py-1 {
     @media (width < 48rem) {
       padding-block: calc(var(--spacing) * 1) !important;
