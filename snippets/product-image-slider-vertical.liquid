@@ -155,8 +155,8 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var mainEl = document.getElementById('#MainProduct-{{ section.id }} product-main-slider-{{ slider_id }}');
-    var thumbEl = document.getElementById('#MainProduct-{{ section.id }} product-thumbnail-slider-{{ slider_id }}');
+    var mainEl = document.querySelector('#MainProduct-{{ section.id }} #product-main-slider-{{ slider_id }}');
+    var thumbEl = document.querySelector('#MainProduct-{{ section.id }} #product-thumbnail-slider-{{ slider_id }}');
 
     if (!mainEl || !thumbEl) return;
 
