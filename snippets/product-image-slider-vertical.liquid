@@ -13,7 +13,7 @@
             {% endif %}
           {% elsif media.media_type == 'video' %}
             <li class="splide__slide">
-              <div class="aspect-[1/1]">
+              <div class="aspect-[1/1] product-image-slider__video-wrapper">
                 {% render 'product-thumbnail-2',
                   media: media,
                   media_count: 0,
@@ -113,6 +113,10 @@
     height: 100%;
     background-color: #fff;
     border-radius: 20px;
+  }
+
+  .product-image-slider__video-wrapper .product-media-container {
+    --ratio: 1!important;
   }
 
   @media screen and (max-width: 750px) {
