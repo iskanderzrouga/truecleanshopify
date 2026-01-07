@@ -1061,7 +1061,7 @@
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
-        "image": "shopify://shop_images/image_19.png",
+        "image": "shopify://shop_images/image_19_27f9994e-cf2f-4828-8309-5db15dadc80a.png",
         "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!</strong>  The more bathrooms, the more you save.</p>",
         "border_radius": 0,
         "image_right": false,
@@ -1496,7 +1496,7 @@
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_2.png",
+            "image": "shopify://shop_images/Rectangle_1001_d973b6b4-dae0-47c6-b14e-107aa67227a9.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
@@ -1518,7 +1518,7 @@
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_3.png",
+            "image": "shopify://shop_images/Rectangle_1001_1_a499d61f-4f46-4b93-aaf5-a1edd55010f7.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
