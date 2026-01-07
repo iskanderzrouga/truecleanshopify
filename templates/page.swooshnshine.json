@@ -1345,6 +1345,33 @@
             "icon3": "shopify://shop_images/image_8.png",
             "text3": "Secure Checkout"
           }
+        },
+        "collapsible_tab_X6ii9R": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How does subscription work?",
+            "icon": "none",
+            "content": "<p>Your first order includes the dispenser + 3-month cartridge. Every 90 days, we send just the refill cartridge so you never run out. Skip or cancel anytime - no commitments, no hassle. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wDCwiA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will it fit my toilet?",
+            "icon": "none",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_nHJrMB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What if it doesn't work for me?",
+            "icon": "none",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -1355,7 +1382,10 @@
         "feature_4_below",
         "variant_picker_below",
         "ship_by_below",
-        "buy_buttons_below"
+        "buy_buttons_below",
+        "collapsible_tab_X6ii9R",
+        "collapsible_tab_wDCwiA",
+        "collapsible_tab_nHJrMB"
       ],
       "settings": {
         "product": "trueclean",
