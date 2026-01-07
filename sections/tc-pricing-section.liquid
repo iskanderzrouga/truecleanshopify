@@ -70,6 +70,12 @@
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
 
+    {% if section.settings.show_shipping_banner %}
+      <div class="text-center py-3 px-4 mb-6 rounded-lg border-[#000000] border bg-[#E8FF33]">
+        <p class="text-[14px] md:text-[18px] font-bold text-[#000000]">{{ section.settings.shipping_heading }}</p>
+      </div>
+    {% endif %}
+
     <!-- Urgency Banner -->
     {% if section.settings.show_urgency_banner %}
       <div class="text-center py-3 px-4 mb-6 rounded-lg" style="background-color: #D30101 !important; color: #ffffff !important;">
@@ -258,6 +264,18 @@
     {
       "type": "header",
       "content": "Urgency Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_banner",
+      "label": "Show Urgency Banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_heading",
+      "label": "Shipping Heading",
+      "default": "7 Jan, Orders will ship in 2 weeks due to high demand"
     },
     {
       "type": "checkbox",
