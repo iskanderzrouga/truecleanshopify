@@ -30,7 +30,7 @@
           "settings": {
             "name": "",
             "image": "shopify:\/\/shop_images\/Group_46485.png",
-            "heading": "<p><strong>4.85\/5<\/strong> by <strong>50,173<\/strong> Homeowners Who Stopped Scrubbing<\/p>"
+            "heading": "<p>Rated 4.85\/5 • 50,173+ Reviews<\/p>"
           }
         },
         "heading_KRif3P": {
@@ -42,7 +42,7 @@
         "description_CwK9EA": {
           "type": "description",
           "settings": {
-            "description": "<p>TrueClean clips into your tank in 60 seconds. Every flush releases cleaning solution directly to the bowl so rings and grime never get a chance to build up. <\/p>"
+            "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>"
           }
         },
         "ship_by_zf66Rh": {
@@ -60,32 +60,33 @@
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Prevents rings, slime, and stains automatically<\/p>"
-          }
-        },
-        "feature_XCqr98": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>Guest-ready 24\/7<\/p>"
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
           }
         },
         "feature_8Yte4B": {
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>60 seconds to install, zero tools<\/p>"
+            "description": "<p>60-Second Install. No Tools.<\/p>"
           }
         },
-        "feature_HBPTJk": {
+        "feature_XCqr98": {
           "type": "feature",
           "settings": {
             "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
-            "description": "<p>One cartridge = 90 days no scrubbing<\/p>"
+            "description": "<p>Guest-Ready 24\/7<\/p>"
+          }
+        },
+        "feature_UnivFit": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
           }
         },
         "variant_picker_X3mg6k": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle",
@@ -108,6 +109,7 @@
         },
         "ship_by_yH4HbV": {
           "type": "ship_by",
+          "disabled": true,
           "settings": {
             "text": "Ships by DATEPLACEHOLDER",
             "icon": "shopify:\/\/shop_images\/ship-icon.png"
@@ -125,15 +127,16 @@
         },
         "buy_buttons_eLzg7L": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "quantity_selector": false,
-            "redirect_checkout": true,
+            "redirect_checkout": false,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false,
             "custom_text": "ADD TO CART",
             "text1": "90-Day Money-Back Guarantee",
             "icon1": "shopify:\/\/shop_images\/image_6.png",
-            "text2": "Free U.S. Shipping on orders $75+",
+            "text2": "Free Fast Shipping",
             "icon2": "shopify:\/\/shop_images\/image_7_1.png",
             "text3": "Secure Checkout",
             "icon3": "shopify:\/\/shop_images\/image_8.png"
@@ -142,9 +145,9 @@
         "collapsible_tab_98w9hT": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How does subscription work?",
+            "heading": "How do the refills work?",
             "icon": "none",
-            "content": "<p>Your first order includes the dispenser + 3-month cartridge. Every 90 days, we send just the refill cartridge so you never run out. Skip or cancel anytime - no commitments, no hassle. <\/p>",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
             "page": ""
           }
         },
@@ -187,9 +190,9 @@
         "ship_by_zf66Rh",
         "feature_wrapper_icKPBw",
         "feature_HiXeDc",
-        "feature_XCqr98",
         "feature_8Yte4B",
-        "feature_HBPTJk",
+        "feature_XCqr98",
+        "feature_UnivFit",
         "variant_picker_X3mg6k",
         "ship_by_yH4HbV",
         "price_JdP3yx",
@@ -221,11 +224,11 @@
         "bottom_label_grid": 2,
         "product_bottom_label": "90-Day Money-Back Guarantee",
         "bottom_label_icon": "shopify:\/\/shop_images\/image_6.png",
-        "product_bottom_label2": "Free U.S. Shipping on orders $75+",
+        "product_bottom_label2": "Free Fast Shipping",
         "bottom_label_icon2": "shopify:\/\/shop_images\/image_7_1.png",
         "product_bottom_label3": "Secure Checkout",
         "bottom_label_icon3": "shopify:\/\/shop_images\/image_8.png",
-        "bgcolor": "#fafaf8",
+        "bgcolor": "#ffffff",
         "max_width": 1280,
         "padding_top": 36,
         "padding_bottom": 36,
@@ -1058,7 +1061,7 @@
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
-        "image": "shopify:\/\/shop_images\/image_19.png",
+        "image": "shopify:\/\/shop_images\/image_19_27f9994e-cf2f-4828-8309-5db15dadc80a.png",
         "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!<\/strong>  The more bathrooms, the more you save.<\/p>",
         "border_radius": 0,
         "image_right": false,
@@ -1263,6 +1266,141 @@
         "padding_bottom_m": 36
       }
     },
+    "tc_pricing_section_below_guarantee": {
+      "type": "tc-pricing-section",
+      "blocks": {
+        "review_below": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p>Rated 4.85\/5 • 50,173+ Reviews<\/p>"
+          }
+        },
+        "feature_1_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
+          }
+        },
+        "feature_2_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
+          }
+        },
+        "feature_3_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
+          }
+        },
+        "feature_4_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
+          }
+        },
+        "variant_picker_below": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "horizontal_type": true,
+            "updated_version": false,
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "sub_feature1": "Free dispensers with first order",
+            "sub_feature2": "Free fast shipping, always",
+            "sub_feature3": "Dispenser breaks? We replace it free",
+            "sub_feature4": "Priority support",
+            "sub_feature5": "Never run out - auto-delivery",
+            "sub_feature6": "Price locked in forever",
+            "sub_feature7": "",
+            "sub_feature8": ""
+          }
+        },
+        "ship_by_below": {
+          "type": "ship_by",
+          "settings": {
+            "text": "Ships by DATEPLACEHOLDER",
+            "icon": "shopify:\/\/shop_images\/ship-icon.png"
+          }
+        },
+        "buy_buttons_below": {
+          "type": "buy_buttons",
+          "settings": {
+            "quantity_selector": false,
+            "redirect_checkout": false,
+            "show_dynamic_checkout": false,
+            "custom_text": "ADD TO CART",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
+            "text1": "90-Day Money-Back Guarantee",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
+            "text2": "Free Fast Shipping",
+            "icon3": "shopify:\/\/shop_images\/image_8.png",
+            "text3": "Secure Checkout"
+          }
+        },
+        "collapsible_tab_X6ii9R": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do the refills work?",
+            "icon": "none",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wDCwiA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will it fit my toilet?",
+            "icon": "none",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_nHJrMB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What if it doesn't work for me?",
+            "icon": "none",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_below",
+        "feature_1_below",
+        "feature_2_below",
+        "feature_3_below",
+        "feature_4_below",
+        "variant_picker_below",
+        "ship_by_below",
+        "buy_buttons_below",
+        "collapsible_tab_X6ii9R",
+        "collapsible_tab_wDCwiA",
+        "collapsible_tab_nHJrMB"
+      ],
+      "settings": {
+        "product": "trueclean",
+        "show_shipping_banner": true,
+        "shipping_heading": ", Orders will ship in 2 weeks due to high demand",
+        "show_urgency_banner": true,
+        "urgency_heading": "GET UP TO 50% OFF WITH YOUR ORDER TODAY!",
+        "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
+        "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
+        "heading_color": "#001c19",
+        "max_width": 1280,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "tc_reviews_C7Brhn": {
       "type": "tc-reviews",
       "blocks": {
@@ -1358,7 +1496,7 @@
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify:\/\/shop_images\/Rectangle_1001_2.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_d973b6b4-dae0-47c6-b14e-107aa67227a9.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
@@ -1380,7 +1518,7 @@
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify:\/\/shop_images\/Rectangle_1001_3.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_1_a499d61f-4f46-4b93-aaf5-a1edd55010f7.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
@@ -1898,7 +2036,7 @@
             "variant_id1": "52861386293613",
             "variant_text1": "Lemon Fresh",
             "variant_id2": "52861386326381",
-            "variant_text2": "Unscented",
+            "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
             "image": "shopify:\/\/shop_images\/Rectangle_1001_15.png",
             "badge": "",
@@ -1921,7 +2059,7 @@
             "variant_id1": "52861386359149",
             "variant_text1": "Lemon Fresh",
             "variant_id2": "52861386391917",
-            "variant_text2": "Unscented",
+            "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
             "image": "shopify:\/\/shop_images\/Rectangle_1001_16.png",
             "badge": "",
@@ -1944,7 +2082,7 @@
             "variant_id1": "52861386424685",
             "variant_text1": "Lemon Fresh",
             "variant_id2": "52861386457453",
-            "variant_text2": "Unscented",
+            "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
             "image": "shopify:\/\/shop_images\/Rectangle_1001_17.png",
             "badge": "Best Value",
@@ -1967,7 +2105,7 @@
             "variant_id1": "52861386490221",
             "variant_text1": "Lemon Fresh",
             "variant_id2": "52861386522989",
-            "variant_text2": "Unscented",
+            "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
             "image": "shopify:\/\/shop_images\/Rectangle_1001_18.png",
             "badge": "Whole Home Bundle",
@@ -2037,6 +2175,7 @@
     "tc_information_CbWNzM",
     "tc_comparison_dhkbUk",
     "tc_guarantee_iB3X4t",
+    "tc_pricing_section_below_guarantee",
     "tc_reviews_C7Brhn",
     "an_faqs_grt6N6",
     "tc_product_cards_RzYfgz"
