@@ -84,10 +84,9 @@
                   {% for block in section.blocks %}
                     {% if block.type == 'table_row' %}
                       <div
-                        class="relative grid grid-cols-3 border-b"
-                        style="border-color: {{ block.settings.border_color }};"
+                        class="relative grid grid-cols-3"
                       >
-                        <div class="!block w-full">
+                        <div class="!block w-full border-b" style="border-color: {{ block.settings.border_color }};">
                           {% if block.settings.text1 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text1,
@@ -97,7 +96,7 @@
                             %}
                           {% endif %}
                         </div>
-                        <div class="!block w-full">
+                        <div class="!block w-full border-dashed border-b" style="border-color: {{ block.settings.border_color }};">
                           {% if block.settings.text2 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text2,
@@ -107,7 +106,7 @@
                             %}
                           {% endif %}
                         </div>
-                        <div class="!block w-full">
+                        <div class="!block w-full border-b" style="border-color: {{ block.settings.border_color }};">
                           {% if block.settings.text3 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text3,
