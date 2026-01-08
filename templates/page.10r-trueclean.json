@@ -13,18 +13,17 @@
       "type": "logo-and-button-2",
       "disabled": true,
       "settings": {
-        "logo": "shopify:\/\/shop_images\/Group_82.png",
         "button_text": "",
-        "button_url": "https:\/\/pluxy.co\/pages\/epil-pro-3"
+        "button_url": "https://pluxy.co/pages/epil-pro-3"
       }
     },
     "adv_announcement_WAEQWj": {
       "type": "adv-announcement",
       "name": "ADV Announcement C",
       "settings": {
-        "description": "<p>Advertorial<\/p>",
-        "color": "#000000",
-        "bgcolor": "#ffffff",
+        "description": "<p>Try It for 90 Days - Love it or Your Money Back  I <a href=\"#products\" title=\"#products\">Shop Now </a>→</p>",
+        "color": "#001c19",
+        "bgcolor": "#e8ff33",
         "border_color": "#d7cde5",
         "max_width": 1200,
         "padding_top": 12,
@@ -39,10 +38,9 @@
         "avatar_xTTjVq": {
           "type": "avatar",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Ellipse_87.png",
             "heading": "Rachel C.",
             "verified": "Verified",
-            "text": "<p>UPDATED 2 DAYS AGO<\/p>"
+            "text": "<p>UPDATED 2 DAYS AGO</p>"
           }
         },
         "highlight_PPLwKJ": {
@@ -51,14 +49,14 @@
             "bgcolor": "#efeaf3",
             "border_color": "#7a5ec5",
             "color": "#000000",
-            "text": "<p><strong>“Read this BEFORE you buy your mom, grandma, or best friend's gift in 2025!”<\/strong><\/p>"
+            "text": "<p><strong>“Read this BEFORE you buy your mom, grandma, or best friend's gift in 2025!”</strong></p>"
           }
         },
         "description_jLG9Wg": {
           "type": "description",
           "settings": {
             "color": "#000000",
-            "text": "<p>As a senior woman, I know firsthand how frustrating facial hair can be. Thinning, sensitive skin makes traditional hair removal methods like waxing and tweezing a painful, time-consuming chore.<br\/><br\/>Not to mention how much shaving every day dries out mature, sensitive skin. <br\/><br\/>So I was thrilled when my daughter gifted me the Pluxy Epil Pro Essentials set last Christmas. This game-changing kit has everything you need for gentle, effective, and long-lasting hair removal at home and 6 other bonus treatments that keep me looking barely 45!<br\/><br\/>Here are 10 reasons why it's the perfect gift for any woman over 60:<\/p>"
+            "text": "<p>As a senior woman, I know firsthand how frustrating facial hair can be. Thinning, sensitive skin makes traditional hair removal methods like waxing and tweezing a painful, time-consuming chore.<br/><br/>Not to mention how much shaving every day dries out mature, sensitive skin. <br/><br/>So I was thrilled when my daughter gifted me the Pluxy Epil Pro Essentials set last Christmas. This game-changing kit has everything you need for gentle, effective, and long-lasting hair removal at home and 6 other bonus treatments that keep me looking barely 45!<br/><br/>Here are 10 reasons why it's the perfect gift for any woman over 60:</p>"
           }
         },
         "divider_CTaMLe": {
@@ -71,7 +69,7 @@
           "type": "heading",
           "settings": {
             "color": "#000000",
-            "text": "<p><strong>PLUXY VS. Traditional Hair Removal<\/strong><\/p>"
+            "text": "<p><strong>PLUXY VS. Traditional Hair Removal</strong></p>"
           }
         },
         "table_Ubh34F": {
@@ -85,9 +83,9 @@
           "settings": {
             "text1": "",
             "color1": "#000000",
-            "text2": "<p><strong>Pluxy Facial Epilator<\/strong><\/p>",
+            "text2": "<p><strong>Pluxy Facial Epilator</strong></p>",
             "color2": "#7a5ec5",
-            "text3": "<p><strong>Regular Hair Removal Tools<\/strong><\/p>",
+            "text3": "<p><strong>Regular Hair Removal Tools</strong></p>",
             "color3": "#000000",
             "border_color": "#d9cfcf",
             "header": true
@@ -96,11 +94,11 @@
         "table_row_TBCrUP": {
           "type": "table_row",
           "settings": {
-            "text1": "<p><strong>✨ Gentle on Mature Skin<\/strong><\/p>",
+            "text1": "<p><strong>✨ Gentle on Mature Skin</strong></p>",
             "color1": "#000000",
-            "text2": "<p>Safe, damage-free, irritation-free results<\/p>",
+            "text2": "<p>Safe, damage-free, irritation-free results</p>",
             "color2": "#000000",
-            "text3": "<p>Can scratch or irritate thinner skin<\/p>",
+            "text3": "<p>Can scratch or irritate thinner skin</p>",
             "color3": "#000000",
             "border_color": "#d9cfcf",
             "header": false
@@ -109,11 +107,11 @@
         "table_row_NRbdTk": {
           "type": "table_row",
           "settings": {
-            "text1": "<p><strong>🎁 Gift Experience<\/strong><\/p>",
+            "text1": "<p><strong>🎁 Gift Experience</strong></p>",
             "color1": "#000000",
-            "text2": "<p>Thoughtful gift that lasts a lifetime<\/p>",
+            "text2": "<p>Thoughtful gift that lasts a lifetime</p>",
             "color2": "#000000",
-            "text3": "<p>Feels cheap or purely practical<\/p>",
+            "text3": "<p>Feels cheap or purely practical</p>",
             "color3": "#000000",
             "border_color": "#d9cfcf",
             "header": false
@@ -122,11 +120,11 @@
         "table_row_MHML63": {
           "type": "table_row",
           "settings": {
-            "text1": "<p><strong>🔍 Precision on Fine Hairs<\/strong><\/p>",
+            "text1": "<p><strong>🔍 Precision on Fine Hairs</strong></p>",
             "color1": "#000000",
-            "text2": "<p>Removes tiny white\/gray hairs effortlessly<\/p>",
+            "text2": "<p>Removes tiny white/gray hairs effortlessly</p>",
             "color2": "#000000",
-            "text3": "<p>Struggles with short, fine, or wiry hairs<\/p>",
+            "text3": "<p>Struggles with short, fine, or wiry hairs</p>",
             "color3": "#000000",
             "border_color": "#d9cfcf",
             "header": false
@@ -135,11 +133,11 @@
         "table_row_A7dzBg": {
           "type": "table_row",
           "settings": {
-            "text1": "<p><strong>⏳ Smoothness Duration<\/strong><\/p>",
+            "text1": "<p><strong>⏳ Smoothness Duration</strong></p>",
             "color1": "#000000",
-            "text2": "<p>Up to 4 weeks of smoothness<\/p>",
+            "text2": "<p>Up to 4 weeks of smoothness</p>",
             "color2": "#000000",
-            "text3": "<p>1–3 days before regrowth<\/p>",
+            "text3": "<p>1–3 days before regrowth</p>",
             "color3": "#000000",
             "border_color": "rgba(0,0,0,0)",
             "header": false
@@ -149,87 +147,77 @@
           "type": "heading",
           "settings": {
             "color": "#000000",
-            "text": "<p><strong>The Pluxy Epil Pro Essentials set is a thoughtful, all-in-one hair removal solution that senior women will actually use and love.<\/strong><\/p>"
+            "text": "<p><strong>The Pluxy Epil Pro Essentials set is a thoughtful, all-in-one hair removal solution that senior women will actually use and love.</strong></p>"
           }
         },
         "list_XffmV4": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_v1.png",
             "heading": "1. Gentle And Effective Hair Removal For Mature Skin",
-            "text": "<p>My favorite, the Pluxy Epil Pro 3.0, featuring 17 hypoallergenic discs that <strong>remove even coarse facial hairs without irritation<\/strong>. It removes them instantly<strong> from the root<\/strong>, more <strong>gently <\/strong>than my old tweezers, but <strong>gets all the tiny hairs in seconds! <\/strong><\/p>"
+            "text": "<p>My favorite, the Pluxy Epil Pro 3.0, featuring 17 hypoallergenic discs that <strong>remove even coarse facial hairs without irritation</strong>. It removes them instantly<strong> from the root</strong>, more <strong>gently </strong>than my old tweezers, but <strong>gets all the tiny hairs in seconds! </strong></p>"
           }
         },
         "list_dg6Fdw": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/29448792-8403285-image-a-57_1591798661892_4cae4728-6bbf-4dd3-baa2-505124d7fddb.png",
             "heading": "2. Weeks of Smooth Skin, Not Days",
-            "text": "<p>It’s so effective at <strong>catching all those tiny, hard-to-see hairs<\/strong> that one session leaves me <strong>smooth as a baby’s butt for up to 4 weeks<\/strong>. Not to mention, as it pulls from the root, the hair that does return is finer, softer and barely there. <strong>No more plucking ever again!<\/strong><\/p>"
+            "text": "<p>It’s so effective at <strong>catching all those tiny, hard-to-see hairs</strong> that one session leaves me <strong>smooth as a baby’s butt for up to 4 weeks</strong>. Not to mention, as it pulls from the root, the hair that does return is finer, softer and barely there. <strong>No more plucking ever again!</strong></p>"
           }
         },
         "list_zTaACM": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_1368_8edfc202-49f2-4e26-b72b-470444ffd275.png",
             "heading": "3. Soothing Aftercare For A Radiant, Youthful Glow",
-            "text": "<p>The kit includes a massage treatment, which, when paired with your favorite moisturiser or cleanser, stimulates bloodflow for a <strong>plump, youthful-looking glow.<\/strong> It lifted my cheekbones and jowl, transformed my daily skincare routine and made taking care of myself from home effortless!<\/p>"
+            "text": "<p>The kit includes a massage treatment, which, when paired with your favorite moisturiser or cleanser, stimulates bloodflow for a <strong>plump, youthful-looking glow.</strong> It lifted my cheekbones and jowl, transformed my daily skincare routine and made taking care of myself from home effortless!</p>"
           }
         },
         "list_PxKXFA": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Epil_Pro_3.0-6_1_b79e42d7-e610-42ff-b9cc-1c31c523869c.png",
             "heading": "4. Deep Cleanse for a Bright, Blemish-Free Complexion",
-            "text": "<p>We all know that aging skin is darker, duller, and less vibrant. Well, the cleansing treatment gently buffs away dead skin cells and prevents ingrown hairs. It's a must-have for healthy, blemish-free skin between epilating sessions.<\/p>"
+            "text": "<p>We all know that aging skin is darker, duller, and less vibrant. Well, the cleansing treatment gently buffs away dead skin cells and prevents ingrown hairs. It's a must-have for healthy, blemish-free skin between epilating sessions.</p>"
           }
         },
         "list_chkYbA": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_10099.png",
             "heading": "5. Safe, Gentle & Easy To Use",
-            "text": "<p>The Precision Cover is pre-fitted onto the Epil Pro 3.0, making it easy to glide the device gently over contours, and target fine hairs on the upper lip, chin, or brows without any nicks or cuts. No more struggling with tricky angles or missed spots!<\/p>"
+            "text": "<p>The Precision Cover is pre-fitted onto the Epil Pro 3.0, making it easy to glide the device gently over contours, and target fine hairs on the upper lip, chin, or brows without any nicks or cuts. No more struggling with tricky angles or missed spots!</p>"
           }
         },
         "list_fRYfx9": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_10099_1.png",
             "heading": "6. Confidence on Your Terms",
-            "text": "<p>With the Pluxy Essentials Bundle, she can enjoy professional-level hair removal results from the comfort of home. Each session leaves skin smooth and glowing for up to 4 weeks, anytime, any place. She’ll never rely on others to feel confident again.<\/p>"
+            "text": "<p>With the Pluxy Essentials Bundle, she can enjoy professional-level hair removal results from the comfort of home. Each session leaves skin smooth and glowing for up to 4 weeks, anytime, any place. She’ll never rely on others to feel confident again.</p>"
           }
         },
         "list_XcLaRB": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Epil_Pro_3.0-6_1_1_21feeab0-e7d2-4d43-adc8-7161d0210a9f.png",
             "heading": "7. Dermatologist-Approved and Face-Safe for Mature Skin",
-            "text": "<p>Pluxy's products are dermatologist-tested and free of harsh chemicals or irritating materials, making them safe and gentle for even the most sensitive skin types. You can gift with confidence, knowing she's getting the best.<\/p>"
+            "text": "<p>Pluxy's products are dermatologist-tested and free of harsh chemicals or irritating materials, making them safe and gentle for even the most sensitive skin types. You can gift with confidence, knowing she's getting the best.</p>"
           }
         },
         "list_BLwK7W": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_10099_2_bba8d700-5faf-4d08-9ab3-d77fdb49f391.png",
             "heading": "8. Incredible Value for an Effortless Self-Care System",
-            "text": "<p>Purchased separately, the <strong>items in this set would cost over $200<\/strong>. But for a limited time, you can <strong>snag the Pluxy Epil Pro Essentials gift set for just $89.99<\/strong> - a savings of over $90. That’s six dermatologist-approved treatments for <strong>FREE<\/strong>.<\/p>"
+            "text": "<p>Purchased separately, the <strong>items in this set would cost over $200</strong>. But for a limited time, you can <strong>snag the Pluxy Epil Pro Essentials gift set for just $89.99</strong> - a savings of over $90. That’s six dermatologist-approved treatments for <strong>FREE</strong>.</p>"
           }
         },
         "list_NypkVi": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_v1_439c7d75-6e7f-456e-a03f-b022dd0d5115.png",
             "heading": "9. Luxurious, Risk-Free Gifting Experience",
-            "text": "<p>The set comes beautifully packaged, all ready to gift. Plus, with our 90-day guarantee, she can try it risk-free. If she's not thrilled, simply return it for a full refund - no questions asked.<\/p>"
+            "text": "<p>The set comes beautifully packaged, all ready to gift. Plus, with our 90-day guarantee, she can try it risk-free. If she's not thrilled, simply return it for a full refund - no questions asked.</p>"
           }
         },
         "list_jLmy3H": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1000004571_081724c9-10d3-4e4d-9b66-8fccc3d1451c.png",
             "heading": "10. A Gift That Keeps On Giving",
-            "text": "<p>Sure you can gift her something she’ll pop on the shelf for till next year. The Pluxy Epil Pro Essentials set isn't just a one-time present - it's an investment in her self-care routine she’ll use everyday for years to come. Just imagine the joy as she looks in the mirror and loves what she sees<\/p>"
+            "text": "<p>Sure you can gift her something she’ll pop on the shelf for till next year. The Pluxy Epil Pro Essentials set isn't just a one-time present - it's an investment in her self-care routine she’ll use everyday for years to come. Just imagine the joy as she looks in the mirror and loves what she sees</p>"
           }
         }
       },
@@ -262,7 +250,7 @@
         "text": "",
         "divider": false,
         "button_text": "Get 35% OFF Today",
-        "button_url": "https:\/\/pluxy.co\/pages\/epil-pro-3",
+        "button_url": "https://pluxy.co/pages/epil-pro-3",
         "show_button": true
       }
     },
@@ -272,14 +260,14 @@
         "feature_3_FfDqwF": {
           "type": "feature_3",
           "settings": {
-            "text": "<p>Stock Alert: <strong>Running Low<\/strong><\/p>",
+            "text": "<p>Stock Alert: <strong>Running Low</strong></p>",
             "highlight": "Running Low"
           }
         },
         "feature_3_MLpWQb": {
           "type": "feature_3",
           "settings": {
-            "text": "<p><strong>Fast<\/strong> Shipping<\/p>",
+            "text": "<p><strong>Fast</strong> Shipping</p>",
             "highlight": ""
           }
         }
@@ -292,20 +280,14 @@
         "product_id": "pluxy-epil-pro-3-1",
         "heading": "SAVE $90 ON YOUR ORDER",
         "subheading": "DEAL ENDING IN:",
-        "icon": "shopify:\/\/shop_images\/time_1.png",
-        "text": "<p>Today Get <strong>55% OFF<\/strong> The Essentials Kit I <strong>Ends Tonight<\/strong><br\/><br\/><strong>Surprise her with the ultimate hair removal gift set at an unbeatable price. Our biggest sale of the year won't last long - get it before time runs out!<\/strong><\/p>",
-        "rev_image": "shopify:\/\/shop_images\/image_1705_409d18fd-f71a-4038-b643-bc6a71e2882a.png",
-        "stars": "shopify:\/\/shop_images\/Star_Rating_23491605-7abb-4677-95ec-26cb17724afd.png",
-        "rev_icon": "shopify:\/\/shop_images\/Vector_244514d8-e0bb-42c3-be17-fafff2f21475.png",
+        "text": "<p>Today Get <strong>55% OFF</strong> The Essentials Kit I <strong>Ends Tonight</strong><br/><br/><strong>Surprise her with the ultimate hair removal gift set at an unbeatable price. Our biggest sale of the year won't last long - get it before time runs out!</strong></p>",
         "name": "Elsie, 62, New York",
         "verified": "Verified Buyer",
         "review": "“I have never felt so confident and free now that I’m not constantly worrying about who can see my whiskers.”",
         "note_text": "Because of high demand, we regret to inform you that once our current stock runs out — we can’t maintain this special discount offer.",
-        "image": "shopify:\/\/shop_images\/Rectangle_1159_16778ae2-7de6-486f-9522-1915f67b6324.png",
-        "image_mobile": "shopify:\/\/shop_images\/image_1345.png",
         "button_text": "GET UP TO 55% OFF NOW",
-        "button_url": "https:\/\/trypluxy.co\/pages\/epil-pro-essentials",
-        "sub_text": "<p>Field test it with our 90-Day Money Back Guarantee!<\/p>",
+        "button_url": "https://trypluxy.co/pages/epil-pro-essentials",
+        "sub_text": "<p>Field test it with our 90-Day Money Back Guarantee!</p>",
         "show_background": true,
         "show_timer": false
       }
