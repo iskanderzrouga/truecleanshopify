@@ -76,6 +76,12 @@
                   class="flex w-full flex-col relative rounded-[15px] md:rounded-[20px]"
                   style="  box-shadow: 4px 4px 12px lightgray;"
                 >
+                {% assign accent_color = block.settings.accent_color %}
+                <div
+                  class="absolute left-[33%] top-0 w-full max-w-[33%] h-full rounded-[15px] md:rounded-[20px] border-[2px] md:border-[4px] !block"
+                  style="border-color: {{ accent_color }};background: radial-gradient(96.19% 16.4% at 50% -4.73%, #E8FF33 0%, #00B7A2 100%);"
+                ></div>
+                
                   {% for block in section.blocks %}
                     {% if block.type == 'table_row' %}
                       <div class="grid grid-cols-3 border-b" style="border-color: {{ block.settings.border_color }};">
@@ -113,12 +119,6 @@
                     {% endif %}
                   {% endfor %}
                 </div>
-
-                {% assign accent_color = block.settings.accent_color %}
-                <div
-                  class="absolute left-[33%] top-0 w-full max-w-[33%] h-full rounded-[15px] md:rounded-[20px] border-[2px] md:border-[4px] !block"
-                  style="border-color: {{ accent_color }};background: radial-gradient(96.19% 16.4% at 50% -4.73%, #E8FF33 0%, #00B7A2 100%);"
-                ></div>
               </div>
             {% endif %}
 
