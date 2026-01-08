@@ -13,6 +13,7 @@
       "type": "adv-announcement",
       "name": "ADV Announcement C",
       "settings": {
+        "hide_header": true,
         "description": "<p>Try It for 90 Days - Love it or Your Money Back  I <a href=\"#products\" title=\"#products\">Shop Now </a>→</p>",
         "color": "#001c19",
         "bgcolor": "#e8ff33",
