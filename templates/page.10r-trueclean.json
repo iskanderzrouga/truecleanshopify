@@ -322,8 +322,8 @@
         "text": "",
         "divider": false,
         "button_text": "Get 35% OFF Today",
-        "button_url": "https://pluxy.co/pages/epil-pro-3",
-        "show_button": true
+        "button_url": "",
+        "show_button": false
       }
     },
     "new_listicle_offer_zKhPta1": {
