@@ -3084,6 +3084,11 @@ html {
       object-fit: cover;
     }
   }
+  .\[\&\>p\>a\]\:underline {
+    &>p>a {
+      text-decoration-line: underline;
+    }
+  }
   .\[\&\>p\>strong\]\:font-medium {
     &>p>strong {
       --tw-font-weight: var(--font-weight-medium);
