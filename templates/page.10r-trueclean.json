@@ -162,7 +162,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346.png",
             "heading": "1. It Prevents Stains Before They Form (So You Finally Stop Scrubbing)",
-            "text": "<p>Here's the problem with everything you've tried: bleach, pumice stones, expensive cleaners — they all attack stains after they form. You scrub. It comes back in 3 days. You scrub again.<br/><br/>TrueClean releases a cleaning solution with every single flush — before new minerals stick to your bowl. <br/><br/><strong>No bond. No stain. No scrubbing.</strong></p>"
+            "text": "<p>Here's the problem with everything you've tried: bleach, pumice stones, expensive cleaners — they all attack stains after they form. You scrub. It comes back in 3 days. You scrub again.<br/><br/>TrueClean releases a cleaning solution with every single flush — before new minerals stick to your bowl. <br/><br/><strong>No bond. No stain. No scrubbing.</strong></p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_dg6Fdw": {
@@ -170,7 +174,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_1.png",
             "heading": "2. It Actually Works on Hard Water (Unlike Everything Else)",
-            "text": "<p>If you live in CA, AZ, TX, DC, or FL — you know what I’m talking about.<br/><br/>Those stubborn brown rings. The rust-colored streaks. The crusty mineral buildup that mock you and your scrub brush.<br/><br/>TrueClean's chlorine-based formula was engineered to break down and disperse hard water minerals so those ugly brown rings never form to begin with.</p>"
+            "text": "<p>If you live in CA, AZ, TX, DC, or FL — you know what I’m talking about.<br/><br/>Those stubborn brown rings. The rust-colored streaks. The crusty mineral buildup that mock you and your scrub brush.<br/><br/>TrueClean's chlorine-based formula was engineered to break down and disperse hard water minerals so those ugly brown rings never form to begin with.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_zTaACM": {
@@ -178,7 +186,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_2.png",
             "heading": "3. It Works Automatically With Every Flush",
-            "text": "<p>Clip it to your overflow tube. Walk away. Done in 60 seconds  — no tools, no plumber, no complicated installation.<br/><br/>Every flush releases a precise dose of cleaning solution directly into your bowl. You don't have to remember anything. You don't have to do anything.<br/><br/>Your toilet cleans itself while you sleep, while you're at work, while you're living your life.</p>"
+            "text": "<p>Clip it to your overflow tube. Walk away. Done in 60 seconds  — no tools, no plumber, no complicated installation.<br/><br/>Every flush releases a precise dose of cleaning solution directly into your bowl. You don't have to remember anything. You don't have to do anything.<br/><br/>Your toilet cleans itself while you sleep, while you're at work, while you're living your life.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_PxKXFA": {
@@ -186,7 +198,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_3.png",
             "heading": "4. Stop Scrubbing Every Week",
-            "text": "<p>How many hours have you spent scrubbing toilets over the years?<br/><br/>I was scrubbing my toilet every week. I used to ruin so many toilet brushes because I'd have to scrub and scrub and scrub until the bristles were totally brown.<br/><br/>That's over now.</p>"
+            "text": "<p>How many hours have you spent scrubbing toilets over the years?<br/><br/>I was scrubbing my toilet every week. I used to ruin so many toilet brushes because I'd have to scrub and scrub and scrub until the bristles were totally brown.<br/><br/>That's over now.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_chkYbA": {
@@ -194,7 +210,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_4.png",
             "heading": "5. Guest-Ready Bathrooms 24/7 (Never Feel Embarrassed Again)",
-            "text": "<p>I grew sick of being embarrassed by surprise guests who wanted to use the toilet— it would look like I went months between cleanings. REALLY gross!<br/><br/>With TrueClean, my toilet stays spotless on autopilot. No rings. No stains. No panic attack when the doorbell rings.</p>"
+            "text": "<p>I grew sick of being embarrassed by surprise guests who wanted to use the toilet— it would look like I went months between cleanings. REALLY gross!<br/><br/>With TrueClean, my toilet stays spotless on autopilot. No rings. No stains. No panic attack when the doorbell rings.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_fRYfx9": {
@@ -202,7 +222,12 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_5.png",
             "heading": "6. Save Up to 37% & Automate Your Whole Home (Limited Time)",
-            "text": "<p>One bathroom or four — TrueClean makes it easy to cover your whole home.<br/><br/><strong>1 Toilet: $39 (6-month supply)<br/>2 Toilets: $69 — Save 30%<br/>3 Toilets: $99 — Save 37%</strong><br/><br/>For less than one plumber visit, every toilet in your home stays spotless for six months. Free shipping on all bundles.</p>"
+            "text": "<p>One bathroom or four — TrueClean makes it easy to cover your whole home.<br/><br/><strong>1 Toilet: $39 (6-month supply)<br/>2 Toilets: $69 — Save 30%<br/>3 Toilets: $99 — Save 37%</strong><br/><br/>For less than one plumber visit, every toilet in your home stays spotless for six months. Free shipping on all bundles.</p>",
+            "button_label": "STOP SCRUBBING NOW →",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_XcLaRB": {
@@ -210,7 +235,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_6.png",
             "heading": "7. Plumber-Approved (Won't Destroy Your Toilet Like Tank Tablets)",
-            "text": "<p>Tank tablets sit in your tank 24/7, corroding your flapper and seals.<br/><br/>TrueClean is different. The cleaning solution flows directly to the bowl — only when you flush. It never touches your tank, your flapper, your seals, or your valves.<br/><br/><strong>That's why TrueClean is plumber-approved and safe for septic systems.</strong></p>"
+            "text": "<p>Tank tablets sit in your tank 24/7, corroding your flapper and seals.<br/><br/>TrueClean is different. The cleaning solution flows directly to the bowl — only when you flush. It never touches your tank, your flapper, your seals, or your valves.<br/><br/><strong>That's why TrueClean is plumber-approved and safe for septic systems.</strong></p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_BLwK7W": {
@@ -218,7 +247,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_7.png",
             "heading": "8. Safe for Your Home (No Harsh Chemicals or Toxic Fumes)",
-            "text": "<p>TrueClean works without toxic off-gassing. <br/>It's:<br/><br/>✅ Septic-safe certified<br/>✅ Safe around kids and pets<br/>✅ No bleach smell lingering for hours<br/><br/>Enjoy a clean toilet without compromising your home or your family's health.</p>"
+            "text": "<p>TrueClean works without toxic off-gassing. <br/>It's:<br/><br/>✅ Septic-safe certified<br/>✅ Safe around kids and pets<br/>✅ No bleach smell lingering for hours<br/><br/>Enjoy a clean toilet without compromising your home or your family's health.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_NypkVi": {
@@ -226,7 +259,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_8.png",
             "heading": "9. Your 90-Day Scrub Free or Your Money Back Guarantee",
-            "text": "<p>If you don't see results, you don't pay. Full refund, no questions asked.<br/><br/>Use it for 90 days. If your toilet isn't staying cleaner with less effort, send it back. We'll return every penny.</p>"
+            "text": "<p>If you don't see results, you don't pay. Full refund, no questions asked.<br/><br/>Use it for 90 days. If your toilet isn't staying cleaner with less effort, send it back. We'll return every penny.</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "list_jLmy3H": {
@@ -234,7 +271,11 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_9.png",
             "heading": "10. Join 50,000+ Homeowners Who've Stopped Scrubbing",
-            "text": "<p>Sure you can gift her something she’ll pop on the shelf for till next year. The Pluxy Epil Pro Essentials set isn't just a one-time present - it's an investment in her self-care routine she’ll use everyday for years to come. Just imagine the joy as she looks in the mirror and loves what she sees</p>"
+            "text": "<p>Sure you can gift her something she’ll pop on the shelf for till next year. The Pluxy Epil Pro Essentials set isn't just a one-time present - it's an investment in her self-care routine she’ll use everyday for years to come. Just imagine the joy as she looks in the mirror and loves what she sees</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
           }
         }
       },
