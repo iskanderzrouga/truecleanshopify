@@ -1402,7 +1402,7 @@
       }
     },
     "new_lp_featured_product_mk_mR7xzz": {
-      "type": "new-lp-featured-product-mk",
+      "type": "new-lp-featured-product-main",
       "blocks": {
         "badge_pDpdUD": {
           "type": "badge",
