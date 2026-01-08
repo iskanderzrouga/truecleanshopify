@@ -9,14 +9,6 @@
  */
 {
   "sections": {
-    "logo_and_button_XCETPj": {
-      "type": "logo-and-button-2",
-      "disabled": true,
-      "settings": {
-        "button_text": "",
-        "button_url": "https://pluxy.co/pages/epil-pro-3"
-      }
-    },
     "adv_announcement_WAEQWj": {
       "type": "adv-announcement",
       "name": "ADV Announcement C",
@@ -294,7 +286,6 @@
     }
   },
   "order": [
-    "logo_and_button_XCETPj",
     "adv_announcement_WAEQWj",
     "new_listicle_reasons_TibHVQ",
     "new_listicle_offer_zKhPta1"

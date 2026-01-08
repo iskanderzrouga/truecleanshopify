@@ -30,7 +30,16 @@
   </div>
 </div>
 
-{% render 'global-countdown-script', resetTime: "00:00:00" %}
+{% if section.settings.hide_header %}
+  <style>
+    .announcement-bar-section,
+    .shopify-section-group-header-group {
+      display: none !important;
+    }
+  </style>
+{% endif %}
+
+{% render 'global-countdown-script', resetTime: '00:00:00' %}
 
 {% schema %}
 {
