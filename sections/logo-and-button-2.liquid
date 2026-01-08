@@ -1,0 +1,58 @@
+<section class="bg-[#fff] px-5 py-[14px] md:py-[26px]">
+  <div class="max-w-[1220px] mx-auto w-full flex items-center {% if section.settings.button_text != blank %} justify-between {% else %} justify-center {% endif %} gap-4">
+    <img
+      src="{{ section.settings.logo | image_url: width: 300 }}"
+      class="w-[90px] xs:w-[110px] md:w-[130px] lg:w-[150px]"
+      width="auto"
+      height="auto"
+      alt=""
+      loading="eager"
+    >
+
+    <div class="w-fit">
+      {% if section.settings.button_text != blank %}
+        <a
+          href="{{ section.settings.button_url }}"
+          data-scroll-to-section
+          data-btn-type="animate"
+          class="
+            flex items-center gap-2 overflow-hidden rounded-full bg-[#7A5EC5] hover:bg-[#422780] duration-150 text-white font-semibold
+            whitespace-nowrap text-sm xs:text-lg md:text-[24px] py-[8px] md:py-[15px] px-[20px] md:px-[25px]
+          "
+        >
+          {{ section.settings.button_text }}
+          {% render 'icon-arrow-right' %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo and Button",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "TRY PLUXY NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo and Button"
+    }
+  ]
+}
+{% endschema %}
