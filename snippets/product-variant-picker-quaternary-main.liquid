@@ -9,7 +9,7 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
-{% render 'subscription-between-widget', block: block %}
+{% render 'subscription-between-widget-main', block: block %}
 
 {%- unless product.has_only_default_variant -%}
   <variant-selects
