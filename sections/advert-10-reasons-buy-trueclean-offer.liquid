@@ -86,11 +86,10 @@
             {% if section.settings.button_text != blank %}
               <div class="w-full">
                 <a
-                  class="!text-white text-[18px] lg:text-[22px] font-bold flex items-center gap-2 p-[18px] md:p-4 !bg-[#00bf00] rounded-[10px] justify-center mx-auto text-center w-full !no-underline"
+                  class="new-button--primary"
                   href="{{ section.settings.button_url }}"
                 >
                   <span>{{ section.settings.button_text }}</span>
-                  {% render 'icon-arrow' %}
                 </a>
               </div>
             {% endif %}
