@@ -101,6 +101,11 @@
                           class="!block w-full border-dashed border-b"
                           style="border-color: {{ block.settings.border_color }};"
                         >
+                          <div class="w-full flex items-center justify-center">
+                            {% if block.settings.image2 != blank %}
+                              {{ block.settings.image2 | image_url: width: 250 | image_tag: class: 'w-full max-w-[70%]' }}
+                            {% endif %}
+                          </div>
                           {% if block.settings.text2 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text2,
