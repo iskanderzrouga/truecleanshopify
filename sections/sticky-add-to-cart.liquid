@@ -1,7 +1,6 @@
 <div class="sticky-add-to-cart section-{{ section.id }}-padding">
   <a href="{{section.settings.link}}" class="new-button--tertiary sticky-add-to-cart__btn">
     {{ section.settings.btn_text }}
-    {%- render 'icon-arrow-right-black' -%}
   </a>
   {% unless section.settings.hide_shipping %}
     {% render 'custom-shipping' %}
@@ -44,7 +43,7 @@
 
   .sticky-add-to-cart__btn {
     color: #fff;
-    background: #84F75D;
+    background: #E8FF33;
     border: unset;
     padding: 10px;
     font-weight: 900;
