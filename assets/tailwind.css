@@ -3035,6 +3035,11 @@ html {
       font-size: 24px;
     }
   }
+  .lg\:text-\[28px\] {
+    @media (width >= 64rem) {
+      font-size: 28px;
+    }
+  }
   .lg\:text-\[30px\] {
     @media (width >= 64rem) {
       font-size: 30px;
