@@ -248,9 +248,10 @@
             "image": "shopify://shop_images/Rectangle_240648346_7.png",
             "heading": "8. Safe for Your Home (No Harsh Chemicals or Toxic Fumes)",
             "text": "<p>TrueClean works without toxic off-gassing. <br/>It's:<br/><br/>✅ Septic-safe certified<br/>✅ Safe around kids and pets<br/>✅ No bleach smell lingering for hours<br/><br/>Enjoy a clean toilet without compromising your home or your family's health.</p>",
-            "button_label": "",
-            "button_url": "",
-            "btn_bottom_text": "",
+            "button_label": "STOP SCRUBBING NOW →",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
             "btn_bottom_text_color": "#001c19"
           }
         },
@@ -260,8 +261,8 @@
             "image": "shopify://shop_images/Rectangle_240648346_8.png",
             "heading": "9. Your 90-Day Scrub Free or Your Money Back Guarantee",
             "text": "<p>If you don't see results, you don't pay. Full refund, no questions asked.<br/><br/>Use it for 90 days. If your toilet isn't staying cleaner with less effort, send it back. We'll return every penny.</p>",
-            "button_label": "",
-            "button_url": "",
+            "button_label": "Try It 100% Risk-Free →",
+            "button_url": "shopify://pages/swooshnshine",
             "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19"
           }
@@ -272,9 +273,10 @@
             "image": "shopify://shop_images/Rectangle_240648346_9.png",
             "heading": "10. Join 50,000+ Homeowners Who've Stopped Scrubbing",
             "text": "<p>Sure you can gift her something she’ll pop on the shelf for till next year. The Pluxy Epil Pro Essentials set isn't just a one-time present - it's an investment in her self-care routine she’ll use everyday for years to come. Just imagine the joy as she looks in the mirror and loves what she sees</p>",
-            "button_label": "",
-            "button_url": "",
-            "btn_bottom_text": "",
+            "button_label": "STOP SCRUBBING NOW →",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
             "btn_bottom_text_color": "#001c19"
           }
         }
