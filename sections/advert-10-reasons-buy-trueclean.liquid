@@ -185,6 +185,28 @@
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
+                    {% if section.settings.button_label != blank %}
+        <div class="w-full md:w-fit mx-auto flex flex-col items-center justify-center gap-3">
+          <a href="{{ section.settings.button_url }}" class="new-button--primary">
+            {{ section.settings.button_label }}
+          </a>
+          {% if block.settings.btn_bottom_text != blank %}
+            <div
+              class="text-[13px] md:text-[13px] font-medium !leading-tight text-[#001C19] flex items-center justify-center gap-2"
+              style="color: {{ block.settings.btn_bottom_text_color }};"
+            >
+              {% if block.settings.btn_bottom_icon != blank %}
+                {{
+                  block.settings.btn_bottom_icon
+                  | image_url: width: 16
+                  | image_tag: class: 'w-full max-w-[16px] h-fit object-contain', sizes: '16px'
+                }}
+              {% endif %}
+              {{ block.settings.btn_bottom_text }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
                   </div>
                 </div>
               </div>
@@ -482,7 +504,33 @@
           "type": "richtext",
           "id": "text",
           "label": "Text"
-        }
+        },
+        {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "btn_bottom_icon",
+      "label": "Btn Bottom Icon"
+    },
+    {
+      "type": "richtext",
+      "id": "btn_bottom_text",
+      "label": "Btn Bottom Text"
+    },
+    {
+      "type": "color",
+      "id": "btn_bottom_text_color",
+      "label": "Buttom Bottom Text Color",
+      "default": "#001C19"
+    }
       ]
     }
   ],
