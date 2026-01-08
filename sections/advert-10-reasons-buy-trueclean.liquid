@@ -97,14 +97,17 @@
                             %}
                           {% endif %}
                         </div>
-                        <div class="!block w-full border-dashed border-b" style="border-color: {{ block.settings.border_color }};">
+                        <div
+                          class="!block w-full border-dashed border-b"
+                          style="border-color: {{ block.settings.border_color }};"
+                        >
                           {% if block.settings.text2 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text2,
                               icon: block.settings.icon2,
                               color: block.settings.color2,
                               block: block,
-                              center: true
+                              center: false
                             %}
                           {% endif %}
                         </div>
@@ -115,7 +118,7 @@
                               color: block.settings.color3,
                               icon: block.settings.icon3,
                               block: block,
-                              center: true
+                              center: false
                             %}
                           {% endif %}
                         </div>
