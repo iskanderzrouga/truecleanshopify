@@ -1,0 +1,126 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
+    <input
+      type="radio"
+      class=""
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    {% assign forloop_index = forloop.index | minus: 1 %}
+    {% assign variant = product.variants[forloop_index] %}
+    {% comment %} {% assign number_of_items = variant.metafields.custom.product_count %} {% endcomment %}
+
+    <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0">
+      <div class="new-lp-variant-content new-lp-variant-content--main flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#F9F9F9] rounded-[50px] relative p-2 md:p-[15px]">
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
+
+        <div class="flex flex-col gap-1 flex-1">
+          <div class="new-lp-variant-title new-lp-variant-title--main text-[#001C19] font-medium !text-[16px] md:!text-[14px] [&>strong]:text-[#D30101] tracking-normal justify-center text-center flex flex-col md:flex-row gap-1 md:gap-2 md:items-center">
+            {{ value | highlight: block.settings.highlight_text | highlight: block.settings.highlight_text_2 -}}
+            {{ label_unavailable }}
+            {% assign price = variant.price %}
+            {% assign compare_price = variant.compare_at_price %}
+
+            {% if compare_price > price %}
+              {% assign discount = compare_price | minus: price %}
+              {% assign percent_off_raw = discount | times: 100.0 | divided_by: compare_price %}
+              {% assign percent_off = percent_off_raw | ceil %}
+
+              {% comment %}
+                <span class="price-item price-item--savings !text-[#007820] !text-[16px] md:!text-[16px] font-extrabold tracking-normal">
+                  (Save {{ percent_off }}% OFF)
+                </span>
+              {% endcomment %}
+            {% endif %}
+          </div>
+        </div>
+
+        {% comment %}
+          <div class="new-lp-variant-price text-[#000] font-bold !text-[16px] md:!text-[16px] tracking-normal flex flex-col md:flex-row items-end md:items-center justify-center gap-1">
+            {% if variant.compare_at_price > variant.price %}
+              <div
+                class="text-[#747474] font-normal !text-[16px] md:!text-[16px] !leading-tight line-through text-right"
+              >
+                {{ variant.compare_at_price | money -}}
+              </div>
+            {% endif %}
+          </div>
+        {% endcomment %}
+      </div>
+    </label>
+  </div>
+{%- endfor -%}
