@@ -90,6 +90,7 @@
                           {% if block.settings.text1 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text1,
+                              icon: block.settings.icon1,
                               color: block.settings.color1,
                               block: block,
                               center: false
@@ -100,6 +101,7 @@
                           {% if block.settings.text2 != blank %}
                             {% render 'table-row-comparison',
                               text: block.settings.text2,
+                              icon: block.settings.icon2,
                               color: block.settings.color2,
                               block: block,
                               center: true
@@ -111,6 +113,7 @@
                             {% render 'table-row-comparison',
                               text: block.settings.text3,
                               color: block.settings.color3,
+                              icon: block.settings.icon3,
                               block: block,
                               center: true
                             %}
@@ -310,6 +313,11 @@
       "type": "table_row",
       "name": "Table Row",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
         {
           "type": "richtext",
           "id": "text1",
