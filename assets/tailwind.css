@@ -1089,6 +1089,9 @@ html {
   .\!rounded-\[16px\] {
     border-radius: 16px !important;
   }
+  .\!rounded-\[100px\] {
+    border-radius: 100px !important;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
