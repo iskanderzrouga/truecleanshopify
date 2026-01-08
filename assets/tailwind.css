@@ -1171,9 +1171,17 @@ html {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
+  .rounded-t-\[20px\] {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
   .rounded-t-lg {
     border-top-left-radius: var(--radius-lg);
     border-top-right-radius: var(--radius-lg);
+  }
+  .rounded-l-\[20px\] {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .rounded-b-\[8px\] {
     border-bottom-right-radius: 8px;

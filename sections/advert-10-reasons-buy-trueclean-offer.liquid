@@ -8,14 +8,14 @@
               {{
                 section.settings.image
                 | image_url: width: 500
-                | image_tag: class: 'w-full h-full object-cover aspect-[1/1] md:aspect-auto hidden md:block'
+                | image_tag: class: 'w-full h-full object-cover aspect-[1/1] md:aspect-auto hidden md:block rounded-l-[20px]'
               }}
             {% endif %}
             {% if section.settings.image_mobile != blank %}
               {{
                 section.settings.image_mobile
                 | image_url: width: 500
-                | image_tag: class: 'w-full h-full object-cover aspect-[1/1] md:aspect-auto block md:hidden'
+                | image_tag: class: 'w-full h-full object-cover aspect-[1/1] md:aspect-auto block md:hidden rounded-t-[20px]'
               }}
             {% endif %}
           </div>
