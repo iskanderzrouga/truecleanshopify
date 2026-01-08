@@ -1399,6 +1399,9 @@ html {
   .bg-\[\#fffaee\] {
     background-color: #fffaee;
   }
+  .bg-\[\#ffffff\] {
+    background-color: #ffffff;
+  }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
   }
