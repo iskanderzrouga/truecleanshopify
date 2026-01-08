@@ -1267,7 +1267,7 @@
       }
     },
     "tc_pricing_section_below_guarantee": {
-      "type": "tc-pricing-section",
+      "type": "tc-pricing-section-bundle",
       "blocks": {
         "review_below": {
           "type": "review",
