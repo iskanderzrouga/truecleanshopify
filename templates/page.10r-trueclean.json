@@ -73,7 +73,7 @@
         "table_Ubh34F": {
           "type": "table",
           "settings": {
-            "accent_color": "#7a5ec5"
+            "accent_color": "rgba(0,0,0,0)"
           }
         },
         "table_row_DceVk6": {
