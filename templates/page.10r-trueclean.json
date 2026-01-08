@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "sticky_add_to_cart_X4JbTJ": {
+      "type": "sticky-add-to-cart",
+      "name": "Sticky Add To Cart",
+      "settings": {
+        "link": "shopify://pages/swooshnshine",
+        "primary_color": "#000000",
+        "secondary_color": "#08421F",
+        "bgcolor": "#00b7a2",
+        "btn_text": "GET UP TO 37% OFF →",
+        "hide_shipping": true
+      }
+    },
     "adv_announcement_WAEQWj": {
       "type": "adv-announcement",
       "name": "ADV Announcement C",
@@ -357,6 +369,7 @@
     }
   },
   "order": [
+    "sticky_add_to_cart_X4JbTJ",
     "adv_announcement_WAEQWj",
     "new_listicle_reasons_TibHVQ",
     "new_listicle_offer_zKhPta1"
