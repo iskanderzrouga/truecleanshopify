@@ -44,12 +44,8 @@
                     {% if block.settings.verified != blank %}
                       <div class="text-[#262626] text-[14px] md:text-[14px] font-normal !leading-tight border rounded-[50px] border-black px-4 py-1 flex items-center gap-1">
                         {% if block.settings.icon != blank %}
-                  {{
-                    block.settings.icon
-                    | image_url: width: 12
-                    | image_tag: class: 'w-full max-w-[12px]'
-                  }}
-                {% endif %}
+                          {{ block.settings.icon | image_url: width: 12 | image_tag: class: 'w-full max-w-[12px]' }}
+                        {% endif %}
                         {{ block.settings.verified }}
                       </div>
                     {% endif %}
@@ -279,6 +275,11 @@
           "type": "text",
           "id": "heading",
           "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         },
         {
           "type": "text",
