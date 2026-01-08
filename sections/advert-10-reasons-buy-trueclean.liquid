@@ -189,6 +189,41 @@
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
+                    {% if block.settings.stars != blank %}
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center gap-2">
+                          {{
+                            section.settings.stars
+                            | image_url: width: 120
+                            | image_tag: class: 'w-full max-w-[80px] md:max-w-[120px]', sizes: '120px'
+                          }}
+                          {% if block.settings.star_text1 != blank %}
+                            <div class="text-[#000] text-[16px] lg:text-[18px] font-normal leading-normal md:leading-normal">
+                              {{ block.settings.star_text1 }}
+                            </div>
+                          {% endif %}
+                        </div>
+                        {% if block.settings.star_text2 != blank %}
+                          <div class="text-[#000] text-[16px] lg:text-[18px] font-normal leading-normal md:leading-normal">
+                            {{ block.settings.star_text2 }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
+                    {% for i in (1..4) %}
+                      {% assign description_name = 'review_text' | append: i %}
+                      {% assign description = block.settings[description_name] %}
+                      {% if description != blank %}
+                        <div
+                          class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#000] bg-[#EFF6F6] rounded-[10px] p-4"
+                          style="color: {{ block.settings.color }};"
+                        >
+                          {{ description }}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+
                     {% if block.settings.button_label != blank %}
                       <div class="w-full md:w-fit flex flex-col items-center justify-center gap-3">
                         <a href="{{ block.settings.button_url }}" class="new-button--primary">
