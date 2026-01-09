@@ -368,6 +368,9 @@ html {
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
+  .bottom-3 {
+    bottom: calc(var(--spacing) * 3);
+  }
   .bottom-12 {
     bottom: calc(var(--spacing) * 12);
   }
