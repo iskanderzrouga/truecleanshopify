@@ -1318,6 +1318,9 @@ html {
   .bg-\[\#000C38\] {
     background-color: #000C38;
   }
+  .bg-\[\#01afa9\] {
+    background-color: #01afa9;
+  }
   .bg-\[\#7A5EC5\] {
     background-color: #7A5EC5;
   }
@@ -1380,6 +1383,9 @@ html {
   }
   .bg-\[\#ffffff\] {
     background-color: #ffffff;
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
