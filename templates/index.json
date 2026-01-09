@@ -1324,7 +1324,7 @@
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
-            "text": "Ships by 20 Jan 2026",
+            "text": "Ships by 20th Jan 2026",
             "icon": "shopify://shop_images/ship-icon.png"
           }
         },
