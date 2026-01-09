@@ -2449,6 +2449,12 @@ html {
       min-width: 460px;
     }
   }
+  .md\:-translate-x-1\/2 {
+    @media (width >= 48rem) {
+      --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
   .md\:\!grid-cols-9 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
