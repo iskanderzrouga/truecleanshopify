@@ -1324,8 +1324,8 @@
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
-            "text": "Due to high demand over new years we can ship your order by the 20th of Jan",
-            "icon": "shopify://shop_images/icon-info.svg"
+            "text": "Ships by DATEPLACEHOLDER",
+            "icon": "shopify://shop_images/ship-icon.png"
           }
         },
         "buy_buttons_below": {
