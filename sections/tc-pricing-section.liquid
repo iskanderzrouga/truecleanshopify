@@ -198,6 +198,9 @@
                       {{ block.settings.text | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
                   {% endif %}
+                  {% if block.settings.info_text != blank %}
+                    <div class="">i</div>
+                  {% endif %}
                 </div>
 
               {%- when 'collapsible_tab' -%}
