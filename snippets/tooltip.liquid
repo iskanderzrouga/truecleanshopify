@@ -27,3 +27,21 @@
 }
 
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const icons = document.querySelectorAll('.info-icon');
+
+  icons.forEach(icon => {
+    const tooltip = icon.querySelector('.tooltip');
+
+    icon.addEventListener('click', () => {
+      // Toggle only on mobile
+      if (window.innerWidth <= 767) {
+        tooltip.classList.toggle('open');
+      }
+    });
+  });
+});
+
+</script>
