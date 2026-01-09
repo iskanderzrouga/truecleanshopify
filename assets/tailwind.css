@@ -839,6 +839,9 @@ html {
   .max-w-\[280px\] {
     max-width: 280px;
   }
+  .max-w-\[300px\] {
+    max-width: 300px;
+  }
   .max-w-\[340px\] {
     max-width: 340px;
   }
@@ -1766,6 +1769,9 @@ html {
   }
   .\!whitespace-nowrap {
     white-space: nowrap !important;
+  }
+  .whitespace-normal {
+    white-space: normal;
   }
   .whitespace-nowrap {
     white-space: nowrap;
