@@ -218,15 +218,18 @@
                       {% assign avatar_name = 'review_avatar' | append: i %}
                       {% assign avatar = block.settings[avatar_name] %}
                       {% if description != blank %}
-                        <div class="flex gap-2 bg-[#EFF6F6] rounded-[10px] p-4" style="color: {{ block.settings.color }};">
+                        <div
+                          class="flex gap-2 bg-[#EFF6F6] rounded-[10px] p-4"
+                          style="color: {{ block.settings.color }};"
+                        >
                           {% if avatar != blank %}
-                                  {{
-                                      avatar
-                                      | image_url: width: 48
-                                      | image_tag: class: 'w-full max-w-[48px]', sizes: '48px'
-                                    }}
-                                {%  endif %}
-                                
+                            {{
+                              avatar
+                              | image_url: width: 48
+                              | image_tag: class: 'w-full max-w-[48px] h-fit object-contain', sizes: '48px'
+                            }}
+                          {% endif %}
+
                           <div class="flex flex-col gap-2">
                             <div
                               class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]"
@@ -240,23 +243,23 @@
                                 >
                                   {{ name }}
                                 </div>
-                              {%  endif %}
+                              {% endif %}
 
                               <div class="flex gap-2">
                                 {% if block.settings.review_verifeid_icon != blank %}
                                   {{
-                                      block.settings.review_verifeid_icon
-                                      | image_url: width: 16
-                                      | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
-                                    }}
-                                {%  endif %}
+                                    block.settings.review_verifeid_icon
+                                    | image_url: width: 16
+                                    | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                                  }}
+                                {% endif %}
                                 {% if block.settings.review_verifeid != blank %}
                                   <div
                                     class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#000] bg-[#EFF6F6] rounded-[10px] p-4"
                                   >
                                     {{ block.settings.review_verifeid }}
                                   </div>
-                                {%  endif %}
+                                {% endif %}
                               </div>
                             </div>
                           </div>
