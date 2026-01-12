@@ -1388,7 +1388,7 @@
       "settings": {
         "product": "trueclean",
         "show_shipping_banner": true,
-        "shipping_heading": "Due to extremely high demand over the New Year we are currently restocking TrueClean and will be able to ship your order within 8 days. Thank you for your understanding and patience!",
+        "shipping_heading": "Due to extremely high demand over the New Year we are currently restocking TrueClean and will be able to ship your order within DATEPLACEHOLDER days. Thank you for your understanding and patience!",
         "show_urgency_banner": true,
         "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
         "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
