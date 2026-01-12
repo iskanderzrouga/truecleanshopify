@@ -140,8 +140,8 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="text-[17px] md:text-[20px] font-normal !leading-tight text-[#000]"
-                  style="color: {{ block.settings.color }};"
+                  class="text-[17px] md:text-[20px] font-normal !leading-tight text-[#000] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
                 </div>
