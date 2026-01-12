@@ -84,7 +84,7 @@
           {% assign diff_days = diff_seconds | divided_by: 86400 %}
 
           {% assign today = 'now' | date: '%-d %b' | upcase %}
-          <p class="text-[14px] md:text-[18px] font-bold text-[#000000] !leading-tight uppercase">{{ today }}, {{ section.settings.shipping_heading }} {{ diff_days }}</p>
+          <p class="text-[14px] md:text-[18px] font-bold text-[#000000] !leading-tight uppercase">{{ today }}, {{ section.settings.shipping_heading | replace: "DATEPLACEHOLDER", diff_days }}</p>
         </div>
       </div>
     {% endif %}
