@@ -63,6 +63,8 @@
           "type": "description",
           "disabled": true,
           "settings": {
+            "bg": "#fbffe6",
+            "show_bg": false,
             "color": "#000000",
             "text": "<p>As a senior woman, I know firsthand how frustrating facial hair can be. Thinning, sensitive skin makes traditional hair removal methods like waxing and tweezing a painful, time-consuming chore.<br/><br/>Not to mention how much shaving every day dries out mature, sensitive skin. <br/><br/>So I was thrilled when my daughter gifted me the Pluxy Epil Pro Essentials set last Christmas. This game-changing kit has everything you need for gentle, effective, and long-lasting hair removal at home and 6 other bonus treatments that keep me looking barely 45!<br/><br/>Here are 10 reasons why it's the perfect gift for any woman over 60:</p>"
           }
@@ -165,6 +167,8 @@
         "description_Jt7Qxk": {
           "type": "description",
           "settings": {
+            "bg": "#fbffe6",
+            "show_bg": true,
             "color": "#000000",
             "text": "<p><strong>TLDR</strong>: TrueClean prevents toilet stains automatically with every flush — so you stop scrubbing and start living. <strong>Here are 10 reasons hard water homeowners are making the switch.</strong></p>"
           }
