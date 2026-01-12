@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "featured_collection_LmQ47e": {
@@ -76,7 +85,7 @@
           }
         },
         "recharge_subscriptions_subscription_widget_v2_DJ4bzQ": {
-          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget-v2\/371eed76-0b44-4869-9813-730372ea378e",
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {}
         }
       },
@@ -129,12 +138,32 @@
       "type": "apps",
       "blocks": {
         "aftersell_by_rokt_pdp_upsells_EmrXp6": {
-          "type": "shopify:\/\/apps\/aftersell-by-rokt\/blocks\/pdp-upsells\/509ec35d-0632-4dfc-a105-fa799cd9d149",
+          "type": "shopify://apps/aftersell-by-rokt/blocks/pdp-upsells/509ec35d-0632-4dfc-a105-fa799cd9d149",
           "settings": {}
         }
       },
       "block_order": [
         "aftersell_by_rokt_pdp_upsells_EmrXp6"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "176819142433629ef0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_VyJQzP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_VyJQzP"
       ],
       "settings": {
         "include_margins": true
@@ -145,6 +174,7 @@
     "featured_collection_LmQ47e",
     "main",
     "related-products",
-    "1766469646607c3d99"
+    "1766469646607c3d99",
+    "176819142433629ef0"
   ]
 }
