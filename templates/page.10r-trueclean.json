@@ -13,7 +13,7 @@
       "type": "sticky-add-to-cart",
       "name": "Sticky Add To Cart",
       "settings": {
-        "link": "shopify:\/\/pages\/swooshnshine",
+        "link": "shopify://pages/swooshnshine",
         "primary_color": "#000000",
         "secondary_color": "#08421f",
         "bgcolor": "#00b7a2",
@@ -26,7 +26,7 @@
       "name": "ADV Announcement C",
       "settings": {
         "hide_header": true,
-        "description": "<p>Try It for 90 Days - Love it or Your Money Back  I <a href=\"\/pages\/swooshnshine\" title=\"Swoosh 'n Shine\">Shop Now <\/a>→<\/p>",
+        "description": "<p>Try It for 90 Days - Love it or Your Money Back  I <a href=\"/pages/swooshnshine\" title=\"Swoosh 'n Shine\">Shop Now </a>→</p>",
         "color": "#001c19",
         "bgcolor": "#e8ff33",
         "border_color": "#d7cde5",
@@ -43,11 +43,11 @@
         "avatar_xTTjVq": {
           "type": "avatar",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Ellipse_87.png",
+            "image": "shopify://shop_images/Ellipse_87_91b2750b-5d23-4d01-b524-e59e062329cd.png",
             "heading": "By Sarah M.",
-            "icon": "shopify:\/\/shop_images\/Vector.png",
+            "icon": "shopify://shop_images/Vector.png",
             "verified": "Verified",
-            "text": "<p><em>Updated 2 days ago<\/em><\/p>"
+            "text": "<p><em>Updated 2 days ago</em></p>"
           }
         },
         "highlight_PPLwKJ": {
@@ -56,7 +56,7 @@
             "bgcolor": "#ffe9e9",
             "border_color": "#d30101",
             "color": "#000000",
-            "text": "<p><strong>“I Read this BEFORE you scrub your toilet again in 2026.”<\/strong><\/p>"
+            "text": "<p><strong>“I Read this BEFORE you scrub your toilet again in 2026.”</strong></p>"
           }
         },
         "description_jLG9Wg": {
@@ -64,7 +64,7 @@
           "disabled": true,
           "settings": {
             "color": "#000000",
-            "text": "<p>As a senior woman, I know firsthand how frustrating facial hair can be. Thinning, sensitive skin makes traditional hair removal methods like waxing and tweezing a painful, time-consuming chore.<br\/><br\/>Not to mention how much shaving every day dries out mature, sensitive skin. <br\/><br\/>So I was thrilled when my daughter gifted me the Pluxy Epil Pro Essentials set last Christmas. This game-changing kit has everything you need for gentle, effective, and long-lasting hair removal at home and 6 other bonus treatments that keep me looking barely 45!<br\/><br\/>Here are 10 reasons why it's the perfect gift for any woman over 60:<\/p>"
+            "text": "<p>As a senior woman, I know firsthand how frustrating facial hair can be. Thinning, sensitive skin makes traditional hair removal methods like waxing and tweezing a painful, time-consuming chore.<br/><br/>Not to mention how much shaving every day dries out mature, sensitive skin. <br/><br/>So I was thrilled when my daughter gifted me the Pluxy Epil Pro Essentials set last Christmas. This game-changing kit has everything you need for gentle, effective, and long-lasting hair removal at home and 6 other bonus treatments that keep me looking barely 45!<br/><br/>Here are 10 reasons why it's the perfect gift for any woman over 60:</p>"
           }
         },
         "divider_CTaMLe": {
@@ -79,7 +79,7 @@
           "disabled": true,
           "settings": {
             "color": "#000000",
-            "text": "<p><strong>PLUXY VS. Traditional Hair Removal<\/strong><\/p>"
+            "text": "<p><strong>PLUXY VS. Traditional Hair Removal</strong></p>"
           }
         },
         "table_Ubh34F": {
@@ -91,12 +91,12 @@
         "table_row_DceVk6": {
           "type": "table_row",
           "settings": {
-            "text1": "<p><strong>Features<\/strong><\/p>",
+            "text1": "<p><strong>Features</strong></p>",
             "color1": "#000000",
-            "image2": "shopify:\/\/shop_images\/TrueClean_logo_af27d67a-47b6-47ac-a477-1b09ab61098d.png",
+            "image2": "shopify://shop_images/TrueClean_logo_af27d67a-47b6-47ac-a477-1b09ab61098d.png",
             "text2": "",
             "color2": "#ffffff",
-            "text3": "<p><strong>Traditional Cleaners<\/strong><\/p>",
+            "text3": "<p><strong>Traditional Cleaners</strong></p>",
             "color3": "#000000",
             "border_color": "#d9dde0",
             "header": true
@@ -105,13 +105,13 @@
         "table_row_TBCrUP": {
           "type": "table_row",
           "settings": {
-            "text1": "<p>Stain Prevention<\/p>",
+            "text1": "<p>Stain Prevention</p>",
             "color1": "#000000",
-            "icon2": "shopify:\/\/shop_images\/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
-            "text2": "<p>Prevents with every flush<\/p>",
+            "icon2": "shopify://shop_images/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
+            "text2": "<p>Prevents with every flush</p>",
             "color2": "#ffffff",
-            "icon3": "shopify:\/\/shop_images\/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
-            "text3": "<p>Attacks after they form<\/p>",
+            "icon3": "shopify://shop_images/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
+            "text3": "<p>Attacks after they form</p>",
             "color3": "#000000",
             "border_color": "#d9dde0",
             "header": false
@@ -120,13 +120,13 @@
         "table_row_Kh9mVa": {
           "type": "table_row",
           "settings": {
-            "text1": "<p>Effort<\/p>",
+            "text1": "<p>Effort</p>",
             "color1": "#000000",
-            "icon2": "shopify:\/\/shop_images\/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
-            "text2": "<p>Set-and-forget, Clean in seconds<\/p>",
+            "icon2": "shopify://shop_images/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
+            "text2": "<p>Set-and-forget, Clean in seconds</p>",
             "color2": "#ffffff",
-            "icon3": "shopify:\/\/shop_images\/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
-            "text3": "<p>Weekly scrubbing<\/p>",
+            "icon3": "shopify://shop_images/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
+            "text3": "<p>Weekly scrubbing</p>",
             "color3": "#000000",
             "border_color": "#d9dde0",
             "header": false
@@ -135,13 +135,13 @@
         "table_row_AYyytg": {
           "type": "table_row",
           "settings": {
-            "text1": "<p>Plumbing<\/p>",
+            "text1": "<p>Plumbing</p>",
             "color1": "#000000",
-            "icon2": "shopify:\/\/shop_images\/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
-            "text2": "<p>Bowl-only, tank-safe<\/p>",
+            "icon2": "shopify://shop_images/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
+            "text2": "<p>Bowl-only, tank-safe</p>",
             "color2": "#ffffff",
-            "icon3": "shopify:\/\/shop_images\/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
-            "text3": "<p>Corrodes flappers & seals<\/p>",
+            "icon3": "shopify://shop_images/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
+            "text3": "<p>Corrodes flappers & seals</p>",
             "color3": "#000000",
             "border_color": "#d9dde0",
             "header": false
@@ -150,13 +150,13 @@
         "table_row_nagGLC": {
           "type": "table_row",
           "settings": {
-            "text1": "<p>Guarantee<\/p>",
+            "text1": "<p>Guarantee</p>",
             "color1": "#000000",
-            "icon2": "shopify:\/\/shop_images\/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
-            "text2": "<p>90-day money-back<\/p>",
+            "icon2": "shopify://shop_images/material-symbols_check-circle_81e11d24-844b-465a-b78f-8ebeb1e5691b.png",
+            "text2": "<p>90-day money-back</p>",
             "color2": "#ffffff",
-            "icon3": "shopify:\/\/shop_images\/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
-            "text3": "<p>None<\/p>",
+            "icon3": "shopify://shop_images/mdi_close-circle_d43d3c4d-eb94-470c-9350-1c44692e9d47.png",
+            "text3": "<p>None</p>",
             "color3": "#000000",
             "border_color": "#d9dde0",
             "header": false
@@ -166,15 +166,15 @@
           "type": "description",
           "settings": {
             "color": "#000000",
-            "text": "<p><strong>TLDR<\/strong>: TrueClean prevents toilet stains automatically with every flush — so you stop scrubbing and start living. <strong>Here are 10 reasons hard water homeowners are making the switch.<\/strong><\/p>"
+            "text": "<p><strong>TLDR</strong>: TrueClean prevents toilet stains automatically with every flush — so you stop scrubbing and start living. <strong>Here are 10 reasons hard water homeowners are making the switch.</strong></p>"
           }
         },
         "list_XffmV4": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346.png",
+            "image": "shopify://shop_images/Rectangle_240648346.png",
             "heading": "1. It Prevents Stains Before They Form (So You Finally Stop Scrubbing)",
-            "text": "<p>Here's the problem with everything you've tried: bleach, pumice stones, expensive cleaners — they all attack stains after they form. You scrub. It comes back in 3 days. You scrub again.<br\/><br\/>TrueClean releases a cleaning solution with every single flush — before new minerals stick to your bowl. <br\/><br\/><strong>No bond. No stain. No scrubbing.<\/strong><\/p>",
+            "text": "<p>Here's the problem with everything you've tried: bleach, pumice stones, expensive cleaners — they all attack stains after they form. You scrub. It comes back in 3 days. You scrub again.<br/><br/>TrueClean releases a cleaning solution with every single flush — before new minerals stick to your bowl. <br/><br/><strong>No bond. No stain. No scrubbing.</strong></p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -190,9 +190,9 @@
         "list_dg6Fdw": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_1.png",
+            "image": "shopify://shop_images/Rectangle_240648346_1.png",
             "heading": "2. It Actually Works on Hard Water (Unlike Everything Else)",
-            "text": "<p>If you live in CA, AZ, TX, DC, or FL — you know what I’m talking about.<br\/><br\/>Those stubborn brown rings. The rust-colored streaks. The crusty mineral buildup that mock you and your scrub brush.<br\/><br\/>TrueClean's chlorine-based formula was engineered to break down and disperse hard water minerals so those ugly brown rings never form to begin with.<\/p>",
+            "text": "<p>If you live in CA, AZ, TX, DC, or FL — you know what I’m talking about.<br/><br/>Those stubborn brown rings. The rust-colored streaks. The crusty mineral buildup that mock you and your scrub brush.<br/><br/>TrueClean's chlorine-based formula was engineered to break down and disperse hard water minerals so those ugly brown rings never form to begin with.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -208,9 +208,9 @@
         "list_zTaACM": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_2.png",
+            "image": "shopify://shop_images/Rectangle_240648346_2.png",
             "heading": "3. It Works Automatically With Every Flush",
-            "text": "<p>Clip it to your overflow tube. Walk away. Done in 60 seconds  — no tools, no plumber, no complicated installation.<br\/><br\/>Every flush releases a precise dose of cleaning solution directly into your bowl. You don't have to remember anything. You don't have to do anything.<br\/><br\/>Your toilet cleans itself while you sleep, while you're at work, while you're living your life.<\/p>",
+            "text": "<p>Clip it to your overflow tube. Walk away. Done in 60 seconds  — no tools, no plumber, no complicated installation.<br/><br/>Every flush releases a precise dose of cleaning solution directly into your bowl. You don't have to remember anything. You don't have to do anything.<br/><br/>Your toilet cleans itself while you sleep, while you're at work, while you're living your life.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -226,9 +226,9 @@
         "list_PxKXFA": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_3.png",
+            "image": "shopify://shop_images/Rectangle_240648346_3.png",
             "heading": "4. Stop Scrubbing Every Week",
-            "text": "<p>How many hours have you spent scrubbing toilets over the years?<br\/><br\/>I was scrubbing my toilet every week. I used to ruin so many toilet brushes because I'd have to scrub and scrub and scrub until the bristles were totally brown.<br\/><br\/>That's over now.<\/p>",
+            "text": "<p>How many hours have you spent scrubbing toilets over the years?<br/><br/>I was scrubbing my toilet every week. I used to ruin so many toilet brushes because I'd have to scrub and scrub and scrub until the bristles were totally brown.<br/><br/>That's over now.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -244,9 +244,9 @@
         "list_chkYbA": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_4.png",
-            "heading": "5. Guest-Ready Bathrooms 24\/7 (Never Feel Embarrassed Again)",
-            "text": "<p>I grew sick of being embarrassed by surprise guests who wanted to use the toilet— it would look like I went months between cleanings. REALLY gross!<br\/><br\/>With TrueClean, my toilet stays spotless on autopilot. No rings. No stains. No panic attack when the doorbell rings.<\/p>",
+            "image": "shopify://shop_images/Rectangle_240648346_4.png",
+            "heading": "5. Guest-Ready Bathrooms 24/7 (Never Feel Embarrassed Again)",
+            "text": "<p>I grew sick of being embarrassed by surprise guests who wanted to use the toilet— it would look like I went months between cleanings. REALLY gross!<br/><br/>With TrueClean, my toilet stays spotless on autopilot. No rings. No stains. No panic attack when the doorbell rings.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -262,9 +262,9 @@
         "list_fRYfx9": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_5.png",
+            "image": "shopify://shop_images/Rectangle_240648346_5.png",
             "heading": "6. Save Up to 37% & Automate Your Whole Home (Limited Time)",
-            "text": "<p>One bathroom or four — TrueClean makes it easy to cover your whole home.<br\/><br\/><strong>1 Toilet: $39 (6-month supply)<br\/>2 Toilets: $69 — Save 30%<br\/>3 Toilets: $99 — Save 37%<\/strong><br\/><br\/>For less than one plumber visit, every toilet in your home stays spotless for six months. Free shipping on all bundles.<\/p>",
+            "text": "<p>One bathroom or four — TrueClean makes it easy to cover your whole home.<br/><br/><strong>1 Toilet: $39 (6-month supply)<br/>2 Toilets: $69 — Save 30%<br/>3 Toilets: $99 — Save 37%</strong><br/><br/>For less than one plumber visit, every toilet in your home stays spotless for six months. Free shipping on all bundles.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -272,18 +272,18 @@
             "review_text3": "",
             "review_text4": "",
             "button_label": "STOP SCRUBBING NOW →",
-            "button_url": "shopify:\/\/pages\/swooshnshine",
-            "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
             "btn_bottom_text_color": "#001c19"
           }
         },
         "list_XcLaRB": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_6.png",
+            "image": "shopify://shop_images/Rectangle_240648346_6.png",
             "heading": "7. Plumber-Approved (Won't Destroy Your Toilet Like Tank Tablets)",
-            "text": "<p>Tank tablets sit in your tank 24\/7, corroding your flapper and seals.<br\/><br\/>TrueClean is different. The cleaning solution flows directly to the bowl — only when you flush. It never touches your tank, your flapper, your seals, or your valves.<br\/><br\/><strong>That's why TrueClean is plumber-approved and safe for septic systems.<\/strong><\/p>",
+            "text": "<p>Tank tablets sit in your tank 24/7, corroding your flapper and seals.<br/><br/>TrueClean is different. The cleaning solution flows directly to the bowl — only when you flush. It never touches your tank, your flapper, your seals, or your valves.<br/><br/><strong>That's why TrueClean is plumber-approved and safe for septic systems.</strong></p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -299,9 +299,9 @@
         "list_BLwK7W": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_7.png",
+            "image": "shopify://shop_images/Rectangle_240648346_7.png",
             "heading": "8. Safe for Your Home (No Harsh Chemicals or Toxic Fumes)",
-            "text": "<p>TrueClean works without toxic off-gassing. <br\/>It's:<br\/><br\/>✅ Septic-safe certified<br\/>✅ Safe around kids and pets<br\/>✅ No bleach smell lingering for hours<br\/><br\/>Enjoy a clean toilet without compromising your home or your family's health.<\/p>",
+            "text": "<p>TrueClean works without toxic off-gassing. <br/>It's:<br/><br/>✅ Septic-safe certified<br/>✅ Safe around kids and pets<br/>✅ No bleach smell lingering for hours<br/><br/>Enjoy a clean toilet without compromising your home or your family's health.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -309,18 +309,18 @@
             "review_text3": "",
             "review_text4": "",
             "button_label": "STOP SCRUBBING NOW →",
-            "button_url": "shopify:\/\/pages\/swooshnshine",
-            "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
             "btn_bottom_text_color": "#001c19"
           }
         },
         "list_NypkVi": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_8.png",
+            "image": "shopify://shop_images/Rectangle_240648346_8.png",
             "heading": "9. Your 90-Day Scrub Free or Your Money Back Guarantee",
-            "text": "<p>If you don't see results, you don't pay. Full refund, no questions asked.<br\/><br\/>Use it for 90 days. If your toilet isn't staying cleaner with less effort, send it back. We'll return every penny.<\/p>",
+            "text": "<p>If you don't see results, you don't pay. Full refund, no questions asked.<br/><br/>Use it for 90 days. If your toilet isn't staying cleaner with less effort, send it back. We'll return every penny.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -328,7 +328,7 @@
             "review_text3": "",
             "review_text4": "",
             "button_label": "Try It 100% Risk-Free →",
-            "button_url": "shopify:\/\/pages\/swooshnshine",
+            "button_url": "shopify://pages/swooshnshine",
             "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19"
           }
@@ -336,20 +336,20 @@
         "list_jLmy3H": {
           "type": "list",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_240648346_9.png",
+            "image": "shopify://shop_images/Rectangle_240648346_9.png",
             "heading": "10. Join 50,000+ Homeowners Who've Stopped Scrubbing",
             "text": "",
-            "stars": "shopify:\/\/shop_images\/stars.png",
-            "star_text1": "<p><strong>4.85 out of 5 stars<\/strong><\/p>",
-            "star_text2": "<p>Based on 50,173 verified reviews<\/p>",
-            "review_text1": "<p><em>\"I've tried everything for years now and finally something that works! My bowl would be stained within days of scrubbing. This is no scrub!\" — <\/em><em><strong>Sarah P.<\/strong><\/em><\/p>",
-            "review_text2": "<p><em>\"Haven't cleaned the bowl in two weeks and it's just as white!\" — <\/em><em><strong>David K.<\/strong><\/em><\/p>",
+            "stars": "shopify://shop_images/stars.png",
+            "star_text1": "<p><strong>4.85 out of 5 stars</strong></p>",
+            "star_text2": "<p>Based on 50,173 verified reviews</p>",
+            "review_text1": "<p><em>\"I've tried everything for years now and finally something that works! My bowl would be stained within days of scrubbing. This is no scrub!\" — </em><em><strong>Sarah P.</strong></em></p>",
+            "review_text2": "<p><em>\"Haven't cleaned the bowl in two weeks and it's just as white!\" — </em><em><strong>David K.</strong></em></p>",
             "review_text3": "",
             "review_text4": "",
             "button_label": "STOP SCRUBBING NOW →",
-            "button_url": "shopify:\/\/pages\/swooshnshine",
-            "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
+            "button_url": "shopify://pages/swooshnshine",
+            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
             "btn_bottom_text_color": "#001c19"
           }
         }
@@ -393,14 +393,14 @@
         "feature_3_FfDqwF": {
           "type": "feature_3",
           "settings": {
-            "text": "<p>Stock Alert: <strong>Running Low<\/strong><\/p>",
+            "text": "<p>Stock Alert: <strong>Running Low</strong></p>",
             "highlight": "Running Low"
           }
         },
         "feature_3_MLpWQb": {
           "type": "feature_3",
           "settings": {
-            "text": "<p><strong>Fast FREE<\/strong> Shipping<\/p>",
+            "text": "<p><strong>Fast FREE</strong> Shipping</p>",
             "highlight": ""
           }
         }
@@ -414,16 +414,16 @@
         "label": "NEW YEAR’S SALE",
         "heading": "GET UP TO 37% OFFYOUR ORDER",
         "subheading": "DEAL ENDING IN:",
-        "text": "<p>Our biggest sale of 2026. Get America’s favorite automatic toilet cleaner at our lowest price all year.<\/p>",
+        "text": "<p>Our biggest sale of 2026. Get America’s favorite automatic toilet cleaner at our lowest price all year.</p>",
         "name": "",
         "verified": "",
         "review": "",
         "note_text": "",
-        "image": "shopify:\/\/shop_images\/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
+        "image": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
+        "image_mobile": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
         "button_text": "GET UP TO 37% OFF →",
-        "button_url": "shopify:\/\/pages\/swooshnshine",
-        "sub_text": "<p><em>Field test it with our 90-Day Money Back Guarantee!<\/em><\/p>",
+        "button_url": "shopify://pages/swooshnshine",
+        "sub_text": "<p><em>Field test it with our 90-Day Money Back Guarantee!</em></p>",
         "show_background": true,
         "show_timer": false
       }
