@@ -210,15 +210,56 @@
                       </div>
                     {% endif %}
 
-                    {% for i in (1..4) %}
+                    {% for i in (1..2) %}
                       {% assign description_name = 'review_text' | append: i %}
                       {% assign description = block.settings[description_name] %}
+                      {% assign name_name = 'review_name' | append: i %}
+                      {% assign name = block.settings[name_name] %}
+                      {% assign avatar_name = 'review_avatar' | append: i %}
+                      {% assign avatar = block.settings[avatar_name] %}
                       {% if description != blank %}
-                        <div
-                          class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#000] bg-[#EFF6F6] rounded-[10px] p-4"
-                          style="color: {{ block.settings.color }};"
-                        >
-                          {{ description }}
+                        <div class="flex gap-2 bg-[#EFF6F6] rounded-[10px] p-4" style="color: {{ block.settings.color }};">
+                          {% if avatar != blank %}
+                                  {{
+                                      avatar
+                                      | image_url: width: 48
+                                      | image_tag: class: 'w-full max-w-[48px]', sizes: '48px'
+                                    }}
+                                {%  endif %}
+                                
+                          <div class="flex flex-col gap-2">
+                            <div
+                              class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]"
+                            >
+                              {{ description }}
+                            </div>
+                            <div class="flex items-center justify-between">
+                              {% if name != blank %}
+                                <div
+                                  class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000] bg-[#EFF6F6] rounded-[10px] p-4"
+                                >
+                                  {{ name }}
+                                </div>
+                              {%  endif %}
+
+                              <div class="flex gap-2">
+                                {% if block.settings.review_verifeid_icon != blank %}
+                                  {{
+                                      block.settings.review_verifeid_icon
+                                      | image_url: width: 16
+                                      | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                                    }}
+                                {%  endif %}
+                                {% if block.settings.review_verifeid != blank %}
+                                  <div
+                                    class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#000] bg-[#EFF6F6] rounded-[10px] p-4"
+                                  >
+                                    {{ block.settings.review_verifeid }}
+                                  </div>
+                                {%  endif %}
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       {% endif %}
                     {% endfor %}
