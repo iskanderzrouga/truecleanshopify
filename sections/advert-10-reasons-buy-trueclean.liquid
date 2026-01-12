@@ -161,11 +161,6 @@
 
             {% if block.type == 'list' %}
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
-                {% if block.settings.heading != blank %}
-                  <div class="text-[#000] text-[24px] lg:text-[30px] font-semibold leading-tight md:leading-tight block md:hidden">
-                    {{ block.settings.heading }}
-                  </div>
-                {% endif %}
                 {% if block.settings.image != blank %}
                   <img
                     class="w-full"
@@ -179,7 +174,7 @@
                 <div class="">
                   <div class="flex flex-col gap-[15px] md:gap-[30px] justify-center h-full">
                     {% if block.settings.heading != blank %}
-                      <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight hidden md:block">
+                      <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
