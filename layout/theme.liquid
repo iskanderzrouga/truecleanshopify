@@ -402,10 +402,21 @@ window['__cvg_shopify_info'] = {
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script> document.addEventListener("DOMContentLoaded", function () { 
-      const countEl = document.querySelector('#judgeme_product_reviews > div > div > div.jm-stack.jm-stack--space-600.jm-review-widget__header.jm-review-widget-header > div.jm-cluster.jm-review-widget-header__summary-section > div > div > div > div > p:nth-child(2)'); 
-      console.log('countEl', countEl);
-      if (countEl) { countEl.textContent = "1,234 Reviews"; 
-       } }); </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    const countEl = document.querySelector(
+      '#judgeme_product_reviews > div > div > div.jm-stack.jm-stack--space-600.jm-review-widget__header.jm-review-widget-header > div.jm-cluster.jm-review-widget-header__summary-section > div > div > div > div > p:nth-child(2)'
+    );
+
+    console.log('countEl', countEl);
+
+    if (countEl) {
+      countEl.textContent = "1,234 Reviews";
+    }
+  }, 2000); // 2 seconds
+});
+</script>
+
   </body>
 </html>
