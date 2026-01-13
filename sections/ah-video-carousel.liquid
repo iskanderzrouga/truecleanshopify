@@ -31,6 +31,7 @@
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
+      <div class="flex w-full gap-2">
       {% if section.settings.heading != blank %}
         <h2
           class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
@@ -48,6 +49,7 @@
           {{ section.settings.description }}
         </div>
       {% endif %}
+      </div>
 
       {% assign max_width = section.settings.max_width %}
       {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
@@ -62,36 +64,36 @@
 
       {% if section.blocks.size > 0 %}
         <div class="w-full">
-        <div class="splide mb-16 lg:mb-8 al-carousel__slider">
-          <div class="splide__track pb-2">
-            <ul class="splide__list">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'video' %}
-                <div class="splide__slide">
-                  {% if block.settings.video != blank %}
-                            <video
-                              src="{{ block.settings.video }}"
-                              type="video/mp4"
-                              class="w-full rounded-[20px] aspect-[4/5] object-cover"
-                              loop
-                              muted
-                              playsinline
-                              autoplay
-                              controls
-                              disablepictureinpicture
-                              controlslist="nodownload"
-                              height="auto"
-                              style="width:100%;"
-                            ></video>
-                          {% endif %}
-                </div>
-            {% endcase %}
-          {% endfor %}
-        </ul>
+          <div class="splide mb-16 lg:mb-8 al-carousel__slider">
+            <div class="splide__track pb-2">
+              <ul class="splide__list">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'video' %}
+                      <div class="splide__slide">
+                        {% if block.settings.video != blank %}
+                          <video
+                            src="{{ block.settings.video }}"
+                            type="video/mp4"
+                            class="w-full rounded-[20px] aspect-[4/5] object-cover"
+                            loop
+                            muted
+                            playsinline
+                            autoplay
+                            controls
+                            disablepictureinpicture
+                            controlslist="nodownload"
+                            height="auto"
+                            style="width:100%;"
+                          ></video>
+                        {% endif %}
+                      </div>
+                  {% endcase %}
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       {% endif %}
 
       {% if section.settings.button_label != blank %}
