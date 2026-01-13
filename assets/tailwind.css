@@ -2159,6 +2159,11 @@ html {
       margin-inline: auto;
     }
   }
+  .max-md\:mb-8 {
+    @media (width < 48rem) {
+      margin-bottom: calc(var(--spacing) * 8);
+    }
+  }
   .max-md\:\!grid {
     @media (width < 48rem) {
       display: grid !important;
