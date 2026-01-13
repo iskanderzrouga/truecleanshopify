@@ -19,7 +19,7 @@
 <div
   id="{{ section.settings.section_id }}"
   class="section-{{ section.id }}-padding px-5 relative"
-  style="background-color: {{ section.settings.bgcolor }};"
+  style="background-color: {{ section.settings.bgcolor }}; background: linear-gradient(0deg, #01B7A2, #01B7A2), radial-gradient(21.84% 78.69% at -4.14% -27.12%, #E8FF33 0%, #00B7A2 100%);"
 >
   {% if section.settings.bg != blank %}
     {{
@@ -64,7 +64,7 @@
         <div class="w-full gap-[15px] md:gap-5">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'star_review' %}
+              {% when 'video' %}
                 <div class="flex items-center gap-3 {% if block.settings.center %} justify-center {% endif %}">
                   {% if block.settings.image != blank %}
                     {{
@@ -79,65 +79,6 @@
                       style="color: {{ block.settings.description_color }};"
                     >
                       {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-                </div>
-
-              {% when 'row' %}
-                <div class="flex flex-col items-center justify-center gap-[15px] md:gap-5 w-full">
-                  {% if block.settings.label != blank %}
-                    <div
-                      class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.label_color }};"
-                    >
-                      {{ block.settings.label }}
-                    </div>
-                  {% endif %}
-                  {% if block.settings.heading != blank %}
-                    <div
-                      class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.heading_color }};"
-                    >
-                      {{ block.settings.heading }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[17px] md:text-[20px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 500
-                      | image_tag:
-                        class: 'w-full rounded-[20px] border-[2px] border-solid border-[#7A5EC5]',
-                        sizes: '500px'
-                    }}
-                  {% endif %}
-
-                  {% if block.settings.button_label != blank %}
-                    <div class="w-full md:w-fit mx-auto">
-                      <a
-                        href="{{ block.settings.button_url }}"
-                        class="new-button--primary"
-                      >
-                        {{ block.settings.button_label }}
-                        {%- render 'icon-arrow-right' -%}
-                      </a>
-                      {% if block.settings.btn_bottom_text != blank %}
-                        <div
-                          class="text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.btn_bottom_text_color }};"
-                        >
-                          {{ block.settings.btn_bottom_text }}
-                        </div>
-                      {% endif %}
                     </div>
                   {% endif %}
                 </div>
