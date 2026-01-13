@@ -37,6 +37,13 @@
           style="color: {{ section.settings.heading_color }};"
         >
           {{ section.settings.heading }}
+          {% if section.settings.tag != blank %}
+            <h2
+            class="text-[20px] md:text-[28px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black px-6 py-[10px] w-fit rounded-[100px]"
+            >
+            {{ section.settings.tag }}
+            </h2>
+        {% endif %}
         </h2>
       {% endif %}
 
