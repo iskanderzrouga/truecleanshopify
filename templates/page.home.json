@@ -19,6 +19,52 @@
     },
     "ah_sold_dCFw8r": {
       "type": "ah-sold",
+      "blocks": {
+        "image_t9iYqm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648368.png"
+          }
+        },
+        "image_cTCnPf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648371.png"
+          }
+        },
+        "image_HXkNAE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648372.png"
+          }
+        },
+        "image_XUFrqd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648369.png"
+          }
+        },
+        "image_mTTPcb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648372_1.png"
+          }
+        },
+        "image_c3DXnD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_240648373.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_t9iYqm",
+        "image_cTCnPf",
+        "image_HXkNAE",
+        "image_XUFrqd",
+        "image_mTTPcb",
+        "image_c3DXnD"
+      ],
       "name": "AH Sold",
       "settings": {
         "section_id": "",
