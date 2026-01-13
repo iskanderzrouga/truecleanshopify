@@ -408,11 +408,18 @@ window['__cvg_shopify_info'] = {
           const countEl = document.querySelector(
             '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(2)'
           );
+          const rateEl = document.querySelector(
+            '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(2)'
+          );
           console.log('countEl', countEl);
+          console.log('rateEl', rateEl);
           if (countEl) {
             countEl.textContent = "50,173 Reviews";
           }
-        }, 1000);
+          if (countEl) {
+            countEl.textContent = "4.85";
+          }
+        }, 1500);
       });
       </script>
   </body>
