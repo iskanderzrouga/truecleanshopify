@@ -25,10 +25,116 @@
         "heading": "Questions? We're Here to Help",
         "heading_m_center": true,
         "heading_d_center": true,
-        "heading_color": "#001C19",
+        "heading_color": "#001c19",
         "description": "<p>Chat with us or email <br/><a href=\"mailto:support@truecleanhome.com\" title=\"mailto:support@truecleanhome.com\">support@truecleanhome.com</a> — replies within 24h.<br/>Our home care experts are ready to help you find the perfect solution for your bathroom.</p>",
         "description_m_center": true,
         "description_d_center": true,
+        "description_color": "#001c19",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001c19",
+        "bgcolor": "#ffffff",
+        "max_width": 660,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
+    "ah_achieve_RPWTXM": {
+      "type": "ah-achieve",
+      "blocks": {
+        "row_RfnyrW": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#eff6f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "4.85/5",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>Rated Excellent</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/image_65.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_tDbNer": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#eff6f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "1M+",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>Cartridges Sold</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/image_66.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_BPRzGL": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#eff6f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "50K+",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>Happy Homeowners</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/image_64.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        }
+      },
+      "block_order": [
+        "row_RfnyrW",
+        "row_tDbNer",
+        "row_BPRzGL"
+      ],
+      "name": "AH Achieve",
+      "settings": {
+        "section_id": "",
+        "heading": "",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001C19",
+        "description": "",
+        "description_m_center": true,
+        "description_d_center": false,
         "description_color": "#001C19",
         "border_radius": 0,
         "image_right": false,
@@ -37,7 +143,7 @@
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001C19",
         "bgcolor": "#ffffff",
-        "max_width": 660,
+        "max_width": 1280,
         "padding_top": 72,
         "padding_bottom": 72,
         "padding_top_m": 36,
@@ -47,6 +153,7 @@
   },
   "order": [
     "main",
-    "ah_contact_yfLWLz"
+    "ah_contact_yfLWLz",
+    "ah_achieve_RPWTXM"
   ]
 }
