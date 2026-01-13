@@ -3315,14 +3315,31 @@ html {
       padding-inline: calc(var(--spacing) * 6);
     }
   }
+  .\[\&\>span\]\:py-1 {
+    &>span {
+      padding-block: calc(var(--spacing) * 1);
+    }
+  }
   .\[\&\>span\]\:py-2 {
     &>span {
       padding-block: calc(var(--spacing) * 2);
     }
   }
+  .\[\&\>span\]\:text-\[18px\] {
+    &>span {
+      font-size: 18px;
+    }
+  }
   .\[\&\>span\]\:text-\[20px\] {
     &>span {
       font-size: 20px;
+    }
+  }
+  .\[\&\>span\]\:md\:text-\[24px\] {
+    &>span {
+      @media (width >= 48rem) {
+        font-size: 24px;
+      }
     }
   }
   .\[\&\>span\]\:md\:text-\[28px\] {
