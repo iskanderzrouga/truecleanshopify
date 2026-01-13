@@ -110,6 +110,7 @@
         "description_m_center": true,
         "description_d_center": false,
         "description_color": "#001C19",
+        "image": "shopify://shop_images/toilet.png",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
