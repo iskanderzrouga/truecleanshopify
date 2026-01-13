@@ -1102,6 +1102,9 @@ html {
   .gap-x-2 {
     column-gap: calc(var(--spacing) * 2);
   }
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
   .gap-x-\[10px\] {
     column-gap: 10px;
   }
@@ -1110,6 +1113,9 @@ html {
   }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-8 {
+    row-gap: calc(var(--spacing) * 8);
   }
   .truncate {
     overflow: hidden;
@@ -2669,6 +2675,11 @@ html {
   .md\:gap-\[60px\] {
     @media (width >= 48rem) {
       gap: 60px;
+    }
+  }
+  .md\:gap-x-10 {
+    @media (width >= 48rem) {
+      column-gap: calc(var(--spacing) * 10);
     }
   }
   .md\:gap-y-10 {
