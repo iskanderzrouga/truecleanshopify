@@ -66,14 +66,13 @@
             {% case block.type %}
               {% when 'row' %}
                 <div
-                  class="flex items-center gap-2 md:gap-3 w-full p-5 md:p-6 rounded-[20px]"
-                  style="background-color: {{ block.settings.bgcolor }};"
+                  class="flex items-center gap-2 md:gap-3 w-full"
                 >
                   {% if block.settings.image != blank %}
                     {{
                       block.settings.image
-                      | image_url: width: 76
-                      | image_tag: class: 'w-full max-w-[64px] md:max-w-[76px]', sizes: '76px'
+                      | image_url: width: 32
+                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[32px]', sizes: '32px'
                     }}
                   {% endif %}
 
