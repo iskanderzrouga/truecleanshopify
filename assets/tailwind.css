@@ -2179,6 +2179,11 @@ html {
       max-width: 100px !important;
     }
   }
+  .max-md\:max-w-\[360px\] {
+    @media (width < 48rem) {
+      max-width: 360px;
+    }
+  }
   .max-md\:items-center {
     @media (width < 48rem) {
       align-items: center;
