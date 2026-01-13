@@ -30,7 +30,8 @@
   {% endif %}
 
   <div class="mx-auto w-full grid md:grid-cols-2 relative" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-3">
         {% if section.settings.label != blank %}
             <span
               class="text-[20px] md:text-[28px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black px-6 py-[10px] w-fit rounded-[100px]"
@@ -55,6 +56,7 @@
           {{ section.settings.description }}
         </div>
       {% endif %}
+      </div>
 
       <div class="grid grid-cols-2 gap-2">
         {% if section.settings.text1 != blank %}
@@ -190,7 +192,7 @@
 
       {% if section.settings.btn_bottom_text != blank %}
             <div
-              class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] mt-7 text-center md:text-left"
+              class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] text-center md:text-left"
               style="color: {{ section.settings.btn_bottom_text_color }};"
             >
               {{ section.settings.btn_bottom_text }}
