@@ -17,6 +17,113 @@
         "padding_bottom": 28
       }
     },
+    "ah_benefits_x9JdRH": {
+      "type": "ah-benefits",
+      "blocks": {
+        "row_A9M3mT": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Eliminates Scrubbing",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001C19",
+            "description": "<p>Prevents rings, slime, and stains before they form—so you never have to scrub again.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#001C19",
+            "image": "shopify://shop_images/material-symbols_check-circle_57a34af2-e0ed-423f-80a6-1712901ca95f.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_hMF77g": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Protects Your Plumbing",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001C19",
+            "description": "<p>Unlike tank tablets, TrueClean flows directly to the bowl. Flappers, seals, and valves stay safe.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#001C19",
+            "image": "shopify://shop_images/material-symbols_check-circle_57a34af2-e0ed-423f-80a6-1712901ca95f.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_M8bkLn": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Guest-Ready 24/7",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001C19",
+            "description": "<p>Every flush cleans automatically. Your bathroom is always ready for unexpected visitors.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#001C19",
+            "image": "shopify://shop_images/material-symbols_check-circle_57a34af2-e0ed-423f-80a6-1712901ca95f.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        }
+      },
+      "block_order": [
+        "row_A9M3mT",
+        "row_hMF77g",
+        "row_M8bkLn"
+      ],
+      "name": "AH Benefits",
+      "settings": {
+        "section_id": "",
+        "heading": "3 \"Set &amp; Forget\" Benefits TrueClean Brings to Your Home",
+        "highlight": "\"Set & Forget\"",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001C19",
+        "description": "",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#001C19",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001C19",
+        "bgcolor": "#fcffec",
+        "max_width": 1200,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "ah_approved_JcxjXd": {
       "type": "ah-approved",
       "blocks": {
@@ -27,7 +134,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "Risk-Free Trial",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -41,7 +148,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "row_FCkdUC": {
@@ -51,7 +158,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "Plumber-Approved",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -65,7 +172,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "row_tGiXtH": {
@@ -75,7 +182,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "Fast Shipping",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -89,7 +196,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         }
       },
@@ -104,17 +211,17 @@
         "heading": "",
         "heading_m_center": true,
         "heading_d_center": true,
-        "heading_color": "#001C19",
+        "heading_color": "#001c19",
         "description": "",
         "description_m_center": true,
         "description_d_center": false,
-        "description_color": "#001C19",
+        "description_color": "#001c19",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
         "button_url": "",
         "btn_bottom_text": "",
-        "btn_bottom_text_color": "#001C19",
+        "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 1200,
         "padding_top": 72,
@@ -794,6 +901,7 @@
   },
   "order": [
     "main",
+    "ah_benefits_x9JdRH",
     "ah_approved_JcxjXd",
     "ah_sold_dCFw8r",
     "ah_reviews_7XfcQm",
