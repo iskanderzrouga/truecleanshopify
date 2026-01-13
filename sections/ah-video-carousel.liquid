@@ -61,30 +61,37 @@
       {% endif %}
 
       {% if section.blocks.size > 0 %}
-        <div class="w-full gap-[15px] md:gap-5">
+        <div class="w-full">
+        <div class="splide mb-16 lg:mb-8 al-carousel__slider">
+          <div class="splide__track pb-2">
+            <ul class="splide__list">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'video' %}
-                <div class="flex items-center gap-3 {% if block.settings.center %} justify-center {% endif %}">
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 96
-                      | image_tag: class: 'w-full max-w-[80px] md:max-w-[96px]', sizes: '96px', preload: true
-                    }}
-                  {% endif %}
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="text-[12px] md:text-[16px] font-medium !leading-tight text-[#001C19]"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
+                <div class="splide__slide">
+                  {% if block.settings.video != blank %}
+                            <video
+                              src="{{ block.settings.video }}"
+                              type="video/mp4"
+                              class="w-full rounded-[20px] aspect-[4/5] object-cover"
+                              loop
+                              muted
+                              playsinline
+                              autoplay
+                              controls
+                              disablepictureinpicture
+                              controlslist="nodownload"
+                              height="auto"
+                              style="width:100%;"
+                            ></video>
+                          {% endif %}
                 </div>
             {% endcase %}
           {% endfor %}
+        </ul>
+          </div>
         </div>
+      </div>
       {% endif %}
 
       {% if section.settings.button_label != blank %}
@@ -109,6 +116,71 @@
     </div>
   </div>
 </div>
+
+<style>
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__pagination__page {
+    height: 10px;
+    background: transparent;
+    width: 10px;
+    border: 1px solid {{section.settings.color_tertiary}};
+  }
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__pagination__page.is-active {
+    background: {{section.settings.color_tertiary}};
+    transform: unset;
+    width: 40px;
+    border-radius: 20px;
+  }
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__pagination {
+    gap: 5px;
+    bottom: -40px;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__arrow {
+    width: 48px;
+    height: 48px;
+    border: 2px solid {{section.settings.color_tertiary}};
+    background-color: transparent;
+    opacity: 1;
+    top: auto;
+    bottom: -80px;
+  }
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: {{section.settings.color_tertiary}};
+  }
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__arrow--prev {
+    right: 80px;
+    left: auto;
+  }
+  .section-{{ section.id }}-padding .al-carousel__slider .splide__arrow--next {
+    right: 0px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.section-{{ section.id }}-padding .al-carousel__slider', {
+      perPage: {{section.settings.count_desktop}},
+      perMove: 1,
+      arrows: true,
+      rewind: true,
+      gap: '15px',
+      trimSpace: false,
+      breakpoints: {
+        768: {
+          perPage: {{section.settings.count_mobile}},
+          arrows: true,
+          gap: '20px',
+          padding: { right: '90px' },
+        },
+      },
+    });
+    splide.mount();
+  });
+</script>
 
 {% schema %}
 {
