@@ -143,9 +143,111 @@
       {% endif %}
     </div>
 
-    <div>some</div>
+    <div>
+        <div class="block lg:hidden overflow-hidden">
+            <div class="home-banner-img-animation-mobile flex">
+              {% for i in (1..2) %}
+                {% for block in section.blocks %}
+                  {% if block.type == 'image' %}
+                    <div class="w-[230px] max-w-[230px] min-w-[230px] pr-[10px]">
+                      {{
+                        block.settings.image
+                        | image_url: width: 220
+                        | image_tag:
+                          class: 'w-[220px] max-w-[220px] min-w-[220px] object-contain',
+                          sizes: '320px',
+                          preload: true
+                      }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="home-banner-img-animation relative grid grid-cols-2 gap-5 max-h-[600px]">
+            <div class="home-banner-img-animation-secondary flex flex-col">
+              {% for i in (1..2) %}
+                {% for block in section.blocks reversed %}
+                  {% if block.type == 'image' %}
+                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                      {{
+                        block.settings.image
+                        | image_url: width: 220
+                        | image_tag:
+                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
+                          sizes: '320px',
+                          preload: true
+                      }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+
+            <div class="home-banner-img-animation-primary flex flex-col">
+              {% for i in (1..2) %}
+                {% for block in section.blocks %}
+                  {% if block.type == 'image' %}
+                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                      {{
+                        block.settings.image
+                        | image_url: width: 220
+                        | image_tag:
+                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
+                          sizes: '320px',
+                          preload: true
+                      }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+    </div>
   </div>
 </div>
+
+<style>
+  .home-banner-img-animation-mobile {
+    animation: homeBannerImageHorizontalAnimation 30s linear infinite;
+    width: 2760px;
+  }
+  @keyframes homeBannerImageHorizontalAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1380px);
+    }
+  }
+
+  .home-banner-img-animation-primary {
+    animation: homeBannerImageVerticalAnimationPrimary 30s linear infinite;
+    height: 4080px;
+  }
+  @keyframes homeBannerImageVerticalAnimationPrimary {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-2040px);
+    }
+  }
+
+  .home-banner-img-animation-secondary {
+    animation: homeBannerImageVerticalAnimationSecondary 30s linear infinite;
+    height: 4080px;
+  }
+  @keyframes homeBannerImageVerticalAnimationSecondary {
+    0% {
+      transform: translateY(-2040px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
 
 {% schema %}
 {
