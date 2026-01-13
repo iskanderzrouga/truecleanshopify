@@ -17,6 +17,112 @@
         "padding_bottom": 28
       }
     },
+    "ah_approved_JcxjXd": {
+      "type": "ah-approved",
+      "blocks": {
+        "row_9bKVz3": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Risk-Free Trial",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>Covered by a 90-day money-back guarantee.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/Group_1321315103.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_FCkdUC": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Plumber-Approved",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>Endorsed by licensed plumbers nationwide.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/Group_1321315103_1.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        },
+        "row_tGiXtH": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#F4F4F6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001C19",
+            "heading": "Fast Shipping",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#000000",
+            "description": "<p>on all orders. Ships same day.</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "image": "shopify://shop_images/Group_1321315103_2.png",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001C19"
+          }
+        }
+      },
+      "block_order": [
+        "row_9bKVz3",
+        "row_FCkdUC",
+        "row_tGiXtH"
+      ],
+      "name": "AH Approved",
+      "settings": {
+        "section_id": "",
+        "heading": "",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001C19",
+        "description": "",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#001C19",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001C19",
+        "bgcolor": "#ffffff",
+        "max_width": 1200,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "ah_sold_dCFw8r": {
       "type": "ah-sold",
       "blocks": {
@@ -688,6 +794,7 @@
   },
   "order": [
     "main",
+    "ah_approved_JcxjXd",
     "ah_sold_dCFw8r",
     "ah_reviews_7XfcQm",
     "ah_reasons_ep3zeK",
