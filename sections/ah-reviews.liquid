@@ -169,6 +169,72 @@
   </div>
 </div>
 
+<style>
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__pagination__page {
+    height: 10px;
+    background: transparent;
+    width: 10px;
+    border: 1px solid {{section.settings.color_tertiary}};
+  }
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__pagination__page.is-active {
+    background: {{section.settings.color_tertiary}};
+    transform: unset;
+    width: 40px;
+    border-radius: 20px;
+  }
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__pagination {
+    gap: 5px;
+    bottom: -40px;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__arrow {
+    width: 48px;
+    height: 48px;
+    border: 2px solid {{section.settings.color_tertiary}};
+    background-color: transparent;
+    opacity: 1;
+    top: auto;
+    bottom: -80px;
+  }
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: {{section.settings.color_tertiary}};
+  }
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__arrow--prev {
+    right: 80px;
+    left: auto;
+  }
+  .section-{{ section.id }}-padding .ah-reviews__slider .splide__arrow--next {
+    right: 0px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.section-{{ section.id }}-padding .ah-reviews__slider', {
+      perPage: 4,
+      perMove: 1,
+      arrows: false,
+      rewind: true,
+      gap: '15px',
+      trimSpace: false,
+      pagination: false,
+      breakpoints: {
+        768: {
+          perPage: 1,
+          arrows: false,
+          gap: '10px',
+          padding: { right: '60px' },
+        },
+      },
+    });
+    splide.mount();
+  });
+</script>
+
 {% schema %}
 {
   "name": "AH Reviews",
