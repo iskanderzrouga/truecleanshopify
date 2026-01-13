@@ -58,7 +58,7 @@
 
       <div class="grid grid-cols-2 gap-2">
         {% if section.settings.text1 != blank %}
-        <div class="flex items-center justify-center">
+        <div class="flex items-center max-md:justify-center">
             <div
           class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
           style="color: {{ section.settings.text_color }};"
@@ -68,7 +68,7 @@
         </div>
       {% endif %}
       {% if section.settings.text2 != blank %}
-        <div class="flex items-center justify-center">
+        <div class="flex items-center max-md:justify-center">
             <div
           class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
           style="color: {{ section.settings.text_color }};"
