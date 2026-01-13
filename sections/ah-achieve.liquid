@@ -65,7 +65,7 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'star_review' %}
-                <div class="flex items-center gap-3 {% if block.settings.center %} justify-center {% endif %}">
+                <div class="flex items-center gap-3 {% if block.settings.center %} justify-center {% endif %}" style="background-color: {{ block.settings.bgcolor }};">
                   {% if block.settings.image != blank %}
                     {{
                       block.settings.image
