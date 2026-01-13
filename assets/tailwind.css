@@ -2606,12 +2606,6 @@ html {
       border-bottom-right-radius: 20px;
     }
   }
-  .md\:border-\[4px\] {
-    @media (width >= 48rem) {
-      border-style: var(--tw-border-style);
-      border-width: 4px;
-    }
-  }
   .md\:border-t-0 {
     @media (width >= 48rem) {
       border-top-style: var(--tw-border-style);
