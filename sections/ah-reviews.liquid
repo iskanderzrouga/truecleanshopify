@@ -61,7 +61,10 @@
       {% endif %}
 
       {% if section.blocks.size > 0 %}
-        <div class="w-full gap-[15px] md:gap-5">
+        <div class="w-full">
+          <div class="splide ah-reviews__slider">
+            <div class="splide__track pb-2">
+              <ul class="splide__list">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
@@ -136,6 +139,9 @@
                 </div>
             {% endcase %}
           {% endfor %}
+        </ul>
+            </div>
+          </div>
         </div>
       {% endif %}
 
