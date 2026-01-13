@@ -3284,6 +3284,11 @@ html {
       font-weight: var(--font-weight-medium);
     }
   }
+  .\[\&\>span\]\:mb-2 {
+    &>span {
+      margin-bottom: calc(var(--spacing) * 2);
+    }
+  }
   .\[\&\>span\]\:rounded-\[100px\] {
     &>span {
       border-radius: 100px;
@@ -3298,6 +3303,11 @@ html {
   .\[\&\>span\]\:border-black {
     &>span {
       border-color: var(--color-black);
+    }
+  }
+  .\[\&\>span\]\:bg-\[\#E8FF33\] {
+    &>span {
+      background-color: #E8FF33;
     }
   }
   .\[\&\>span\]\:px-6 {
