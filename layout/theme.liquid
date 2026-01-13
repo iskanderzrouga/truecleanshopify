@@ -401,5 +401,7 @@ window['__cvg_shopify_info'] = {
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script> document.addEventListener("DOMContentLoaded", function () { const countEl = document.querySelector('.jdgm-rev-widg__summary-text'); if (countEl) { countEl.textContent = "1,234 Reviews"; // your custom text } }); </script>
   </body>
 </html>
