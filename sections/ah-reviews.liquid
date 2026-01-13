@@ -33,7 +33,7 @@
     <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
       {% if section.settings.heading != blank %}
         <h2
-          class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+          class="text-[24px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
           style="color: {{ section.settings.heading_color }};"
         >
           {{ section.settings.heading }}
@@ -171,7 +171,7 @@
 
 {% schema %}
 {
-  "name": "SectionTemplate",
+  "name": "AH Reviews",
   "settings": [
     {
       "type": "text",
@@ -330,34 +330,6 @@
   ],
   "blocks": [
     {
-      "type": "star_review",
-      "name": "Star Review",
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description"
-        },
-        {
-          "type": "checkbox",
-          "id": "center",
-          "label": "Center",
-          "default": false
-        },
-        {
-          "type": "color",
-          "id": "description_color",
-          "label": "Description Color",
-          "default": "#001C19"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
-    },
-    {
       "type": "row",
       "name": "Row",
       "settings": [
@@ -473,7 +445,7 @@
   ],
   "presets": [
     {
-      "name": "SectionTemplate"
+      "name": "AH Reviews"
     }
   ]
 }
