@@ -2340,6 +2340,11 @@ html {
       max-width: 56px;
     }
   }
+  .md\:max-w-\[76px\] {
+    @media (width >= 48rem) {
+      max-width: 76px;
+    }
+  }
   .md\:max-w-\[80px\] {
     @media (width >= 48rem) {
       max-width: 80px;

@@ -64,82 +64,38 @@
         <div class="w-full grid md:grid-cols-3 gap-4 md:gap-5">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'star_review' %}
-                <div class="flex items-center gap-4 {% if block.settings.center %} justify-center {% endif %} px-5 md:px-6 py-6 rounded-[20px]" style="background-color: {{ block.settings.bgcolor }};">
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 96
-                      | image_tag: class: 'w-full max-w-[80px] md:max-w-[96px]', sizes: '96px', preload: true
-                    }}
-                  {% endif %}
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="text-[12px] md:text-[16px] font-medium !leading-tight text-[#001C19]"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-                </div>
-
               {% when 'row' %}
-                <div class="flex flex-col items-center justify-center gap-[15px] md:gap-5 w-full">
-                  {% if block.settings.label != blank %}
-                    <div
-                      class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.label_color }};"
-                    >
-                      {{ block.settings.label }}
-                    </div>
-                  {% endif %}
-                  {% if block.settings.heading != blank %}
-                    <div
-                      class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.heading_color }};"
-                    >
-                      {{ block.settings.heading }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[17px] md:text-[20px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-
+                <div
+                  class="flex items-center gap-4 px-5 md:px-6 py-6 rounded-[20px]"
+                  style="background-color: {{ block.settings.bgcolor }};"
+                >
                   {% if block.settings.image != blank %}
                     {{
                       block.settings.image
-                      | image_url: width: 500
-                      | image_tag:
-                        class: 'w-full rounded-[20px] border-[2px] border-solid border-[#7A5EC5]',
-                        sizes: '500px'
+                      | image_url: width: 76
+                      | image_tag: class: 'w-full max-w-[56px] md:max-w-[76px]', sizes: '76px'
                     }}
                   {% endif %}
 
-                  {% if block.settings.button_label != blank %}
-                    <div class="w-full md:w-fit mx-auto">
-                      <a
-                        href="{{ block.settings.button_url }}"
-                        class="new-button--primary"
+                  <div>
+                    {% if block.settings.heading != blank %}
+                      <div
+                        class="text-[24px] md:text-[32px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                        style="color: {{ block.settings.heading_color }};"
                       >
-                        {{ block.settings.button_label }}
-                        {%- render 'icon-arrow-right' -%}
-                      </a>
-                      {% if block.settings.btn_bottom_text != blank %}
-                        <div
-                          class="text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.btn_bottom_text_color }};"
-                        >
-                          {{ block.settings.btn_bottom_text }}
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.description != blank %}
+                      <div
+                        class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                        style="color: {{ block.settings.description_color }};"
+                      >
+                        {{ block.settings.description }}
+                      </div>
+                    {% endif %}
+                  </div>
                 </div>
             {% endcase %}
           {% endfor %}
