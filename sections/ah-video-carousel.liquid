@@ -165,7 +165,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('.section-{{ section.id }}-padding .al-carousel__slider', {
-      perPage: {{section.settings.count_desktop}},
+      perPage: 4,
       perMove: 1,
       arrows: true,
       rewind: true,
@@ -173,7 +173,7 @@
       trimSpace: false,
       breakpoints: {
         768: {
-          perPage: {{section.settings.count_mobile}},
+          perPage: 1,
           arrows: true,
           gap: '20px',
           padding: { right: '90px' },
