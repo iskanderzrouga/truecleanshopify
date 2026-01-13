@@ -409,15 +409,13 @@ window['__cvg_shopify_info'] = {
             '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(2)'
           );
           const rateEl = document.querySelector(
-            '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(2)'
+            '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(1)'
           );
-          console.log('countEl', countEl);
-          console.log('rateEl', rateEl);
           if (countEl) {
             countEl.textContent = "50,173 Reviews";
           }
-          if (countEl) {
-            countEl.textContent = "4.85";
+          if (rateEl) {
+            rateEl.textContent = "4.85";
           }
         }, 1500);
       });
