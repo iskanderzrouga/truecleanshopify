@@ -32,23 +32,23 @@
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
       <div class="flex flex-col w-full gap-2">
-      {% if section.settings.heading != blank %}
-        <h2
-          class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.heading_color }};"
-        >
-          {{ section.settings.heading }}
-        </h2>
-      {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.heading_color }};"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
 
-      {% if section.settings.description != blank %}
-        <div
-          class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.description_color }};"
-        >
-          {{ section.settings.description }}
-        </div>
-      {% endif %}
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.description_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
       </div>
 
       {% assign max_width = section.settings.max_width %}
@@ -72,28 +72,27 @@
                     {% when 'video' %}
                       <div class="splide__slide">
                         {% if block.settings.video != blank %}
-<div class="relative w-full overflow-hidden rounded-[20px] aspect-[4/5] nl-video-wrapper">
-  
-  <video
-    src="{{ block.settings.video }}"
-    class="w-full h-full object-cover cursor-pointer nl-video"
-    playsinline
-    muted
-  ></video>
+                          <div class="relative w-full overflow-hidden rounded-[20px] aspect-[4/5] nl-video-wrapper">
+                            <video
+                              src="{{ block.settings.video }}"
+                              class="w-full h-full object-cover cursor-pointer nl-video"
+                              playsinline
+                              muted
+                            ></video>
 
-  <div class="absolute inset-0 flex items-center justify-center nl-video-play-btn">
-    <div class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center">
-      <div class="w-0 h-0 
-            border-l-[22px] border-l-white 
-            border-y-[14px] border-y-transparent !block">
-</div>
-
-    </div>
-  </div>
-
-</div>
-{% endif %}
-
+                            <div class="absolute inset-0 flex items-center justify-center nl-video-play-btn">
+                              <div class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center">
+                                <div
+                                  class="
+                                    w-0 h-0
+                                    border-l-[22px] border-l-white
+                                    border-y-[14px] border-y-transparent !block
+                                  "
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
                       </div>
                   {% endcase %}
                 {% endfor %}
@@ -174,14 +173,15 @@
     var splide = new Splide('.section-{{ section.id }}-padding .al-carousel__slider', {
       perPage: 4,
       perMove: 1,
-      arrows: true,
+      arrows: false,
       rewind: true,
       gap: '15px',
       trimSpace: false,
+      pagination: false,
       breakpoints: {
         768: {
           perPage: 1,
-          arrows: true,
+          arrows: false,
           gap: '20px',
           padding: { right: '90px' },
         },
@@ -192,30 +192,29 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('.nl-video-wrapper').forEach(wrapper => {
-    const video = wrapper.querySelector('.nl-video');
-    const btn = wrapper.querySelector('.nl-video-play-btn');
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.nl-video-wrapper').forEach((wrapper) => {
+      const video = wrapper.querySelector('.nl-video');
+      const btn = wrapper.querySelector('.nl-video-play-btn');
 
-    function togglePlay() {
-      if (video.paused) {
-        video.play();
-        btn.classList.add('hidden');
-      } else {
-        video.pause();
-        btn.classList.remove('hidden');
+      function togglePlay() {
+        if (video.paused) {
+          video.play();
+          btn.classList.add('hidden');
+        } else {
+          video.pause();
+          btn.classList.remove('hidden');
+        }
       }
-    }
 
-    btn.addEventListener('click', togglePlay);
-    video.addEventListener('click', togglePlay);
+      btn.addEventListener('click', togglePlay);
+      video.addEventListener('click', togglePlay);
 
-    video.addEventListener('pause', () => btn.classList.remove('hidden'));
-    video.addEventListener('play', () => btn.classList.add('hidden'));
+      video.addEventListener('pause', () => btn.classList.remove('hidden'));
+      video.addEventListener('play', () => btn.classList.add('hidden'));
+    });
   });
-});
 </script>
-
 
 {% schema %}
 {
