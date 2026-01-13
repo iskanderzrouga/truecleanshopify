@@ -71,25 +71,6 @@
         <div class="w-full gap-5 md:gap-10 grid md:grid-cols-5">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'star_review' %}
-                <div class="flex items-center gap-3 {% if block.settings.center %} justify-center {% endif %}">
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 96
-                      | image_tag: class: 'w-full max-w-[80px] md:max-w-[96px]', sizes: '96px', preload: true
-                    }}
-                  {% endif %}
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="text-[12px] md:text-[16px] font-medium !leading-tight text-[#001C19]"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-                </div>
-
               {% when 'row' %}
                 <div class="flex flex-col items-center justify-center gap-[15px] md:gap-5 w-full">
                   {% if block.settings.label != blank %}
@@ -100,9 +81,10 @@
                       {{ block.settings.label }}
                     </div>
                   {% endif %}
-                  {% if block.settings.heading != blank %}
+                  <div class="flex flex-col gap-1 md:gap-2">
+                    {% if block.settings.heading != blank %}
                     <div
-                      class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                      class="text-[20px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
                       style="color: {{ block.settings.heading_color }};"
                     >
                       {{ block.settings.heading }}
@@ -111,42 +93,13 @@
 
                   {% if block.settings.description != blank %}
                     <div
-                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[17px] md:text-[20px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[18px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                       style="color: {{ block.settings.description_color }};"
                     >
                       {{ block.settings.description }}
                     </div>
                   {% endif %}
-
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 500
-                      | image_tag:
-                        class: 'w-full rounded-[20px] border-[2px] border-solid border-[#7A5EC5]',
-                        sizes: '500px'
-                    }}
-                  {% endif %}
-
-                  {% if block.settings.button_label != blank %}
-                    <div class="w-full md:w-fit mx-auto">
-                      <a
-                        href="{{ block.settings.button_url }}"
-                        class="new-button--primary"
-                      >
-                        {{ block.settings.button_label }}
-                        {%- render 'icon-arrow-right' -%}
-                      </a>
-                      {% if block.settings.btn_bottom_text != blank %}
-                        <div
-                          class="text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.btn_bottom_text_color }};"
-                        >
-                          {{ block.settings.btn_bottom_text }}
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
+                </div>
                 </div>
             {% endcase %}
           {% endfor %}
