@@ -2285,6 +2285,11 @@ html {
       height: 56px !important;
     }
   }
+  .md\:h-10 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 10);
+    }
+  }
   .md\:h-\[48px\] {
     @media (width >= 48rem) {
       height: 48px;
@@ -2320,6 +2325,11 @@ html {
       max-height: 360px;
     }
   }
+  .md\:min-h-10 {
+    @media (width >= 48rem) {
+      min-height: calc(var(--spacing) * 10);
+    }
+  }
   .md\:min-h-\[48px\] {
     @media (width >= 48rem) {
       min-height: 48px;
@@ -2328,6 +2338,11 @@ html {
   .md\:w-6 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:w-10 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 10);
     }
   }
   .md\:w-\[180px\] {
@@ -2458,6 +2473,11 @@ html {
   .md\:max-w-\[1000px\] {
     @media (width >= 48rem) {
       max-width: 1000px;
+    }
+  }
+  .md\:min-w-10 {
+    @media (width >= 48rem) {
+      min-width: calc(var(--spacing) * 10);
     }
   }
   .md\:min-w-\[40\%\] {
