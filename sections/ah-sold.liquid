@@ -29,7 +29,7 @@
     }}
   {% endif %}
 
-  <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
+  <div class="mx-auto w-full grid md:grid-cols-2 relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
       {% if section.settings.heading != blank %}
         <h2
@@ -165,6 +165,10 @@
           {% endif %}
         </div>
       {% endif %}
+    </div>
+
+    <div>
+        some
     </div>
   </div>
 </div>
