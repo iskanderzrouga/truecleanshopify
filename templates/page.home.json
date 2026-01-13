@@ -23,7 +23,7 @@
         "row_9bKVz3": {
           "type": "row",
           "settings": {
-            "bgcolor": "#F4F4F6",
+            "bgcolor": "#ffffff",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -47,7 +47,7 @@
         "row_FCkdUC": {
           "type": "row",
           "settings": {
-            "bgcolor": "#F4F4F6",
+            "bgcolor": "#ffffff",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -71,7 +71,7 @@
         "row_tGiXtH": {
           "type": "row",
           "settings": {
-            "bgcolor": "#F4F4F6",
+            "bgcolor": "#ffffff",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
