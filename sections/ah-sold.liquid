@@ -162,16 +162,17 @@
             {{ section.settings.button_label }}
             {%- render 'icon-arrow-right' -%}
           </a>
-          {% if section.settings.btn_bottom_text != blank %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.btn_bottom_text != blank %}
             <div
-              class="text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+              class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] mt-7 text-center"
               style="color: {{ section.settings.btn_bottom_text_color }};"
             >
               {{ section.settings.btn_bottom_text }}
             </div>
           {% endif %}
-        </div>
-      {% endif %}
     </div>
 
     <div>
