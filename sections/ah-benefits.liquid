@@ -55,13 +55,13 @@
             {% case block.type %}
               {% when 'row' %}
                 <div
-                  class="flex items-center gap-2 md:gap-3 w-full"
+                  class="flex gap-2 md:gap-3 w-full"
                 >
                   {% if block.settings.image != blank %}
                     {{
                       block.settings.image
                       | image_url: width: 32
-                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[32px]', sizes: '32px'
+                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[32px] h-fit', sizes: '32px'
                     }}
                   {% endif %}
 
