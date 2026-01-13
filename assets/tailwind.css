@@ -3081,6 +3081,11 @@ html {
       margin-bottom: calc(var(--spacing) * 8);
     }
   }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;

@@ -29,7 +29,10 @@
     }}
   {% endif %}
 
-  <div class="mx-auto w-full grid md:grid-cols-2 relative gap-8 md:gap-10 lg:gap-[80px]" style="max-width: {{ section.settings.max_width }}px;">
+  <div
+    class="mx-auto w-full grid md:grid-cols-2 relative gap-8 md:gap-10 lg:gap-[80px]"
+    style="max-width: {{ section.settings.max_width }}px;"
+  >
     <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-3">
         {% if section.settings.label != blank %}
@@ -144,66 +147,68 @@
     </div>
 
     <div>
-        <div class="block lg:hidden overflow-hidden">
-            <div class="home-banner-img-animation-mobile flex">
-              {% for i in (1..2) %}
-                {% for block in section.blocks %}
-                  {% if block.type == 'image' %}
-                    <div class="w-[230px] max-w-[230px] min-w-[230px] pr-[10px]">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'w-[220px] max-w-[220px] min-w-[220px] object-contain',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              {% endfor %}
-            </div>
-          </div>
+      <div class="block lg:hidden overflow-hidden">
+        <div class="home-banner-img-animation-mobile flex">
+          {% for i in (1..2) %}
+            {% for block in section.blocks %}
+              {% if block.type == 'image' %}
+                <div class="w-[230px] max-w-[230px] min-w-[230px] pr-[10px]">
+                  {{
+                    block.settings.image
+                    | image_url: width: 220
+                    | image_tag:
+                      class: 'w-[220px] max-w-[220px] min-w-[220px] object-contain',
+                      sizes: '320px',
+                      preload: true
+                  }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
 
-          <div class="home-banner-img-animation relative grid grid-cols-2 gap-5 max-h-[600px]">
-            <div class="home-banner-img-animation-secondary flex flex-col">
-              {% for i in (1..2) %}
-                {% for block in section.blocks reversed %}
-                  {% if block.type == 'image' %}
-                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              {% endfor %}
-            </div>
+      <div class="home-banner-img-animation relative grid grid-cols-2 gap-5 max-h-[600px]">
+        <div class="home-banner-img-animation-secondary flex flex-col">
+          {% for i in (1..2) %}
+            {% for block in section.blocks reversed %}
+              {% if block.type == 'image' %}
+                <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                  {{
+                    block.settings.image
+                    | image_url: width: 220
+                    | image_tag:
+                      class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
+                      sizes: '320px',
+                      preload: true
+                  }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
 
-            <div class="home-banner-img-animation-primary flex flex-col">
-              {% for i in (1..2) %}
-                {% for block in section.blocks %}
-                  {% if block.type == 'image' %}
-                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
-                {% endfor %}
+        <div class="flex-col items-center justify-center hidden lg:flex overflow-hidden">
+          <div class="home-banner-img-animation-primary flex flex-col">
+            {% for i in (1..2) %}
+              {% for block in section.blocks %}
+                {% if block.type == 'image' %}
+                  <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                    {{
+                      block.settings.image
+                      | image_url: width: 220
+                      | image_tag:
+                        class: 'h-[320px] max-h-[320px] min-h-[320px] object-contain',
+                        sizes: '320px',
+                        preload: true
+                    }}
+                  </div>
+                {% endif %}
               {% endfor %}
-            </div>
+            {% endfor %}
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
