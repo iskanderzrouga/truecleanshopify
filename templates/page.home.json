@@ -55,6 +55,144 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648373.png"
           }
+        },
+        "row_GFMaWJ": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "94%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Saw visible reduction in mineral stains within 2 weeks¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_Ga6Vei": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "97%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Would recommend TrueClean to a friend¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_6HQHN4": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "91%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Reported scrubbing less or not at all¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_zMGXXp": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "96%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Said their toilet stays cleaner longer¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_9873qr": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "89%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Said rings and buildup stopped forming¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_WEHCUh": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "93%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Reported their bathroom feels more guest-ready¹</p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
         }
       },
       "block_order": [
@@ -63,7 +201,13 @@
         "image_HXkNAE",
         "image_XUFrqd",
         "image_mTTPcb",
-        "image_c3DXnD"
+        "image_c3DXnD",
+        "row_GFMaWJ",
+        "row_Ga6Vei",
+        "row_6HQHN4",
+        "row_zMGXXp",
+        "row_9873qr",
+        "row_WEHCUh"
       ],
       "name": "AH Sold",
       "settings": {
