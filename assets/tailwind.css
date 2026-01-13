@@ -3284,6 +3284,44 @@ html {
       font-weight: var(--font-weight-medium);
     }
   }
+  .\[\&\>span\]\:rounded-\[100px\] {
+    &>span {
+      border-radius: 100px;
+    }
+  }
+  .\[\&\>span\]\:border {
+    &>span {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+    }
+  }
+  .\[\&\>span\]\:border-black {
+    &>span {
+      border-color: var(--color-black);
+    }
+  }
+  .\[\&\>span\]\:px-6 {
+    &>span {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .\[\&\>span\]\:py-2 {
+    &>span {
+      padding-block: calc(var(--spacing) * 2);
+    }
+  }
+  .\[\&\>span\]\:text-\[20px\] {
+    &>span {
+      font-size: 20px;
+    }
+  }
+  .\[\&\>span\]\:md\:text-\[28px\] {
+    &>span {
+      @media (width >= 48rem) {
+        font-size: 28px;
+      }
+    }
+  }
   .\[\&\>strong\]\:text-\[\#BD0202\] {
     &>strong {
       color: #BD0202;
