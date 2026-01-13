@@ -68,6 +68,7 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
+                <div class="splide__slide">
                 <div class="flex flex-col items-center justify-center gap-[15px] md:gap-5 w-full">
                   {% if block.settings.image != blank %}
                     {{
@@ -136,6 +137,7 @@
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
             {% endcase %}
           {% endfor %}
@@ -227,6 +229,7 @@
           perPage: 1,
           arrows: false,
           gap: '10px',
+          pagination: true,
           padding: { right: '60px' },
         },
       },
