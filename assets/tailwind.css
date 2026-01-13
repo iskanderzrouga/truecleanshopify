@@ -677,6 +677,9 @@ html {
   .max-h-\[600px\] {
     max-height: 600px;
   }
+  .max-h-\[830px\] {
+    max-height: 830px;
+  }
   .\!min-h-\[34px\] {
     min-height: 34px !important;
   }
