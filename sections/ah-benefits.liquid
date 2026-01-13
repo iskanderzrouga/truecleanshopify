@@ -36,7 +36,6 @@
           class="max-w-[630px] mx-auto text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
           style="color: {{ section.settings.heading_color }};"
         >
-            {{ section.settings.highlight }}
           {{ section.settings.heading | highlight: section.settings.highlight }}
         </h2>
       {% endif %}
@@ -91,7 +90,7 @@
         </div>
       {% endif %}
 
-      {% assign max_width = section.settings.max_width |  divided_by: 2 %}
+      {% assign max_width = section.settings.max_width | divided_by: 2 %}
       {% assign max_width_px = max_width | append: 'px' %}
       {% if section.settings.image != blank %}
         {{
