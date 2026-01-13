@@ -132,7 +132,7 @@
         "image_right": false,
         "button_label": "",
         "button_url": "",
-        "btn_bottom_text": "<p><em>²Individual results may vary.</em></p>",
+        "btn_bottom_text": "",
         "btn_bottom_text_color": "#000000",
         "bgcolor": "#ffffff",
         "max_width": 1260,
