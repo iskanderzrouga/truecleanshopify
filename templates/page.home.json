@@ -120,9 +120,9 @@
         "bgcolor": "#fcffec",
         "max_width": 1200,
         "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_bottom": 0,
         "padding_top_m": 36,
-        "padding_bottom_m": 36
+        "padding_bottom_m": 0
       }
     },
     "ah_approved_JcxjXd": {
