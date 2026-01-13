@@ -31,6 +31,13 @@
 
   <div class="mx-auto w-full grid md:grid-cols-2 relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
+        {% if section.settings.label != blank %}
+            <span
+              class="text-[20px] md:text-[28px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black px-6 py-[10px] w-fit rounded-[100px]"
+            >
+              {{ section.settings.label }}
+            </span>
+          {% endif %}
       {% if section.settings.heading != blank %}
         <h2
           class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
