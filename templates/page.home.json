@@ -17,33 +17,6 @@
         "padding_bottom": 28
       }
     },
-    "ah_contact_yfLWLz": {
-      "type": "ah-contact",
-      "name": "AH Contact",
-      "settings": {
-        "section_id": "",
-        "heading": "Questions? We're Here to Help",
-        "heading_m_center": true,
-        "heading_d_center": true,
-        "heading_color": "#001c19",
-        "description": "<p>Chat with us or email <br/><a href=\"mailto:support@truecleanhome.com\" title=\"mailto:support@truecleanhome.com\">support@truecleanhome.com</a> — replies within 24h.<br/>Our home care experts are ready to help you find the perfect solution for your bathroom.</p>",
-        "description_m_center": true,
-        "description_d_center": true,
-        "description_color": "#001c19",
-        "border_radius": 0,
-        "image_right": false,
-        "button_label": "",
-        "button_url": "",
-        "btn_bottom_text": "",
-        "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#ffffff",
-        "max_width": 660,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_m": 36,
-        "padding_bottom_m": 36
-      }
-    },
     "ah_achieve_RPWTXM": {
       "type": "ah-achieve",
       "blocks": {
@@ -149,11 +122,38 @@
         "padding_top_m": 36,
         "padding_bottom_m": 36
       }
+    },
+    "ah_contact_yfLWLz": {
+      "type": "ah-contact",
+      "name": "AH Contact",
+      "settings": {
+        "section_id": "",
+        "heading": "Questions? We're Here to Help",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001c19",
+        "description": "<p>Chat with us or email <br/><a href=\"mailto:support@truecleanhome.com\" title=\"mailto:support@truecleanhome.com\">support@truecleanhome.com</a> — replies within 24h.<br/>Our home care experts are ready to help you find the perfect solution for your bathroom.</p>",
+        "description_m_center": true,
+        "description_d_center": true,
+        "description_color": "#001c19",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001c19",
+        "bgcolor": "#ffffff",
+        "max_width": 660,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
     }
   },
   "order": [
     "main",
-    "ah_contact_yfLWLz",
-    "ah_achieve_RPWTXM"
+    "ah_achieve_RPWTXM",
+    "ah_contact_yfLWLz"
   ]
 }
