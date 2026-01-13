@@ -17,6 +17,65 @@
         "padding_bottom": 28
       }
     },
+    "ah_video_carousel_FMqJmz": {
+      "type": "ah-video-carousel",
+      "blocks": {
+        "video_zg9bjH": {
+          "type": "video",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/o/v/0c0c6b51432a466e9ffa1e530a838e10.mp4"
+          }
+        },
+        "video_XVYPhy": {
+          "type": "video",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/o/v/0c0c6b51432a466e9ffa1e530a838e10.mp4"
+          }
+        },
+        "video_w64yK3": {
+          "type": "video",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/o/v/0c0c6b51432a466e9ffa1e530a838e10.mp4"
+          }
+        },
+        "video_LYrUC4": {
+          "type": "video",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/o/v/0c0c6b51432a466e9ffa1e530a838e10.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_zg9bjH",
+        "video_XVYPhy",
+        "video_w64yK3",
+        "video_LYrUC4"
+      ],
+      "name": "AH Video Carousel",
+      "settings": {
+        "section_id": "",
+        "heading": "Don't Just Take Our Word For It",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#ffffff",
+        "description": "<p>See how TrueClean is transforming bathrooms across America</p>",
+        "description_m_center": true,
+        "description_d_center": true,
+        "description_color": "#ffffff",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001C19",
+        "bgcolor": "#ffffff",
+        "max_width": 1200,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "ah_achieve_RPWTXM": {
       "type": "ah-achieve",
       "blocks": {
@@ -27,7 +86,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "4.85/5",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -41,7 +100,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "row_tDbNer": {
@@ -51,7 +110,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "1M+",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -65,7 +124,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         },
         "row_BPRzGL": {
@@ -75,7 +134,7 @@
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
-            "label_color": "#001C19",
+            "label_color": "#001c19",
             "heading": "50K+",
             "heading_m_center": false,
             "heading_d_center": false,
@@ -89,7 +148,7 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001C19"
+            "btn_bottom_text_color": "#001c19"
           }
         }
       },
@@ -104,17 +163,17 @@
         "heading": "",
         "heading_m_center": true,
         "heading_d_center": true,
-        "heading_color": "#001C19",
+        "heading_color": "#001c19",
         "description": "",
         "description_m_center": true,
         "description_d_center": false,
-        "description_color": "#001C19",
+        "description_color": "#001c19",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
         "button_url": "",
         "btn_bottom_text": "",
-        "btn_bottom_text_color": "#001C19",
+        "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 1280,
         "padding_top": 72,
@@ -153,6 +212,7 @@
   },
   "order": [
     "main",
+    "ah_video_carousel_FMqJmz",
     "ah_achieve_RPWTXM",
     "ah_contact_yfLWLz"
   ]
