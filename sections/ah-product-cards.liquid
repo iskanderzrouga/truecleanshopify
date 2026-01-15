@@ -62,95 +62,101 @@
 
       {% if section.blocks.size > 0 %}
         <div class="w-full grid md:grid-cols-2 gap-4 md:gap-6">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'row' %}
+                <div
+                  class="flex flex-col gap-4 rounded-[20px] p-4 h-full"
+                  style="background-color: {{ block.settings.bgcolor }};"
+                >
+                  {% if block.settings.image != blank %}
+                    {{
+                      block.settings.image
+                      | image_url: width: 500
+                      | image_tag: class: 'w-full rounded-[20px]', sizes: '500px'
+                    }}
+                  {% endif %}
 
-                {% for block in section.blocks %}
-                  {% case block.type %}
-                    {% when 'row' %}
-
-                        <div class="flex flex-col gap-4 rounded-[20px] p-4 h-full" style="background-color: {{ block.settings.bgcolor }};">
-                          {% if block.settings.image != blank %}
-                            {{
-                              block.settings.image
-                              | image_url: width: 500
-                              | image_tag:
-                                class: 'w-full rounded-[20px]',
-                                sizes: '500px'
-                            }}
-                          {% endif %}
-
-                          <div class="flex-1 flex flex-col justify-between gap-3">
-                            <div class="flex flex-col gap-4">
-                              {% if block.settings.heading != blank %}
-                                <div
-                                  class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                                  style="color: {{ block.settings.heading_color }};"
-                                >
-                                  {{ block.settings.heading }}
-                                </div>
-                              {% endif %}
-
-                              {% if block.settings.description != blank %}
-                                <div
-                                  class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[15px] md:text-[15px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                                  style="color: {{ block.settings.description_color }};"
-                                >
-                                  {{ block.settings.description }}
-                                </div>
-                              {% endif %}
-
-                              <div class="flex items-center gap-2">
-                                {% if block.settings.stars != blank %}
-                                  {{
-                                    block.settings.stars
-                                    | image_url: width: 100
-                                    | image_tag: class: 'w-full max-w-[100px]', sizes: '100px'
-                                  }}
-                                {% endif %}
-                                {% if block.settings.review != blank %}
-                                  <div
-                                    class="text-[14px] md:text-[14px] font-bold !leading-tight text-[#000]"
-                                    style="color: {{ block.settings.review_color }};"
-                                  >
-                                    {{ block.settings.review }}
-                                  </div>
-                                {% endif %}
-                              </div>
-                              <div class="flex flex-col gap-2">
-                                {% for i in (1..5) %}
-                                    {% assign description_name = 'text' | append: i %}
-                                    {% assign description = block.settings[description_name] %}
-
-                                    {% if description != blank %}
-                                    <div
-                                        class="flex items-center gap-2"
-                                    >
-                                        {% if block.settings.icon != blank %}
-                                        {{
-                                            block.settings.icon
-                                            | image_url: width: 10
-                                            | image_tag: class: 'w-full h-fit object-contain max-w-[10px]'
-                                        }}
-                                        {% endif %}
-                                        <div
-                                        class="text-[15px] font-normal !leading-[1.5] text-[#000]"
-                                        style="color: {{ block.settings.text_color }};"
-                                        >
-                                        {{ description }}
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                {% endfor %}
-                              </div>
-                            </div>
-                            <div class="flex flex-col gap-1">
-                              
-                            </div>
-                          </div>
+                  <div class="flex-1 flex flex-col justify-between gap-3">
+                    <div class="flex flex-col gap-4">
+                      {% if block.settings.heading != blank %}
+                        <div
+                          class="text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                          style="color: {{ block.settings.heading_color }};"
+                        >
+                          {{ block.settings.heading }}
                         </div>
+                      {% endif %}
 
-                  {% endcase %}
-                {% endfor %}
+                      {% if block.settings.description != blank %}
+                        <div
+                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[15px] md:text-[15px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                          style="color: {{ block.settings.description_color }};"
+                        >
+                          {{ block.settings.description }}
+                        </div>
+                      {% endif %}
 
+                      <div class="flex items-center gap-2">
+                        {% if block.settings.stars != blank %}
+                          {{
+                            block.settings.stars
+                            | image_url: width: 100
+                            | image_tag: class: 'w-full max-w-[100px]', sizes: '100px'
+                          }}
+                        {% endif %}
+                        {% if block.settings.review != blank %}
+                          <div
+                            class="text-[14px] md:text-[14px] font-bold !leading-tight text-[#000]"
+                            style="color: {{ block.settings.review_color }};"
+                          >
+                            {{ block.settings.review }}
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        {% for i in (1..5) %}
+                          {% assign description_name = 'text' | append: i %}
+                          {% assign description = block.settings[description_name] %}
+
+                          {% if description != blank %}
+                            <div
+                              class="flex items-center gap-2"
+                            >
+                              {% if block.settings.icon != blank %}
+                                {{
+                                  block.settings.icon
+                                  | image_url: width: 10
+                                  | image_tag: class: 'w-full h-fit object-contain max-w-[10px]'
+                                }}
+                              {% endif %}
+                              <div
+                                class="text-[15px] font-normal !leading-[1.5] text-[#000]"
+                                style="color: {{ block.settings.text_color }};"
+                              >
+                                {{ description }}
+                              </div>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      {% if block.settings.btn_text != blank %}
+                        <div class="w-full">
+                          <a
+                            href="{{ block.settings.url }}"
+                            class="new-button--primary"
+                          >
+                            {{ block.settings.btn_text }}
+                          </a>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
         </div>
       {% endif %}
 
@@ -182,26 +188,6 @@
 {
   "name": "AH Product Cards",
   "settings": [
-    {
-      "type": "range",
-      "id": "count_desktop",
-      "min": 1,
-      "max": 30,
-      "step": 1,
-      "unit": "col",
-      "label": "Carousel Count on Desktop",
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "count_mobile",
-      "min": 1,
-      "max": 30,
-      "step": 1,
-      "unit": "col",
-      "label": "Carousel Count on Mobile",
-      "default": 1
-    },
     {
       "type": "text",
       "id": "section_id",
