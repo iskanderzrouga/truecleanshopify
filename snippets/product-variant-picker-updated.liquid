@@ -29,82 +29,36 @@
           endif
         endif
       -%}
-      {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label mt-5">
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
-            </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
-      {%- elsif picker_type == 'button' -%}
-        {% comment %} Use inline style for Scent to prevent flash during HTML swap {% endcomment %}
-        <fieldset class="js product-form__input product-form__input--pill !mb-0" {% if option.name == 'Scent' %}style="display: none !important;"{% endif %}>
-          {% if option.name == 'Bathrooms' %}
-            <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
-              {% render 'product-variant-options-quaternary-mk-horizontal',
-                product: product,
-                option: option,
-                block: block,
-                picker_type: picker_type
-              %}
-            </div>
-          {% else %}
-            <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">
-              {% render 'product-variant-options-quaternary-mk',
-                product: product,
-                option: option,
-                block: block,
-                picker_type: picker_type
-              %}
-            </div>
-          {% endif %}
-        </fieldset>
-      {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-          <div class="select">
-            {%- if picker_type == 'swatch_dropdown' -%}
-              <span
-                data-selected-value
-                class="dropdown-swatch"
-              >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
-              </span>
-            {%- endif -%}
-            <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
-              name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
-              {% render 'product-variant-options',
-                product: product,
-                option: option,
-                block: block,
-                picker_type: picker_type
-              %}
-            </select>
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
+      <fieldset
+        class="js product-form__input product-form__input--pill !mb-0"
+        {% if option.name == 'Scent' %}
+          style="display: none !important;"
+        {% endif %}
+      >
+        {% if option.name == 'Bathrooms' %}
+          <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
+            {% render 'product-variant-options-quaternary-mk-horizontal',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type
+            %}
           </div>
-        </div>
-      {%- endif -%}
+        {% else %}
+          <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">
+            {% render 'product-variant-options-quaternary-mk',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type
+            %}
+          </div>
+        {% endif %}
+      </fieldset>
     {%- endfor -%}
 
     <script type="application/json" data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
     </script>
   </variant-selects>
-
 {%- endunless -%}
