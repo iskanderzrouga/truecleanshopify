@@ -68,7 +68,10 @@
         "variant_picker_updated_Cw6DHJ": {
           "type": "variant_picker_updated",
           "settings": {
-            "picker_type": "button"
+            "icon1": "shopify://shop_images/material-symbols_home-rounded.png",
+            "description1": "<p>1 dispenser = 1 toilet</p>",
+            "icon2": "shopify://shop_images/lets-icons_date-fill.png",
+            "description2": "<p>Each refill = 90 days</p>"
           }
         },
         "ship_by_below": {
