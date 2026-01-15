@@ -198,6 +198,12 @@
                     product_form_id: product_form_id
                   %}
 
+                  {% if block.settings.description1 != blank or block.settings.description2 != blank  %}
+                    <div class="bg-[#EFF6F6] rounded-[10px] grid grid-cols-2 p-3 md:p-4 gap-2">
+                      </div>
+
+                  {% endif %}
+
               {%- when 'ship_by' -%}
                 <div class="flex gap-2 md:gap-4 items-center pb-4 !my-2 md:!my-4">
                   {% if block.settings.icon != blank %}
