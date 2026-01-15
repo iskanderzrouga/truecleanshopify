@@ -199,7 +199,7 @@
                   %}
 
               {%- when 'ship_by' -%}
-                <div class="flex gap-2 md:gap-4 items-center justify-center pb-4 !my-2 md:!my-4">
+                <div class="flex gap-2 md:gap-4 items-center pb-4 !my-2 md:!my-4">
                   {% if block.settings.icon != blank %}
                     {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px' }}
                   {% endif %}
