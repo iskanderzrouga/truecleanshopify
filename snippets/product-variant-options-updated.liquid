@@ -67,13 +67,11 @@
         {% endif %}
 
         {% if variant.metafields.custom.custom_variant_image != blank %}
-          <div class="relative w-fit">
-            {{
-              variant.metafields.custom.custom_variant_image
-              | image_url: width: 300
-              | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain'
-            }}
-          </div>
+          {{
+            variant.metafields.custom.custom_variant_image
+            | image_url: width: 300
+            | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain'
+          }}
         {% endif %}
 
         {% if variant.metafields.custom.info_text != blank %}
