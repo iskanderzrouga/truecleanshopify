@@ -97,23 +97,22 @@
                                   {{ block.settings.description }}
                                 </div>
                               {% endif %}
-                            </div>
-                            <div class="flex flex-col gap-1">
+
                               <div class="flex items-center gap-2">
-                                {% if block.settings.name != blank %}
-                                  <div
-                                    class="text-[14px] md:text-[14px] font-bold !leading-tight text-[#000]"
-                                    style="color: {{ block.settings.name_color }};"
-                                  >
-                                    {{ block.settings.name }}
-                                  </div>
-                                {% endif %}
                                 {% if block.settings.stars != blank %}
                                   {{
                                     block.settings.stars
                                     | image_url: width: 100
                                     | image_tag: class: 'w-full max-w-[100px]', sizes: '100px'
                                   }}
+                                {% endif %}
+                                {% if block.settings.review != blank %}
+                                  <div
+                                    class="text-[14px] md:text-[14px] font-bold !leading-tight text-[#000]"
+                                    style="color: {{ block.settings.review_color }};"
+                                  >
+                                    {{ block.settings.review }}
+                                  </div>
                                 {% endif %}
                               </div>
                               <div class="flex items-center gap-1">
@@ -133,6 +132,9 @@
                                   </div>
                                 {% endif %}
                               </div>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                              
                             </div>
                           </div>
                         </div>
