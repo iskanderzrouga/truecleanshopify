@@ -52,6 +52,13 @@
         <div class="nl-animation__item flex items-center justify-between">
           {% for block in section.blocks %}
             <div class="flex items-center justify-center gap-5 px-5">
+              {% if block.settings.icon != blank %}
+                {{
+                  block.settings.icon
+                  | image_url: width: 28
+                  | image_tag: class: 'w-full h-fit object-contain max-w-[28px]'
+                }}
+              {% endif %}
               {% if block.settings.show_dot %}
                 <div
                   class="!block w-[7px] h-[7px] rounded-[10px]"
@@ -59,7 +66,7 @@
                 ></div>
               {% endif %}
               {% if block.settings.text != blank %}
-                <div class="font-medium text-lg !leading-[1] w-full">
+                <div class="font-medium text-[20px] md:text-[24px] !leading-[1] w-full">
                   {{ block.settings.text }}
                 </div>
               {% endif %}
