@@ -23,8 +23,9 @@
         "row_tJ6pPg": {
           "type": "row",
           "settings": {
-            "url": "",
-            "bgcolor": "#F9F9F9",
+            "btn_text": "ADD TO CART →",
+            "url": "shopify://pages/swooshnshine",
+            "bgcolor": "#f9f9f9",
             "image": "shopify://shop_images/Rectangle_1001_8_e0ad25b9-6126-47da-8c01-66c0201946ec.png",
             "review": "50,173 reviews",
             "review_color": "#001c19",
@@ -39,17 +40,46 @@
             "heading": "Swoosh n’ Shine Automatic Toilet Cleaner",
             "heading_m_center": false,
             "heading_d_center": false,
-            "heading_color": "#001C19",
+            "heading_color": "#001c19",
             "description": "",
             "description_m_center": true,
             "description_d_center": false,
             "small_description": false,
-            "description_color": "#001C19"
+            "description_color": "#001c19"
+          }
+        },
+        "row_DQtM7L": {
+          "type": "row",
+          "settings": {
+            "btn_text": "ADD TO CART →",
+            "url": "shopify://pages/swooshnshine",
+            "bgcolor": "#f9f9f9",
+            "image": "shopify://shop_images/Rectangle_1001_9_9891336b-48a4-447f-8687-e5bf10ef86fb.png",
+            "review": "14,982 reviews",
+            "review_color": "#001c19",
+            "stars": "shopify://shop_images/stars.png",
+            "icon": "shopify://shop_images/Ellipse_92.png",
+            "text1": "6, 9, 12 month bundles",
+            "text2": "Biggest savings (53% off)",
+            "text3": "Unscented vs Lemon Fresh",
+            "text4": "",
+            "text5": "",
+            "text_color": "#001c19",
+            "heading": "Swoosh n’ Shine Refills",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "",
+            "description_m_center": true,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#001c19"
           }
         }
       },
       "block_order": [
-        "row_tJ6pPg"
+        "row_tJ6pPg",
+        "row_DQtM7L"
       ],
       "name": "AH Product Cards",
       "settings": {
@@ -59,17 +89,17 @@
         "heading": "Shop Top Picks",
         "heading_m_center": true,
         "heading_d_center": true,
-        "heading_color": "#001C19",
+        "heading_color": "#001c19",
         "description": "",
         "description_m_center": true,
         "description_d_center": false,
-        "description_color": "#001C19",
+        "description_color": "#001c19",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
         "button_url": "",
         "btn_bottom_text": "",
-        "btn_bottom_text_color": "#001C19",
+        "btn_bottom_text_color": "#001c19",
         "bgcolor": "#eff6f6",
         "max_width": 1200,
         "padding_top": 72,
