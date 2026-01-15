@@ -341,6 +341,9 @@ html {
   .-top-\[14px\] {
     top: calc(14px * -1);
   }
+  .-top-\[18px\] {
+    top: calc(18px * -1);
+  }
   .-top-\[30px\] {
     top: calc(30px * -1);
   }
@@ -2272,6 +2275,11 @@ html {
   .sm\:bottom-auto {
     @media (width >= 40rem) {
       bottom: auto;
+    }
+  }
+  .md\:-top-\[14px\] {
+    @media (width >= 48rem) {
+      top: calc(14px * -1);
     }
   }
   .md\:\!col-span-4 {

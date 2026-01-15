@@ -59,7 +59,7 @@
       <div class="new-lp-variant-content flex flex-col items-center justify-between gap-2 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
           <div
-            class="absolute left-1/2 -translate-x-1/2 -top-[14px] min-w-[90%] tracking-normal md:whitespace-nowrap w-fit text-[9px] md:text-[11px] font-bold text-[#fff] !leading-tight px-[6px] md:px-2 py-1 md:py-[6px] rounded-[5px] text-center"
+            class="absolute left-1/2 -translate-x-1/2 -top-[18px] md:-top-[14px] min-w-[90%] tracking-normal md:whitespace-nowrap w-fit text-[9px] md:text-[11px] font-bold text-[#fff] !leading-tight px-[6px] md:px-2 py-1 md:py-[6px] rounded-[5px] text-center"
             style="background-color: {{ variant.metafields.custom.badge_color }};"
           >
             {{ variant.metafields.custom.badge }}
@@ -70,7 +70,7 @@
           {{
             variant.metafields.custom.custom_variant_image
             | image_url: width: 300
-            | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain'
+            | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain mt-5'
           }}
         {% endif %}
 
