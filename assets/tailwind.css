@@ -2889,6 +2889,11 @@ html {
       padding-block: calc(var(--spacing) * 7);
     }
   }
+  .md\:py-\[6px\] {
+    @media (width >= 48rem) {
+      padding-block: 6px;
+    }
+  }
   .md\:py-\[20px\] {
     @media (width >= 48rem) {
       padding-block: 20px;

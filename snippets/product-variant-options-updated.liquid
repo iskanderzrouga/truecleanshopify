@@ -59,8 +59,8 @@
       <div class="new-lp-variant-content flex flex-col items-center justify-between gap-2 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
           <div
-            class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
-            style="color: {{ variant.metafields.custom.badge_color }};"
+            class="w-fit text-[9px] md:text-[12px] font-bold text-[#fff] !leading-tight px-[6px] md:px-4 py-1 md:py-[6px] rounded-[5px] text-center"
+            style="background-color: {{ variant.metafields.custom.badge_color }};"
           >
             {{ variant.metafields.custom.badge }}
           </div>
