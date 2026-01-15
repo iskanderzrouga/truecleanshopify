@@ -35,8 +35,7 @@
           style="display: none !important;"
         {% endif %}
       >
-        {% if option.name == 'Bathrooms' %}
-          <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
+        <div class="flex flex-col w-full gap-3 max-w-[340px] mx-auto">
             {% render 'product-variant-options-quaternary-mk-horizontal',
               product: product,
               option: option,
@@ -44,16 +43,6 @@
               picker_type: picker_type
             %}
           </div>
-        {% else %}
-          <div class="flex gap-x-2 gap-y-4 md:gap-2 mt-1">
-            {% render 'product-variant-options-quaternary-mk',
-              product: product,
-              option: option,
-              block: block,
-              picker_type: picker_type
-            %}
-          </div>
-        {% endif %}
       </fieldset>
     {%- endfor -%}
 
