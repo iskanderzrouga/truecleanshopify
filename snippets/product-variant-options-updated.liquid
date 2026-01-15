@@ -57,19 +57,19 @@
       class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 cursor-pointer"
     >
       <div class="new-lp-variant-content flex items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
-        {% if current_variant.metafields.custom.badge %}
+        {% if variant.metafields.custom.badge %}
       <div
         class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
-        style="color: {{ current_variant.metafields.custom.badge_color }};"
+        style="color: {{ variant.metafields.custom.badge_color }};"
       >
-        {{ current_variant.metafields.custom.badge }}
+        {{ variant.metafields.custom.badge }}
       </div>
     {% endif %}
 
-    {% if current_variant.metafields.custom.custom_variant_image != blank %}
+    {% if variant.metafields.custom.custom_variant_image != blank %}
       <div class="relative w-fit">
         {{
-          current_variant.metafields.custom.custom_variant_image
+          variant.metafields.custom.custom_variant_image
           | image_url: width: 300
           | image_tag: class: 'h-[150px] w-auto max-w-full object-contain'
         }}
@@ -78,18 +78,18 @@
 
     
 
-    {% if current_variant.metafields.custom.info_text != blank %}
+    {% if variant.metafields.custom.info_text != blank %}
       <div class="flex gap-1 items-center justify-center">
         <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
-          {{- current_variant.metafields.custom.info_text -}}
+          {{- variant.metafields.custom.info_text -}}
         </span>
       </div>
     {% endif %}
 
-    {% if current_variant.metafields.custom.kit_price != blank %}
+    {% if variant.metafields.custom.kit_price != blank %}
       <div class="flex gap-1 items-center justify-center">
         <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
-          {{- current_variant.metafields.custom.kit_price -}}
+          {{- variant.metafields.custom.kit_price -}}
         </span>
       </div>
     {% endif %}
@@ -109,10 +109,10 @@
           {% endif %}
         </div>
 
-        {% if current_variant.metafields.custom.free_shipping_text != blank %}
+        {% if variant.metafields.custom.free_shipping_text != blank %}
       <div class="flex gap-1 items-center justify-center">
         <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
-          {{- current_variant.metafields.custom.free_shipping_text -}}
+          {{- variant.metafields.custom.free_shipping_text -}}
         </span>
       </div>
     {% endif %}
