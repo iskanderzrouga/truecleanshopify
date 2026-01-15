@@ -3164,6 +3164,11 @@ html {
       min-width: 450px;
     }
   }
+  .lg\:\!gap-\[60px\] {
+    @media (width >= 64rem) {
+      gap: 60px !important;
+    }
+  }
   .lg\:\!gap-\[80px\] {
     @media (width >= 64rem) {
       gap: 80px !important;
