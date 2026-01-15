@@ -776,6 +776,9 @@ html {
   .max-w-\[10\%\] {
     max-width: 10%;
   }
+  .max-w-\[10px\] {
+    max-width: 10px;
+  }
   .max-w-\[12px\] {
     max-width: 12px;
   }
