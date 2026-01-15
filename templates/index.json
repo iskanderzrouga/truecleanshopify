@@ -271,9 +271,9 @@
         "bgcolor": "#ffffff",
         "max_width": 1600,
         "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_bottom": 12,
         "padding_top_m": 36,
-        "padding_bottom_m": 36
+        "padding_bottom_m": 8
       }
     },
     "an_logos_R7BVh4": {
