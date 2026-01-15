@@ -102,6 +102,10 @@
             <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
               {{ variant.compare_at_price | money_without_trailing_zeros }}
             </div>
+
+            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
+              Save {{ variant.compare_at_price | minus: variant.price | money_without_trailing_zeros }}
+            </div>
           {% endif %}
         </div>
 
