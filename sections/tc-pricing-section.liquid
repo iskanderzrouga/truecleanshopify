@@ -97,17 +97,17 @@
       </div>
     {% endif %}
 
-    <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[60px] px-4 md:px-0">
+    <div class="product !grid !grid-cols-1 md:!grid-cols-2 !gap-2 md:!gap-10 lg:!gap-[60px] px-4 md:px-0">
 
       <!-- Product Images Column -->
-      <div class="md:col-span-5">
+      <div class="">
         <div class="w-full">
           {% render 'product-image-slider-vertical', product: product, section: section %}
         </div>
       </div>
 
       <!-- Product Info Column -->
-      <div class="md:!col-span-4 max-md:pt-6 !w-full !max-w-none !px-0 md:!p-0">
+      <div class="max-md:pt-6 !w-full !max-w-none !px-0 md:!p-0">
         <section id="ProductInfo-{{ section.id }}" class="product__info-container">
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
