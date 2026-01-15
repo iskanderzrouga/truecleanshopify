@@ -3129,6 +3129,11 @@ html {
       line-height: var(--leading-tight);
     }
   }
+  .md\:whitespace-nowrap {
+    @media (width >= 48rem) {
+      white-space: nowrap;
+    }
+  }
   .md\:text-\[\#000\] {
     @media (width >= 48rem) {
       color: #000;
