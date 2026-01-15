@@ -76,8 +76,6 @@
       </div>
     {% endif %}
 
-    
-
     {% if variant.metafields.custom.info_text != blank %}
       <div class="text-[9px] md:text-[11px] font-normal text-[#8E8E8E] !leading-tight">
           {{- variant.metafields.custom.info_text -}}
@@ -106,11 +104,9 @@
         </div>
 
         {% if variant.metafields.custom.free_shipping_text != blank %}
-      <div class="flex gap-1 items-center justify-center">
-        <span class="text-[15px] md:text-[15px] font-normal text-black !leading-tight">
+        <div class="text-[9px] md:text-[11px] font-normal text-[#1273B7] !leading-tight">
           {{- variant.metafields.custom.free_shipping_text -}}
-        </span>
-      </div>
+        </div>
     {% endif %}
       </div>
     </label>
