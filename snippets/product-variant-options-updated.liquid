@@ -97,7 +97,7 @@
               {{ variant.compare_at_price | money_without_trailing_zeros }}
             </div>
 
-            <div class="text-[8px] md:text-[11px] font-normal !leading-tight text-[#000] tracking-normal bg-[#E8FF33] rounded-[4px] w-fit px-[6px] md:px-2 py-[3px] md:py-1">
+            <div class="text-[8px] md:text-[11px] font-bold !leading-tight text-[#000] tracking-normal bg-[#E8FF33] rounded-[4px] w-fit px-[6px] md:px-2 py-[3px] md:py-1">
               Save {{ variant.compare_at_price | minus: variant.price | money_without_trailing_zeros }}
             </div>
           {% endif %}
