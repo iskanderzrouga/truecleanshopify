@@ -12,7 +12,7 @@
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
-            <li class="splide__slide">
+            {% comment %} <li class="splide__slide">
               <div class="aspect-[1/1] h-full product-image-slider__video-wrapper">
                 {% render 'product-thumbnail-2',
                   media: media,
@@ -29,7 +29,7 @@
                   lazy_load: false
                 %}
               </div>
-            </li>
+            </li> {% endcomment %}
           {% endif %}
         {% endfor %}
       </ul>
@@ -53,9 +53,9 @@
                 <source src="{{ media.sources[0].url }}" type="video/mp4">
               </video>
             {% endcomment %}
-            <li class="splide__slide">
+            {% comment %} <li class="splide__slide">
               <img src="{{ media.preview_image | image_url }}" width="90" height="90" alt="{{ media.alt }}">
-            </li>
+            </li> {% endcomment %}
           {% endif %}
         {% endfor %}
       </ul>
