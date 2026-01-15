@@ -58,56 +58,56 @@
     >
       <div class="new-lp-variant-content flex flex-col items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
-      <div
-        class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
-        style="color: {{ variant.metafields.custom.badge_color }};"
-      >
-        {{ variant.metafields.custom.badge }}
-      </div>
-    {% endif %}
+          <div
+            class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
+            style="color: {{ variant.metafields.custom.badge_color }};"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
 
-    {% if variant.metafields.custom.custom_variant_image != blank %}
-      <div class="relative w-fit">
-        {{
-          variant.metafields.custom.custom_variant_image
-          | image_url: width: 300
-          | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain'
-        }}
-      </div>
-    {% endif %}
+        {% if variant.metafields.custom.custom_variant_image != blank %}
+          <div class="relative w-fit">
+            {{
+              variant.metafields.custom.custom_variant_image
+              | image_url: width: 300
+              | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain'
+            }}
+          </div>
+        {% endif %}
 
-    {% if variant.metafields.custom.info_text != blank %}
-      <div class="text-[9px] md:text-[11px] font-normal text-[#8E8E8E] !leading-tight">
-          {{- variant.metafields.custom.info_text -}}
-        </div>
-    {% endif %}
+        {% if variant.metafields.custom.info_text != blank %}
+          <div class="text-[9px] md:text-[11px] font-normal text-[#8E8E8E] !leading-tight">
+            {{- variant.metafields.custom.info_text -}}
+          </div>
+        {% endif %}
 
-    {% if variant.metafields.custom.kit_price != blank %}
-      <div class="text-[11px] md:text-[16px] font-normal text-[#001C19] !leading-tight">
-          {{- variant.metafields.custom.kit_price -}}
-        </div>
-    {% endif %}
+        {% if variant.metafields.custom.kit_price != blank %}
+          <div class="text-[11px] md:text-[16px] font-normal text-[#001C19] !leading-tight">
+            {{- variant.metafields.custom.kit_price -}}
+          </div>
+        {% endif %}
 
-        <div class="flex flex-col items-end gap-0">
-          <div class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#1a1a1a] tracking-normal">
+        <div class="flex items-center gap-1">
+          <div class="text-[11px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal w-fit ">
             {{- variant.price | money_without_trailing_zeros -}}
           </div>
           {% if variant.compare_at_price > variant.price %}
-            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
+            <div class="text-[11px] md:text-[16px] font-normal !leading-tight text-[#8E8E8E] line-through tracking-normal w-fit ">
               {{ variant.compare_at_price | money_without_trailing_zeros }}
             </div>
 
-            <div class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#666] line-through tracking-normal">
+            <div class="text-[8px] md:text-[11px] font-normal !leading-tight text-[#000] tracking-normal bg-[#E8FF33] rounded-[4px] w-fit px-[6px] md:px-2 py-[3px] md:py-1">
               Save {{ variant.compare_at_price | minus: variant.price | money_without_trailing_zeros }}
             </div>
           {% endif %}
         </div>
 
         {% if variant.metafields.custom.free_shipping_text != blank %}
-        <div class="text-[9px] md:text-[11px] font-normal text-[#1273B7] !leading-tight">
-          {{- variant.metafields.custom.free_shipping_text -}}
-        </div>
-    {% endif %}
+          <div class="text-[9px] md:text-[11px] font-normal text-[#1273B7] !leading-tight">
+            {{- variant.metafields.custom.free_shipping_text -}}
+          </div>
+        {% endif %}
       </div>
     </label>
   </div>
