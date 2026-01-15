@@ -191,6 +191,13 @@
                   {% endif %}
                 </div>
 
+              {% when 'variant_picker_updated' %}
+                {% render 'product-variant-picker-quaternary-mk',
+                    product: product,
+                    block: block,
+                    product_form_id: product_form_id
+                  %}
+
               {%- when 'ship_by' -%}
                 <div class="flex gap-2 md:gap-4 items-center justify-center pb-4 !my-2 md:!my-4">
                   {% if block.settings.icon != blank %}
@@ -707,6 +714,23 @@
           "type": "text",
           "id": "sub_feature8",
           "label": "Sub Feature 8"
+        }
+      ]
+    },
+    {
+      "type": "variant_picker_updated",
+      "name": "Variant Picker Updated",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            { "value": "dropdown", "label": "Dropdown" },
+            { "value": "button", "label": "Button" }
+          ],
+          "default": "button",
+          "label": "Picker Type"
         }
       ]
     },
