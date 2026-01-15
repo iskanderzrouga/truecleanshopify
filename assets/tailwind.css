@@ -2185,6 +2185,11 @@ html {
       margin-inline: auto;
     }
   }
+  .max-md\:mt-3 {
+    @media (width < 48rem) {
+      margin-top: calc(var(--spacing) * 3);
+    }
+  }
   .max-md\:mb-8 {
     @media (width < 48rem) {
       margin-bottom: calc(var(--spacing) * 8);
