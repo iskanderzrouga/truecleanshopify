@@ -647,6 +647,9 @@ html {
   .max-h-\[70px\] {
     max-height: 70px;
   }
+  .max-h-\[80px\] {
+    max-height: 80px;
+  }
   .max-h-\[100px\] {
     max-height: 100px;
   }
@@ -1614,6 +1617,9 @@ html {
   .py-\[2px\] {
     padding-block: 2px;
   }
+  .py-\[3px\] {
+    padding-block: 3px;
+  }
   .py-\[6px\] {
     padding-block: 6px;
   }
@@ -1727,6 +1733,9 @@ html {
   }
   .\!text-\[20px\] {
     font-size: 20px !important;
+  }
+  .text-\[8px\] {
+    font-size: 8px;
   }
   .text-\[9px\] {
     font-size: 9px;
@@ -1915,6 +1924,9 @@ html {
   }
   .text-\[\#757E85\] {
     color: #757E85;
+  }
+  .text-\[\#1273B7\] {
+    color: #1273B7;
   }
   .text-\[\#5395ff\] {
     color: #5395ff;
@@ -2354,6 +2366,11 @@ html {
   .md\:max-h-\[120px\] {
     @media (width >= 48rem) {
       max-height: 120px;
+    }
+  }
+  .md\:max-h-\[140px\] {
+    @media (width >= 48rem) {
+      max-height: 140px;
     }
   }
   .md\:max-h-\[150px\] {
@@ -2812,6 +2829,11 @@ html {
       padding-inline: calc(var(--spacing) * 0);
     }
   }
+  .md\:px-2 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 2);
+    }
+  }
   .md\:px-3 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 3);
@@ -2840,6 +2862,11 @@ html {
   .md\:px-12 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+  .md\:py-1 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 1);
     }
   }
   .md\:py-3 {
@@ -2965,6 +2992,11 @@ html {
   .md\:text-\[10px\] {
     @media (width >= 48rem) {
       font-size: 10px;
+    }
+  }
+  .md\:text-\[11px\] {
+    @media (width >= 48rem) {
+      font-size: 11px;
     }
   }
   .md\:text-\[12px\] {
