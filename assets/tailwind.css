@@ -347,9 +347,6 @@ html {
   .top-0\.5 {
     top: calc(var(--spacing) * 0.5);
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -388,9 +385,6 @@ html {
   }
   .left-0\.5 {
     left: calc(var(--spacing) * 0.5);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
@@ -464,9 +458,6 @@ html {
   .\!mt-6 {
     margin-top: calc(var(--spacing) * 6) !important;
   }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
-  }
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
   }
@@ -524,9 +515,6 @@ html {
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
   }
-  .mb-16 {
-    margin-bottom: calc(var(--spacing) * 16);
-  }
   .mb-\[6px\] {
     margin-bottom: 6px;
   }
@@ -574,9 +562,6 @@ html {
   }
   .aspect-\[3\/4\] {
     aspect-ratio: 3/4;
-  }
-  .aspect-\[4\/5\] {
-    aspect-ratio: 4/5;
   }
   .h-0 {
     height: calc(var(--spacing) * 0);
@@ -673,9 +658,6 @@ html {
   }
   .max-h-\[340px\] {
     max-height: 340px;
-  }
-  .max-h-\[600px\] {
-    max-height: 600px;
   }
   .max-h-\[830px\] {
     max-height: 830px;
@@ -998,18 +980,8 @@ html {
   .flex-1 {
     flex: 1;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
@@ -2003,9 +1975,6 @@ html {
   }
   .line-through {
     text-decoration-line: line-through;
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .opacity-0 {
     opacity: 0%;
@@ -3284,11 +3253,6 @@ html {
       font-weight: var(--font-weight-medium);
     }
   }
-  .\[\&\>span\]\:mb-2 {
-    &>span {
-      margin-bottom: calc(var(--spacing) * 2);
-    }
-  }
   .\[\&\>span\]\:rounded-\[100px\] {
     &>span {
       border-radius: 100px;
@@ -3315,31 +3279,14 @@ html {
       padding-inline: calc(var(--spacing) * 6);
     }
   }
-  .\[\&\>span\]\:py-1 {
-    &>span {
-      padding-block: calc(var(--spacing) * 1);
-    }
-  }
   .\[\&\>span\]\:py-2 {
     &>span {
       padding-block: calc(var(--spacing) * 2);
     }
   }
-  .\[\&\>span\]\:text-\[18px\] {
-    &>span {
-      font-size: 18px;
-    }
-  }
   .\[\&\>span\]\:text-\[20px\] {
     &>span {
       font-size: 20px;
-    }
-  }
-  .\[\&\>span\]\:md\:text-\[24px\] {
-    &>span {
-      @media (width >= 48rem) {
-        font-size: 24px;
-      }
     }
   }
   .\[\&\>span\]\:md\:text-\[28px\] {
