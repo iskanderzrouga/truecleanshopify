@@ -163,7 +163,7 @@
         "collapsible_tab_bqBJYJ": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What if it doesn't work for me?",
+            "heading": "Try it 100% risk-free",
             "icon": "none",
             "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
             "page": ""
@@ -1366,7 +1366,7 @@
         "collapsible_tab_nHJrMB": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What if it doesn't work for me?",
+            "heading": "Try it 100% risk-free",
             "icon": "none",
             "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
             "page": ""
@@ -1954,7 +1954,7 @@
           "settings": {
             "open": false,
             "label": "",
-            "heading": "What if it doesn't work for me?",
+            "heading": "Try it 100% risk-free",
             "description": "<p>We offer a 90-day money-back guarantee. If you're not satisfied for ANY reason within 90 days, return it for a full refund. You have nothing to lose.<\/p>"
           }
         },
