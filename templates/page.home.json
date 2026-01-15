@@ -17,6 +17,62 @@
         "padding_bottom": 28
       }
     },
+    "ah_animation_JDBYJe": {
+      "type": "ah-animation",
+      "blocks": {
+        "text_X9Mi4T": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/image_58.png",
+            "show_dot": false,
+            "text": "Subscribe & Save"
+          }
+        },
+        "text_gr8FHj": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/image_59.png",
+            "show_dot": false,
+            "text": "90 Day Money Back Guarantee"
+          }
+        },
+        "text_r8mTKr": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/image_60.png",
+            "show_dot": false,
+            "text": "Plumber-Approved"
+          }
+        },
+        "text_XRFGE6": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/image_61.png",
+            "show_dot": false,
+            "text": "Loved By 50,000+ Homeowners"
+          }
+        }
+      },
+      "block_order": [
+        "text_X9Mi4T",
+        "text_gr8FHj",
+        "text_r8mTKr",
+        "text_XRFGE6"
+      ],
+      "name": "AH Animation",
+      "settings": {
+        "section_id": "",
+        "repeat_count": 5,
+        "animation_length": 50,
+        "max_width": 860,
+        "bgcolor": "#e8ff33",
+        "text_color": "#000000",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0
+      }
+    },
     "ah_product_cards_emHqq6": {
       "type": "ah-product-cards",
       "blocks": {
@@ -83,8 +139,6 @@
       ],
       "name": "AH Product Cards",
       "settings": {
-        "count_desktop": 2,
-        "count_mobile": 1,
         "section_id": "",
         "heading": "Shop Top Picks",
         "heading_m_center": true,
@@ -1118,6 +1172,7 @@
   },
   "order": [
     "main",
+    "ah_animation_JDBYJe",
     "ah_product_cards_emHqq6",
     "ah_reviews_8eH7tg",
     "ah_benefits_x9JdRH",
