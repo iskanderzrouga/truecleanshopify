@@ -12,8 +12,8 @@
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
-            {% comment %} <li class="splide__slide">
-              <div class="aspect-[1/1] h-full product-image-slider__video-wrapper">
+            <li class="splide__slide">
+              {% comment %} <div class="aspect-[1/1] h-full product-image-slider__video-wrapper">
                 {% render 'product-thumbnail-2',
                   media: media,
                   media_count: 0,
@@ -28,8 +28,28 @@
                   constrain_to_viewport: true,
                   lazy_load: false
                 %}
+              </div> {% endcomment %}
+              <div class="relative w-full overflow-hidden rounded-[20px] aspect-[3/4] nl-video-wrapper">
+                <video
+                  src="{{ media.src }}"
+                  class="w-full h-full object-cover cursor-pointer nl-video"
+                  playsinline
+                  muted
+                ></video>
+
+                <div class="absolute inset-0 flex items-center justify-center nl-video-play-btn">
+                  <div class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center">
+                    <div
+                      class="
+                        w-0 h-0
+                        border-l-[22px] border-l-white
+                        border-y-[14px] border-y-transparent !block
+                      "
+                    ></div>
+                  </div>
+                </div>
               </div>
-            </li> {% endcomment %}
+            </li>
           {% endif %}
         {% endfor %}
       </ul>
@@ -53,15 +73,40 @@
                 <source src="{{ media.sources[0].url }}" type="video/mp4">
               </video>
             {% endcomment %}
-            {% comment %} <li class="splide__slide">
+            <li class="splide__slide">
               <img src="{{ media.preview_image | image_url }}" width="90" height="90" alt="{{ media.alt }}">
-            </li> {% endcomment %}
+            </li>
           {% endif %}
         {% endfor %}
       </ul>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.nl-video-wrapper').forEach((wrapper) => {
+      const video = wrapper.querySelector('.nl-video');
+      const btn = wrapper.querySelector('.nl-video-play-btn');
+
+      function togglePlay() {
+        if (video.paused) {
+          video.play();
+          btn.classList.add('hidden');
+        } else {
+          video.pause();
+          btn.classList.remove('hidden');
+        }
+      }
+
+      btn.addEventListener('click', togglePlay);
+      video.addEventListener('click', togglePlay);
+
+      video.addEventListener('pause', () => btn.classList.remove('hidden'));
+      video.addEventListener('play', () => btn.classList.add('hidden'));
+    });
+  });
+</script>
 
 <style>
   .product-thumbnail-slider {
