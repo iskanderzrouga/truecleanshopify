@@ -15,36 +15,36 @@
         "review_below": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/Group_46485.png",
-            "heading": "<p>Rated 4.85/5 • 50,173+ Reviews</p>"
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p>Rated 4.85\/5 • 50,173+ Reviews<\/p>"
           }
         },
         "feature_1_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>No Rings, Slime, Or Stains</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
           }
         },
         "feature_2_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>60-Second Install. No Tools.</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
           }
         },
         "feature_3_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Guest-Ready 24/7</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
           }
         },
         "feature_4_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Fits Any Toilet</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
           }
         },
         "variant_picker_below": {
@@ -54,7 +54,7 @@
             "picker_type": "button",
             "horizontal_type": true,
             "updated_version": false,
-            "feature_icon": "shopify://shop_images/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
             "sub_feature1": "Free dispensers with first order",
             "sub_feature2": "Free fast shipping, always",
             "sub_feature3": "Dispenser breaks? We replace it free",
@@ -68,18 +68,18 @@
         "variant_picker_updated_Cw6DHJ": {
           "type": "variant_picker_updated",
           "settings": {
-            "icon1": "shopify://shop_images/material-symbols_home-rounded.png",
-            "description1": "<p>1 dispenser = 1 toilet</p>",
-            "icon2": "shopify://shop_images/lets-icons_date-fill.png",
-            "description2": "<p>Each refill = 90 days</p>"
+            "icon1": "shopify:\/\/shop_images\/material-symbols_home-rounded.png",
+            "description1": "<p>1 dispenser = 1 toilet<\/p>",
+            "icon2": "shopify:\/\/shop_images\/lets-icons_date-fill.png",
+            "description2": "<p>Each refill = 90 days<\/p>"
           }
         },
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
             "text": "Ships by 20th Jan 2026",
-            "icon": "shopify://shop_images/ship-icon.png",
-            "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan</p>"
+            "icon": "shopify:\/\/shop_images\/ship-icon.png",
+            "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan<\/p>"
           }
         },
         "buy_buttons_below": {
@@ -89,11 +89,11 @@
             "redirect_checkout": false,
             "show_dynamic_checkout": false,
             "custom_text": "ADD TO CART",
-            "icon1": "shopify://shop_images/image_6.png",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
             "text1": "90-Day Money-Back Guarantee",
-            "icon2": "shopify://shop_images/image_7_1.png",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
             "text2": "Free Shipping on All Orders",
-            "icon3": "shopify://shop_images/image_8.png",
+            "icon3": "shopify:\/\/shop_images\/image_8.png",
             "text3": "Secure Checkout"
           }
         },
@@ -102,7 +102,7 @@
           "settings": {
             "heading": "How do the refills work?",
             "icon": "none",
-            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!</p>",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
             "page": ""
           }
         },
@@ -111,7 +111,7 @@
           "settings": {
             "heading": "Will it fit my toilet?",
             "icon": "none",
-            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. <\/p>",
             "page": ""
           }
         },
@@ -120,7 +120,7 @@
           "settings": {
             "heading": "Try it 100% risk-free",
             "icon": "none",
-            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
             "page": ""
           }
         }
@@ -147,7 +147,7 @@
         "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
         "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
         "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
-        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
         "heading_color": "#001c19",
         "max_width": 1280,
         "padding_top": 72,
