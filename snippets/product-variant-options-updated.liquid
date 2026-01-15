@@ -56,7 +56,7 @@
       data-total-price="{{ variant.price | money_without_trailing_zeros }}"
       class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 cursor-pointer"
     >
-      <div class="new-lp-variant-content flex flex-col items-center justify-between gap-3 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
+      <div class="new-lp-variant-content flex flex-col items-center justify-between gap-2 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
         {% if variant.metafields.custom.badge %}
           <div
             class="text-[26px] md:text-[30px] font-bold !leading-tight group-[.active]:!text-[#FFFFFF] group-[.inactive]:!text-[#444444] duration-100"
@@ -104,7 +104,7 @@
         </div>
 
         {% if variant.metafields.custom.free_shipping_text != blank %}
-          <div class="text-[9px] md:text-[11px] font-normal text-[#1273B7] !leading-tight">
+          <div class="text-[9px] md:text-[11px] font-medium text-[#1273B7] !leading-tight">
             {{- variant.metafields.custom.free_shipping_text -}}
           </div>
         {% endif %}
