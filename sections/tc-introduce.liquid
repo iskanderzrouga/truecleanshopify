@@ -38,7 +38,7 @@
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-10 md:gap-[60px]">
-      <div class="flex flex-col items-center justify-center gap-6 md:gap-10 w-full">
+      {% comment %} <div class="flex flex-col items-center justify-center gap-6 md:gap-10 w-full">
         {% if section.settings.label != blank %}
           <div
             class="max-w-[650px] mx-auto text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if section.settings.label_m_center %} max-md:text-center {% endif %} {% if section.settings.label_d_center %} md:text-center {% endif %}"
@@ -91,9 +91,9 @@
             {% endfor %}
           </div>
         {% endif %}
-      </div>
+      </div> {% endcomment %}
 
-      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+      {% comment %} <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
         {% if section.settings.heading != blank %}
           <h2
             class="max-w-[680px] mx-auto text-[28px] md:text-[48px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
@@ -161,7 +161,7 @@
             {% endfor %}
           </div>
         {% endif %}
-      </div>
+      </div> {% endcomment %}
 
       <div class="flex flex-col items-center justify-center gap-6 md:gap-10">
         {% if section.settings.subheading2 != blank %}
