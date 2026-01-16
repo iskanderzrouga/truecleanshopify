@@ -524,10 +524,10 @@
       "name": "TC Multicolumn",
       "settings": {
         "section_id": "",
-        "label": "",
+        "label": "How TrueClean Works:",
         "label_m_center": true,
         "label_d_center": true,
-        "label_color": "#001C19",
+        "label_color": "#000000",
         "product": "",
         "heading": "Introducing TrueClean Automatic Toilet Cleaner",
         "heading_m_center": true,
