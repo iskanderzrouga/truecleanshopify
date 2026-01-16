@@ -38,10 +38,10 @@
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-10 md:gap-[60px]">
-      <div class="flex flex-col items-center justify-center gap-6 md:gap-10 w-full">
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-3 w-full">
         {% if section.settings.heading != blank %}
           <h2
-            class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            class="max-w-[680px] mx-auto text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
             style="color: {{ section.settings.heading_color }};"
           >
             {{ section.settings.heading }}
@@ -50,7 +50,7 @@
 
         {% if section.settings.description != blank %}
           <div
-            class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            class="text-[16px] md:text-[20px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
             style="color: {{ section.settings.description_color }};"
           >
             {{ section.settings.description }}
