@@ -67,6 +67,29 @@
         {% endif %}
       </div>
 
+      {% if section.settings.video != blank %}
+                          <div class="relative w-full overflow-hidden rounded-[20px] aspect-[3/4] nl-video-wrapper">
+                            <video
+                              src="{{ section.settings.video }}"
+                              class="w-full h-full object-cover cursor-pointer nl-video"
+                              playsinline
+                              muted
+                            ></video>
+
+                            <div class="absolute inset-0 flex items-center justify-center nl-video-play-btn">
+                              <div class="w-16 h-16 bg-black/60 rounded-full flex items-center justify-center">
+                                <div
+                                  class="
+                                    w-0 h-0
+                                    border-l-[22px] border-l-white
+                                    border-y-[14px] border-y-transparent !block
+                                  "
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
+
       {% if section.settings.button_label != blank %}
         <div class="w-full md:w-fit mx-auto flex flex-col items-center justify-center gap-3">
           <a
@@ -95,6 +118,32 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.nl-video-wrapper').forEach((wrapper) => {
+      const video = wrapper.querySelector('.nl-video');
+      const btn = wrapper.querySelector('.nl-video-play-btn');
+
+      function togglePlay() {
+        if (video.paused) {
+          video.play();
+          btn.classList.add('hidden');
+        } else {
+          video.pause();
+          btn.classList.remove('hidden');
+        }
+      }
+
+      btn.addEventListener('click', togglePlay);
+      video.addEventListener('click', togglePlay);
+
+      video.addEventListener('pause', () => btn.classList.remove('hidden'));
+      video.addEventListener('play', () => btn.classList.add('hidden'));
+    });
+  });
+</script>
+
 
 {% schema %}
 {
