@@ -56,6 +56,15 @@
             {{ section.settings.description }}
           </div>
         {% endif %}
+
+        {% if section.settings.label != blank %}
+        <div
+            class="mt-6 md:mt-7 text-[17px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if section.settings.label_m_center %} max-md:text-center {% endif %} {% if section.settings.label_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.label_color }};"
+        >
+            {{ section.settings.label }}
+        </div>
+        {% endif %}
       </div>
 
       {% if section.blocks.size > 0 %}
