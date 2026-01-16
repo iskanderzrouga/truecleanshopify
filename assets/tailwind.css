@@ -3355,6 +3355,12 @@ html {
       text-decoration-line: underline;
     }
   }
+  .\[\&\>p\>strong\]\:font-bold {
+    &>p>strong {
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
+    }
+  }
   .\[\&\>p\>strong\]\:font-medium {
     &>p>strong {
       --tw-font-weight: var(--font-weight-medium);
