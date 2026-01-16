@@ -707,18 +707,18 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p><strong>Our fast-acting, chlorine-based formula:</strong></p>",
+            "heading": "",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#ffffff",
             "image": "shopify://shop_images/Gemini_Generated_Image_uc150kucsd150kuc15_1.png",
-            "icon": "shopify://shop_images/material-symbols_check-circle_2.png",
-            "description1": "<p><strong>Breaks down and disperses hard water minerals</strong> like calcium, iron, and manganese <strong>before they can bond to your toilet bowl</strong></p>",
-            "description2": "<p><strong>Eliminates up to 99.9% of bacteria</strong> that cause unsightly pink and black slime</p>",
-            "description3": "<p><strong>Creates an invisible protective coating</strong> on the bowl surface to <strong>prevent new stains from sticking</strong></p>",
+            "icon": "shopify://shop_images/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
+            "description1": "<p>Stops stains before they form</p>",
+            "description2": "<p>Kills bacteria that causes pink & black slime</p>",
+            "description3": "<p>Lasts 90 days</p>",
             "description4": "",
             "description5": "",
-            "description_color": "#ffffff"
+            "description_color": "#000000"
           }
         },
         "row3_eU8g4y": {
@@ -729,18 +729,18 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p><strong>TrueClean's bowl dispenser is designed for controlled release.</strong> This ensures the perfect amount of cleaning solution is dispensed with every flush.</p>",
+            "heading": "",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#ffffff",
             "image": "shopify://shop_images/Gemini_Generated_Image_v3hlw4v3hlw4v3hl-Photoroom_1.png",
-            "icon": "shopify://shop_images/material-symbols_check-circle_2.png",
-            "description1": "<p><strong>Flush-activated, </strong>releases a precise dose only when water flows</p>",
-            "description2": "<p><strong>Bowl-only delivery</strong></p>",
-            "description3": "<p><strong>Never touches your tank,</strong> protecting flappers, seals, and plumbing from damage</p>",
+            "icon": "shopify://shop_images/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
+            "description1": "<p>Releases cleaner only when you flush</p>",
+            "description2": "<p>Delivers to the bowl — never your tank</p>",
+            "description3": "<p>Protects flappers, seals & valves</p>",
             "description4": "",
             "description5": "",
-            "description_color": "#ffffff"
+            "description_color": "#000000"
           }
         }
       },
