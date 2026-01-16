@@ -81,7 +81,7 @@
                       {{
                         block.settings.image
                         | image_url: width: 300
-                        | image_tag: class: 'w-full rounded-[10px] h-fit object-contain', sizes: '300px'
+                        | image_tag: class: 'w-full rounded-[10px] h-fit object-cover aspect-[3/2]', sizes: '300px'
                       }}
                     {% endif %}
 

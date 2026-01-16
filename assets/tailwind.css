@@ -582,6 +582,9 @@ html {
   .aspect-\[1\/1\] {
     aspect-ratio: 1/1;
   }
+  .aspect-\[3\/2\] {
+    aspect-ratio: 3/2;
+  }
   .aspect-\[3\/4\] {
     aspect-ratio: 3/4;
   }
