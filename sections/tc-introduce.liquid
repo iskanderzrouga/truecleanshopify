@@ -149,7 +149,7 @@
 
                       {% if block.settings.description != blank %}
                         <div
-                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-normal !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-medium !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                           style="color: {{ block.settings.description_color }};"
                         >
                           {{ block.settings.description }}
