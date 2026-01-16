@@ -1517,7 +1517,7 @@
         "btn_bottom_icon": "shopify://shop_images/image_6_2.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
         "btn_bottom_text_color": "#ffffff",
-        "bgcolor": "#ffffff",
+        "bgcolor": "#00b7a2",
         "max_width": 1040,
         "padding_top": 72,
         "padding_bottom": 72,
