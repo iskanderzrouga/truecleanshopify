@@ -186,7 +186,7 @@
               {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'row3' %}
-                    <div class="grid md:grid-cols-5 {% if forloop.last %} max-md:border-t md:border-l max-md:pt-5 md:pl-5 border-[#D5D5D5] {% endif %}">
+                    <div class="grid md:grid-cols-5 {% if forloop.last %} max-md:border-t md:border-l max-md:pt-5 md:pl-5 border-[#D5D5D5] {% endif %} md:items-center">
                       {% if block.settings.image != blank %}
                         <div class="md:col-span-2 flex items-center justify-center">
                           {{
@@ -234,7 +234,7 @@
                                     }}
                                   {% endif %}
                                   <div
-                                    class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                                    class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                                     style="color: {{ block.settings.description_color }};"
                                   >
                                     {{ description }}
