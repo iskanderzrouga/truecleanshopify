@@ -789,6 +789,40 @@
         "padding_bottom_m": 36
       }
     },
+    "tc_video_Y7iwgL": {
+      "type": "tc-video",
+      "name": "TC Video",
+      "settings": {
+        "section_id": "",
+        "label": "",
+        "label_m_center": true,
+        "label_d_center": true,
+        "label_color": "#001C19",
+        "product": "",
+        "heading": "60-Second Install",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#000000",
+        "description": "<p>No plumber. No tools. If you can lift a toilet lid, you can install TrueClean.</p>",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#000000",
+        "text": "",
+        "video": "",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001C19",
+        "bgcolor": "#eff6f6",
+        "max_width": 680,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "tc_safe_compare_3FdfYW": {
       "type": "tc-safe-compare",
       "blocks": {
@@ -2417,6 +2451,7 @@
     "tc_multicolumn_rcdDEA",
     "tc_multicolumn_9B4gMH",
     "tc_introduce_GxejY8",
+    "tc_video_Y7iwgL",
     "tc_safe_compare_3FdfYW",
     "tc_promise_k8Lrix",
     "tc_testimonials_JpzwDb",
