@@ -78,7 +78,7 @@
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'row' %}
-                  <div class="flex flex-col w-full gap-4 items-center {% if forloop.last %} border-l border-[#D5D5D5] pl-4 {% endif %}">
+                  <div class="flex flex-col w-full gap-4 items-center {% if forloop.last %} border-l border-[#D5D5D5] pl-4 {% else %} pr-4 {% endif %}">
                     {% assign icon = block.settings.icon %}
 
                     {% if block.settings.label != blank %}
