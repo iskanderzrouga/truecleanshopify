@@ -1458,6 +1458,9 @@ html {
   .border-y-transparent {
     border-block-color: transparent;
   }
+  .border-l-black {
+    border-left-color: var(--color-black);
+  }
   .border-l-transparent {
     border-left-color: transparent;
   }
