@@ -998,6 +998,9 @@ html {
   .min-w-\[250px\] {
     min-width: 250px;
   }
+  .min-w-\[500px\] {
+    min-width: 500px;
+  }
   .min-w-\[570px\] {
     min-width: 570px;
   }

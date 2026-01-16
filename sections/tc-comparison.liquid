@@ -63,7 +63,8 @@
       </div>
 
       {% if section.blocks.size > 0 %}
-        <div class="rounded-[24px] bg-white py-5 px-6" style="box-shadow: 0px 0px 10px 0px #0000000D;">
+        <div class="overflow-x-auto">
+        <div class="min-w-[500px] rounded-[24px] bg-white py-5 px-6" style="box-shadow: 0px 0px 10px 0px #0000000D;">
           <div class="w-full flex flex-col relative py-5">
             <div
               class="absolute w-[16.666%] left-[33.33%] border border-[#00B7A2] bg-[#EDFFFD] rounded-[10px] !block h-full"
@@ -123,6 +124,7 @@
               {{ section.settings.text }}
             </div>
           {% endif %}
+        </div>
         </div>
       {% endif %}
 
