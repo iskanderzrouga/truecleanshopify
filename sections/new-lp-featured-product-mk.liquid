@@ -296,7 +296,7 @@
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
                     {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year  %}
-                    <div class="text-xs md:text-[16px] font-normal !leading-tight text-[#001C19]">
+                    <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
                       {{ block.settings.text |  highlight: "DATEPLACEHOLDER" | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
                   {% endif %}
