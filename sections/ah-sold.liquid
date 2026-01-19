@@ -53,7 +53,7 @@
 
         {% if section.settings.description != blank %}
           <div
-            class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
             style="color: {{ section.settings.description_color }};"
           >
             {{ section.settings.description }}
@@ -65,7 +65,7 @@
         {% if section.settings.text1 != blank %}
           <div class="flex items-center max-md:justify-center">
             <div
-              class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
+              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
               style="color: {{ section.settings.text_color }};"
             >
               {{ section.settings.text1 }}
@@ -75,7 +75,7 @@
         {% if section.settings.text2 != blank %}
           <div class="flex items-center max-md:justify-center">
             <div
-              class="text-[16px] md:text-[18px] font-normal !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
+              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
               style="color: {{ section.settings.text_color }};"
             >
               {{ section.settings.text2 }}
@@ -112,7 +112,7 @@
 
                   {% if block.settings.description != blank %}
                     <div
-                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[14px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[14px] md:text-[18px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                       style="color: {{ block.settings.description_color }};"
                     >
                       {{ block.settings.description }}
