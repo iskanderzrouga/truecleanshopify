@@ -84,7 +84,7 @@
 
           {% assign today = 'now' | date: '%-d %b' | upcase %}
           <p class="text-[13px] md:text-[18px] font-medium text-[#000000] !leading-tight">
-            <span class="underline">Urgent Update: {{ today }}</span>, {{ section.settings.shipping_heading | replace: 'DATEPLACEHOLDER', diff_days }}
+            <span class="underline font-bold">Urgent Update: {{ today }}</span>, {{ section.settings.shipping_heading | replace: 'DATEPLACEHOLDER', diff_days }}
           </p>
         </div>
       </div>
