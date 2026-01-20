@@ -94,16 +94,15 @@
                   {% endif %}
                 </div>
 
-                {% assign max_width = section.settings.max_width %}
-      {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
-      {% assign max_width_px = max_width | append: 'px' %}
-      {% if section.settings.image != blank %}
-        {{
-          section.settings.image
-          | image_url: width: max_width
-          | image_tag: class: 'w-full section-main-image', sizes: max_width_px
-        }}
-      {% endif %}
+                {% assign max_width = section.settings.max_width |  divided_by: 2 %}
+                {% assign max_width_px = max_width | append: 'px' %}
+                {% if block.settings.image != blank %}
+                    {{
+                    block.settings.image
+                    | image_url: width: max_width
+                    | image_tag: class: 'w-full', sizes: max_width_px
+                    }}
+                {% endif %}
             {% endcase %}
           {% endfor %}
         </div>
