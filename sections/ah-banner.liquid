@@ -78,44 +78,44 @@
                     </div>
 
                     <div class="bg-white rounded-[20px] px-4 py-5 flex flex-col gap-4">
-                        {% if block.settings.review_text != blank %}
-                            <div
-                              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19]"
-                            >
-                              {{ block.settings.review_text }}
-                            </div>
-                          {% endif %}
-                          <div class="flex items-center gap-1">
-                            {% if section.settings.review_image != blank %}
-                                {{
-                                section.settings.review_image
-                                | image_url: width: 24
-                                | image_tag: class: 'w-full max-w-[24px]', sizes: '24px'
-                                }}
-                            {% endif %}
+                      {% if block.settings.review_text != blank %}
+                        <div
+                          class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19]"
+                        >
+                          {{ block.settings.review_text }}
+                        </div>
+                      {% endif %}
+                      <div class="flex items-center gap-1">
+                        {% if block.settings.review_image != blank %}
+                          {{
+                            block.settings.review_image
+                            | image_url: width: 24
+                            | image_tag: class: 'w-full max-w-[24px]', sizes: '24px'
+                          }}
+                        {% endif %}
 
-                            {% if block.settings.review_name != blank %}
-                            <div
-                              class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19]"
-                            >
-                              {{ block.settings.review_name }}
-                            </div>
-                          {% endif %}
-                          {% if section.settings.review_icon != blank %}
-                                {{
-                                section.settings.review_icon
-                                | image_url: width: 16
-                                | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
-                                }}
-                            {% endif %}
-                          {% if block.settings.review_verified != blank %}
-                            <div
-                              class="text-[12px] md:text-[14px] font-normal !leading-tight text-[#001C19]"
-                            >
-                              {{ block.settings.review_verified }}
-                            </div>
-                          {% endif %}
+                        {% if block.settings.review_name != blank %}
+                          <div
+                            class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19]"
+                          >
+                            {{ block.settings.review_name }}
                           </div>
+                        {% endif %}
+                        {% if block.settings.review_icon != blank %}
+                          {{
+                            block.settings.review_icon
+                            | image_url: width: 16
+                            | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                          }}
+                        {% endif %}
+                        {% if block.settings.review_verified != blank %}
+                          <div
+                            class="text-[12px] md:text-[14px] font-normal !leading-tight text-[#001C19]"
+                          >
+                            {{ block.settings.review_verified }}
+                          </div>
+                        {% endif %}
+                      </div>
                     </div>
                   </div>
 
