@@ -29,8 +29,8 @@
           "type": "review",
           "settings": {
             "name": "",
-            "image": "shopify://shop_images/Group_46485.png",
-            "heading": "<p><strong>4.85/5 </strong>by <strong>50,173 </strong>Homeowners Who Stopped Scrubbing</p>"
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p><strong>4.85\/5 <\/strong>by <strong>50,173 <\/strong>Homeowners Who Stopped Scrubbing<\/p>"
           }
         },
         "heading_KRif3P": {
@@ -42,7 +42,7 @@
         "description_CwK9EA": {
           "type": "description",
           "settings": {
-            "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>"
+            "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>"
           }
         },
         "ship_by_zf66Rh": {
@@ -59,29 +59,29 @@
         "feature_HiXeDc": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>No Rings, Slime, Or Stains</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
           }
         },
         "feature_8Yte4B": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>60-Second Install. No Tools.</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
           }
         },
         "feature_XCqr98": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Guest-Ready 24/7</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
           }
         },
         "feature_UnivFit": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Fits Any Toilet</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
           }
         },
         "variant_picker_X3mg6k": {
@@ -96,7 +96,7 @@
             "label2": "",
             "horizontal_type": true,
             "updated_version": false,
-            "feature_icon": "shopify://shop_images/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
             "sub_feature1": "Free dispensers with first order",
             "sub_feature2": "Free fast shipping, always",
             "sub_feature3": "Dispenser breaks? We replace it free",
@@ -112,7 +112,7 @@
           "disabled": true,
           "settings": {
             "text": "Ships by DATEPLACEHOLDER",
-            "icon": "shopify://shop_images/ship-icon.png"
+            "icon": "shopify:\/\/shop_images\/ship-icon.png"
           }
         },
         "price_JdP3yx": {
@@ -135,11 +135,11 @@
             "show_gift_card_recipient": false,
             "custom_text": "ADD TO CART",
             "text1": "90-Day Money-Back Guarantee",
-            "icon1": "shopify://shop_images/image_6.png",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
             "text2": "Free Fast Shipping",
-            "icon2": "shopify://shop_images/image_7_1.png",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
             "text3": "Secure Checkout",
-            "icon3": "shopify://shop_images/image_8.png"
+            "icon3": "shopify:\/\/shop_images\/image_8.png"
           }
         },
         "collapsible_tab_98w9hT": {
@@ -147,7 +147,7 @@
           "settings": {
             "heading": "How do the refills work?",
             "icon": "none",
-            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!</p>",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
             "page": ""
           }
         },
@@ -156,7 +156,7 @@
           "settings": {
             "heading": "Will it fit my toilet?",
             "icon": "none",
-            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. <\/p>",
             "page": ""
           }
         },
@@ -165,18 +165,18 @@
           "settings": {
             "heading": "Try it 100% risk-free",
             "icon": "none",
-            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
             "page": ""
           }
         },
         "testimonial_VHWM3m": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
+            "avatar": "shopify:\/\/shop_images\/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
             "heading": "",
-            "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!</p>",
+            "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!<\/p>",
             "name": "- Rachel M. Tx.",
-            "icon": "shopify://shop_images/material-symbols_verified.png",
+            "icon": "shopify:\/\/shop_images\/material-symbols_verified.png",
             "verified": ""
           }
         }
@@ -223,11 +223,11 @@
         "button_type": "primary",
         "bottom_label_grid": 2,
         "product_bottom_label": "90-Day Money-Back Guarantee",
-        "bottom_label_icon": "shopify://shop_images/image_6.png",
+        "bottom_label_icon": "shopify:\/\/shop_images\/image_6.png",
         "product_bottom_label2": "Free Fast Shipping",
-        "bottom_label_icon2": "shopify://shop_images/image_7_1.png",
+        "bottom_label_icon2": "shopify:\/\/shop_images\/image_7_1.png",
         "product_bottom_label3": "Secure Checkout",
-        "bottom_label_icon3": "shopify://shop_images/image_8.png",
+        "bottom_label_icon3": "shopify:\/\/shop_images\/image_8.png",
         "bgcolor": "#ffffff",
         "max_width": 1280,
         "padding_top": 36,
@@ -260,8 +260,8 @@
         "description_m_center": true,
         "description_d_center": false,
         "description_color": "#001c19",
-        "image": "shopify://shop_images/Group_1321314772_b17be781-cbbd-44c9-8578-9ef064b646f5.png",
-        "image_mobile": "shopify://shop_images/Group_2607838_5abef4b2-246b-45cc-898d-de4d65022f60.png",
+        "image": "shopify:\/\/shop_images\/Group_1321314772_b17be781-cbbd-44c9-8578-9ef064b646f5.png",
+        "image_mobile": "shopify:\/\/shop_images\/Group_2607838_5abef4b2-246b-45cc-898d-de4d65022f60.png",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
@@ -282,25 +282,25 @@
         "logo_hQC7Jz": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Frame.png"
+            "image": "shopify:\/\/shop_images\/Frame.png"
           }
         },
         "logo_rkFBVt": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Layer_1.png"
+            "image": "shopify:\/\/shop_images\/Layer_1.png"
           }
         },
         "logo_pY8fWJ": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Frame_1.png"
+            "image": "shopify:\/\/shop_images\/Frame_1.png"
           }
         },
         "logo_J4RYdY": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/svg8.png"
+            "image": "shopify:\/\/shop_images\/svg8.png"
           }
         }
       },
@@ -343,12 +343,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Minerals and bacteria stick to your bowl with every flush.</p>",
+            "description": "<p>Minerals and bacteria stick to your bowl with every flush.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_11_e6f001c4-6f2e-464b-bf7a-1a117d3834f6.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_11_e6f001c4-6f2e-464b-bf7a-1a117d3834f6.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -367,12 +367,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>You remove what's visible but more is already forming.</p>",
+            "description": "<p>You remove what's visible but more is already forming.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_12_21a0a00a-d858-4b43-9637-bb6f6525cf7c.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_12_21a0a00a-d858-4b43-9637-bb6f6525cf7c.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -391,12 +391,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>They remove stains after they form. You'll always be one step behind.</p>",
+            "description": "<p>They remove stains after they form. You'll always be one step behind.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_14_c9a2e127-a116-497f-93ae-0c7df887a8a1.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_14_c9a2e127-a116-497f-93ae-0c7df887a8a1.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -455,12 +455,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Attach to your overflow tube in 60 seconds. No tools or plumbers required.</p>",
+            "description": "<p>Attach to your overflow tube in 60 seconds. No tools or plumbers required.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/attachment.gif",
+            "image": "shopify:\/\/shop_images\/attachment.gif",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -479,12 +479,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Every flush releases a blue cleaning solution directly into the bowl.</p>",
+            "description": "<p>Every flush releases a blue cleaning solution directly into the bowl.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/attachment_1.gif",
+            "image": "shopify:\/\/shop_images\/attachment_1.gif",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -503,12 +503,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Minerals breakdown or flush instead of bonding. Your bowl stays clean on autopilot.</p>",
+            "description": "<p>Minerals breakdown or flush instead of bonding. Your bowl stays clean on autopilot.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_17_0d09c3e3-9c9a-4dba-8843-f747a464d4db.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_17_0d09c3e3-9c9a-4dba-8843-f747a464d4db.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -533,7 +533,7 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#000000",
-        "description": "<p>TrueClean is an automatic dispenser. It clips inside your tank and releases cleaner into the bowl with every flush.</p>",
+        "description": "<p>TrueClean is an automatic dispenser. It clips inside your tank and releases cleaner into the bowl with every flush.<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#000000",
@@ -567,12 +567,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Minerals and bacteria deposit onto your bowl dozens of times a day.</p>",
+            "description": "<p>Minerals and bacteria deposit onto your bowl dozens of times a day.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_24.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_24.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -591,12 +591,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>You remove what's visible but with each flush more is already forming.</p>",
+            "description": "<p>You remove what's visible but with each flush more is already forming.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_25.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_25.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -615,12 +615,12 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Everything you've tried attacks stains after they form. That's why you're losing.</p>",
+            "description": "<p>Everything you've tried attacks stains after they form. That's why you're losing.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_26.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_26.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -639,12 +639,12 @@
             "heading_m_center": false,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Attach to your overflow tube in 60 seconds. No tools or plumbers required.</p>",
+            "description": "<p>Attach to your overflow tube in 60 seconds. No tools or plumbers required.<\/p>",
             "description_m_center": false,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_240648302_dcc1def4-0b46-42a7-9d99-1f516bd8a056.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648302_dcc1def4-0b46-42a7-9d99-1f516bd8a056.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -663,12 +663,12 @@
             "heading_m_center": false,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Every flush releases a blue cleaning solution directly into the bowl.</p>",
+            "description": "<p>Every flush releases a blue cleaning solution directly into the bowl.<\/p>",
             "description_m_center": false,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_990_3.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_990_3.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -687,12 +687,12 @@
             "heading_m_center": false,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>Minerals breakdown or flush instead of bonding. Your bowl stays clean on autopilot.</p>",
+            "description": "<p>Minerals breakdown or flush instead of bonding. Your bowl stays clean on autopilot.<\/p>",
             "description_m_center": false,
             "description_d_center": true,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_990_4.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_990_4.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -711,11 +711,11 @@
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#ffffff",
-            "image": "shopify://shop_images/Gemini_Generated_Image_uc150kucsd150kuc15_1_e5f23a5a-a175-4e06-8088-f75e25fb58f5.png",
-            "icon": "shopify://shop_images/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
-            "description1": "<p>Stops stains before they form</p>",
-            "description2": "<p>Kills bacteria that causes pink & black slime</p>",
-            "description3": "<p>Lasts 90 days</p>",
+            "image": "shopify:\/\/shop_images\/Gemini_Generated_Image_uc150kucsd150kuc15_1_e5f23a5a-a175-4e06-8088-f75e25fb58f5.png",
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
+            "description1": "<p>Stops stains before they form<\/p>",
+            "description2": "<p>Kills bacteria that causes pink & black slime<\/p>",
+            "description3": "<p>Lasts 90 days<\/p>",
             "description4": "",
             "description5": "",
             "description_color": "#000000"
@@ -733,11 +733,11 @@
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#ffffff",
-            "image": "shopify://shop_images/Gemini_Generated_Image_v3hlw4v3hlw4v3hl-Photoroom_1.png",
-            "icon": "shopify://shop_images/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
-            "description1": "<p>Releases cleaner only when you flush</p>",
-            "description2": "<p>Delivers to the bowl — never your tank</p>",
-            "description3": "<p>Protects flappers, seals & valves</p>",
+            "image": "shopify:\/\/shop_images\/Gemini_Generated_Image_v3hlw4v3hlw4v3hl-Photoroom_1.png",
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle_1_1fe45636-c0c4-4c2b-8ebe-3328e728b20c.png",
+            "description1": "<p>Releases cleaner only when you flush<\/p>",
+            "description2": "<p>Delivers to the bowl — never your tank<\/p>",
+            "description3": "<p>Protects flappers, seals & valves<\/p>",
             "description4": "",
             "description5": "",
             "description_color": "#000000"
@@ -769,17 +769,17 @@
         "subheading1": "How TrueClean Works:",
         "subheading2": "What’s Inside",
         "subheading_color": "#001c19",
-        "description": "<p>TrueClean works automatically with every flush to prevent stains before they form.</p>",
+        "description": "<p>TrueClean works automatically with every flush to prevent stains before they form.<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
-        "text": "<p>Replace the cartridge every 90 days. Never scrub again.</p>",
+        "text": "<p>Replace the cartridge every 90 days. Never scrub again.<\/p>",
         "border_radius": 0,
         "image_right": false,
         "button_label": "STOP SCRUBBING NOW →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 1280,
@@ -803,12 +803,12 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#000000",
-        "description": "<p>No plumber. No tools. If you can lift a toilet lid, you can install TrueClean.</p>",
+        "description": "<p>No plumber. No tools. If you can lift a toilet lid, you can install TrueClean.<\/p>",
         "description_m_center": true,
         "description_d_center": false,
         "description_color": "#000000",
         "text": "",
-        "video": "https://cdn.shopify.com/videos/c/o/v/2e35b9d25b384d008b893b20bfad2c65.mp4",
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2e35b9d25b384d008b893b20bfad2c65.mp4",
         "border_radius": 0,
         "image_right": false,
         "button_label": "",
@@ -834,13 +834,13 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
-            "description": "<p><em>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean flows directly to the bowl without touching tank components. It's </em><em><strong>the only automatic system I confidently recommend.</strong></em><em>\"</em></p>",
+            "icon": "shopify:\/\/shop_images\/verified.png",
+            "description": "<p><em>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean flows directly to the bowl without touching tank components. It's <\/em><em><strong>the only automatic system I confidently recommend.<\/strong><\/em><em>\"<\/em><\/p>",
             "description_m_center": true,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Ellipse_22.png"
+            "image": "shopify:\/\/shop_images\/Ellipse_22.png"
           }
         },
         "row_KbDhbB": {
@@ -851,12 +851,12 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_990.png",
-            "icon": "shopify://shop_images/mdi_close-circle.png",
-            "description1": "<p>Corrodes rubber flappers</p>",
-            "description2": "<p>Damages fill valve seals</p>",
-            "description3": "<p>Causes leaks over time</p>",
-            "description4": "<p>$300+ repair bills</p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_990.png",
+            "icon": "shopify:\/\/shop_images\/mdi_close-circle.png",
+            "description1": "<p>Corrodes rubber flappers<\/p>",
+            "description2": "<p>Damages fill valve seals<\/p>",
+            "description3": "<p>Causes leaks over time<\/p>",
+            "description4": "<p>$300+ repair bills<\/p>",
             "description5": "",
             "description_color": "#001c19"
           }
@@ -865,16 +865,16 @@
           "type": "row",
           "settings": {
             "bgcolor": "#f4f4f6",
-            "label": "<strong>TrueClean</strong>",
+            "label": "<strong>TrueClean<\/strong>",
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_995.png",
-            "icon": "shopify://shop_images/material-symbols_check-circle_1.png",
-            "description1": "<p>Bowl-only application</p>",
-            "description2": "<p>Protects all plumbing components</p>",
-            "description3": "<p>No leak risk</p>",
-            "description4": "<p>Plumber-approved & safe for septic-tanks</p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_995.png",
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle_1.png",
+            "description1": "<p>Bowl-only application<\/p>",
+            "description2": "<p>Protects all plumbing components<\/p>",
+            "description3": "<p>No leak risk<\/p>",
+            "description4": "<p>Plumber-approved & safe for septic-tanks<\/p>",
             "description5": "",
             "description_color": "#001c19"
           }
@@ -893,7 +893,7 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p>TrueClean's cleaning solution never touches your tank. It flows <strong>directly to the bowl</strong>—only when you flush so your flappers, seals, and valves stay protected.</p>",
+        "description": "<p>TrueClean's cleaning solution never touches your tank. It flows <strong>directly to the bowl<\/strong>—only when you flush so your flappers, seals, and valves stay protected.<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
@@ -902,8 +902,8 @@
         "image_right": false,
         "button_label": "PROTECT YOUR PLUMBING →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_7.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_7.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#fbffe6",
         "max_width": 780,
@@ -933,7 +933,7 @@
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_46345.png",
+            "image": "shopify:\/\/shop_images\/Group_46345.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -957,7 +957,7 @@
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098230.png",
+            "image": "shopify:\/\/shop_images\/Group_48098230.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -981,7 +981,7 @@
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098229.png",
+            "image": "shopify:\/\/shop_images\/Group_48098229.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1005,7 +1005,7 @@
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098231.png",
+            "image": "shopify:\/\/shop_images\/Group_48098231.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1029,7 +1029,7 @@
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098228.png",
+            "image": "shopify:\/\/shop_images\/Group_48098228.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1082,16 +1082,16 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Linda – California <br/>Timeframe: 2 weeks <br/>Water type: City hard water</p>",
+            "heading": "<p>Linda – California\u2028<br\/>Timeframe: 2 weeks\u2028<br\/>Water type: City hard water<\/p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>“I live in California where hard water combined with water use restrictions (‘If it’s yellow, let it mellow…’) leads to hard-to-clean toilet bowl stains. Two weeks in and I am amazed! No new stains. I highly recommend TrueClean.”</p>",
+            "description": "<p>“I live in California where hard water combined with water use restrictions (‘If it’s yellow, let it mellow…’) leads to hard-to-clean toilet bowl stains. Two weeks in and I am amazed! No new stains. I highly recommend TrueClean.”<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_19.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_19.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1106,16 +1106,16 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Simon - Desborough <br/>Timeframe: 1 week <br/>Water type: Community well</p>",
+            "heading": "<p>Simon - Desborough\u2028<br\/>Timeframe: 1 week\u2028<br\/>Water type: Community well<\/p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>“TrueClean has been in place for only a week and the change is amazing. We have hard well water and nothing else has worked. Clean isn't the issue. Hard water staining is. Even the tanks were solid brown and encrusted. Not anymore!”</p>",
+            "description": "<p>“TrueClean has been in place for only a week and the change is amazing. We have hard well water and nothing else has worked. Clean isn't the issue. Hard water staining is. Even the tanks were solid brown and encrusted. Not anymore!”<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_43a24ed7-9c01-48b3-86f1-61cc05d3ca12.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_43a24ed7-9c01-48b3-86f1-61cc05d3ca12.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1130,16 +1130,16 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Jane Wilson – Washington State <br/>Timeframe: 3 weeks <br/>Water type: Very hard city water</p>",
+            "heading": "<p>Jane Wilson – Washington State\u2028<br\/>Timeframe: 3 weeks\u2028<br\/>Water type: Very hard city water<\/p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>“I used to live in Washington state and the water is so hard on toilets. I was having to use a pumice stone every time. It sucked. Clipped these into the tanks 3 weeks ago and haven't had any hard water deposited since.”</p>",
+            "description": "<p>“I used to live in Washington state and the water is so hard on toilets. I was having to use a pumice stone every time. It sucked. Clipped these into the tanks 3 weeks ago and haven't had any hard water deposited since.”<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_21.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_21.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1154,16 +1154,16 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Unknown – Well Water Home <br/>Timeframe: 3–4 weeks <br/>Water type: Well water</p>",
+            "heading": "<p>Unknown – Well Water Home\u2028<br\/>Timeframe: 3–4 weeks\u2028<br\/>Water type: Well water<\/p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>“We have well water and get black slime in our toilets. These do come with an extra tube that’s longer, which I appreciated. It worked out and the water line stains are finally under control.”</p>",
+            "description": "<p>“We have well water and get black slime in our toilets. These do come with an extra tube that’s longer, which I appreciated. It worked out and the water line stains are finally under control.”<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_22.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_22.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1178,16 +1178,16 @@
             "label_m_center": true,
             "label_d_center": true,
             "label_color": "#001c19",
-            "heading": "<p>Jared Claxton - Florida <br/>Timeframe: 1 month <br/>Water type: Humid area</p>",
+            "heading": "<p>Jared Claxton - Florida\u2028<br\/>Timeframe: 1 month\u2028<br\/>Water type: Humid area<\/p>",
             "heading_m_center": false,
             "heading_d_center": false,
             "heading_color": "#001c19",
-            "description": "<p>\"I live in a humid area and the bowls just get gross too fast. This keeps mold growth out of the bowl.\"</p>",
+            "description": "<p>\"I live in a humid area and the bowls just get gross too fast. This keeps mold growth out of the bowl.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Rectangle_1001_23.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_23.png",
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
@@ -1218,8 +1218,8 @@
         "image_right": false,
         "button_label": "BUY NOW & SAVE →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 1400,
@@ -1244,7 +1244,7 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p><strong>AirBnb Host?</strong><br/>Guest-ready bathrooms between every turnover. No coordinating cleaners. No nasty surprises.</p>",
+            "description": "<p><strong>AirBnb Host?<\/strong><br\/>Guest-ready bathrooms between every turnover. No coordinating cleaners. No nasty surprises.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
@@ -1267,7 +1267,7 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p><strong>Vacation Home?</strong><br/>Arrive to already clean—not to cleaning.</p>",
+            "description": "<p><strong>Vacation Home?<\/strong><br\/>Arrive to already clean—not to cleaning.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
@@ -1290,7 +1290,7 @@
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p><strong>Kids Bathroom?</strong><br/>The kids' bathroom handles itself. No monitoring. No nagging. No Saturdays spent catching up.</p>",
+            "description": "<p><strong>Kids Bathroom?<\/strong><br\/>The kids' bathroom handles itself. No monitoring. No nagging. No Saturdays spent catching up.<\/p>",
             "description_m_center": true,
             "description_d_center": true,
             "small_description": false,
@@ -1316,18 +1316,18 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p>One bathroom or four, <strong>60 second install </strong>once per toilet. <strong>No tools or plumbers required</strong>. Every <strong>flush cleans automatically</strong> so you don’t have to.</p>",
+        "description": "<p>One bathroom or four, <strong>60 second install <\/strong>once per toilet. <strong>No tools or plumbers required<\/strong>. Every <strong>flush cleans automatically<\/strong> so you don’t have to.<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
-        "image": "shopify://shop_images/image_19_27f9994e-cf2f-4828-8309-5db15dadc80a.png",
-        "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!</strong>  The more bathrooms, the more you save.</p>",
+        "image": "shopify:\/\/shop_images\/image_19_27f9994e-cf2f-4828-8309-5db15dadc80a.png",
+        "text": "<p>Our <strong>Whole Home Bundles are up to 37% off!<\/strong>  The more bathrooms, the more you save.<\/p>",
         "border_radius": 0,
         "image_right": false,
         "button_label": "BUNDLE & SAVE →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 880,
@@ -1345,25 +1345,25 @@
           "settings": {
             "border_color": "#d9dde0",
             "label": "",
-            "image1": "shopify://shop_images/TrueClean_logo_2.png",
+            "image1": "shopify:\/\/shop_images\/TrueClean_logo_2.png",
             "text1": "",
-            "text2": "<p><strong>Tank Tabs</strong></p>",
-            "text3": "<p><strong>Brush & Bleach</strong></p>",
-            "text4": "<p><strong>Disposable Wands</strong></p>"
+            "text2": "<p><strong>Tank Tabs<\/strong><\/p>",
+            "text3": "<p><strong>Brush & Bleach<\/strong><\/p>",
+            "text4": "<p><strong>Disposable Wands<\/strong><\/p>"
           }
         },
         "row_xKGDrq": {
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>No tank contact</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>No tank contact<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "icon2": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text2": "",
-            "icon3": "shopify://shop_images/fe_check.png",
+            "icon3": "shopify:\/\/shop_images\/fe_check.png",
             "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
+            "icon4": "shopify:\/\/shop_images\/fe_check.png",
             "text4": ""
           }
         },
@@ -1371,14 +1371,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>Protects plumbing</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>Protects plumbing<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "icon2": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text2": "",
-            "icon3": "shopify://shop_images/fe_check.png",
+            "icon3": "shopify:\/\/shop_images\/fe_check.png",
             "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
+            "icon4": "shopify:\/\/shop_images\/fe_check.png",
             "text4": ""
           }
         },
@@ -1386,14 +1386,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>Prevents stains</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>Prevents stains<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/fe_check.png",
+            "icon2": "shopify:\/\/shop_images\/fe_check.png",
             "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "icon3": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "icon4": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text4": ""
           }
         },
@@ -1401,14 +1401,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>No harsh fumes</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>No harsh fumes<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "icon2": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "icon3": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "icon4": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text4": ""
           }
         },
@@ -1416,14 +1416,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>Works automatically</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>Works automatically<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/fe_check.png",
+            "icon2": "shopify:\/\/shop_images\/fe_check.png",
             "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "icon3": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
+            "icon4": "shopify:\/\/shop_images\/fe_check.png",
             "text4": ""
           }
         },
@@ -1431,14 +1431,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>Set-and-forget</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>Set-and-forget<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "icon2": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "icon3": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "icon4": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text4": ""
           }
         },
@@ -1446,14 +1446,14 @@
           "type": "row",
           "settings": {
             "border_color": "#d9dde0",
-            "label": "<p>90-Day Guarantee</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
+            "label": "<p>90-Day Guarantee<\/p>",
+            "icon1": "shopify:\/\/shop_images\/fe_check.png",
             "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "icon2": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "icon3": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "icon4": "shopify:\/\/shop_images\/rivet-icons_close.png",
             "text4": ""
           }
         }
@@ -1485,8 +1485,8 @@
         "image_right": false,
         "button_label": "STOP SCRUBBING NOW →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 900,
@@ -1505,17 +1505,17 @@
         "heading_m_center": false,
         "heading_d_center": false,
         "heading_color": "#ffffff",
-        "description": "<p>Your order is backed by our <strong>90-Day Money-Back Guarantee</strong>. If you don't see results, or it doesn't fit your toilet simply return TrueClean for a <strong>full refund</strong>. No questions asked.</p>",
+        "description": "<p>Your order is backed by our <strong>90-Day Money-Back Guarantee<\/strong>. If you don't see results, or it doesn't fit your toilet simply return TrueClean for a <strong>full refund<\/strong>. No questions asked.<\/p>",
         "description_m_center": false,
         "description_d_center": false,
         "description_color": "#ffffff",
-        "image": "shopify://shop_images/Layer_1_7f7c119f-8b73-46fb-ad57-0094dc46bf59.png",
+        "image": "shopify:\/\/shop_images\/Layer_1_7f7c119f-8b73-46fb-ad57-0094dc46bf59.png",
         "border_radius": 0,
         "image_right": false,
         "button_label": "TRY TRUECLEAN RISK-FREE →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_2.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_2.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#ffffff",
         "bgcolor": "#00b7a2",
         "max_width": 1040,
@@ -1531,36 +1531,36 @@
         "review_below": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/Group_46485.png",
-            "heading": "<p>Rated 4.85/5 • 50,173+ Reviews</p>"
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p>Rated 4.85\/5 • 50,173+ Reviews<\/p>"
           }
         },
         "feature_1_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>No Rings, Slime, Or Stains</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
           }
         },
         "feature_2_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>60-Second Install. No Tools.</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
           }
         },
         "feature_3_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Guest-Ready 24/7</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
           }
         },
         "feature_4_below": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Fits Any Toilet</p>"
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
           }
         },
         "variant_picker_below": {
@@ -1570,7 +1570,7 @@
             "picker_type": "button",
             "horizontal_type": true,
             "updated_version": false,
-            "feature_icon": "shopify://shop_images/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
             "sub_feature1": "Free dispensers with first order",
             "sub_feature2": "Free fast shipping, always",
             "sub_feature3": "Dispenser breaks? We replace it free",
@@ -1584,18 +1584,18 @@
         "variant_picker_updated_Cw6DHJ": {
           "type": "variant_picker_updated",
           "settings": {
-            "icon1": "shopify://shop_images/material-symbols_home-rounded.png",
-            "description1": "<p>1 dispenser = 1 toilet</p>",
-            "icon2": "shopify://shop_images/lets-icons_date-fill.png",
-            "description2": "<p>Each refill = 90 days</p>"
+            "icon1": "shopify:\/\/shop_images\/material-symbols_home-rounded.png",
+            "description1": "<p>1 dispenser = 1 toilet<\/p>",
+            "icon2": "shopify:\/\/shop_images\/lets-icons_date-fill.png",
+            "description2": "<p>Each refill = 90 days<\/p>"
           }
         },
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
             "text": "Ships by 20th Jan 2026",
-            "icon": "shopify://shop_images/ship-icon.png",
-            "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan</p>"
+            "icon": "shopify:\/\/shop_images\/ship-icon.png",
+            "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan<\/p>"
           }
         },
         "buy_buttons_below": {
@@ -1605,11 +1605,11 @@
             "redirect_checkout": false,
             "show_dynamic_checkout": false,
             "custom_text": "ADD TO CART",
-            "icon1": "shopify://shop_images/image_6.png",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
             "text1": "90-Day Money-Back Guarantee",
-            "icon2": "shopify://shop_images/image_7_1.png",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
             "text2": "Free Shipping on All Orders",
-            "icon3": "shopify://shop_images/image_8.png",
+            "icon3": "shopify:\/\/shop_images\/image_8.png",
             "text3": "Secure Checkout"
           }
         },
@@ -1618,7 +1618,7 @@
           "settings": {
             "heading": "How do the refills work?",
             "icon": "none",
-            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!</p>",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
             "page": ""
           }
         },
@@ -1627,7 +1627,7 @@
           "settings": {
             "heading": "Will it fit my toilet?",
             "icon": "none",
-            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. <\/p>",
             "page": ""
           }
         },
@@ -1636,18 +1636,18 @@
           "settings": {
             "heading": "Try it 100% risk-free",
             "icon": "none",
-            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
             "page": ""
           }
         },
         "testimonial_GtzPCX": {
           "type": "testimonial",
           "settings": {
-            "avatar": "shopify://shop_images/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
+            "avatar": "shopify:\/\/shop_images\/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
             "heading": "",
-            "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!</p>",
+            "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!<\/p>",
             "name": "- Rachel M. Tx.",
-            "icon": "shopify://shop_images/material-symbols_verified_a39a29c8-c23a-443d-898b-06fa4d2ce0c6.png",
+            "icon": "shopify:\/\/shop_images\/material-symbols_verified_a39a29c8-c23a-443d-898b-06fa4d2ce0c6.png",
             "verified": ""
           }
         }
@@ -1675,7 +1675,7 @@
         "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
         "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
         "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
-        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
         "heading_color": "#001c19",
         "max_width": 1280,
         "padding_top": 72,
@@ -1691,418 +1691,418 @@
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"Hard water stains are a thing of the past. We installed these at our home and rental and we are so glad to not have to use pumice stones every couple months now! Loved them for over 6 months</p>",
+            "description": "<p>\"Hard water stains are a thing of the past. We installed these at our home and rental and we are so glad to not have to use pumice stones every couple months now! Loved them for over 6 months<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Rachel S.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_JMEXpL": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1002.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1002.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I was almost going out of my mind trying to figure out what to do about the stains in my toilet that would just seem to appear literally the next day after cleaning. This product is a God sent.\"</p>",
+            "description": "<p>\"I was almost going out of my mind trying to figure out what to do about the stains in my toilet that would just seem to appear literally the next day after cleaning. This product is a God sent.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Michael T.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_JUMAhb": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_03c5220c-6e07-479c-bc6e-be4115215048.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_03c5220c-6e07-479c-bc6e-be4115215048.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I've got really hard water so it's been a struggle to keep the mineral deposits at bay. I clean the toilets 1–2x a week and still needed pumice. I gave this system a try and it actually really works.\"</p>",
+            "description": "<p>\"I've got really hard water so it's been a struggle to keep the mineral deposits at bay. I clean the toilets 1–2x a week and still needed pumice. I gave this system a try and it actually really works.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Jessica L.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_QzcRTY": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1002_1.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1002_1.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"When I first bought this product, I really had my doubts. But it has been two weeks now and I am a believer. I have hard water and usually within one week my bowl starts turning tan. It's been two weeks and it's still nice and clear.\"</p>",
+            "description": "<p>\"When I first bought this product, I really had my doubts. But it has been two weeks now and I am a believer. I have hard water and usually within one week my bowl starts turning tan. It's been two weeks and it's still nice and clear.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- David M.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_KHrJ7a": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_d973b6b4-dae0-47c6-b14e-107aa67227a9.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_d973b6b4-dae0-47c6-b14e-107aa67227a9.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I have tried everything on the market for years now and finally something that works! I have well water with a lot of iron. My bowl would be stained within days of scrubbing. This is no scrub!\"</p>",
+            "description": "<p>\"I have tried everything on the market for years now and finally something that works! I have well water with a lot of iron. My bowl would be stained within days of scrubbing. This is no scrub!\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Sarah P.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_8M6FdA": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_1_a499d61f-4f46-4b93-aaf5-a1edd55010f7.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_1_a499d61f-4f46-4b93-aaf5-a1edd55010f7.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"We have a home in AZ and in WA where each sits empty 6 months at a time. Always come back to rings & dust in bowls which I struggle to remove. Tried this & didn't notice much at first. Then by end of 6 weeks I was scrubbing way less and rings were gone.\"</p>",
+            "description": "<p>\"We have a home in AZ and in WA where each sits empty 6 months at a time. Always come back to rings & dust in bowls which I struggle to remove. Tried this & didn't notice much at first. Then by end of 6 weeks I was scrubbing way less and rings were gone.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- John K.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_MeFiUB": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1002_2.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1002_2.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I bought one maybe six months ago then I bought three more and I put it in my daughter and my two grandchildren's toilet. I never let them know. I keep checking their toilets and it's clean.\"</p>",
+            "description": "<p>\"I bought one maybe six months ago then I bought three more and I put it in my daughter and my two grandchildren's toilet. I never let them know. I keep checking their toilets and it's clean.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Emily R.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_ECBAak": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_4.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_4.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I live in a humid area and the bowls just get gross too fast. This keeps mold growth out of the bowl.\"</p>",
+            "description": "<p>\"I live in a humid area and the bowls just get gross too fast. This keeps mold growth out of the bowl.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- William J.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_UFQtyX": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_5.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_5.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"At first I ordered 2 just to see if their promise holds up. Two weeks later, toilet bowl still clean. I ordered 2 more for my other toilets.\"</p>",
+            "description": "<p>\"At first I ordered 2 just to see if their promise holds up. Two weeks later, toilet bowl still clean. I ordered 2 more for my other toilets.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Olivia C.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_mMnJe8": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_6.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_6.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I was a skeptic but was tired of cleaning every few days. I am truly amazed how well it works! The bowls are spotless. I don't see the water line stains anymore.\"</p>",
+            "description": "<p>\"I was a skeptic but was tired of cleaning every few days. I am truly amazed how well it works! The bowls are spotless. I don't see the water line stains anymore.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Sophia H.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_pWCNJK": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_1_f137d0b2-3a5e-4118-a506-7250f031fd3a.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_1_f137d0b2-3a5e-4118-a506-7250f031fd3a.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"We have five toilets and since purchasing Trueclean, we have had no problems.\"</p>",
+            "description": "<p>\"We have five toilets and since purchasing Trueclean, we have had no problems.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Elizabeth W.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_NjM3EA": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1002_3.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1002_3.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I put TrueClean in all of my 3 toilets. I have not had to clean them for 2 weeks. In the past, a weekly cleaning was absolutely necessary.\"</p>",
+            "description": "<p>\"I put TrueClean in all of my 3 toilets. I have not had to clean them for 2 weeks. In the past, a weekly cleaning was absolutely necessary.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Robert G.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_khpi8N": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_8.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_8.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I was a skeptic but was tired of cleaning every few days. I am truly amazed how well it works!\"</p>",
+            "description": "<p>\"I was a skeptic but was tired of cleaning every few days. I am truly amazed how well it works!\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Jennifer B.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_hP8DPw": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_9.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_9.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"Normally everyday I would have to swish the toilets with a toilet brush because of an orange film. I have only had to do it once in the last month.\"</p>",
+            "description": "<p>\"Normally everyday I would have to swish the toilets with a toilet brush because of an orange film. I have only had to do it once in the last month.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Christopher N.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_7g49ik": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_10.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_10.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I have a basement toilet and we have extremely hard water. The toilet built up brown scale on the walls that just wouldn't come out. Since installing this, it's noticeably cleaner than the rest of the toilets.\"</p>",
+            "description": "<p>\"I have a basement toilet and we have extremely hard water. The toilet built up brown scale on the walls that just wouldn't come out. Since installing this, it's noticeably cleaner than the rest of the toilets.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Amanda D.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_zzXmE7": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_11.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_11.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"Our whole house water filter takes out the chlorine, which is great for drinking but not great for weird stuff on my toilet bowl. This system ensures no build up or line around the bowl.\"</p>",
+            "description": "<p>\"Our whole house water filter takes out the chlorine, which is great for drinking but not great for weird stuff on my toilet bowl. This system ensures no build up or line around the bowl.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Matthew F.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_w7afRE": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_12.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_12.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"We moved into a house that has 3 toilets. One hardly ever gets used. Installed the TrueClean in the other 2 toilets a month ago and I am very pleased with the results.\"</p>",
+            "description": "<p>\"We moved into a house that has 3 toilets. One hardly ever gets used. Installed the TrueClean in the other 2 toilets a month ago and I am very pleased with the results.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Laura S.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_xhmUqU": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_2_3ec1972e-3b9f-407b-bf78-a9794a48bce0.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_2_3ec1972e-3b9f-407b-bf78-a9794a48bce0.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"I installed these on each of my two toilets. The bowls stay clean and I don't see the water line stains anymore.\"</p>",
+            "description": "<p>\"I installed these on each of my two toilets. The bowls stay clean and I don't see the water line stains anymore.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Daniel P.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified ReviewVerified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         },
         "row_ikwnAB": {
           "type": "row",
           "settings": {
             "bgcolor": "#eff6f6",
-            "image": "shopify://shop_images/Rectangle_1001_14.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_14.png",
             "heading": "",
             "heading_m_center": true,
             "heading_d_center": true,
             "heading_color": "#001c19",
-            "description": "<p>\"Had buildups in toilets and needed frequent cleaning. Since I installed these with bleach cartridges I haven't had to clean even once after 2 weeks.\"</p>",
+            "description": "<p>\"Had buildups in toilets and needed frequent cleaning. Since I installed these with bleach cartridges I haven't had to clean even once after 2 weeks.\"<\/p>",
             "description_m_center": false,
             "description_d_center": false,
             "small_description": false,
             "description_color": "#001c19",
             "name": "- Stephanie V.",
             "name_color": "#001c19",
-            "icon": "shopify://shop_images/verified.png",
+            "icon": "shopify:\/\/shop_images\/verified.png",
             "verified": "Verified Review",
             "verified_color": "#001c19",
-            "stars": "shopify://shop_images/stars.png"
+            "stars": "shopify:\/\/shop_images\/stars.png"
           }
         }
       },
@@ -2135,11 +2135,11 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p><strong>4.8</strong> out of 5 stars (based on <strong>50,137</strong> verified reviews)</p>",
+        "description": "<p><strong>4.8<\/strong> out of 5 stars (based on <strong>50,137<\/strong> verified reviews)<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
-        "image": "shopify://shop_images/Group_48098358.png",
+        "image": "shopify:\/\/shop_images\/Group_48098358.png",
         "border_radius": 0,
         "image_right": false,
         "button_label": "Read More Reviews →",
@@ -2158,7 +2158,7 @@
       "type": "apps",
       "blocks": {
         "judge_me_reviews_review_widget_homepage_7Qg8Dc": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "product": "trueclean",
             "review_data": "real_data",
@@ -2182,7 +2182,7 @@
             "open": true,
             "label": "",
             "heading": "How long until I see results?",
-            "description": "<p>You'll notice prevention of new stains immediately—no new rings will form after installation. Existing hard water stains will gradually fade over 1-2 weeks. Optimal performance and complete stain removal typically occurs within 30 days of use.</p>"
+            "description": "<p>You'll notice prevention of new stains immediately—no new rings will form after installation. Existing hard water stains will gradually fade over 1-2 weeks. Optimal performance and complete stain removal typically occurs within 30 days of use.<\/p>"
           }
         },
         "row_aT9VzP": {
@@ -2191,7 +2191,7 @@
             "open": false,
             "label": "",
             "heading": "Will I never have to scrub my toilet again?",
-            "description": "<p>TrueClean reduces scrubbing by about 80%. Most customers go from cleaning 2x per week to just 1x every 3 months. You'll still want to do light maintenance cleaning for hygiene (the outside of the bowl, under the seat, etc.), but the heavy scrubbing of mineral rings and stains or weekly deep cleans becomes a thing of the past.</p>"
+            "description": "<p>TrueClean reduces scrubbing by about 80%. Most customers go from cleaning 2x per week to just 1x every 3 months. You'll still want to do light maintenance cleaning for hygiene (the outside of the bowl, under the seat, etc.), but the heavy scrubbing of mineral rings and stains or weekly deep cleans becomes a thing of the past.<\/p>"
           }
         },
         "row_kccXW4": {
@@ -2200,7 +2200,7 @@
             "open": false,
             "label": "",
             "heading": "Is it safe for my toilet and plumbing?",
-            "description": "<p>Absolutely. Unlike tank tablets that sit in your tank water and corrode rubber seals, TrueClean never contacts your tank components. The treated water flows directly into your bowl via the overflow tube. It's safe for all standard toilets, septic systems, and plumbing. Licensed plumbers recommend it.</p>"
+            "description": "<p>Absolutely. Unlike tank tablets that sit in your tank water and corrode rubber seals, TrueClean never contacts your tank components. The treated water flows directly into your bowl via the overflow tube. It's safe for all standard toilets, septic systems, and plumbing. Licensed plumbers recommend it.<\/p>"
           }
         },
         "row_UkMF6m": {
@@ -2209,7 +2209,7 @@
             "open": false,
             "label": "",
             "heading": "Does it have a smell?",
-            "description": "<p>TrueClean uses controlled chlorine, so there is a mild scent of detergent—especially noticeable right after installation. Most customers report the scent fades significantly after 1-3 flushes and becomes a pleasant barely-there scent within the first day. Many actually like the \"clean\" smell.</p>"
+            "description": "<p>TrueClean uses controlled chlorine, so there is a mild scent of detergent—especially noticeable right after installation. Most customers report the scent fades significantly after 1-3 flushes and becomes a pleasant barely-there scent within the first day. Many actually like the \"clean\" smell.<\/p>"
           }
         },
         "row_QEbLcB": {
@@ -2218,7 +2218,7 @@
             "open": false,
             "label": "",
             "heading": "How do I know if it will fit my toilet?",
-            "description": "<p>TrueClean works with approximately 95% of standard toilets manufactured in the last 30 years. It requires a standard fill valve with a refill tube. If your toilet has a canister-style flush valve (common in some Kohler models) or a non-standard fill valve, check our compatibility guide video. If it doesn't fit, we offer a full refund plus return shipping.</p>"
+            "description": "<p>TrueClean works with approximately 95% of standard toilets manufactured in the last 30 years. It requires a standard fill valve with a refill tube. If your toilet has a canister-style flush valve (common in some Kohler models) or a non-standard fill valve, check our compatibility guide video. If it doesn't fit, we offer a full refund plus return shipping.<\/p>"
           }
         },
         "row_hBWRMU": {
@@ -2227,7 +2227,7 @@
             "open": false,
             "label": "",
             "heading": "How often do I need to replace it?",
-            "description": "<p>Once you’ve purchased the TrueClean it’s engineered to last you years, however your refill lasts approximately 90 days with normal household use (15-20 flushes per day). We recommend subscribing for automatic refills every 3 months, or stocking up, so you never run out.</p>"
+            "description": "<p>Once you’ve purchased the TrueClean it’s engineered to last you years, however your refill lasts approximately 90 days with normal household use (15-20 flushes per day). We recommend subscribing for automatic refills every 3 months, or stocking up, so you never run out.<\/p>"
           }
         },
         "row_nfYL4G": {
@@ -2236,7 +2236,7 @@
             "open": false,
             "label": "",
             "heading": "What if it doesn't work for me?",
-            "description": "<p>We offer a 90-day money-back guarantee. If you're not satisfied for ANY reason within 90 days, return it for a full refund. You have nothing to lose.</p>"
+            "description": "<p>We offer a 90-day money-back guarantee. If you're not satisfied for ANY reason within 90 days, return it for a full refund. You have nothing to lose.<\/p>"
           }
         },
         "row_WJXyph": {
@@ -2245,7 +2245,7 @@
             "open": false,
             "label": "",
             "heading": "Can I use it with a septic system?",
-            "description": "<p>TrueClean is completely septic-safe. The controlled chlorine dosage is well within safe limits for septic bacteria and won't harm your system.</p>"
+            "description": "<p>TrueClean is completely septic-safe. The controlled chlorine dosage is well within safe limits for septic bacteria and won't harm your system.<\/p>"
           }
         },
         "row_QVmch8": {
@@ -2254,7 +2254,7 @@
             "open": false,
             "label": "",
             "heading": "Will it clean existing stains or just prevent new ones?",
-            "description": "<p>Both. TrueClean prevents new buildup immediately upon installation. Existing stains will gradually fade over 1-2 weeks as the minerals are broken down with each flush. For heavily stained toilets, we recommend doing a final deep clean first for faster results.</p>"
+            "description": "<p>Both. TrueClean prevents new buildup immediately upon installation. Existing stains will gradually fade over 1-2 weeks as the minerals are broken down with each flush. For heavily stained toilets, we recommend doing a final deep clean first for faster results.<\/p>"
           }
         },
         "row_NRiXgx": {
@@ -2263,7 +2263,7 @@
             "open": false,
             "label": "",
             "heading": "How is this different from tank tablets?",
-            "description": "<p>Tank tablets sit in your tank water 24/7, exposing rubber flappers and seals to harsh chemicals that cause deterioration, leaks, and costly repairs. This also means that chemical water is sitting stagnant in the tank exposing small or windowless bathrooms to excessive fumes. TrueClean's treated water bypasses the tank entirely and flows directly into the bowl only when you flush. You get the cleaning power without the plumbing damage or the health risks. </p>"
+            "description": "<p>Tank tablets sit in your tank water 24\/7, exposing rubber flappers and seals to harsh chemicals that cause deterioration, leaks, and costly repairs. This also means that chemical water is sitting stagnant in the tank exposing small or windowless bathrooms to excessive fumes. TrueClean's treated water bypasses the tank entirely and flows directly into the bowl only when you flush. You get the cleaning power without the plumbing damage or the health risks. <\/p>"
           }
         },
         "row_pzHNUC": {
@@ -2272,7 +2272,7 @@
             "open": false,
             "label": "",
             "heading": "How long does it take for bleach to dissipate so the toilet water is safe for kids and pets?",
-            "description": "<p>Here's the thing, chlorine works fast on some germs and slow on others. It kills E. coli in under a minute, but needs about 16 minutes to destroy hepatitis A. Giardia takes around 45 minutes. And Cryptosporidium? Up to 10 days. So the real question is: do you actually want the chlorine to disappear quickly?<br/><br/>Toilet bowl water without any chlorine means bacteria, viruses, and parasites can survive in there. A small amount of chlorine keeping things sanitized is actually a good thing, it's why swimming pools maintain constant chlorine levels. TrueClean keeps a safe, controlled amount working around the clock - so your bowl stays sanitized without you having to think about it.<br/><br/></p>"
+            "description": "<p>Here's the thing, chlorine works fast on some germs and slow on others. It kills E. coli in under a minute, but needs about 16 minutes to destroy hepatitis A. Giardia takes around 45 minutes. And Cryptosporidium? Up to 10 days. So the real question is: do you actually want the chlorine to disappear quickly?<br\/><br\/>Toilet bowl water without any chlorine means bacteria, viruses, and parasites can survive in there. A small amount of chlorine keeping things sanitized is actually a good thing, it's why swimming pools maintain constant chlorine levels. TrueClean keeps a safe, controlled amount working around the clock - so your bowl stays sanitized without you having to think about it.<br\/><br\/><\/p>"
           }
         }
       },
@@ -2298,7 +2298,7 @@
         "button_url": "#productsVariants",
         "button_type": "primary",
         "product_bottom_label": "",
-        "bottom_label_icon": "shopify://shop_images/image_6.png",
+        "bottom_label_icon": "shopify:\/\/shop_images\/image_6.png",
         "text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 760,
@@ -2314,33 +2314,33 @@
         "feature_ehFma4": {
           "type": "feature",
           "settings": {
-            "description": "<p>Secure 256-bit SSL checkout</p>",
+            "description": "<p>Secure 256-bit SSL checkout<\/p>",
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_46346.png"
+            "image": "shopify:\/\/shop_images\/Group_46346.png"
           }
         },
         "feature_9VNkkr": {
           "type": "feature",
           "settings": {
-            "description": "<p>No auto-billing or hidden subscriptions (unless you opt-in)</p>",
+            "description": "<p>No auto-billing or hidden subscriptions (unless you opt-in)<\/p>",
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098280.png"
+            "image": "shopify:\/\/shop_images\/Group_48098280.png"
           }
         },
         "feature_axCHYT": {
           "type": "feature",
           "settings": {
-            "description": "<p>US-based customer service</p>",
+            "description": "<p>US-based customer service<\/p>",
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098281.png"
+            "image": "shopify:\/\/shop_images\/Group_48098281.png"
           }
         },
         "feature_eYbMPR": {
           "type": "feature",
           "settings": {
-            "description": "<p>Same-day shipping on orders placed before 2pm EST</p>",
+            "description": "<p>Same-day shipping on orders placed before 2pm EST<\/p>",
             "description_color": "#001c19",
-            "image": "shopify://shop_images/Group_48098282.png"
+            "image": "shopify:\/\/shop_images\/Group_48098282.png"
           }
         },
         "card_xckpfQ": {
@@ -2351,7 +2351,7 @@
             "variant_id2": "52861386326381",
             "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
-            "image": "shopify://shop_images/Rectangle_1001_15.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_15.png",
             "badge": "",
             "badge_bgcolor": "#ff5e00",
             "badge_color": "#ffffff",
@@ -2361,7 +2361,7 @@
             "price_color": "#001c19",
             "compare_price": "$49",
             "compare_price_color": "#8e8e8e",
-            "description": "<p>You Save $10</p>",
+            "description": "<p>You Save $10<\/p>",
             "description_color": "#001c19",
             "button_label": "ADD TO CART →"
           }
@@ -2374,7 +2374,7 @@
             "variant_id2": "52861386391917",
             "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
-            "image": "shopify://shop_images/Rectangle_1001_16.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_16.png",
             "badge": "",
             "badge_bgcolor": "#ff5e00",
             "badge_color": "#ffffff",
@@ -2384,7 +2384,7 @@
             "price_color": "#001c19",
             "compare_price": "$98",
             "compare_price_color": "#8e8e8e",
-            "description": "<p>You Save $29</p>",
+            "description": "<p>You Save $29<\/p>",
             "description_color": "#001c19",
             "button_label": "ADD TO CART →"
           }
@@ -2397,7 +2397,7 @@
             "variant_id2": "52861386457453",
             "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
-            "image": "shopify://shop_images/Rectangle_1001_17.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_17.png",
             "badge": "Best Value",
             "badge_bgcolor": "#ff5e00",
             "badge_color": "#ffffff",
@@ -2407,7 +2407,7 @@
             "price_color": "#001c19",
             "compare_price": "$147",
             "compare_price_color": "#8e8e8e",
-            "description": "<p>You Save $48</p>",
+            "description": "<p>You Save $48<\/p>",
             "description_color": "#001c19",
             "button_label": "ADD TO CART →"
           }
@@ -2420,7 +2420,7 @@
             "variant_id2": "52861386522989",
             "variant_text2": "Fresh & Clean",
             "bgcolor": "#ffffff",
-            "image": "shopify://shop_images/Rectangle_1001_18.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1001_18.png",
             "badge": "Whole Home Bundle",
             "badge_bgcolor": "#ff5e00",
             "badge_color": "#ffffff",
@@ -2430,7 +2430,7 @@
             "price_color": "#001c19",
             "compare_price": "$196",
             "compare_price_color": "#8e8e8e",
-            "description": "<p>You Save $77</p>",
+            "description": "<p>You Save $77<\/p>",
             "description_color": "#001c19",
             "button_label": "ADD TO CART →"
           }
@@ -2457,7 +2457,7 @@
         "heading_m_center": true,
         "heading_d_center": true,
         "heading_color": "#001c19",
-        "description": "<p>Join thousands of homeowners who've switched to a simpler, safer way to keep their toilets sparkling clean automatically.</p>",
+        "description": "<p>Join thousands of homeowners who've switched to a simpler, safer way to keep their toilets sparkling clean automatically.<\/p>",
         "description_m_center": true,
         "description_d_center": true,
         "description_color": "#001c19",
@@ -2465,8 +2465,8 @@
         "image_right": false,
         "button_label": "Eliminate Scrubbing →",
         "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#eff6f6",
         "max_width": 1260,
