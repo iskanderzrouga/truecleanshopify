@@ -35,109 +35,109 @@
         <div class="splide ah-home__slider">
           <div class="splide__track">
             <div class="splide__list">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'row' %}
-                <div class="splide__slide h-auto">
-                <div class="flex flex-col-reverse md:flex-row h-full">
-                  <div class="flex-1 px-4 py-10 flex flex-col gap-4 w-full">
-                    <div class="max-w-[780px] mx-auto flex flex-col items-center justify-center gap-4 w-full bg-[#EFF6F6] rounded-[20px] px-4 py-10 md:px-8 lg:px-16">
-                      {% if block.settings.heading != blank %}
-                        <div
-                          class="text-[26px] md:text-[40px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.heading_color }};"
-                        >
-                          {{ block.settings.heading }}
-                        </div>
-                      {% endif %}
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'row' %}
+                    <div class="splide__slide h-auto">
+                      <div class="flex flex-col-reverse md:flex-row h-full">
+                        <div class="flex-1 px-4 py-10 flex flex-col gap-4 w-full">
+                          <div class="max-w-[780px] mx-auto flex flex-col items-center justify-center gap-4 w-full bg-[#EFF6F6] rounded-[20px] px-4 py-10 md:px-8 lg:px-16">
+                            {% if block.settings.heading != blank %}
+                              <div
+                                class="text-[26px] md:text-[40px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                                style="color: {{ block.settings.heading_color }};"
+                              >
+                                {{ block.settings.heading }}
+                              </div>
+                            {% endif %}
 
-                      {% if block.settings.description != blank %}
-                        <div
-                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.description_color }};"
-                        >
-                          {{ block.settings.description }}
-                        </div>
-                      {% endif %}
+                            {% if block.settings.description != blank %}
+                              <div
+                                class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                                style="color: {{ block.settings.description_color }};"
+                              >
+                                {{ block.settings.description }}
+                              </div>
+                            {% endif %}
 
-                      {% if block.settings.button_label != blank %}
-                        <div class="w-full md:w-fit mx-auto mt-6 md:mt-8">
-                          <a
-                            href="{{ block.settings.button_url }}"
-                            class="new-button--primary"
-                          >
-                            {{ block.settings.button_label }}
-                          </a>
-                          {% if block.settings.btn_bottom_text != blank %}
-                            <div
-                              class="mt-2 text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                              style="color: {{ block.settings.btn_bottom_text_color }};"
-                            >
-                              {{ block.settings.btn_bottom_text }}
+                            {% if block.settings.button_label != blank %}
+                              <div class="w-full md:w-fit mx-auto mt-6 md:mt-8">
+                                <a
+                                  href="{{ block.settings.button_url }}"
+                                  class="new-button--primary"
+                                >
+                                  {{ block.settings.button_label }}
+                                </a>
+                                {% if block.settings.btn_bottom_text != blank %}
+                                  <div
+                                    class="mt-2 text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                                    style="color: {{ block.settings.btn_bottom_text_color }};"
+                                  >
+                                    {{ block.settings.btn_bottom_text }}
+                                  </div>
+                                {% endif %}
+                              </div>
+                            {% endif %}
+                          </div>
+
+                          <div class="max-w-[780px] mx-auto bg-white rounded-[20px] px-4 py-5 flex flex-col gap-4">
+                            {% if block.settings.review_text != blank %}
+                              <div
+                                class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19]"
+                              >
+                                {{ block.settings.review_text }}
+                              </div>
+                            {% endif %}
+                            <div class="flex items-center gap-1">
+                              {% if block.settings.review_image != blank %}
+                                {{
+                                  block.settings.review_image
+                                  | image_url: width: 24
+                                  | image_tag: class: 'w-full max-w-[24px]', sizes: '24px'
+                                }}
+                              {% endif %}
+
+                              {% if block.settings.review_name != blank %}
+                                <div
+                                  class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19]"
+                                >
+                                  {{ block.settings.review_name }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.review_icon != blank %}
+                                {{
+                                  block.settings.review_icon
+                                  | image_url: width: 16
+                                  | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                                }}
+                              {% endif %}
+                              {% if block.settings.review_verified != blank %}
+                                <div
+                                  class="text-[12px] md:text-[14px] font-normal !leading-tight text-[#001C19]"
+                                >
+                                  {{ block.settings.review_verified }}
+                                </div>
+                              {% endif %}
                             </div>
-                          {% endif %}
-                        </div>
-                      {% endif %}
-                    </div>
-
-                    <div class="max-w-[780px] mx-auto bg-white rounded-[20px] px-4 py-5 flex flex-col gap-4">
-                      {% if block.settings.review_text != blank %}
-                        <div
-                          class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19]"
-                        >
-                          {{ block.settings.review_text }}
-                        </div>
-                      {% endif %}
-                      <div class="flex items-center gap-1">
-                        {% if block.settings.review_image != blank %}
-                          {{
-                            block.settings.review_image
-                            | image_url: width: 24
-                            | image_tag: class: 'w-full max-w-[24px]', sizes: '24px'
-                          }}
-                        {% endif %}
-
-                        {% if block.settings.review_name != blank %}
-                          <div
-                            class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19]"
-                          >
-                            {{ block.settings.review_name }}
                           </div>
-                        {% endif %}
-                        {% if block.settings.review_icon != blank %}
+                        </div>
+
+                        {% assign max_width = section.settings.max_width | divided_by: 2 %}
+                        {% assign max_width_px = max_width | append: 'px' %}
+                        {% if block.settings.image != blank %}
                           {{
-                            block.settings.review_icon
-                            | image_url: width: 16
-                            | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                            block.settings.image
+                            | image_url: width: max_width
+                            | image_tag: class: 'w-full aspect-[1/1] max-w-[850px]', sizes: max_width_px
                           }}
-                        {% endif %}
-                        {% if block.settings.review_verified != blank %}
-                          <div
-                            class="text-[12px] md:text-[14px] font-normal !leading-tight text-[#001C19]"
-                          >
-                            {{ block.settings.review_verified }}
-                          </div>
                         {% endif %}
                       </div>
                     </div>
-                  </div>
-
-                  {% assign max_width = section.settings.max_width | divided_by: 2 %}
-                  {% assign max_width_px = max_width | append: 'px' %}
-                  {% if block.settings.image != blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: max_width
-                      | image_tag: class: 'w-full aspect-[1/1] max-w-[850px]', sizes: max_width_px
-                    }}
-                  {% endif %}
-                </div>
-                </div>
-            {% endcase %}
-          {% endfor %}
+                {% endcase %}
+              {% endfor %}
+            </div>
           </div>
-          </div>
-          </div>
+        </div>
       {% endif %}
 
       {% if section.settings.button_label != blank %}
@@ -164,22 +164,27 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var splide = new Splide('.section-{{ section.id }}-padding .ah-home__slider', {
-        perPage: 1,
-        perMove: 1,
-        rewind: true,
-        gap: '15px',
-        trimSpace: false,
-        pagination: false,
-        mediaQuery: 'min',
-        arrows: true,
-        padding: { right: '0' },
+  document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.section-{{ section.id }}-padding .ah-home__slider', {
+      perPage: 1,
+      perMove: 1,
+      rewind: true,
+      gap: '15px',
+      trimSpace: false,
+      pagination: false,
+      mediaQuery: 'min',
+      arrows: true,
+      padding: { right: '0' },
+      breakpoints: {
+        750: {
+          arrows: false,
+          pagination: true,
         },
-      });
-      splide.mount();
+      },
     });
-  </script>
+    splide.mount();
+  });
+</script>
 
 {% schema %}
 {
