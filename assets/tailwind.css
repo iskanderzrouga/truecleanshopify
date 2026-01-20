@@ -1430,6 +1430,9 @@ html {
   .border-\[\#7A5EC5\] {
     border-color: #7A5EC5;
   }
+  .border-\[\#9CA2A7\] {
+    border-color: #9CA2A7;
+  }
   .border-\[\#84A191\] {
     border-color: #84A191;
   }
@@ -2816,6 +2819,11 @@ html {
       column-gap: calc(var(--spacing) * 10);
     }
   }
+  .md\:gap-y-6 {
+    @media (width >= 48rem) {
+      row-gap: calc(var(--spacing) * 6);
+    }
+  }
   .md\:gap-y-10 {
     @media (width >= 48rem) {
       row-gap: calc(var(--spacing) * 10);
@@ -3004,6 +3012,11 @@ html {
   .md\:pr-6 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:pb-6 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 6);
     }
   }
   .md\:pl-5 {
