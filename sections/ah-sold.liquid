@@ -99,7 +99,7 @@
         <div class="w-full grid grid-cols-2 gap-y-4 md:gap-y-6">
           {% for block in section.blocks %}
             {% case block.type %}
-              {{  block.size }}
+              {{  section.blocks.size }}
               {% when 'row' %}
                 <div class="flex flex-col gap-1 {% unless forloop.last %} border-dashed border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
                   {% if block.settings.heading != blank %}
