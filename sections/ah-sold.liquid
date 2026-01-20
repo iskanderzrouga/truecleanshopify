@@ -96,11 +96,11 @@
       {% endif %}
 
       {% if section.blocks.size > 0 %}
-        <div class="w-full grid grid-cols-2 gap-x-4 md:gap-x-10 gap-y-8">
+        <div class="w-full grid grid-cols-2 gap-y-4 md:gap-y-6">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 {% unless forloop.last %} border border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
                   {% if block.settings.heading != blank %}
                     <div
                       class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
