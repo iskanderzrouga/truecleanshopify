@@ -32,10 +32,13 @@
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="">
       {% if section.blocks.size > 0 %}
-        <div class="">
+        <div class="splide ah-home__slider">
+          <div class="splide__track">
+            <div class="splide__list">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
+                <div class="splide__slide h-auto">
                 <div class="flex flex-col-reverse md:flex-row h-full">
                   <div class="flex-1 px-4 py-10 flex flex-col gap-4 w-full">
                     <div class="max-w-[780px] mx-auto flex flex-col items-center justify-center gap-4 w-full bg-[#EFF6F6] rounded-[20px] px-4 py-10 md:px-8 lg:px-16">
@@ -129,9 +132,12 @@
                     }}
                   {% endif %}
                 </div>
+                </div>
             {% endcase %}
           {% endfor %}
-        </div>
+          </div>
+          </div>
+          </div>
       {% endif %}
 
       {% if section.settings.button_label != blank %}
@@ -156,6 +162,28 @@
     </div>
   </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var splide = new Splide('.section-{{ section.id }}-padding .ah-home__slider', {
+        perPage: 1,
+        perMove: 1,
+        rewind: true,
+        gap: '15px',
+        trimSpace: false,
+        pagination: false,
+        mediaQuery: 'min',
+        arrows: true,
+        padding: { right: '0' },
+        breakpoints: {
+          750: {
+            destroy: true,
+          },
+        },
+      });
+      splide.mount();
+    });
+  </script>
 
 {% schema %}
 {
