@@ -102,7 +102,7 @@
             {% assign is_even = forloop.index | modulo: 2 %}
             {% case block.type %}
               {% when 'row' %}
-                <div class="flex flex-col gap-1 {% if is_even == 0 %} pl-2 md:p-5 {% else %} pr-2 md:pr-5 {%  endif %} {% unless forloop.index > lasttwo_length %} border-dashed border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
+                <div class="flex flex-col gap-1 {% if is_even == 0 %} pr-2 md:pr-5 {% else %} pl-2 md:p-5 {%  endif %} {% unless forloop.index > lasttwo_length %} border-dashed border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
                   {% if block.settings.heading != blank %}
                     <div
                       class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
