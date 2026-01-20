@@ -64,11 +64,10 @@
                             class="new-button--primary"
                           >
                             {{ block.settings.button_label }}
-                            {%- render 'icon-arrow-right' -%}
                           </a>
                           {% if block.settings.btn_bottom_text != blank %}
                             <div
-                              class="text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                              class="mt-2 text-[13px] md:text-[13px] font-normal !leading-tight text-[#001C19] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                               style="color: {{ block.settings.btn_bottom_text_color }};"
                             >
                               {{ block.settings.btn_bottom_text }}
