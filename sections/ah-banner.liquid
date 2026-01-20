@@ -36,7 +36,8 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
-                <div class="flex flex-col items-center justify-center gap-[15px] md:gap-5 w-full">
+                <div>
+                    <div class="flex flex-col items-center justify-center gap-4 w-full bg-white rounded-[20px]">
                   {% if block.settings.heading != blank %}
                     <div
                       class="text-[26px] md:text-[40px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
@@ -74,6 +75,10 @@
                       {% endif %}
                     </div>
                   {% endif %}
+                </div>
+
+                <div>
+                </div>
                 </div>
 
                 {% assign max_width = section.settings.max_width |  divided_by: 2 %}
