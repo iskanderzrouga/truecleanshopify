@@ -32,7 +32,7 @@
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="">
       {% if section.blocks.size > 0 %}
-        <div class="w-full gap-[15px] md:gap-5">
+        <div class="">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
@@ -93,6 +93,17 @@
                     </div>
                   {% endif %}
                 </div>
+
+                {% assign max_width = section.settings.max_width %}
+      {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
+      {% assign max_width_px = max_width | append: 'px' %}
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: max_width
+          | image_tag: class: 'w-full section-main-image', sizes: max_width_px
+        }}
+      {% endif %}
             {% endcase %}
           {% endfor %}
         </div>
