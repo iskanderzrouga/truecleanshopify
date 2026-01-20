@@ -120,10 +120,10 @@
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#00b7a2",
         "max_width": 1920,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_m": 36,
-        "padding_bottom_m": 36
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0
       }
     },
     "ah_animation_JDBYJe": {
