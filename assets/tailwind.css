@@ -1718,6 +1718,9 @@ html {
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
   }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
   .pr-3 {
     padding-right: calc(var(--spacing) * 3);
   }
@@ -1747,6 +1750,9 @@ html {
   }
   .\!pl-5 {
     padding-left: calc(var(--spacing) * 5) !important;
+  }
+  .pl-2 {
+    padding-left: calc(var(--spacing) * 2);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -3007,6 +3013,11 @@ html {
   .md\:py-\[60px\] {
     @media (width >= 48rem) {
       padding-block: 60px;
+    }
+  }
+  .md\:pr-5 {
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 5);
     }
   }
   .md\:pr-6 {
