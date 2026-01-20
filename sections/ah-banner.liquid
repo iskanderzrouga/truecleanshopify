@@ -30,36 +30,7 @@
   {% endif %}
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex flex-col items-center justify-center gap-6 md:gap-12">
-      {% if section.settings.heading != blank %}
-        <h2
-          class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.heading_color }};"
-        >
-          {{ section.settings.heading }}
-        </h2>
-      {% endif %}
-
-      {% if section.settings.description != blank %}
-        <div
-          class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.description_color }};"
-        >
-          {{ section.settings.description }}
-        </div>
-      {% endif %}
-
-      {% assign max_width = section.settings.max_width %}
-      {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
-      {% assign max_width_px = max_width | append: 'px' %}
-      {% if section.settings.image != blank %}
-        {{
-          section.settings.image
-          | image_url: width: max_width
-          | image_tag: class: 'w-full section-main-image', sizes: max_width_px
-        }}
-      {% endif %}
-
+    <div class="">
       {% if section.blocks.size > 0 %}
         <div class="w-full gap-[15px] md:gap-5">
           {% for block in section.blocks %}
