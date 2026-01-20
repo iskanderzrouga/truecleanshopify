@@ -77,7 +77,17 @@
                       {% endif %}
                     </div>
 
-                    <div class="bg-white rounded-[20px]"></div>
+                    <div class="bg-white rounded-[20px] px-4 py-5 flex flex-col gap-4">
+                        {% if block.settings.btn_bottom_text != blank %}
+                            <div
+                              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19]"
+                            >
+                              {{ block.settings.btn_bottom_text }}
+                            </div>
+                          {% endif %}
+                          <div class="flex items-center gap-1">
+                          </div>
+                    </div>
                   </div>
 
                   {% assign max_width = section.settings.max_width | divided_by: 2 %}
