@@ -508,7 +508,7 @@
         "border_radius": 0,
         "image_right": false,
         "button_label": "SECURE REFILLS NOW →",
-        "button_url": "",
+        "button_url": "#productsVariants",
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#eff6f6",
