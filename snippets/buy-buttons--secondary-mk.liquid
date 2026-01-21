@@ -72,6 +72,17 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          {% if block.settings.subscription_default %}
+            {% if product.selected_or_first_available_variant.metafields.custom.subscription_id != blank %}
+              <input
+                re-sub-widget__selling-plan-input
+                class=""
+                name="selling_plan"
+                type="hidden"
+                value="{{product.selected_or_first_available_variant.metafields.custom.subscription_id}}"
+              >
+            {% endif %}
+          {% endif %}
           {% if block.settings.redirect_checkout %}
             <div class="redirect-to-checkout" style="display: none!important;"></div>
           {% endif %}
@@ -103,70 +114,72 @@
             {{ form | payment_button }}
           {%- endif -%}
 
-          {% comment %} <div class="flex gap-1 mt-5">
-            {% if section.settings.product_bottom_label != blank %}
-              <div class="flex items-center justify-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
-                {% if section.settings.bottom_label_icon != blank %}
-                  {{
-                    section.settings.bottom_label_icon
-                    | image_url: width: 24
-                    | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
-                  }}
-                {% endif %}
+          {% comment %}
+            <div class="flex gap-1 mt-5">
+              {% if section.settings.product_bottom_label != blank %}
+                <div class="flex items-center justify-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
+                  {% if section.settings.bottom_label_icon != blank %}
+                    {{
+                      section.settings.bottom_label_icon
+                      | image_url: width: 24
+                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
+                    }}
+                  {% endif %}
 
-                <div
-                  class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
-                  style="color: {{ section.settings.text_color }};"
-                >
-                  {{ section.settings.product_bottom_label }}
+                  <div
+                    class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
+                    style="color: {{ section.settings.text_color }};"
+                  >
+                    {{ section.settings.product_bottom_label }}
+                  </div>
                 </div>
-              </div>
-            {% endif %}
-            {% if section.settings.product_bottom_label2 != blank %}
-              <div class="flex items-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
-                {% if section.settings.bottom_label_icon2 != blank %}
-                  {{
-                    section.settings.bottom_label_icon2
-                    | image_url: width: 24
-                    | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
-                  }}
-                {% endif %}
+              {% endif %}
+              {% if section.settings.product_bottom_label2 != blank %}
+                <div class="flex items-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
+                  {% if section.settings.bottom_label_icon2 != blank %}
+                    {{
+                      section.settings.bottom_label_icon2
+                      | image_url: width: 24
+                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
+                    }}
+                  {% endif %}
 
-                <div
-                  class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
-                  style="color: {{ section.settings.text_color }};"
-                >
-                  {{ section.settings.product_bottom_label2 }}
+                  <div
+                    class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
+                    style="color: {{ section.settings.text_color }};"
+                  >
+                    {{ section.settings.product_bottom_label2 }}
+                  </div>
                 </div>
-              </div>
-            {% endif %}
-            {% if section.settings.product_bottom_label3 != blank %}
-              <div class="flex items-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
-                {% if section.settings.bottom_label_icon3 != blank %}
-                  {{
-                    section.settings.bottom_label_icon3
-                    | image_url: width: 24
-                    | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
-                  }}
-                {% endif %}
+              {% endif %}
+              {% if section.settings.product_bottom_label3 != blank %}
+                <div class="flex items-center gap-1 md:gap-2 relative w-fit mx-auto min-w-[28%]">
+                  {% if section.settings.bottom_label_icon3 != blank %}
+                    {{
+                      section.settings.bottom_label_icon3
+                      | image_url: width: 24
+                      | image_tag: class: 'w-full max-w-[20px] md:max-w-[24px]'
+                    }}
+                  {% endif %}
 
-                <div
-                  class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
-                  style="color: {{ section.settings.text_color }};"
-                >
-                  {{ section.settings.product_bottom_label3 }}
+                  <div
+                    class="text-[12px] md:text-[15px] text-[#000] font-normal !leading-tight"
+                    style="color: {{ section.settings.text_color }};"
+                  >
+                    {{ section.settings.product_bottom_label3 }}
+                  </div>
                 </div>
-              </div>
-            {% endif %}
-          </div>
+              {% endif %}
+            </div>
 
-          {% if section.settings.payment_image != blank %}
-            {{
-              section.settings.payment_image
-              | image_url: width: 360
-              | image_tag: class: 'w-full max-w-[60%] md:max-w-[300px] mx-auto mt-4'
-            }}
-          {% endif %} {% endcomment %}
+            {% if section.settings.payment_image != blank %}
+              {{
+                section.settings.payment_image
+                | image_url: width: 360
+                | image_tag: class: 'w-full max-w-[60%] md:max-w-[300px] mx-auto mt-4'
+              }}
+            {% endif %}
+          {% endcomment %}
         </div>
       {%- endform -%}
     </product-form>

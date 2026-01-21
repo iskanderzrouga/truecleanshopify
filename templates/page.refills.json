@@ -122,6 +122,7 @@
         "buy_buttons_eLzg7L": {
           "type": "buy_buttons",
           "settings": {
+            "subscription_default": true,
             "quantity_selector": false,
             "redirect_checkout": false,
             "show_dynamic_checkout": false,
