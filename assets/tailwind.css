@@ -711,6 +711,9 @@ html {
   .min-h-8 {
     min-height: calc(var(--spacing) * 8);
   }
+  .min-h-\[10px\] {
+    min-height: 10px;
+  }
   .min-h-\[28px\] {
     min-height: 28px;
   }
@@ -2129,6 +2132,11 @@ html {
     -webkit-user-select: none;
     user-select: none;
   }
+  .group-\[\.active\]\:\!block {
+    &:is(:where(.group):is(.active) *) {
+      display: block !important;
+    }
+  }
   .group-\[\.active\]\:block {
     &:is(:where(.group):is(.active) *) {
       display: block;
@@ -2143,6 +2151,11 @@ html {
   .group-\[\.active\]\:rotate-180 {
     &:is(:where(.group):is(.active) *) {
       rotate: 180deg;
+    }
+  }
+  .group-\[\.active\]\:border-\[\#00B7A2\] {
+    &:is(:where(.group):is(.active) *) {
+      border-color: #00B7A2;
     }
   }
   .group-\[\.active\]\:border-\[\#247042\] {
