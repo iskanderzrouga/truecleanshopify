@@ -84,7 +84,7 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'row' %}
-                <div class="flex flex-col gap-3 md:gap-4">
+                <div class="flex flex-row md:flex-col gap-3 md:gap-4">
                   {% if block.settings.icon != blank %}
                     {{
                       block.settings.icon
@@ -93,32 +93,34 @@
                     }}
                   {% endif %}
 
-                  {% if block.settings.label != blank %}
-                    <div
-                      class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black w-8 min-w-8 h-8 min-h-8 md:w-10 md:min-w-10 md:h-10 md:min-h-10 flex items-center justify-center rounded-[100px]  {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.label_color }};"
-                    >
-                      {{ block.settings.label }}
-                    </div>
-                  {% endif %}
-                  <div class="flex flex-col gap-1 md:gap-2">
-                    {% if block.settings.heading != blank %}
+                  <div class="flex flex-col gap-3 md:gap-4">
+                    {% if block.settings.label != blank %}
                       <div
-                        class="text-[20px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                        style="color: {{ block.settings.heading_color }};"
+                        class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black w-8 min-w-8 h-8 min-h-8 md:w-10 md:min-w-10 md:h-10 md:min-h-10 flex items-center justify-center rounded-[100px]  {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
+                        style="color: {{ block.settings.label_color }};"
                       >
-                        {{ block.settings.heading }}
+                        {{ block.settings.label }}
                       </div>
                     {% endif %}
+                    <div class="flex flex-col gap-1 md:gap-2">
+                      {% if block.settings.heading != blank %}
+                        <div
+                          class="text-[16px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                          style="color: {{ block.settings.heading_color }};"
+                        >
+                          {{ block.settings.heading }}
+                        </div>
+                      {% endif %}
 
-                    {% if block.settings.description != blank %}
-                      <div
-                        class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[18px] md:text-[18px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                        style="color: {{ block.settings.description_color }};"
-                      >
-                        {{ block.settings.description }}
-                      </div>
-                    {% endif %}
+                      {% if block.settings.description != blank %}
+                        <div
+                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                          style="color: {{ block.settings.description_color }};"
+                        >
+                          {{ block.settings.description }}
+                        </div>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
             {% endcase %}
