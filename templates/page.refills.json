@@ -30,17 +30,18 @@
           "settings": {
             "name": "",
             "image": "shopify://shop_images/Group_46485.png",
-            "heading": "<p><strong>4.85/5 </strong>by <strong>50,173 </strong>Homeowners Who Stopped Scrubbing</p>"
+            "heading": "<p><strong>50,173</strong>+ Reviews</p>"
           }
         },
         "heading_KRif3P": {
           "type": "heading",
           "settings": {
-            "heading": "Keep Your Toilet Sparkling Clean With Every Flush."
+            "heading": "TrueClean Refills"
           }
         },
         "description_CwK9EA": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>"
           }
@@ -56,32 +57,25 @@
           "type": "feature_wrapper",
           "settings": {}
         },
-        "feature_HiXeDc": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>No Rings, Slime, Or Stains</p>"
-          }
-        },
         "feature_8Yte4B": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>60-Second Install. No Tools.</p>"
+            "description": "<p>30s Click-In Replacement</p>"
           }
         },
         "feature_XCqr98": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Guest-Ready 24/7</p>"
+            "description": "<p>Subscribe & Save 30%<br/><br/></p>"
           }
         },
         "feature_UnivFit": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Fits Any Toilet</p>"
+            "description": "<p>90 Days Per Cartridge</p>"
           }
         },
         "variant_picker_X3mg6k": {
@@ -189,7 +183,6 @@
         "description_CwK9EA",
         "ship_by_zf66Rh",
         "feature_wrapper_icKPBw",
-        "feature_HiXeDc",
         "feature_8Yte4B",
         "feature_XCqr98",
         "feature_UnivFit",
@@ -500,6 +493,7 @@
         "description_d_center": true,
         "description_color": "#000000",
         "text": "<p>That's it. Your next 3 months of spotless toilets starts immediately.</p>",
+        "text_color": "#000000",
         "border_radius": 0,
         "image_right": false,
         "button_label": "SECURE REFILLS NOW →",
