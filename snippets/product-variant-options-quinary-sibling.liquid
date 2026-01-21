@@ -84,11 +84,11 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}" class="!rounded-[10px]">
+    <label for="{{ input_id }}" class="!rounded-[10px] !p-0">
       <div class="relative w-full h-full px-1 md:px-3 py-3 md:py-4 flex gap-2 md:gap-2 items-center flex-col">
         {% if variant.metafields.custom.badge %}
           <div
-            class="rounded-[5px] px-2 py-1 text-[10px] md:text-[12px] font-bold bg-[#000C38] !leading-tight text-[#fff] tracking-normal absolute whitespace-nowrap -top-5 left-1/2 -translate-x-1/2"
+            class="rounded-[5px] px-2 py-1 text-[10px] md:text-[12px] font-bold bg-[#000C38] !leading-tight text-[#fff] tracking-normal absolute whitespace-nowrap -top-3 left-1/2 -translate-x-1/2"
             style="background-color: {{ variant.metafields.custom.badge_color }}"
           >
             {{ variant.metafields.custom.badge }}
