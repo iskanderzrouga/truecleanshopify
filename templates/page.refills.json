@@ -68,7 +68,7 @@
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/material-symbols_check-circle.png",
-            "description": "<p>Subscribe & Save 30%<br/><br/></p>"
+            "description": "<p>Subscribe & Save 30%</p>"
           }
         },
         "feature_UnivFit": {
@@ -139,32 +139,33 @@
         "collapsible_tab_98w9hT": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How do the refills work?",
+            "heading": "How to Replace It",
             "icon": "none",
-            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!</p>",
+            "content": "<p>Super easy! Just lift the tank lid, twist out the old cartridge. Click in the new one in 30 seconds. Done.</p>",
             "page": ""
           }
         },
         "collapsible_tab_kjGiJ7": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Will it fit my toilet?",
+            "heading": "Unique Formula",
             "icon": "none",
-            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. </p>",
+            "content": "<p>Our chlorine-based formula is engineered to remove tough build up and prevent new stains from sticking. </p><ul><li><strong>Surfactants</strong> — High detergency that breaks down hard water rings and mineral buildup with every flush.</li><li><strong>Antimicrobials</strong> — Broad-spectrum protection that kills pink slime, black algae, mold, and bacteria before they form.</li><li><strong>Surface-clinging agents</strong> — Cleaning power stays on the bowl longer, so you scrub less.</li><li><strong>Septic-safe formula</strong> — Supports healthy tank bacteria. Prevents sludge and odor buildup.</li><li><strong>No harsh acids. </strong>Won't damage flappers, seals, or valves. Family and pet friendly.</li></ul>",
             "page": ""
           }
         },
         "collapsible_tab_bqBJYJ": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Try it 100% risk-free",
+            "heading": "Why Subscribe?",
             "icon": "none",
-            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.</p>",
+            "content": "<p>Keep spotless toilets a constant and spend less while you’re at it.</p><ul><li>Up to 30% off every automatic refill</li><li>Fresh cartridges ship right as the previous one empties</li><li>Pause or cancel anytime with a single click</li></ul>",
             "page": ""
           }
         },
         "testimonial_VHWM3m": {
           "type": "testimonial",
+          "disabled": true,
           "settings": {
             "avatar": "shopify://shop_images/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
             "heading": "",
@@ -375,6 +376,7 @@
         "collapsible_tab_nHJrMB",
         "testimonial_GtzPCX"
       ],
+      "disabled": true,
       "custom_css": [
         ".accordion__content ul {list-style: disc;}"
       ],
