@@ -40,7 +40,7 @@
               picker_type: picker_type
             %}
           </div>
-          
+
           {% assign first_variant = product.selected_or_first_available_variant %}
           <div class="flex flex-col gap-3 mt-5 w-full">
             <div class="group active border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] cursor-pointer">
@@ -65,6 +65,34 @@
                     </div>
                   {% endif %}
                 </div>
+              </div>
+
+              <div>
+                <div class="flex items-center gap-2">
+                </div>
+                {% for i in (1..5) %}
+                  {% assign description_name = 'sub_feature' | append: i %}
+                  {% assign description = block.settings[description_name] %}
+
+                  {% if description != blank %}
+                    <div
+                      class="flex items-center gap-2"
+                    >
+                      {% if block.settings.feature_icon != blank %}
+                        {{
+                          block.settings.feature_icon
+                          | image_url: width: 14
+                          | image_tag: class: 'w-full h-fit object-contain max-w-[14px]'
+                        }}
+                      {% endif %}
+                      <div
+                        class="text-[12px] md:text-sm font-medium !leading-[1.5] text-[#001C19]"
+                      >
+                        {{ description }}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               </div>
             </div>
             <div class="group border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] flex items-center justify-between cursor-pointer">
