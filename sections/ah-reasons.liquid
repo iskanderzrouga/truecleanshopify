@@ -48,24 +48,24 @@
           </h2>
         {% endif %}
       {% endcomment %}
-       <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
-      {% if section.settings.heading != blank %}
-        <h2
-          class="text-[24px] md:text-[36px] font-bold !leading-[1.5] text-[#001C19] [&>span]:border [&>span]:border-black [&>span]:px-6 [&>span]:py-2 [&>span]:rounded-[100px] [&>span]:text-[20px] [&>span]:md:text-[28px] [&>span]:bg-[#E8FF33] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.heading_color }};"
-        >
-          {{ section.settings.heading }}
-        </h2>
-      {% endif %}
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+        {% if section.settings.heading != blank %}
+          <h2
+            class="text-[24px] md:text-[36px] font-bold !leading-[1.5] text-[#001C19] [&>span]:border [&>span]:border-black [&>span]:px-6 [&>span]:py-2 [&>span]:rounded-[100px] [&>span]:text-[20px] [&>span]:md:text-[28px] [&>span]:bg-[#E8FF33] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.heading_color }};"
+          >
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
 
-      {% if section.settings.description != blank %}
-        <div
-          class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
-          style="color: {{ section.settings.description_color }};"
-        >
-          {{ section.settings.description }}
-        </div>
-      {% endif %}
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            style="color: {{ section.settings.description_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
       </div>
 
       {% assign max_width = section.settings.max_width %}
@@ -85,6 +85,14 @@
             {% case block.type %}
               {% when 'row' %}
                 <div class="flex flex-col gap-3 md:gap-4">
+                  {% if block.settings.icon != blank %}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 32
+                      | image_tag: class: 'w-full max-w-[26px] md:max-w-[32px] h-fit', sizes: '32px'
+                    }}
+                  {% endif %}
+
                   {% if block.settings.label != blank %}
                     <div
                       class="text-[18px] md:text-[22px] font-bold !leading-tight text-[#000] bg-[#E8FF33] border border-black w-8 min-w-8 h-8 min-h-8 md:w-10 md:min-w-10 md:h-10 md:min-h-10 flex items-center justify-center rounded-[100px]  {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
@@ -343,6 +351,11 @@
           "id": "bgcolor",
           "label": "Background Color",
           "default": "#F4F4F6"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         },
         {
           "type": "html",
