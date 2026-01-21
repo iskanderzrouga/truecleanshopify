@@ -345,6 +345,9 @@ html {
   .-top-\[11px\] {
     top: calc(11px * -1);
   }
+  .-top-\[12px\] {
+    top: calc(12px * -1);
+  }
   .-top-\[18px\] {
     top: calc(18px * -1);
   }
@@ -1292,6 +1295,10 @@ html {
   .rounded-t {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+  }
+  .rounded-t-\[5px\] {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   .rounded-t-\[8px\] {
     border-top-left-radius: 8px;
