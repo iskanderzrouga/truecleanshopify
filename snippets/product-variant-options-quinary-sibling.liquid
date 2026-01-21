@@ -58,6 +58,17 @@
     </span>
   {%- endcapture -%}
 
+  {%- assign variant = null -%}
+  {%- assign highest_price = 0 -%}
+  {%- for v in product.variants -%}
+    {%- if v.title contains value -%}
+      {%- if v.price > highest_price -%}
+        {%- assign variant = v -%}
+        {%- assign highest_price = v.price -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   <input
     type="radio"
     id="{{ input_id }}"
@@ -75,5 +86,27 @@
   <label for="{{ input_id }}">
     {{ value -}}
     {{ label_unavailable }}
+
+    <div>
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
+            style="background-color: {{ variant.metafields.custom.badge_color }}"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
+        {% if variant.metafields.custom.badge_image %}
+          {{
+            variant.metafields.custom.badge_image
+            | image_url: width: 50
+            | image_tag:
+            class: 'w-full h-fit object-contain max-w-[40px] md:max-w-[50px] absolute -top-1 -left-1',
+            sizes: '50px',
+            preload: true
+          }}
+        {% endif %}
+    </div>
+
   </label>
 {%- endfor -%}
