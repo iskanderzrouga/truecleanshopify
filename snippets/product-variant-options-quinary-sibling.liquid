@@ -84,8 +84,7 @@
     {{ input_dataset }}
   >
   <label for="{{ input_id }}">
-    {{ value -}}
-    {{ label_unavailable }}
+    
 
     <div>
         {% if variant.metafields.custom.badge %}
@@ -106,6 +105,11 @@
             preload: true
           }}
         {% endif %}
+
+        <div>
+            {{ value -}}
+    {{ label_unavailable }}
+        </div>
     </div>
 
   </label>
