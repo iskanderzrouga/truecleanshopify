@@ -84,41 +84,38 @@
     {{ input_dataset }}
   >
   <label for="{{ input_id }}">
-    
-
     <div>
-        {% if variant.metafields.custom.badge %}
-          <div
-            class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
-            style="background-color: {{ variant.metafields.custom.badge_color }}"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% endif %}
-        {% if variant.metafields.custom.custom_variant_image %}
-          {{
-            variant.metafields.custom.custom_variant_image
-            | image_url: width: 50
-            | image_tag:
+      {% if variant.metafields.custom.badge %}
+        <div
+          class="rounded-t-[16px] text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal absolute top-0 left-0"
+          style="background-color: {{ variant.metafields.custom.badge_color }}"
+        >
+          {{ variant.metafields.custom.badge }}
+        </div>
+      {% endif %}
+      {% if variant.metafields.custom.custom_variant_image %}
+        {{
+          variant.metafields.custom.custom_variant_image
+          | image_url: width: 50
+          | image_tag:
             class: 'w-full h-fit object-contain max-w-[40px] md:max-w-[50px] absolute -top-1 -left-1',
             sizes: '50px',
             preload: true
-          }}
-        {% endif %}
+        }}
+      {% endif %}
 
-        <div>
-            {{ value -}}
-    {{ label_unavailable }}
+      <div>
+        {{ value -}}
+        {{ label_unavailable }}
+      </div>
+
+      {% if variant.metafields.custom.info_text %}
+        <div
+          class="text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal"
+        >
+          {{ variant.metafields.custom.info_text }}
         </div>
-
-        {% if variant.metafields.custom.info_text %}
-          <div
-            class="text-[14px] md:text-[18px] font-bold bg-[#000C38] !leading-tight text-[#fff] p-[6px] tracking-normal"
-          >
-            {{ variant.metafields.custom.info_text }}
-          </div>
-        {% endif %}
+      {% endif %}
     </div>
-
   </label>
 {%- endfor -%}
