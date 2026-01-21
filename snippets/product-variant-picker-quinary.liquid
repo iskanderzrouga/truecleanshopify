@@ -32,7 +32,7 @@
       {% if option.name == 'Count' %}
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
-          <div class="grid grid-cols-3 gap-2 md:gap-3">
+          <div class="grid grid-cols-3">
             {% render 'product-variant-options-quinary-sibling',
               product: product,
               option: option,
