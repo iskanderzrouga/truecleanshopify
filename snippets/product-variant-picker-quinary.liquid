@@ -40,8 +40,31 @@
               picker_type: picker_type
             %}
           </div>
+        </fieldset>
+      {% else %}
+        <fieldset class="js product-form__input product-form__input--pill">
+          {% if option.name == 'Scent' %}
+            <legend class="form__label">Select your scent</legend>
+          {% else %}
+            <legend class="form__label">{{ option.name }}</legend>
+          {% endif %}
+          {% render 'product-variant-options-quinary',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {% endif %}
+    {%- endfor -%}
 
-          {% assign first_variant = product.selected_or_first_available_variant %}
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}
+
+{% assign first_variant = product.selected_or_first_available_variant %}
           <div class="flex flex-col gap-3 mt-5 w-full">
             <div data-type="subscription" onclick="activateTab(this)"  class="variant-picker-quinary-tab group active border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] cursor-pointer">
               <div class="flex items-center justify-between gap-3 w-full">
@@ -133,29 +156,6 @@
               </div>
             </div>
           </div>
-        </fieldset>
-      {% else %}
-        <fieldset class="js product-form__input product-form__input--pill">
-          {% if option.name == 'Scent' %}
-            <legend class="form__label">Select your scent</legend>
-          {% else %}
-            <legend class="form__label">{{ option.name }}</legend>
-          {% endif %}
-          {% render 'product-variant-options-quinary',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
-      {% endif %}
-    {%- endfor -%}
-
-    <script type="application/json" data-selected-variant>
-      {{ product.selected_or_first_available_variant | json }}
-    </script>
-  </variant-selects>
-{%- endunless -%}
 
 <style>
   .subscription-type-variant-select .product-form__input--pill input[type='radio'] + label {
