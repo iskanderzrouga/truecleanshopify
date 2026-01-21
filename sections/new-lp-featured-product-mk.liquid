@@ -287,18 +287,25 @@
                     {{
                       block.settings.icon
                       | image_url: width: 24
-                      | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px', preload: true
+                      | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px'
                     }}
                   {% endif %}
-
                   {% if block.settings.text != blank %}
                     {% assign date_day = 'now' | date: '%d' %}
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
-                    {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year  %}
+                    {% assign date_string = date_day
+                      | append: ' '
+                      | append: date_month
+                      | append: ' '
+                      | append: date_year
+                    %}
                     <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
-                      {{ block.settings.text |  highlight: "DATEPLACEHOLDER" | replace: 'DATEPLACEHOLDER', date_string }}
+                      {{ block.settings.text | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
+                  {% endif %}
+                  {% if block.settings.info_text != blank %}
+                    {% render 'tooltip', block: block %}
                   {% endif %}
                 </div>
 
