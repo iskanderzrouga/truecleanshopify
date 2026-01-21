@@ -96,9 +96,9 @@
             {{ variant.metafields.custom.badge }}
           </div>
         {% endif %}
-        {% if variant.metafields.custom.badge_image %}
+        {% if variant.metafields.custom.custom_variant_image %}
           {{
-            variant.metafields.custom.badge_image
+            variant.metafields.custom.custom_variant_image
             | image_url: width: 50
             | image_tag:
             class: 'w-full h-fit object-contain max-w-[40px] md:max-w-[50px] absolute -top-1 -left-1',
