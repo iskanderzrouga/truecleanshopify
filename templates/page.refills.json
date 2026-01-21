@@ -382,6 +382,9 @@
         "collapsible_tab_nHJrMB",
         "testimonial_GtzPCX"
       ],
+      "custom_css": [
+        ".accordion__content ul {list-style: disc;}"
+      ],
       "settings": {
         "product": "trueclean",
         "show_shipping_banner": true,
