@@ -58,7 +58,25 @@
     </span>
   {%- endcapture -%}
 
-  <div class="flex flex-col h-full product-variant--{{forloop.index}}">
+  {%- if picker_type == 'swatch' -%}
+    {%- capture help_text -%}
+      <span class="visually-hidden">{{ value | escape }}</span>
+      {{ label_unavailable }}
+    {%- endcapture -%}
+    {%
+      render 'swatch-input',
+      id: input_id,
+      name: input_name,
+      value: value | escape,
+      swatch: value.swatch,
+      product_form_id: product_form_id,
+      checked: value.selected,
+      visually_disabled: option_disabled,
+      shape: block.settings.swatch_shape,
+      help_text: help_text,
+      additional_props: input_dataset
+    %}
+  {%- elsif picker_type == 'button' -%}
     <input
       type="radio"
       id="{{ input_id }}"
@@ -73,71 +91,30 @@
       {% endif %}
       {{ input_dataset }}
     >
-    {% assign forloop_index = forloop.index | minus: 1 %}
-    {% assign variant = product.variants[forloop_index] %}
-    {% assign number_of_items = variant.metafields.custom.product_count %}
-
-    <label for="{{ input_id }}" class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 h-full">
-      <div class="new-lp-variant-content flex flex-col h-full border border-[#333333] rounded-[16px]">
-        {% if variant.metafields.custom.badge %}
-          <div
-            class="rounded-t-[16px] text-[12px] md:text-[14px] font-bold bg-[#BD0202] !leading-tight text-[#fff] p-[6px] tracking-normal min-h-[30px]"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% else %}
-          <div
-            class="rounded-t-[16px] min-h-[30px] bg-transparent !block"
-          >
-            {{ variant.metafields.custom.badge }}
-          </div>
-        {% endif %}
-
-        <div class="p-2 md:py-4 md:px-3 rounded-b-[16px] flex flex-col justify-between">
-          <div>
-            {% if variant.metafields.custom.variant_image %}
-              <div class="relative">
-                {% if variant.metafields.custom.free_shipping %}
-                  {{
-                    variant.metafields.custom.free_shipping_image
-                    | image_url: width: 60
-                    | image_tag:
-                      class: 'w-full max-w-[50px] h-fit object-contain absolute top-0  right-0',
-                      sizes: '60px',
-                      preload: true
-                  }}
-                {% endif %}
-                {{
-                  variant.metafields.custom.variant_image
-                  | image_url: width: 300
-                  | image_tag:
-                    class: 'w-full h-full max-h-[48px] md:max-h-[90px] object-contain mx-auto',
-                    sizes: '300px',
-                    preload: true
-                }}
-              </div>
-            {% endif %}
-
-            <div class="new-lp-variant-title text-[#333333] font-bold !text-[16px] md:!text-[20px] mt-3 [&>strong]:text-[#D30101] tracking-normal">
-              {{ value | highlight: block.settings.highlight_text -}}
-              {{ label_unavailable }}
-            </div>
-
-            {% if variant.metafields.custom.variant_detail %}
-              <div
-                class="text-[10px] md:text-[12px] font-bold !leading-tight text-[#333] mt-1 md:mt-3 tracking-normal"
-              >
-                {{ variant.metafields.custom.variant_detail }}
-              </div>
-            {% endif %}
-          </div>
-
-          <div class="new-lp-variant-price text-[#333333] font-medium !text-[14px] md:!text-[16px] mt-2 md:mt-3 tracking-normal">
-            {{ variant.price | divided_by: number_of_items | money -}}
-            {%- unless number_of_items == 1 %}/each{% endunless %}
-          </div>
-        </div>
-      </div>
+    <label for="{{ input_id }}">
+      {{ value -}}
+      {{ label_unavailable }}
     </label>
-  </div>
+  {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
+    <option
+      id="{{ input_id }}"
+      value="{{ value | escape }}"
+      {% if value.selected %}
+        selected="selected"
+      {% endif %}
+      {% if swatch_value and picker_type == 'swatch_dropdown' %}
+        data-option-swatch-value="{{ swatch_value }}"
+        {% if swatch_focal_point %}
+          data-option-swatch-focal-point="{{ swatch_focal_point }}"
+        {% endif %}
+      {% endif %}
+      {{ input_dataset }}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
 {%- endfor -%}

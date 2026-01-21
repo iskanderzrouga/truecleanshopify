@@ -45,7 +45,7 @@
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options',
+          {% render 'product-variant-options-quinary',
             product: product,
             option: option,
             block: block,
