@@ -2464,6 +2464,11 @@ html {
       max-height: 120px;
     }
   }
+  .md\:max-h-\[125px\] {
+    @media (width >= 48rem) {
+      max-height: 125px;
+    }
+  }
   .md\:max-h-\[140px\] {
     @media (width >= 48rem) {
       max-height: 140px;
@@ -2587,6 +2592,11 @@ html {
   .md\:max-w-\[120px\] {
     @media (width >= 48rem) {
       max-width: 120px;
+    }
+  }
+  .md\:max-w-\[125px\] {
+    @media (width >= 48rem) {
+      max-width: 125px;
     }
   }
   .md\:max-w-\[130px\] {
