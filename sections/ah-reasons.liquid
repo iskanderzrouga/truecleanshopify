@@ -48,6 +48,7 @@
           </h2>
         {% endif %}
       {% endcomment %}
+       <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
       {% if section.settings.heading != blank %}
         <h2
           class="text-[24px] md:text-[36px] font-bold !leading-[1.5] text-[#001C19] [&>span]:border [&>span]:border-black [&>span]:px-6 [&>span]:py-2 [&>span]:rounded-[100px] [&>span]:text-[20px] [&>span]:md:text-[28px] [&>span]:bg-[#E8FF33] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
@@ -65,6 +66,7 @@
           {{ section.settings.description }}
         </div>
       {% endif %}
+      </div>
 
       {% assign max_width = section.settings.max_width %}
       {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
