@@ -44,36 +44,13 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          {% if block.settings.label1 != blank %}
-            <div class="pb-4 pt-2">
-              <legend class="form__label text-[#333333] font-normal !leading-tight max-md:!text-xs !text-[18px] !flex justify-center relative w-full text-center">
-                <div class="absolute w-full h-[1px] bg-[#333333] left-0 top-[6px] !block"></div>
-                <div class="relative bg-[#fffaee] w-fit px-4 flex items-center justify-center gap-1">
-                  {% if block.settings.label_icon != blank %}
-                    {{
-                      block.settings.label_icon
-                      | image_url: width: 20
-                      | image_tag: class: 'w-full max-w-[20px]', sizes: '20px'
-                    }}
-                  {% endif %}
-                  <span>{{ block.settings.label1 }}</span>
-                </div>
-              </legend>
-            </div>
-          {% endif %}
-          {% if block.settings.label2 != blank %}
-            <div class="text-[#333333] font-normal !leading-tight max-md:!text-xs !text-[16px] !mb-2">
-              {{ block.settings.label2 }}
-            </div>
-          {% endif %}
-          <div class="grid grid-cols-{{ product.variants.size }} gap-1 md:gap-3">
-            {% render 'product-variant-options-quinary',
-              product: product,
-              option: option,
-              block: block,
-              picker_type: picker_type
-            %}
-          </div>
+          <legend class="form__label">{{ option.name }}</legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
