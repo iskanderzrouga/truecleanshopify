@@ -112,13 +112,13 @@
       {% endif %}
 
       {% if section.settings.text != blank %}
-          <div
-            class="text-[16px] md:text-[20px] font-medium !leading-tight text-[#001C19]"
-            style="color: {{ section.settings.text_color }};"
-          >
-            {{ section.settings.text }}
-          </div>
-        {% endif %}
+        <div
+          class="text-[16px] md:text-[20px] font-medium !leading-tight text-[#001C19] text-center"
+          style="color: {{ section.settings.text_color }};"
+        >
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
 
       {% if section.settings.button_label != blank %}
         <div class="w-full md:w-fit mx-auto flex flex-col items-center justify-center gap-3">
