@@ -40,7 +40,11 @@
         </fieldset>
       {% else %}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
+          {% if option.name == 'Scent' %}
+            <legend class="form__label">Select your scent</legend>
+          {% else %}
+            <legend class="form__label">{{ option.name }}</legend>
+          {% endif %}
           {% render 'product-variant-options-quinary-sibling',
             product: product,
             option: option,
