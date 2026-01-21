@@ -203,7 +203,6 @@
         "collapsible_tab_bqBJYJ",
         "testimonial_VHWM3m"
       ],
-      "disabled": true,
       "custom_css": [
         ".accordion__content ul {list-style: disc;}",
         ".accordion__content ol {list-style: decimal;}",
