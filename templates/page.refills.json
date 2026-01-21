@@ -407,35 +407,6 @@
         "padding_bottom_m": 36
       }
     },
-    "tc_social_proof_KJCnrU": {
-      "type": "tc-social-proof",
-      "name": "TC Images",
-      "settings": {
-        "section_id": "",
-        "heading": "Loved By Thousands of Homeowners",
-        "heading_m_center": true,
-        "heading_d_center": true,
-        "heading_color": "#001c19",
-        "description": "",
-        "description_m_center": true,
-        "description_d_center": false,
-        "description_color": "#001c19",
-        "image": "shopify://shop_images/Group_1321314772_b17be781-cbbd-44c9-8578-9ef064b646f5.png",
-        "image_mobile": "shopify://shop_images/Group_2607838_5abef4b2-246b-45cc-898d-de4d65022f60.png",
-        "border_radius": 0,
-        "image_right": false,
-        "button_label": "",
-        "button_url": "",
-        "btn_bottom_text": "",
-        "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#ffffff",
-        "max_width": 1600,
-        "padding_top": 72,
-        "padding_bottom": 12,
-        "padding_top_m": 36,
-        "padding_bottom_m": 8
-      }
-    },
     "ah_reasons_ep3zeK": {
       "type": "ah-reasons",
       "blocks": {
@@ -698,6 +669,35 @@
         "padding_bottom": 72,
         "padding_top_m": 36,
         "padding_bottom_m": 36
+      }
+    },
+    "tc_social_proof_KJCnrU": {
+      "type": "tc-social-proof",
+      "name": "TC Images",
+      "settings": {
+        "section_id": "",
+        "heading": "Loved By Thousands of Homeowners",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001c19",
+        "description": "",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#001c19",
+        "image": "shopify://shop_images/Group_1321314772_b17be781-cbbd-44c9-8578-9ef064b646f5.png",
+        "image_mobile": "shopify://shop_images/Group_2607838_5abef4b2-246b-45cc-898d-de4d65022f60.png",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "",
+        "btn_bottom_text_color": "#001c19",
+        "bgcolor": "#ffffff",
+        "max_width": 1600,
+        "padding_top": 72,
+        "padding_bottom": 12,
+        "padding_top_m": 36,
+        "padding_bottom_m": 8
       }
     },
     "tc_testimonials_JpzwDb": {
@@ -1015,9 +1015,9 @@
   "order": [
     "new_lp_featured_product_NMieYc",
     "tc_pricing_section_below_guarantee",
-    "tc_social_proof_KJCnrU",
-    "ah_reasons_ep3zeK",
     "tc_multicolumn_9B4gMH",
+    "ah_reasons_ep3zeK",
+    "tc_social_proof_KJCnrU",
     "tc_testimonials_JpzwDb",
     "17682893191ea6b5b7",
     "tc_guarantee_iB3X4t",
