@@ -121,7 +121,6 @@
         },
         "buy_buttons_eLzg7L": {
           "type": "buy_buttons",
-          "disabled": true,
           "settings": {
             "quantity_selector": false,
             "redirect_checkout": false,
@@ -130,7 +129,7 @@
             "custom_text": "ADD TO CART",
             "text1": "90-Day Money-Back Guarantee",
             "icon1": "shopify://shop_images/image_6.png",
-            "text2": "Free Fast Shipping",
+            "text2": "Free Shipping on All Orders",
             "icon2": "shopify://shop_images/image_7_1.png",
             "text3": "Secure Checkout",
             "icon3": "shopify://shop_images/image_8.png"
