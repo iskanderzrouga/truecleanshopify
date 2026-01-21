@@ -10,7 +10,7 @@
 {% endcomment %}
 
 {%- unless product.has_only_default_variant -%}
-  <div>
+  <div id="productsVariants">
     <variant-selects
       id="variant-selects-{{ section.id }}"
       class="!flex w-full flex-col gap-3 mt-6"
