@@ -43,47 +43,51 @@
           {% assign first_variant = product.selected_or_first_available_variant %}
           <div class="flex flex-col gap-3">
             <div class="group active border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] cursor-pointer">
-              <div class="flex items-center gap-2">
-                <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
-                  <div
-                    class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
-                  ></div>
-                </div>
-                <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-                  Subscribe & Save
-                </div>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-                  {{ first_variant.price | money }}
-                </div>
-                {% if first_variant.compare_at_price > first_variant.price %}
-                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
-                    {{ first_variant.compare_at_price | money }}
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
+                    <div
+                      class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
+                    ></div>
                   </div>
-                {% endif %}
+                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+                    Subscribe & Save
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+                    {{ first_variant.price | money }}
+                  </div>
+                  {% if first_variant.compare_at_price > first_variant.price %}
+                    <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
+                      {{ first_variant.compare_at_price | money }}
+                    </div>
+                  {% endif %}
+                </div>
               </div>
             </div>
             <div class="group border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] flex items-center justify-between cursor-pointer">
-              <div class="flex items-center gap-2">
-                <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
-                  <div
-                    class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
-                  ></div>
-                </div>
-                <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-                  One Time Purchase
-                </div>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-                  {{ first_variant.price | money }}
-                </div>
-                {% if first_variant.compare_at_price > first_variant.price %}
-                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
-                    {{ first_variant.compare_at_price | money }}
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
+                    <div
+                      class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
+                    ></div>
                   </div>
-                {% endif %}
+                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+                    One Time Purchase
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+                    {{ first_variant.price | money }}
+                  </div>
+                  {% if first_variant.compare_at_price > first_variant.price %}
+                    <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
+                      {{ first_variant.compare_at_price | money }}
+                    </div>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
