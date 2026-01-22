@@ -169,8 +169,8 @@
 </div>
 
 <script>
-  function switchOnetimeSub(el, dataSectionClass) {
-    const tabs = document.querySelectorAll(`.${dataSectionClass} .variant-picker-quinary-tab`);
+  function switchOnetimeSub(el) {
+    const tabs = document.querySelectorAll('.section-{{ section.id }}-padding .variant-picker-quinary-tab');
     if (!tabs.length) return;
 
     // Remove active from all tabs
@@ -179,21 +179,21 @@
     // Add active to clicked tab
     el.classList.add('active');
 
-    // Find the selling plan input
-    const input = document.querySelector(`.${dataSectionClass} input[re-sub-widget__selling-plan-input]`);
+    // Selling plan input
+    const input = document.querySelector('.section-{{ section.id }}-padding input[re-sub-widget__selling-plan-input]');
     if (!input) return;
 
     const type = el.getAttribute('data-type');
 
-    // If ONETIME → clear input
+    // ONETIME → clear input
     if (type === 'onetime') {
       input.value = '';
       return;
     }
 
-    // If SUBSCRIPTION → get active pvpq-label subscription ID
+    // SUBSCRIPTION → get active pvpq-label subscription ID
     if (type === 'subscription') {
-      const activeLabel = document.querySelector(`.${dataSectionClass} .pvpq-label.active`);
+      const activeLabel = document.querySelector('.section-{{ section.id }}-padding .pvpq-label.active');
       if (!activeLabel) return;
 
       const subId = activeLabel.getAttribute('data-subscription-id');
