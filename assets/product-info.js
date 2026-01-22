@@ -90,8 +90,12 @@ if (!customElements.get('product-info')) {
 
           const subRefills = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-refills]`);
           const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
+
           const subDuration = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-duration]`);
           const duration = label.getAttribute('data-duration'); subDuration.forEach(t => t.textContent = duration);
+
+          const elementPrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-price`);
+          const dataPrice = label.getAttribute('data-price'); elementPrice.forEach(t => t.textContent = dataPrice);
 
           // 2. Get subscription ID from that label
           const subId = label.getAttribute('data-subscription-id');
