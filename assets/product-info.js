@@ -88,9 +88,9 @@ if (!customElements.get('product-info')) {
         if (label.classList.contains('pvpq-label')) {
           const dataSectionClass = label.getAttribute('data-section-class');
 
-          const subRefills = document.querySelectorAll('span[pvpq-sub-refills]');
+          const subRefills = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-refills]`);
           const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
-          const subDuration = document.querySelectorAll('span[pvpq-sub-duration]');
+          const subDuration = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-duration]`);
           const duration = label.getAttribute('data-duration'); subDuration.forEach(t => t.textContent = duration);
 
           // 2. Get subscription ID from that label
