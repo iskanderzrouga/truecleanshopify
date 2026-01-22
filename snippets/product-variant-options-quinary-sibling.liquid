@@ -90,6 +90,8 @@
       class="pvpq-label !rounded-[10px] !p-0 !m-0 !w-full"
       data-price="{{ variant.price | money }}"
       data-compare-price="{{ variant.compare_at_price | money }}"
+      data-sub-price="{{ variant.price | divided_by: 2 | money }}"
+      data-sub-compare-price="{{ variant.compare_at_price | divided_by: 2 | money }}"
       data-title="{{ value | downcase }}"
       {% if variant.metafields.custom.subscription_duration %}
         data-duration="{{ variant.metafields.custom.subscription_duration }}"
