@@ -94,7 +94,7 @@ if (!customElements.get('product-info')) {
         const subId = label.getAttribute('data-subscription-id');
         if (!subId) return;
 
-        const toggle = document.querySelector('.sub-onetime-toggle');
+        const toggle = document.querySelector('.variant-picker-quinary-tab[data-type="subscription"]');
         const isSubActive = toggle && toggle.classList.contains('active');
 
         // 4. Find the correct selling plan input
