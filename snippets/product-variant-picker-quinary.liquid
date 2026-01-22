@@ -189,12 +189,15 @@
 
     // ONETIME → clear input
     if (type === 'onetime') {
+      saveElements.forEach(t => t.classList.add('inactive'));
       input.value = '';
       return;
     }
 
     // SUBSCRIPTION → get active pvpq-label subscription ID
     if (type === 'subscription') {
+      saveElements.forEach(t => t.classList.remove('inactive'));
+
       const activeLabel = document.querySelector('.section-{{ section.id }}-padding .pvpq-label.active');
       if (!activeLabel) return;
 
