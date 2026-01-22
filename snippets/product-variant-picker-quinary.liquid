@@ -185,6 +185,8 @@
 
     const type = el.getAttribute('data-type');
 
+    const saveElements = document.querySelectorAll('.section-{{ section.id }}-padding [pvpq-save]');
+
     // ONETIME → clear input
     if (type === 'onetime') {
       input.value = '';
