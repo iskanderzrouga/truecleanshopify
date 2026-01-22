@@ -163,7 +163,6 @@
 
     
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
     const tabs = document.querySelectorAll('.section-{{ section.id }}-padding .variant-picker-quinary-tab');
 
     tabs.forEach((tab) => {
@@ -175,7 +174,6 @@
         this.classList.add('active');
       });
     });
-  });
 </script>
   </variant-selects>
 {%- endunless -%}
