@@ -96,8 +96,8 @@
       data-section-class="section-{{ section.id }}-padding"
       data-price="{{ variant.price | money }}"
       data-compare-price="{{ variant.compare_at_price | money }}"
-      data-sub-price="{{ variant.price | divided_by: 2 | money }}"
-      data-sub-compare-price="{{ variant.compare_at_price | divided_by: 2 | money }}"
+      data-sub-price="{{ variant.price | times: sub_percent | money }}"
+      data-sub-compare-price="{{ variant.compare_at_price | money }}"
       data-title="{{ value | downcase }}"
       {% if variant.metafields.custom.subscription_duration %}
         data-duration="{{ variant.metafields.custom.subscription_duration }}"
