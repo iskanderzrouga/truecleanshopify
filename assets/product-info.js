@@ -85,24 +85,26 @@ if (!customElements.get('product-info')) {
         const label = document.querySelector(`label[for="${targetId}"]`);
         if (!label) return;
 
-        const subRefills = document.querySelectorAll('span[pvpq-sub-refills]');
-        const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
-        const subDuration = document.querySelectorAll('span[pvpq-sub-duration]');
-        const duration = label.getAttribute('data-duration'); subDuration.forEach(t => t.textContent = duration);
+        if (label.classList.contains('pvpq-label')) {
+          const subRefills = document.querySelectorAll('span[pvpq-sub-refills]');
+          const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
+          const subDuration = document.querySelectorAll('span[pvpq-sub-duration]');
+          const duration = label.getAttribute('data-duration'); subDuration.forEach(t => t.textContent = duration);
 
-        // 2. Get subscription ID from that label
-        const subId = label.getAttribute('data-subscription-id');
-        if (!subId) return;
+          // 2. Get subscription ID from that label
+          const subId = label.getAttribute('data-subscription-id');
+          if (!subId) return;
 
-        const toggle = document.querySelector('.variant-picker-quinary-tab[data-type="subscription"]');
-        const isSubActive = toggle && toggle.classList.contains('active');
+          const toggle = document.querySelector('.variant-picker-quinary-tab[data-type="subscription"]');
+          const isSubActive = toggle && toggle.classList.contains('active');
 
-        // 4. Find the correct selling plan input
-        const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
-        if (!input) return;
+          // 4. Find the correct selling plan input
+          const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+          if (!input) return;
 
-        // 5. Apply logic
-        input.value = isSubActive ? subId : '';
+          // 5. Apply logic
+          input.value = isSubActive ? subId : '';
+        }  
       }
 
       resetProductFormState() {
