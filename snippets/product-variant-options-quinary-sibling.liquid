@@ -92,7 +92,7 @@
     <label
       for="{{ input_id }}"
       pvpq-label
-      class="pvpq-label !rounded-[10px] !p-0 !m-0 !w-full"
+      class="pvpq-label {% if forloop.first %} active {%  endif %} !rounded-[10px] !p-0 !m-0 !w-full"
       data-section-class="section-{{ section.id }}-padding"
       data-price="{{ variant.price | money }}"
       data-compare-price="{{ variant.compare_at_price | money }}"
