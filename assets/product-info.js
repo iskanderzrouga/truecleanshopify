@@ -85,10 +85,11 @@ if (!customElements.get('product-info')) {
         const label = document.querySelector(`label[for="${targetId}"]`);
         if (!label) return;
 
-        if (label.classList.contains('pvpq-label')) {
-          label.classList.add('active');
-          
+        if (label.classList.contains('pvpq-label')) {         
           const dataSectionClass = label.getAttribute('data-section-class');
+
+          document .querySelectorAll(`.${dataSectionClass} .pvpq-label`) .forEach(l => l.classList.remove('active'));
+          label.classList.add('active');
 
           const subRefills = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-refills]`);
           const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
