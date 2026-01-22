@@ -88,6 +88,7 @@
       for="{{ input_id }}"
       pvpq-label
       class="pvpq-label !rounded-[10px] !p-0 !m-0 !w-full"
+      data-section-id="section-{{ section.id }}-padding"
       data-price="{{ variant.price | money }}"
       data-compare-price="{{ variant.compare_at_price | money }}"
       data-sub-price="{{ variant.price | divided_by: 2 | money }}"
