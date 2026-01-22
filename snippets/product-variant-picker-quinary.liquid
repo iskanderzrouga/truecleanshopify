@@ -84,11 +84,11 @@
       </div>
       <div class="flex items-center gap-2">
         <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-          <span>{{ first_variant.price | divided_by: 2 | money }}</span>
+          <span class="pvpq-v-s-price">{{ first_variant.price | divided_by: 2 | money }}</span>
         </div>
         {% if first_variant.compare_at_price > first_variant.price %}
           <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
-            <sapn>{{ first_variant.compare_at_price | divided_by: 2 | money }}</sapn>
+            <span class="pvpq-v-s-compare-price">{{ first_variant.compare_at_price | divided_by: 2 | money }}</span>
           </div>
         {% endif %}
       </div>
