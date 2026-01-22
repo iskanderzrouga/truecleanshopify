@@ -126,6 +126,14 @@
           }}
         {% endif %}
 
+        {% if variant.metafields.custom.save_percent %}
+          <div
+            class="text-[10px] md:text-[12px] font-bold !leading-tight text-[#000000] tracking-normal rounded-[5px] bg-[#E8FF33] px-2 py-1 w-fit"
+          >
+            {{ variant.metafields.custom.save_percent }}
+          </div>
+        {% endif %}
+
         <div class="text-[14px] md:text-[17px] font-medium !leading-tight text-[#001C19] tracking-normal">
           {{ value -}}
           {{ label_unavailable }}
