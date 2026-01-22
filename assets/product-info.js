@@ -86,6 +86,8 @@ if (!customElements.get('product-info')) {
         if (!label) return;
 
         if (label.classList.contains('pvpq-label')) {
+          const dataSectionID = label.getAttribute('data-section-id');
+
           const subRefills = document.querySelectorAll('span[pvpq-sub-refills]');
           const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
           const subDuration = document.querySelectorAll('span[pvpq-sub-duration]');
