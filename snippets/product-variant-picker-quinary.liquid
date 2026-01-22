@@ -175,7 +175,8 @@
         el.classList.add('active');
       }
       function pvpqLabelSelected(el) {
-        el.classList.add('active');
+        const targets = document.querySelectorAll('.section-{{ section.id }}-padding span[pvpq-sub-refills]');
+        const title = el.getAttribute('data-title'); targets.forEach(t => t.textContent = title);
       }
     </script>
   </variant-selects>
