@@ -84,7 +84,8 @@
       </div>
       <div class="flex items-center gap-2">
         <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-          {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+          {% assign sub_percent = first_variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+          {{  sub_percent }}
           {% assign inverted_percent = 1 | minus: sub_percent %}
           {% assign inverted_percent_plus = 1 | plus: sub_percent %}{{  inverted_percent }}
           <span class="pvpq-v-s-price">{{ first_variant.price | times: inverted_percent | money }}</span>
