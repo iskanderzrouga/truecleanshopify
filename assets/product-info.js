@@ -86,6 +86,8 @@ if (!customElements.get('product-info')) {
         if (!label) return;
 
         if (label.classList.contains('pvpq-label')) {
+          label.classList.add('active');
+          
           const dataSectionClass = label.getAttribute('data-section-class');
 
           const subRefills = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-refills]`);
