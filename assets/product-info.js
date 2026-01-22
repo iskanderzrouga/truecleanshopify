@@ -80,6 +80,7 @@ if (!customElements.get('product-info')) {
       }
 
       rendersubscriptionID(targetId) {
+        console.log('targetId', targetId);
         // 1. Find the label with matching "for" attribute
         const label = document.querySelector(`label[for="${targetId}"]`);
         if (!label) return;
