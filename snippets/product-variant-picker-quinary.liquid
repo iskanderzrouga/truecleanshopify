@@ -84,7 +84,9 @@
       </div>
       <div class="flex items-center gap-2">
         <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
-          <span class="pvpq-v-s-price">{{ first_variant.price | divided_by: 2 | money }}</span>
+          {% assign sub_discount = variant.metafields.custom.subscription_discount | plus : 0.00 %}
+          {% assign sub_discount = 1.00 | minus : sub_discount %}
+          <span class="pvpq-v-s-price">{{ first_variant.price | times: sub_discount | money }}</span>
         </div>
         {% if first_variant.compare_at_price >= first_variant.price %}
           <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
