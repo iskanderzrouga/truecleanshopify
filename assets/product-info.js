@@ -96,6 +96,12 @@ if (!customElements.get('product-info')) {
 
           const elementPrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-price`);
           const dataPrice = label.getAttribute('data-price'); elementPrice.forEach(t => t.textContent = dataPrice);
+          const elementComparePrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-compare-price`);
+          const dataComparePrice = label.getAttribute('data-price'); elementComparePrice.forEach(t => t.textContent = dataComparePrice);
+          const elementSubPrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-s-price`);
+          const dataSubPrice = label.getAttribute('data-price'); elementSubPrice.forEach(t => t.textContent = dataSubPrice);
+          const elementSubComparePrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-s-compare-price`);
+          const dataSubComparePrice = label.getAttribute('data-price'); elementSubComparePrice.forEach(t => t.textContent = dataSubComparePrice);
 
           // 2. Get subscription ID from that label
           const subId = label.getAttribute('data-subscription-id');
