@@ -84,6 +84,11 @@
       {% endif %}
       {{ input_dataset }}
     >
+
+    {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+    {% assign inverted_percent = 1 | minus: sub_percent %}
+    {% assign inverted_percent_plus = 1 | plus: sub_percent %}
+
     <label
       for="{{ input_id }}"
       pvpq-label
