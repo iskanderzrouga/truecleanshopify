@@ -97,11 +97,11 @@ if (!customElements.get('product-info')) {
           const subId = label.getAttribute('data-subscription-id');
           if (!subId) return;
 
-          const toggle = document.querySelector('.variant-picker-quinary-tab[data-type="subscription"]');
+          const toggle = document.querySelector(`.${dataSectionClass} .variant-picker-quinary-tab[data-type="subscription"]`);
           const isSubActive = toggle && toggle.classList.contains('active');
 
           // 4. Find the correct selling plan input
-          const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
+          const input = document.querySelector(`.${dataSectionClass} input[re-sub-widget__selling-plan-input]`);
           if (!input) return;
 
           // 5. Apply logic
