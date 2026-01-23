@@ -431,29 +431,57 @@ window['__cvg_shopify_info'] = {
           if (rateFiveProgress) {
             rateFiveProgress.style.width = '89%';
           }
+
           const rateFour = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(2) .jm-histogram-row__frequency'
+          );
+          const rateFourProgress = document.querySelector(
+            '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(2) .jm-progress-bar__fill'
           );
           if (rateFour) {
             rateFour.textContent = '3,512';
           }
+          if (rateFourProgress) {
+            rateFourProgress.style.width = '7%';
+          }
+
           const rateThree = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(3) .jm-histogram-row__frequency'
+          );
+          const rateThreeProgress = document.querySelector(
+            '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(3) .jm-progress-bar__fill'
           );
           if (rateThree) {
             rateThree.textContent = '1,003';
           }
+          if (rateThreeProgress) {
+            rateThreeProgress.style.width = '2%';
+          }
+
           const rateTwo = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(4) .jm-histogram-row__frequency'
+          );
+          const rateTwoProgress = document.querySelector(
+            '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(4) .jm-progress-bar__fill'
           );
           if (rateTwo) {
             rateTwo.textContent = '502';
           }
+          if (rateTwoProgress) {
+            rateTwoProgress.style.width = '1%';
+          }
+
           const rateOne = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(5) .jm-histogram-row__frequency'
           );
+          const rateOneProgress = document.querySelector(
+            '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(5) .jm-progress-bar__fill'
+          );
           if (rateOne) {
             rateOne.textContent = '502';
+          }
+          if (rateOneProgress) {
+            rateOneProgress.style.width = '1%';
           }
         }, 2000);
       });
