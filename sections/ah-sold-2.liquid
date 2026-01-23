@@ -165,7 +165,7 @@
           {% for i in (1..2) %}
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
-                {% if block.settings.mobile_column == '1' %}
+                {% if block.settings.mobile_column == '2' %}
                 <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
                   {{
                     block.settings.image
