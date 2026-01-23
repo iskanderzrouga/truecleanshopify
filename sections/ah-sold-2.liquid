@@ -145,7 +145,7 @@
           {% for i in (1..2) %}
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
-                {% if block.settings.mobile_column == '1' %}
+                {% if block.settings.mobile_row == '1' %}
                 <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
                   {{
                     block.settings.image
@@ -165,7 +165,7 @@
           {% for i in (1..2) %}
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
-                {% if block.settings.mobile_column == '2' %}
+                {% if block.settings.mobile_row == '2' %}
                 <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
                   {{
                     block.settings.image
@@ -266,8 +266,19 @@
       transform: translateX(-1380px);
     }
   }
-
-
+  
+  .home-banner-img-animation-mobile-secondary {
+    animation: homeBannerImageHorizontalAnimationSecondary 30s linear infinite;
+    width: 2760px;
+  }
+  @keyframes homeBannerImageHorizontalAnimationSecondary {
+    0% {
+      transform: translateX(-1380px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
   .home-banner-img-animation-primary {
     animation: homeBannerImageVerticalAnimationPrimary 30s linear infinite;
