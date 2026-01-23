@@ -77,12 +77,12 @@
                     {% when 'video' %}
                       <div class="splide__slide">
                         {% if block.settings.image != blank %}
-                      {{
-                        block.settings.image
-                        | image_url: width: 400
-                        | image_tag: class: 'w-full', sizes: '400px'
-                      }}
-                    {% endif %}
+                          {{
+                            block.settings.image
+                            | image_url: width: 400
+                            | image_tag: class: 'w-full rounded-[20px] aspect-[3/4] object-cover', sizes: '400px'
+                          }}
+                        {% endif %}
                         {% if block.settings.video != blank %}
                           <div class="relative w-full overflow-hidden rounded-[20px] aspect-[3/4] nl-video-wrapper">
                             <video
@@ -393,10 +393,10 @@
       "name": "Video",
       "settings": [
         {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
         {
           "type": "text",
           "id": "video",
