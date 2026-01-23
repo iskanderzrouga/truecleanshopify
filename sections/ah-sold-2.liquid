@@ -30,7 +30,7 @@
   {% endif %}
 
   <div
-    class="mx-auto w-full grid md:grid-cols-5 relative gap-8 md:gap-10 lg:gap-[80px] md:items-center"
+    class="mx-auto w-full grid md:grid-cols-5 relative gap-0 md:gap-10 lg:gap-[80px] md:items-center"
     style="max-width: {{ section.settings.max_width }}px;"
   >
     <div class="section-{{ section.id }}-padding md:col-span-2 px-5 flex flex-col gap-6 md:gap-10">
@@ -146,17 +146,17 @@
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
                 {% if block.settings.mobile_row == '1' %}
-                <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
-                  {{
-                    block.settings.image
-                    | image_url: width: 165
-                    | image_tag:
-                      class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
-                      sizes: '165px',
-                      preload: true
-                  }}
-                </div>
-            {%  endif %}
+                  <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
+                    {{
+                      block.settings.image
+                      | image_url: width: 165
+                      | image_tag:
+                        class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
+                        sizes: '165px',
+                        preload: true
+                    }}
+                  </div>
+                {% endif %}
               {% endif %}
             {% endfor %}
           {% endfor %}
@@ -166,17 +166,17 @@
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
                 {% if block.settings.mobile_row == '2' %}
-                <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
-                  {{
-                    block.settings.image
-                    | image_url: width: 165
-                    | image_tag:
-                      class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
-                      sizes: '165px',
-                      preload: true
-                  }}
-                </div>
-            {%  endif %}
+                  <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
+                    {{
+                      block.settings.image
+                      | image_url: width: 165
+                      | image_tag:
+                        class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
+                        sizes: '165px',
+                        preload: true
+                    }}
+                  </div>
+                {% endif %}
               {% endif %}
             {% endfor %}
           {% endfor %}
@@ -266,7 +266,7 @@
       transform: translateX(-1380px);
     }
   }
-  
+
   .home-banner-img-animation-mobile-secondary {
     animation: homeBannerImageHorizontalAnimationSecondary 30s linear infinite;
     width: 2760px;
