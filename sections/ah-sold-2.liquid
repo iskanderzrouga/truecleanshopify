@@ -61,12 +61,12 @@
         {% endif %}
 
         {% if section.settings.btn_bottom_text != blank %}
-            <div
+          <div
             class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] text-center md:text-left"
             style="color: {{ section.settings.btn_bottom_text_color }};"
-            >
+          >
             {{ section.settings.btn_bottom_text }}
-            </div>
+          </div>
         {% endif %}
       </div>
 
@@ -145,13 +145,13 @@
           {% for i in (1..2) %}
             {% for block in section.blocks %}
               {% if block.type == 'image' %}
-                <div class="w-[165px] max-w-[165px] min-w-[165px] pr-[10px]">
+                <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
                   {{
                     block.settings.image
-                    | image_url: width: 220
+                    | image_url: width: 165
                     | image_tag:
-                      class: 'w-[220px] max-w-[220px] min-w-[220px] object-contain',
-                      sizes: '320px',
+                      class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
+                      sizes: '165px',
                       preload: true
                   }}
                 </div>
@@ -160,14 +160,14 @@
           {% endfor %}
         </div>
       </div>
-      
+
       <div class="flex-col items-center justify-center hidden lg:flex overflow-hidden">
         <div class="home-banner-img-animation relative grid grid-cols-3 gap-5 max-h-[830px]">
           <div class="home-banner-img-animation-secondary flex flex-col">
             {% for i in (1..2) %}
               {% for block in section.blocks reversed %}
                 {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == "1" %}
+                  {% if block.settings.desktop_column == '1' %}
                     <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
                       {{
                         block.settings.image
@@ -178,7 +178,7 @@
                           preload: true
                       }}
                     </div>
-                {% endif %}
+                  {% endif %}
                 {% endif %}
               {% endfor %}
             {% endfor %}
@@ -188,7 +188,7 @@
             {% for i in (1..2) %}
               {% for block in section.blocks %}
                 {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == "2" %}
+                  {% if block.settings.desktop_column == '2' %}
                     <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
                       {{
                         block.settings.image
@@ -209,7 +209,7 @@
             {% for i in (1..2) %}
               {% for block in section.blocks reversed %}
                 {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == "3" %}
+                  {% if block.settings.desktop_column == '3' %}
                     <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
                       {{
                         block.settings.image
@@ -220,7 +220,7 @@
                           preload: true
                       }}
                     </div>
-                {% endif %}
+                  {% endif %}
                 {% endif %}
               {% endfor %}
             {% endfor %}
