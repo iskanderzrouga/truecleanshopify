@@ -279,7 +279,7 @@
                 {% endif %}
 
               {% when 'testimonial' %}
-                <div class="block md:hidden w-full">
+                <div class="block {% if block.settings.desktop_under_slider %} md:hidden {% endif %} w-full">
                   {% render 'new-lp-featured-product-testimonial', block: block %}
                 </div>
 
