@@ -835,23 +835,6 @@
     "tc_safe_compare_3FdfYW": {
       "type": "tc-safe-compare",
       "blocks": {
-        "review_q3cRUj": {
-          "type": "review",
-          "settings": {
-            "bgcolor": "#ffffff",
-            "heading": "Mike R., Licensed Plumber, 15 years",
-            "heading_m_center": true,
-            "heading_d_center": true,
-            "heading_color": "#001c19",
-            "icon": "shopify:\/\/shop_images\/verified.png",
-            "description": "<p><em>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean flows directly to the bowl without touching tank components. It's <\/em><em><strong>the only automatic system I confidently recommend.<\/strong><\/em><em>\"<\/em><\/p>",
-            "description_m_center": true,
-            "description_d_center": false,
-            "small_description": false,
-            "description_color": "#001c19",
-            "image": "shopify:\/\/shop_images\/Ellipse_22.png"
-          }
-        },
         "row_KbDhbB": {
           "type": "row",
           "settings": {
@@ -887,12 +870,29 @@
             "description5": "",
             "description_color": "#001c19"
           }
+        },
+        "review_q3cRUj": {
+          "type": "review",
+          "settings": {
+            "bgcolor": "#ffffff",
+            "heading": "Mike R., Licensed Plumber, 15 years",
+            "heading_m_center": true,
+            "heading_d_center": true,
+            "heading_color": "#001c19",
+            "icon": "shopify:\/\/shop_images\/verified.png",
+            "description": "<p><em>\"I've replaced hundreds of flappers destroyed by tank tablets. TrueClean flows directly to the bowl without touching tank components. It's <\/em><em><strong>the only automatic system I confidently recommend.<\/strong><\/em><em>\"<\/em><\/p>",
+            "description_m_center": true,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#001c19",
+            "image": "shopify:\/\/shop_images\/Ellipse_22.png"
+          }
         }
       },
       "block_order": [
-        "review_q3cRUj",
         "row_KbDhbB",
-        "row_hnTmpU"
+        "row_hnTmpU",
+        "review_q3cRUj"
       ],
       "name": "TC Safe Compare",
       "settings": {
@@ -1228,7 +1228,7 @@
         "image_right": false,
         "button_label": "",
         "button_url": "",
-        "btn_bottom_text": "<p><em>¹Based on a survey of 847 customers who used TrueClean for at least 90 days. Results may vary.<\/em><\/p>",
+        "btn_bottom_text": "",
         "btn_bottom_text_color": "#000000",
         "bgcolor": "#ffffff",
         "max_width": 1280,
@@ -1918,7 +1918,7 @@
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
-            "text": "Ships by 20th Jan 2026",
+            "text": "Ships by DATEPLACEHOLDER",
             "icon": "shopify:\/\/shop_images\/ship-icon.png",
             "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan<\/p>"
           }
