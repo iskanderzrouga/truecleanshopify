@@ -271,7 +271,10 @@
                     }}
                   {% endif %}
                   {% if block.settings.text != blank %}
-                    {% assign date_day = 'now' | date: '%d' %}
+                    {% assign four_days = 4 | times: 86400 %}
+                    {% assign future = 'now' | date: '%s' | plus: four_days %}
+
+                    {% assign date_day = future | date: '%d' %}
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
                     {% assign date_string = date_day
