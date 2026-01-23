@@ -923,7 +923,7 @@
       }
     },
     "ah_sold_dCFw8r": {
-      "type": "ah-sold",
+      "type": "ah-sold-2",
       "blocks": {
         "image_t9iYqm": {
           "type": "image",
@@ -1168,7 +1168,7 @@
         "row_9873qr",
         "row_WEHCUh"
       ],
-      "name": "AH Sold",
+      "name": "AH Sold 2",
       "settings": {
         "section_id": "",
         "label": "Over 1 Million",
