@@ -422,8 +422,14 @@ window['__cvg_shopify_info'] = {
           const rateFive = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(1) .jm-histogram-row__frequency'
           );
+          const rateFiveProgress = document.querySelector(
+            '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(1) .jm-progress-bar__fill'
+          );
           if (rateFive) {
             rateFive.textContent = '44,654';
+          }
+          if (rateFiveProgress) {
+            rateFiveProgress.style.width = '89%';
           }
           const rateFour = document.querySelector(
             '#judgeme_product_reviews .jm-review-widget-header__star-rating-histogram .jm-cluster.jm-histogram-row:nth-child(2) .jm-histogram-row__frequency'
