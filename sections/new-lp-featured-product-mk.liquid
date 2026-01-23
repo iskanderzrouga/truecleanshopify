@@ -123,9 +123,11 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {% when 'testimonial' %}
-              <div class="hidden md:block w-full mt-7">
-                {% render 'new-lp-featured-product-testimonial', block: block %}
-              </div>
+              {% if block.settings.desktop_under_slider %}
+                <div class="hidden md:block w-full mt-7">
+                  {% render 'new-lp-featured-product-testimonial', block: block %}
+                </div>
+              {% endif %}
           {% endcase %}
         {% endfor %}
       </div>
