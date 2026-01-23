@@ -783,6 +783,9 @@ html {
   .w-\[80\%\] {
     width: 80%;
   }
+  .w-\[165px\] {
+    width: 165px;
+  }
   .w-\[220px\] {
     width: 220px;
   }
@@ -900,6 +903,9 @@ html {
   .max-w-\[160px\] {
     max-width: 160px;
   }
+  .max-w-\[165px\] {
+    max-width: 165px;
+  }
   .max-w-\[180px\] {
     max-width: 180px;
   }
@@ -1010,6 +1016,9 @@ html {
   }
   .min-w-\[90\%\] {
     min-width: 90%;
+  }
+  .min-w-\[165px\] {
+    min-width: 165px;
   }
   .min-w-\[220px\] {
     min-width: 220px;
