@@ -993,7 +993,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "2",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648372_cf3b25ce-6373-4bce-9caf-e18e5a736ebf.png"
           }
         },
@@ -1001,7 +1001,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "2",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648373_1_13e61fae-c0a5-44c2-b49d-7af927142093.png"
           }
         },
@@ -1009,7 +1009,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "3",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648374_24d4ddb0-0150-4ae2-9050-b3964849b0a5.png"
           }
         },
@@ -1017,7 +1017,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "3",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648369_b10acc2c-e140-4e28-81a1-049e17890f3d.png"
           }
         },
@@ -1025,7 +1025,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "3",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648372_1_1c4332c5-d5c8-4ef8-9d41-1fb1af794357.png"
           }
         },
@@ -1033,7 +1033,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "3",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648373_1.png"
           }
         },
@@ -1041,7 +1041,7 @@
           "type": "image",
           "settings": {
             "desktop_column": "3",
-            "mobile_row": "1",
+            "mobile_row": "2",
             "image": "shopify://shop_images/Rectangle_240648375_14aea745-dd69-4d84-85f4-c96351441683.png"
           }
         },
