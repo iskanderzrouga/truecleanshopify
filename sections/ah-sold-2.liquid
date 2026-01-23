@@ -161,26 +161,7 @@
             {% endfor %}
           {% endfor %}
         </div>
-        <div class="home-banner-img-animation-mobile-secondary mt-[10px] flex">
-          {% for i in (1..2) %}
-            {% for block in section.blocks %}
-              {% if block.type == 'image' %}
-                {% if block.settings.mobile_column == '2' %}
-                <div class="w-[175px] max-w-[175px] min-w-[175px] pr-[10px]">
-                  {{
-                    block.settings.image
-                    | image_url: width: 165
-                    | image_tag:
-                      class: 'w-[165px] max-w-[165px] min-w-[165px] object-contain',
-                      sizes: '165px',
-                      preload: true
-                  }}
-                </div>
-            {%  endif %}
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        </div>
+
       </div>
 
       <div class="flex-col items-center justify-center hidden lg:flex overflow-hidden">
