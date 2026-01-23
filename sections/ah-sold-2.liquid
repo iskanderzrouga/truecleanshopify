@@ -61,69 +61,60 @@
         {% endif %}
       </div>
 
-      <div class="grid grid-cols-2 gap-2">
-        {% if section.settings.text1 != blank %}
-          <div class="flex items-center max-md:justify-center">
-            <div
-              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
-              style="color: {{ section.settings.text_color }};"
-            >
-              {{ section.settings.text1 }}
+      {% if section.settings.show_data %}
+        <div class="grid grid-cols-2 gap-2">
+          {% if section.settings.text1 != blank %}
+            <div class="flex items-center max-md:justify-center">
+              <div
+                class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
+                style="color: {{ section.settings.text_color }};"
+              >
+                {{ section.settings.text1 }}
+              </div>
             </div>
-          </div>
-        {% endif %}
-        {% if section.settings.text2 != blank %}
-          <div class="flex items-center max-md:justify-center">
-            <div
-              class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
-              style="color: {{ section.settings.text_color }};"
-            >
-              {{ section.settings.text2 }}
+          {% endif %}
+          {% if section.settings.text2 != blank %}
+            <div class="flex items-center max-md:justify-center">
+              <div
+                class="text-[16px] md:text-[18px] font-medium !leading-tight text-[#001C19] px-4 py-2 rounded-[100px] bg-[#EFF6F6] w-fit"
+                style="color: {{ section.settings.text_color }};"
+              >
+                {{ section.settings.text2 }}
+              </div>
             </div>
-          </div>
-        {% endif %}
-      </div>
-
-      {% assign max_width = section.settings.max_width %}
-      {% comment %} {% assign max_width = section.settings.max_width |  divided_by: 2 %} {% endcomment %}
-      {% assign max_width_px = max_width | append: 'px' %}
-      {% if section.settings.image != blank %}
-        {{
-          section.settings.image
-          | image_url: width: max_width
-          | image_tag: class: 'w-full section-main-image', sizes: max_width_px
-        }}
-      {% endif %}
-
-      {% if section.blocks.size > 0 %}
-        <div class="w-full grid grid-cols-2 gap-y-4 md:gap-y-6">
-          {% for block in section.blocks %}
-            {% assign lasttwo_length = forloop.length | minus: 2 %}
-            {% assign is_even = forloop.index | modulo: 2 %}
-            {% case block.type %}
-              {% when 'row' %}
-                <div class="flex flex-col gap-1 {% if is_even == 0 %} pl-2 md:pl-5 {% else %} pr-2 md:pr-5 {%  endif %} {% unless forloop.index > lasttwo_length %} border-dashed border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
-                  {% if block.settings.heading != blank %}
-                    <div
-                      class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.heading_color }};"
-                    >
-                      {{ block.settings.heading }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.description != blank %}
-                    <div
-                      class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[14px] md:text-[18px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                      style="color: {{ block.settings.description_color }};"
-                    >
-                      {{ block.settings.description }}
-                    </div>
-                  {% endif %}
-                </div>
-            {% endcase %}
-          {% endfor %}
+          {% endif %}
         </div>
+
+        {% if section.blocks.size > 0 %}
+          <div class="w-full grid grid-cols-2 gap-y-4 md:gap-y-6">
+            {% for block in section.blocks %}
+              {% assign lasttwo_length = forloop.length | minus: 2 %}
+              {% assign is_even = forloop.index | modulo: 2 %}
+              {% case block.type %}
+                {% when 'row' %}
+                  <div class="flex flex-col gap-1 {% if is_even == 0 %} pl-2 md:pl-5 {% else %} pr-2 md:pr-5 {%  endif %} {% unless forloop.index > lasttwo_length %} border-dashed border-b border-[#9CA2A7] pb-4 md:pb-6 {% endunless %}">
+                    {% if block.settings.heading != blank %}
+                      <div
+                        class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                        style="color: {{ block.settings.heading_color }};"
+                      >
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.description != blank %}
+                      <div
+                        class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[14px] md:text-[18px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                        style="color: {{ block.settings.description_color }};"
+                      >
+                        {{ block.settings.description }}
+                      </div>
+                    {% endif %}
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        {% endif %}
       {% endif %}
 
       {% if section.settings.button_label != blank %}
