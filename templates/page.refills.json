@@ -502,7 +502,7 @@
         "button_url": "#productsVariants",
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#eff6f6",
+        "bgcolor": "#dff4f4",
         "max_width": 1240,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -702,7 +702,7 @@
         "card_E6aUAP": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -726,7 +726,7 @@
         "card_HpxYjK": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -750,7 +750,7 @@
         "card_Mxf374": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -774,7 +774,7 @@
         "card_kpUT9t": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -798,7 +798,7 @@
         "card_hD3bwt": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
