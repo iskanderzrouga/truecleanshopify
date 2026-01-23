@@ -30,10 +30,10 @@
   {% endif %}
 
   <div
-    class="mx-auto w-full grid md:grid-cols-2 relative gap-8 md:gap-10 lg:gap-[80px] md:items-center"
+    class="mx-auto w-full grid md:grid-cols-5 relative gap-8 md:gap-10 lg:gap-[80px] md:items-center"
     style="max-width: {{ section.settings.max_width }}px;"
   >
-    <div class="section-{{ section.id }}-padding px-5 flex flex-col gap-6 md:gap-10">
+    <div class="section-{{ section.id }}-padding md:col-span-2 px-5 flex flex-col gap-6 md:gap-10">
       <div class="flex flex-col gap-3">
         {% if section.settings.label != blank %}
           <span
@@ -139,7 +139,7 @@
       {% endif %}
     </div>
 
-    <div class="w-full max-md:max-w-[360px] max-md:mx-auto max-md:mb-8">
+    <div class="md:col-end-3 w-full max-md:max-w-[360px] max-md:mx-auto max-md:mb-8">
       <div class="block lg:hidden overflow-hidden">
         <div class="home-banner-img-animation-mobile flex">
           {% for i in (1..2) %}
