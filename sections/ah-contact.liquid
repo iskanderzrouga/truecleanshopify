@@ -19,7 +19,7 @@
 <div
   id="{{ section.settings.section_id }}"
   class="section-{{ section.id }}-padding px-5 relative"
-  style="background: linear-gradient(180deg, #FCFFEC 0%, #FFFFFF 100%);background: linear-gradient(180deg, #F5FFC0 0%, #FFFFFF 90.05%);"
+  style="{% if section.settings.gradient_bg %} background: linear-gradient(180deg, #F5FFC0 0%, #FFFFFF 90.05%);{% endif %}"
 >
   {% if section.settings.bg != blank %}
     {{
@@ -279,6 +279,12 @@
       "id": "bgcolor",
       "label": "Background Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "gradient_bg",
+      "label": "Gradient Background",
+      "default": false
     },
     {
       "type": "range",
