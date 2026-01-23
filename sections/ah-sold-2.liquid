@@ -30,7 +30,7 @@
   {% endif %}
 
   <div
-    class="mx-auto w-full grid md:grid-cols-2 relative gap-8 md:gap-10 lg:gap-[80px]"
+    class="mx-auto w-full grid md:grid-cols-2 relative gap-8 md:gap-10 lg:gap-[80px] md:items-center"
     style="max-width: {{ section.settings.max_width }}px;"
   >
     <div class="section-{{ section.id }}-padding px-5 flex flex-col gap-6 md:gap-10">
@@ -58,6 +58,15 @@
           >
             {{ section.settings.description }}
           </div>
+        {% endif %}
+
+        {% if section.settings.btn_bottom_text != blank %}
+            <div
+            class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] text-center md:text-left"
+            style="color: {{ section.settings.btn_bottom_text_color }};"
+            >
+            {{ section.settings.btn_bottom_text }}
+            </div>
         {% endif %}
       </div>
 
@@ -126,15 +135,6 @@
             {{ section.settings.button_label }}
             {%- render 'icon-arrow-right' -%}
           </a>
-        </div>
-      {% endif %}
-
-      {% if section.settings.btn_bottom_text != blank %}
-        <div
-          class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#001C19] text-center md:text-left"
-          style="color: {{ section.settings.btn_bottom_text_color }};"
-        >
-          {{ section.settings.btn_bottom_text }}
         </div>
       {% endif %}
     </div>
