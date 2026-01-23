@@ -147,6 +147,7 @@
         },
         "collapsible_tab_98w9hT": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "How do the refills work?",
             "icon": "none",
@@ -156,6 +157,7 @@
         },
         "collapsible_tab_kjGiJ7": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Will it fit my toilet?",
             "icon": "none",
@@ -165,6 +167,7 @@
         },
         "collapsible_tab_bqBJYJ": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Try it 100% risk-free",
             "icon": "none",
@@ -175,6 +178,7 @@
         "testimonial_VHWM3m": {
           "type": "testimonial",
           "settings": {
+            "desktop_under_slider": false,
             "avatar": "shopify:\/\/shop_images\/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
             "heading": "",
             "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!<\/p>",
@@ -323,7 +327,7 @@
         "product": "",
         "show_payment_icons": false,
         "bottom_description": "",
-        "bgcolor": "#eff6f6",
+        "bgcolor": "#dff4f4",
         "max_width": 780,
         "padding_top": 48,
         "padding_bottom": 48,
@@ -337,7 +341,7 @@
         "row_NMGtdG": {
           "type": "row",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -361,7 +365,7 @@
         "row_C63c8z": {
           "type": "row",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -385,7 +389,7 @@
         "row_NkRB7z": {
           "type": "row",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -549,7 +553,7 @@
         "button_url": "",
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#eff6f6",
+        "bgcolor": "#dff4f4",
         "max_width": 1240,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -820,7 +824,7 @@
         "button_url": "",
         "btn_bottom_text": "",
         "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#eff6f6",
+        "bgcolor": "#dff4f4",
         "max_width": 680,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -912,6 +916,322 @@
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#fbffe6",
         "max_width": 780,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
+    "ah_sold_dCFw8r": {
+      "type": "ah-sold-2",
+      "blocks": {
+        "image_XUFrqd": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648373_286928cb-3d26-4157-b584-f7650c009240.png"
+          }
+        },
+        "image_t9iYqm": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648368_6846ed5e-3033-4fc1-9cf2-c0b5d3e8acfe.png"
+          }
+        },
+        "image_6hLCA3": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648371_a62418c8-bb52-43a1-8eba-ac5af407faa4.png"
+          }
+        },
+        "image_hNkWyr": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648372_f46cd152-71ab-4ca5-9b85-16988ef3efd1.png"
+          }
+        },
+        "image_jbtCDK": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648373_6b06511f-929d-48da-b7f8-a470b36a9e58.png"
+          }
+        },
+        "image_f3ap8p": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648374_1.png"
+          }
+        },
+        "image_cTCnPf": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648371_bbd6e35f-5073-4365-a4fd-d82e9fbd1f8d.png"
+          }
+        },
+        "image_tdYPad": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648368_4bd925b1-f6ea-4316-bfd2-0dda22da403b.png"
+          }
+        },
+        "image_HXkNAE": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648372_cf3b25ce-6373-4bce-9caf-e18e5a736ebf.png"
+          }
+        },
+        "image_DQynzg": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648373_1_13e61fae-c0a5-44c2-b49d-7af927142093.png"
+          }
+        },
+        "image_mTTPcb": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "3",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648374_24d4ddb0-0150-4ae2-9050-b3964849b0a5.png"
+          }
+        },
+        "image_c3DXnD": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "3",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648369_b10acc2c-e140-4e28-81a1-049e17890f3d.png"
+          }
+        },
+        "image_DQien9": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "3",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648372_1_1c4332c5-d5c8-4ef8-9d41-1fb1af794357.png"
+          }
+        },
+        "image_JqJcjt": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "3",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648373_1.png"
+          }
+        },
+        "image_dwPjGW": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "3",
+            "mobile_row": "2",
+            "image": "shopify:\/\/shop_images\/Rectangle_240648375_14aea745-dd69-4d84-85f4-c96351441683.png"
+          }
+        },
+        "row_GFMaWJ": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "94%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Saw visible reduction in mineral stains within 2 weeks¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_Ga6Vei": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "97%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Would recommend TrueClean to a friend¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_6HQHN4": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "91%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Reported scrubbing less or not at all¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_zMGXXp": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "96%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Said their toilet stays cleaner longer¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_9873qr": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "89%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Said rings and buildup stopped forming¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        },
+        "row_WEHCUh": {
+          "type": "row",
+          "settings": {
+            "bgcolor": "#f4f4f6",
+            "label": "",
+            "label_m_center": true,
+            "label_d_center": true,
+            "label_color": "#001c19",
+            "heading": "93%",
+            "heading_m_center": false,
+            "heading_d_center": false,
+            "heading_color": "#001c19",
+            "description": "<p>Reported their bathroom feels more guest-ready¹<\/p>",
+            "description_m_center": false,
+            "description_d_center": false,
+            "small_description": false,
+            "description_color": "#000000",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_text": "",
+            "btn_bottom_text_color": "#001c19"
+          }
+        }
+      },
+      "block_order": [
+        "image_XUFrqd",
+        "image_t9iYqm",
+        "image_6hLCA3",
+        "image_hNkWyr",
+        "image_jbtCDK",
+        "image_f3ap8p",
+        "image_cTCnPf",
+        "image_tdYPad",
+        "image_HXkNAE",
+        "image_DQynzg",
+        "image_mTTPcb",
+        "image_c3DXnD",
+        "image_DQien9",
+        "image_JqJcjt",
+        "image_dwPjGW",
+        "row_GFMaWJ",
+        "row_Ga6Vei",
+        "row_6HQHN4",
+        "row_zMGXXp",
+        "row_9873qr",
+        "row_WEHCUh"
+      ],
+      "name": "AH Sold 2",
+      "settings": {
+        "section_id": "",
+        "label": "Over 1 Million",
+        "label_color": "#000000",
+        "heading": "Cartridges Sold Nationwide",
+        "heading_m_center": true,
+        "heading_d_center": false,
+        "heading_color": "#001c19",
+        "text1": "🚰 Hard Water Homes",
+        "text2": "🏠 All Homeowners",
+        "text_color": "#000000",
+        "description": "<p>Less than 2% returned—homeowners love the results.<\/p>",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#000000",
+        "show_data": false,
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "",
+        "button_url": "",
+        "btn_bottom_text": "<p><em>¹Based on a survey of 847 customers who used TrueClean for at least 90 days. Results may vary.<\/em><\/p>",
+        "btn_bottom_text_color": "#000000",
+        "bgcolor": "#ffffff",
+        "max_width": 1280,
         "padding_top": 72,
         "padding_bottom": 72,
         "padding_top_m": 36,
@@ -1082,7 +1402,7 @@
         "card_E6aUAP": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -1106,7 +1426,7 @@
         "card_HpxYjK": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -1130,7 +1450,7 @@
         "card_Mxf374": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -1154,7 +1474,7 @@
         "card_kpUT9t": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -1178,7 +1498,7 @@
         "card_hD3bwt": {
           "type": "card",
           "settings": {
-            "bgcolor": "#eff6f6",
+            "bgcolor": "#dff4f4",
             "label": "",
             "label_m_center": true,
             "label_d_center": true,
@@ -1334,7 +1654,7 @@
         "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#ffffff",
+        "bgcolor": "#dff4f4",
         "max_width": 880,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -2473,7 +2793,7 @@
         "btn_bottom_icon": "shopify:\/\/shop_images\/image_6_1.png",
         "btn_bottom_text": "<p>90-Day Money-Back Guarantee<\/p>",
         "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#eff6f6",
+        "bgcolor": "#dff4f4",
         "max_width": 1260,
         "padding_top": 72,
         "padding_bottom": 72,
@@ -2491,6 +2811,7 @@
     "tc_introduce_GxejY8",
     "tc_video_Y7iwgL",
     "tc_safe_compare_3FdfYW",
+    "ah_sold_dCFw8r",
     "tc_promise_k8Lrix",
     "tc_testimonials_JpzwDb",
     "tc_information_CbWNzM",
