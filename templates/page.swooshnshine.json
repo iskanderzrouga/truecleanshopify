@@ -147,6 +147,7 @@
         },
         "collapsible_tab_98w9hT": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "How do the refills work?",
             "icon": "none",
@@ -156,6 +157,7 @@
         },
         "collapsible_tab_kjGiJ7": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Will it fit my toilet?",
             "icon": "none",
@@ -165,6 +167,7 @@
         },
         "collapsible_tab_bqBJYJ": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Try it 100% risk-free",
             "icon": "none",
