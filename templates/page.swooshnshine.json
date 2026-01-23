@@ -1918,7 +1918,7 @@
         "ship_by_below": {
           "type": "ship_by",
           "settings": {
-            "text": "Ships by 20th Jan 2026",
+            "text": "Ships by DATEPLACEHOLDER",
             "icon": "shopify://shop_images/ship-icon.png",
             "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan</p>"
           }
