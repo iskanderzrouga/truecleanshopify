@@ -1228,7 +1228,7 @@
         "image_right": false,
         "button_label": "",
         "button_url": "",
-        "btn_bottom_text": "<p><em>¹Based on a survey of 847 customers who used TrueClean for at least 90 days. Results may vary.</em></p>",
+        "btn_bottom_text": "",
         "btn_bottom_text_color": "#000000",
         "bgcolor": "#ffffff",
         "max_width": 1280,
