@@ -271,7 +271,7 @@
                     }}
                   {% endif %}
                   {% if block.settings.text != blank %}
-                    {% assign date_day = 'now' | date: '%d' | plus : 4 %}
+                    {% assign date_day = 'now' | date: '%d' %}
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
                     {% assign date_string = date_day
