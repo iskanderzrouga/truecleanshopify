@@ -90,7 +90,7 @@
           <span class="pvpq-v-s-price">{{ first_variant.price | times: inverted_percent | money }}</span>
         </div>
         {% if first_variant.compare_at_price >= first_variant.price %}
-          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
+          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal line-through">
             <span class="pvpq-v-s-compare-price">{{ first_variant.compare_at_price | money }}</span>
           </div>
         {% endif %}
@@ -159,7 +159,7 @@
           <span class="pvpq-v-price">{{ first_variant.price | money }}</span>
         </div>
         {% if first_variant.compare_at_price > first_variant.price %}
-          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal">
+          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal line-through">
             <span class="pvpq-v-compare-price">{{ first_variant.compare_at_price | money }}</span>
           </div>
         {% endif %}
