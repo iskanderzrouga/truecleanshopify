@@ -591,6 +591,9 @@ html {
   .aspect-\[3\/4\] {
     aspect-ratio: 3/4;
   }
+  .aspect-\[6\/5\] {
+    aspect-ratio: 6/5;
+  }
   .h-0 {
     height: calc(var(--spacing) * 0);
   }
