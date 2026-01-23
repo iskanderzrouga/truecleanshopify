@@ -925,88 +925,124 @@
     "ah_sold_dCFw8r": {
       "type": "ah-sold-2",
       "blocks": {
+        "image_XUFrqd": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648373_286928cb-3d26-4157-b584-f7650c009240.png"
+          }
+        },
         "image_t9iYqm": {
           "type": "image",
           "settings": {
-            "right": false,
+            "desktop_column": "1",
+            "mobile_row": "1",
             "image": "shopify://shop_images/Rectangle_240648368_6846ed5e-3033-4fc1-9cf2-c0b5d3e8acfe.png"
+          }
+        },
+        "image_6hLCA3": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648371_a62418c8-bb52-43a1-8eba-ac5af407faa4.png"
+          }
+        },
+        "image_hNkWyr": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648372_f46cd152-71ab-4ca5-9b85-16988ef3efd1.png"
+          }
+        },
+        "image_jbtCDK": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "1",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648373_6b06511f-929d-48da-b7f8-a470b36a9e58.png"
+          }
+        },
+        "image_f3ap8p": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648374_1.png"
           }
         },
         "image_cTCnPf": {
           "type": "image",
           "settings": {
-            "right": false,
+            "desktop_column": "2",
+            "mobile_row": "1",
             "image": "shopify://shop_images/Rectangle_240648371_bbd6e35f-5073-4365-a4fd-d82e9fbd1f8d.png"
+          }
+        },
+        "image_tdYPad": {
+          "type": "image",
+          "settings": {
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648368_4bd925b1-f6ea-4316-bfd2-0dda22da403b.png"
           }
         },
         "image_HXkNAE": {
           "type": "image",
           "settings": {
-            "right": false,
+            "desktop_column": "2",
+            "mobile_row": "1",
             "image": "shopify://shop_images/Rectangle_240648372_cf3b25ce-6373-4bce-9caf-e18e5a736ebf.png"
           }
         },
-        "image_XUFrqd": {
+        "image_DQynzg": {
           "type": "image",
           "settings": {
-            "right": false,
-            "image": "shopify://shop_images/Rectangle_240648373_286928cb-3d26-4157-b584-f7650c009240.png"
+            "desktop_column": "2",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648373_1_13e61fae-c0a5-44c2-b49d-7af927142093.png"
           }
         },
         "image_mTTPcb": {
           "type": "image",
           "settings": {
-            "right": false,
-            "image": "shopify://shop_images/Rectangle_240648374.png"
+            "desktop_column": "3",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648374_24d4ddb0-0150-4ae2-9050-b3964849b0a5.png"
           }
         },
         "image_c3DXnD": {
           "type": "image",
           "settings": {
-            "right": false,
-            "image": "shopify://shop_images/Rectangle_240648375.png"
-          }
-        },
-        "image_3NHzMR": {
-          "type": "image",
-          "settings": {
-            "right": true,
-            "image": "shopify://shop_images/Rectangle_240648369_9bf55362-0853-4f7b-94a5-0f058d15dc8a.png"
+            "desktop_column": "3",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648369_b10acc2c-e140-4e28-81a1-049e17890f3d.png"
           }
         },
         "image_DQien9": {
           "type": "image",
           "settings": {
-            "right": true,
+            "desktop_column": "3",
+            "mobile_row": "1",
             "image": "shopify://shop_images/Rectangle_240648372_1_1c4332c5-d5c8-4ef8-9d41-1fb1af794357.png"
           }
         },
         "image_JqJcjt": {
           "type": "image",
           "settings": {
-            "right": true,
+            "desktop_column": "3",
+            "mobile_row": "1",
             "image": "shopify://shop_images/Rectangle_240648373_1.png"
-          }
-        },
-        "image_K3jFz6": {
-          "type": "image",
-          "settings": {
-            "right": true,
-            "image": "shopify://shop_images/Rectangle_240648374_1.png"
-          }
-        },
-        "image_EGrMLK": {
-          "type": "image",
-          "settings": {
-            "right": true,
-            "image": "shopify://shop_images/Rectangle_240648375_1.png"
           }
         },
         "image_dwPjGW": {
           "type": "image",
           "settings": {
-            "right": true,
-            "image": "shopify://shop_images/Rectangle_240648376.png"
+            "desktop_column": "3",
+            "mobile_row": "1",
+            "image": "shopify://shop_images/Rectangle_240648375_14aea745-dd69-4d84-85f4-c96351441683.png"
           }
         },
         "row_GFMaWJ": {
@@ -1149,17 +1185,20 @@
         }
       },
       "block_order": [
-        "image_t9iYqm",
-        "image_cTCnPf",
-        "image_HXkNAE",
         "image_XUFrqd",
+        "image_t9iYqm",
+        "image_6hLCA3",
+        "image_hNkWyr",
+        "image_jbtCDK",
+        "image_f3ap8p",
+        "image_cTCnPf",
+        "image_tdYPad",
+        "image_HXkNAE",
+        "image_DQynzg",
         "image_mTTPcb",
         "image_c3DXnD",
-        "image_3NHzMR",
         "image_DQien9",
         "image_JqJcjt",
-        "image_K3jFz6",
-        "image_EGrMLK",
         "image_dwPjGW",
         "row_GFMaWJ",
         "row_Ga6Vei",
