@@ -1406,6 +1406,9 @@ html {
     --tw-border-style: solid;
     border-style: solid;
   }
+  .\!border-\[\#299646\] {
+    border-color: #299646 !important;
+  }
   .border-\[\#00B7A2\] {
     border-color: #00B7A2;
   }
