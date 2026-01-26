@@ -360,9 +360,6 @@ html {
   .top-0\.5 {
     top: calc(var(--spacing) * 0.5);
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -401,9 +398,6 @@ html {
   }
   .left-0\.5 {
     left: calc(var(--spacing) * 0.5);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
@@ -479,9 +473,6 @@ html {
   }
   .\!mt-6 {
     margin-top: calc(var(--spacing) * 6) !important;
-  }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
   }
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
@@ -593,9 +584,6 @@ html {
   }
   .aspect-\[3\/4\] {
     aspect-ratio: 3/4;
-  }
-  .aspect-\[6\/5\] {
-    aspect-ratio: 6/5;
   }
   .h-0 {
     height: calc(var(--spacing) * 0);
@@ -1053,33 +1041,15 @@ html {
   .flex-1 {
     flex: 1;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * 1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .translate-x-1\/2 {
     --tw-translate-x: calc(1/2 * 100%);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
@@ -1513,6 +1483,9 @@ html {
   }
   .\!bg-\[\#7A5EC5\] {
     background-color: #7A5EC5 !important;
+  }
+  .\!bg-\[\#299646\] {
+    background-color: #299646 !important;
   }
   .\!bg-transparent {
     background-color: transparent !important;
@@ -2382,11 +2355,6 @@ html {
   .md\:col-span-5 {
     @media (width >= 48rem) {
       grid-column: span 5 / span 5;
-    }
-  }
-  .md\:col-end-3 {
-    @media (width >= 48rem) {
-      grid-column-end: 3;
     }
   }
   .md\:\!my-4 {
