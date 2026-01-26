@@ -3374,6 +3374,11 @@ html {
       background-color: var(--color-black);
     }
   }
+  .\[\&\.active\]\:bg-white {
+    &.active {
+      background-color: var(--color-white);
+    }
+  }
   .\[\&\.active\]\:text-white {
     &.active {
       color: var(--color-white);
