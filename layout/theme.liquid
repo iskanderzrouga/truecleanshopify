@@ -7,21 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    <script>
-window['__cvg_shopify_info'] = {
-  product: {{ product | json }},
-  variant: {{ product.selected_or_first_available_variant | json }},
-  currency: {{ shop.currency | json }},
-  collection: {...{{ collection | json }}, products: {{ collection.products | json }}},
-  search: {{ search.terms | json }},
-};
-</script>
-<script src="https://static.runconverge.com/pixels/UC0qsF.js" async></script>
-<script>
-  window.cvg||(cvg=function(){cvg.process?cvg.process.apply(cvg,arguments):cvg.queue.push(arguments)},cvg.queue=[]);
-  cvg({method:"track",eventName:"$page_load"});
-</script>
-
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
