@@ -36,7 +36,7 @@
             {% endif %}
 
             {% if section.settings.text != blank %}
-              <div class="listicle-offer__text text-[#000] text-[14px] lg:text-[18px] font-medium leading-tight md:leading-tight text-center">
+              <div class="listicle-offer__text text-[#000] text-[14px] lg:text-[18px] font-bold leading-tight md:leading-tight text-center">
                 {{ section.settings.text }}
               </div>
             {% endif %}
@@ -86,7 +86,7 @@
             {% endif %}
 
             {% if section.settings.note_text != blank %}
-              <div class="text-[#000] text-[10px] lg:text-[10px] bg-[#FEF7F7] font-medium leading-tight md:leading-tight px-[14px] py-2 border border-[#FF8484] rounded-[10px]">
+              <div class="text-[#000] text-[10px] lg:text-[10px] bg-[#FEF7F7] font-semibold leading-tight md:leading-tight px-[14px] py-2 border border-[#FF8484] rounded-[10px]">
                 <strong>Note ({{ 'now' | date: '%b %e, %Y' }}):</strong> {{ section.settings.note_text }}
               </div>
             {% endif %}
