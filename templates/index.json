@@ -1917,6 +1917,7 @@
         },
         "ship_by_below": {
           "type": "ship_by",
+          "disabled": true,
           "settings": {
             "text": "Ships by DATEPLACEHOLDER",
             "icon": "shopify://shop_images/ship-icon.png",
