@@ -1994,7 +1994,7 @@
       ],
       "settings": {
         "product": "swooshnshine",
-        "show_shipping_banner": true,
+        "show_shipping_banner": false,
         "shipping_heading": "Due to extremely high demand over the New Year we are currently restocking TrueClean and will be able to ship your order within 4 days. Thank you for your understanding and patience!",
         "show_urgency_banner": false,
         "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
