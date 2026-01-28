@@ -138,6 +138,7 @@ customElements.define('cart-drawer-items', CartDrawerItems);
 
 function startCartTimer(duration, display) {
   let timer = duration;
+  console.log('coutndown start function here');
   const interval = setInterval(() => {
     const minutes = Math.floor(timer / 60);
     const seconds = timer % 60;
@@ -146,8 +147,6 @@ function startCartTimer(duration, display) {
     if (--timer < 0) {
       clearInterval(interval);
       display.textContent = "00:00";
-      // Optional: update message or trigger cart release
-      // document.getElementById('cart-timer').textContent = "Cart reservation expired";
     }
   }, 1000);
 }
