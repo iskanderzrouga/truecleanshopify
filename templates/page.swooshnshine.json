@@ -221,6 +221,7 @@
       ],
       "name": "New Featured Product MK",
       "settings": {
+        "above_fold": true,
         "product": "swooshnshine",
         "section_id": "",
         "heading": "",
