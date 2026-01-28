@@ -467,7 +467,8 @@
 
   const runTimer = () => {
     const interval = setInterval(() => {
-      console.log('timer runn')
+      console.log('timer runn');
+      console.log('timer', timer)
       const minutes = Math.floor(timer / 60);
       const seconds = timer % 60;
       console.log('minutes', minutes)
