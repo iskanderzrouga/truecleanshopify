@@ -1610,6 +1610,165 @@
         "padding_bottom_m": 36
       }
     },
+    "tc_comparison_dhkbUk": {
+      "type": "tc-comparison",
+      "blocks": {
+        "row_CKh8Wd": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "",
+            "image1": "shopify://shop_images/TrueClean_logo_2.png",
+            "text1": "",
+            "text2": "<p><strong>Tank Tabs</strong></p>",
+            "text3": "<p><strong>Brush & Bleach</strong></p>",
+            "text4": "<p><strong>Disposable Wands</strong></p>"
+          }
+        },
+        "row_xKGDrq": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>No tank contact</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/fe_check.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/fe_check.png",
+            "text4": ""
+          }
+        },
+        "row_Hh93fd": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>Protects plumbing</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/fe_check.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/fe_check.png",
+            "text4": ""
+          }
+        },
+        "row_WwdxHi": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>Prevents stains</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/fe_check.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "text4": ""
+          }
+        },
+        "row_W4TBeg": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>No harsh fumes</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "text4": ""
+          }
+        },
+        "row_UinR6G": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>Works automatically</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/fe_check.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/fe_check.png",
+            "text4": ""
+          }
+        },
+        "row_APXbdH": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>Set-and-forget</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "text4": ""
+          }
+        },
+        "row_VDhQfL": {
+          "type": "row",
+          "settings": {
+            "border_color": "#d9dde0",
+            "label": "<p>90-Day Guarantee</p>",
+            "icon1": "shopify://shop_images/fe_check.png",
+            "text1": "",
+            "icon2": "shopify://shop_images/rivet-icons_close.png",
+            "text2": "",
+            "icon3": "shopify://shop_images/rivet-icons_close.png",
+            "text3": "",
+            "icon4": "shopify://shop_images/rivet-icons_close.png",
+            "text4": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_CKh8Wd",
+        "row_xKGDrq",
+        "row_Hh93fd",
+        "row_WwdxHi",
+        "row_W4TBeg",
+        "row_UinR6G",
+        "row_APXbdH",
+        "row_VDhQfL"
+      ],
+      "name": "TC Comparison",
+      "settings": {
+        "section_id": "",
+        "product": "",
+        "heading": "How TrueClean Compares",
+        "heading_m_center": true,
+        "heading_d_center": true,
+        "heading_color": "#001c19",
+        "description": "",
+        "description_m_center": true,
+        "description_d_center": false,
+        "description_color": "#001c19",
+        "text": "",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "STOP SCRUBBING NOW →",
+        "button_url": "#productsVariants",
+        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_text_color": "#001c19",
+        "bgcolor": "#ffffff",
+        "max_width": 900,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "tc_guarantee_iB3X4t": {
       "type": "tc-guarantee",
       "name": "TC Guarantee",
@@ -1784,8 +1943,8 @@
       ],
       "settings": {
         "product": "swooshnshine",
-        "show_shipping_banner": false,
-        "shipping_heading": "Due to extremely high demand over the New Year we are currently restocking TrueClean and will be able to ship your order within 4 days. Thank you for your understanding and patience!",
+        "show_shipping_banner": true,
+        "shipping_heading": "Because of the high demand, we regret to inform you that once our current stock runs out - we can't maintain this special discount offer.\n\nWe also must inform you that the product is unavailable for purchase on Amazon and eBay.\n\nFor more details on the remaining quantity, please scroll down.",
         "show_urgency_banner": false,
         "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
         "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
@@ -2263,165 +2422,6 @@
         "btn_bottom_text_color": "#001c19",
         "bgcolor": "#ffffff",
         "max_width": 1200,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_m": 36,
-        "padding_bottom_m": 36
-      }
-    },
-    "tc_comparison_dhkbUk": {
-      "type": "tc-comparison",
-      "blocks": {
-        "row_CKh8Wd": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "",
-            "image1": "shopify://shop_images/TrueClean_logo_2.png",
-            "text1": "",
-            "text2": "<p><strong>Tank Tabs</strong></p>",
-            "text3": "<p><strong>Brush & Bleach</strong></p>",
-            "text4": "<p><strong>Disposable Wands</strong></p>"
-          }
-        },
-        "row_xKGDrq": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>No tank contact</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/fe_check.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
-            "text4": ""
-          }
-        },
-        "row_Hh93fd": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>Protects plumbing</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/fe_check.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
-            "text4": ""
-          }
-        },
-        "row_WwdxHi": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>Prevents stains</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/fe_check.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
-            "text4": ""
-          }
-        },
-        "row_W4TBeg": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>No harsh fumes</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
-            "text4": ""
-          }
-        },
-        "row_UinR6G": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>Works automatically</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/fe_check.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/fe_check.png",
-            "text4": ""
-          }
-        },
-        "row_APXbdH": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>Set-and-forget</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
-            "text4": ""
-          }
-        },
-        "row_VDhQfL": {
-          "type": "row",
-          "settings": {
-            "border_color": "#d9dde0",
-            "label": "<p>90-Day Guarantee</p>",
-            "icon1": "shopify://shop_images/fe_check.png",
-            "text1": "",
-            "icon2": "shopify://shop_images/rivet-icons_close.png",
-            "text2": "",
-            "icon3": "shopify://shop_images/rivet-icons_close.png",
-            "text3": "",
-            "icon4": "shopify://shop_images/rivet-icons_close.png",
-            "text4": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_CKh8Wd",
-        "row_xKGDrq",
-        "row_Hh93fd",
-        "row_WwdxHi",
-        "row_W4TBeg",
-        "row_UinR6G",
-        "row_APXbdH",
-        "row_VDhQfL"
-      ],
-      "name": "TC Comparison",
-      "settings": {
-        "section_id": "",
-        "product": "",
-        "heading": "How TrueClean Compares",
-        "heading_m_center": true,
-        "heading_d_center": true,
-        "heading_color": "#001c19",
-        "description": "",
-        "description_m_center": true,
-        "description_d_center": false,
-        "description_color": "#001c19",
-        "text": "",
-        "border_radius": 0,
-        "image_right": false,
-        "button_label": "STOP SCRUBBING NOW →",
-        "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
-        "btn_bottom_text_color": "#001c19",
-        "bgcolor": "#ffffff",
-        "max_width": 900,
         "padding_top": 72,
         "padding_bottom": 72,
         "padding_top_m": 36,
