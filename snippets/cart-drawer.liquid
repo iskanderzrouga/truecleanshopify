@@ -84,6 +84,34 @@
         </button>
       </div>
 
+      <div id="cart-timer" class="text-[16px] font-semibold text-red-600">
+        Limited inventory! Your cart is reserved for <span id="countdown">10:00</span>
+      </div>
+
+      <script>
+        function startCartTimer(duration, display) {
+          let timer = duration;
+          const interval = setInterval(() => {
+            const minutes = Math.floor(timer / 60);
+            const seconds = timer % 60;
+            display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            if (--timer < 0) {
+              clearInterval(interval);
+              display.textContent = "00:00";
+              // Optional: update message or trigger cart release
+              // document.getElementById('cart-timer').textContent = "Cart reservation expired";
+            }
+          }, 1000);
+        }
+
+        // Start 10-minute timer on page load
+        window.addEventListener('DOMContentLoaded', () => {
+          const countdown = document.getElementById('countdown');
+          startCartTimer(10 * 60, countdown);
+        });
+      </script>
+
       {% comment %}
         <div class="bg-[#084c2521] px-5 py-4 flex items-center justify-center gap-4 mb-5">
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
