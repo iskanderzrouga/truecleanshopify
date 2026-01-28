@@ -1984,6 +1984,9 @@ html {
   .\!text-\[\#747474\] {
     color: #747474 !important;
   }
+  .\!text-\[\#fff\] {
+    color: #fff !important;
+  }
   .\!text-\[333\] {
     color: 333 !important;
   }
