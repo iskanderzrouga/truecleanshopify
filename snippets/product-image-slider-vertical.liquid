@@ -8,7 +8,11 @@
             {% if media.alt contains 'carousel-hidden' %}
             {% else %}
               <li class="splide__slide">
+                {% if section.settings.above_fold %}
+                  {{ media.src | image_url: width: 600 | image_tag: class: '', preload: true }}
+                {% else %}
                 {{ media.src | image_url: width: 600 | image_tag: class: '' }}
+                {% endif %}
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
