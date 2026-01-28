@@ -48,7 +48,11 @@
             {% if media.alt contains 'carousel-hidden' %}
             {% else %}
               <li class="splide__slide">
-                <img src="{{ media.src | image_url }}" width="90" height="90" alt="{{ media.alt }}">
+                {% if section.settings.above_fold %}
+                  {{ media.src | image_url: width: 90 | image_tag: class: '', preload: true }}
+                {% else %}
+                {{ media.src | image_url: width: 90 | image_tag: class: '' }}
+                {% endif %}
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
