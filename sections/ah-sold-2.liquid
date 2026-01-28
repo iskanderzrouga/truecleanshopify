@@ -196,7 +196,7 @@
             {% endfor %}
           </div>
 
-          <div class="home-banner-img-animation-secondary flex md:flex-col">
+          <div class="home-banner-img-animation-secondary flex md:flex-col max-md:hidden">
             {% for block in section.blocks reversed %}
               {% if block.type == 'image' %}
                 {% if block.settings.desktop_column == '3' %}
