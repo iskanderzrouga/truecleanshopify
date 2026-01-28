@@ -221,6 +221,7 @@
       ],
       "name": "New Featured Product MK",
       "settings": {
+        "above_fold": true,
         "product": "swooshnshine",
         "section_id": "",
         "heading": "",
@@ -1822,6 +1823,35 @@
         "padding_bottom_m": 36
       }
     },
+    "tc_guarantee_iB3X4t": {
+      "type": "tc-guarantee",
+      "name": "TC Guarantee",
+      "settings": {
+        "section_id": "",
+        "heading": "Try TrueClean 100%\nRisk-Free for 90 Days",
+        "heading_m_center": false,
+        "heading_d_center": false,
+        "heading_color": "#ffffff",
+        "description": "<p>Your order is backed by our <strong>90-Day Money-Back Guarantee</strong>. If you don't see results, or it doesn't fit your toilet simply return TrueClean for a <strong>full refund</strong>. No questions asked.</p>",
+        "description_m_center": false,
+        "description_d_center": false,
+        "description_color": "#ffffff",
+        "image": "shopify://shop_images/Layer_1_7f7c119f-8b73-46fb-ad57-0094dc46bf59.png",
+        "border_radius": 0,
+        "image_right": false,
+        "button_label": "TRY TRUECLEAN RISK-FREE →",
+        "button_url": "#productsVariants",
+        "btn_bottom_icon": "shopify://shop_images/image_6_2.png",
+        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+        "btn_bottom_text_color": "#ffffff",
+        "bgcolor": "#00b7a2",
+        "max_width": 1040,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
     "tc_pricing_section_below_guarantee": {
       "type": "tc-pricing-section",
       "blocks": {
@@ -1976,35 +2006,6 @@
         "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.</p>",
         "heading_color": "#001c19",
         "max_width": 1280,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_m": 36,
-        "padding_bottom_m": 36
-      }
-    },
-    "tc_guarantee_iB3X4t": {
-      "type": "tc-guarantee",
-      "name": "TC Guarantee",
-      "settings": {
-        "section_id": "",
-        "heading": "Try TrueClean 100%\nRisk-Free for 90 Days",
-        "heading_m_center": false,
-        "heading_d_center": false,
-        "heading_color": "#ffffff",
-        "description": "<p>Your order is backed by our <strong>90-Day Money-Back Guarantee</strong>. If you don't see results, or it doesn't fit your toilet simply return TrueClean for a <strong>full refund</strong>. No questions asked.</p>",
-        "description_m_center": false,
-        "description_d_center": false,
-        "description_color": "#ffffff",
-        "image": "shopify://shop_images/Layer_1_7f7c119f-8b73-46fb-ad57-0094dc46bf59.png",
-        "border_radius": 0,
-        "image_right": false,
-        "button_label": "TRY TRUECLEAN RISK-FREE →",
-        "button_url": "#productsVariants",
-        "btn_bottom_icon": "shopify://shop_images/image_6_2.png",
-        "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
-        "btn_bottom_text_color": "#ffffff",
-        "bgcolor": "#00b7a2",
-        "max_width": 1040,
         "padding_top": 72,
         "padding_bottom": 72,
         "padding_top_m": 36,
