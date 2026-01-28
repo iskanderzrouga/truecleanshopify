@@ -154,6 +154,7 @@ function startCartTimer(duration, display) {
 
 // Start 10-minute timer on page load
 window.addEventListener('DOMContentLoaded', () => {
+  console.log('coutndown start');
   const countdown = document.getElementById('countdown');
   startCartTimer(10 * 60, countdown);
 });
