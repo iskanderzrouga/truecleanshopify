@@ -186,61 +186,60 @@
       <div class="flex-col items-center justify-center hidden lg:flex overflow-hidden">
         <div class="home-banner-img-animation relative grid grid-cols-3 gap-5 max-h-[830px]">
           <div class="home-banner-img-animation-secondary flex flex-col">
-              {% for block in section.blocks reversed %}
-                {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == '1' %}
-                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
+            {% for block in section.blocks reversed %}
+              {% if block.type == 'image' %}
+                {% if block.settings.desktop_column == '1' %}
+                  <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                    {{
+                      block.settings.image
+                      | image_url: width: 220
+                      | image_tag:
+                        class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
+                        sizes: '320px',
+                        preload: true
+                    }}
+                  </div>
                 {% endif %}
-              {% endfor %}
-
+              {% endif %}
+            {% endfor %}
           </div>
 
           <div class="home-banner-img-animation-primary flex flex-col">
-              {% for block in section.blocks %}
-                {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == '2' %}
-                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
+            {% for block in section.blocks %}
+              {% if block.type == 'image' %}
+                {% if block.settings.desktop_column == '2' %}
+                  <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                    {{
+                      block.settings.image
+                      | image_url: width: 220
+                      | image_tag:
+                        class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
+                        sizes: '320px',
+                        preload: true
+                    }}
+                  </div>
                 {% endif %}
-              {% endfor %}
+              {% endif %}
+            {% endfor %}
           </div>
 
           <div class="home-banner-img-animation-secondary flex flex-col">
-              {% for block in section.blocks reversed %}
-                {% if block.type == 'image' %}
-                  {% if block.settings.desktop_column == '3' %}
-                    <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
-                      {{
-                        block.settings.image
-                        | image_url: width: 220
-                        | image_tag:
-                          class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
-                          sizes: '320px',
-                          preload: true
-                      }}
-                    </div>
-                  {% endif %}
+            {% for block in section.blocks reversed %}
+              {% if block.type == 'image' %}
+                {% if block.settings.desktop_column == '3' %}
+                  <div class="h-[340px] max-h-[340px] min-h-[340px] pb-5">
+                    {{
+                      block.settings.image
+                      | image_url: width: 220
+                      | image_tag:
+                        class: 'h-[320px] max-h-[320px] min-h-[320px] object-cover rounded-[20px]',
+                        sizes: '320px',
+                        preload: true
+                    }}
+                  </div>
                 {% endif %}
-              {% endfor %}
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
