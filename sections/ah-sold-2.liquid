@@ -178,7 +178,7 @@
 
       <div class="flex-col items-center justify-center flex overflow-hidden">
         <div class="home-banner-img-animation relative grid md:grid-cols-3 gap-5 md:max-h-[830px]">
-          <div class="home-banner-img-animation-secondary flex md:flex-col">
+          <div class="home-banner-img-animation-secondary flex md:flex-col md:justify-end">
             {% for block in section.blocks reversed %}
               {% if block.type == 'image' %}
                 {% if block.settings.desktop_column == '1' %}
