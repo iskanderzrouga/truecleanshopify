@@ -134,3 +134,26 @@ class CartDrawerItems extends CartItems {
 }
 
 customElements.define('cart-drawer-items', CartDrawerItems);
+
+
+function startCartTimer(duration, display) {
+  let timer = duration;
+  const interval = setInterval(() => {
+    const minutes = Math.floor(timer / 60);
+    const seconds = timer % 60;
+    display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    if (--timer < 0) {
+      clearInterval(interval);
+      display.textContent = "00:00";
+      // Optional: update message or trigger cart release
+      // document.getElementById('cart-timer').textContent = "Cart reservation expired";
+    }
+  }, 1000);
+}
+
+// Start 10-minute timer on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const countdown = document.getElementById('countdown');
+  startCartTimer(10 * 60, countdown);
+});
