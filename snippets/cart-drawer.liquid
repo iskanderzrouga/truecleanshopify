@@ -84,9 +84,19 @@
         </button>
       </div>
 
-      <div id="cart-timer" class="text-[16px] font-semibold text-white bg-[#00B7A2] p-3 text-center mb-4">
-        Limited inventory! Your cart is reserved for <span id="countdown">10:00</span>
-      </div>
+      {% assign seconds_since_epoch = 'now' | date: '%s' | plus: 0 %}
+{% assign seconds_into_block = seconds_since_epoch | modulo: 600 %}
+{% assign seconds_remaining = 600 | minus: seconds_into_block %}
+{% assign minutes_remaining = seconds_remaining | divided_by: 60 %}
+{% assign seconds_remaining_final = seconds_remaining | modulo: 60 %}
+
+<div id="cart-timer" class="text-[16px] font-semibold text-white bg-[#00B7A2] p-3 text-center mb-4">
+  Limited inventory! Your cart is reserved for
+  <span id="countdown">
+    {{ minutes_remaining | prepend: '0' | slice: -2, 2 }}:{{ seconds_remaining_final | prepend: '0' | slice: -2, 2 }}
+  </span>
+</div>
+
 
       {% comment %}
         <div class="bg-[#084c2521] px-5 py-4 flex items-center justify-center gap-4 mb-5">
