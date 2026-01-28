@@ -61,7 +61,15 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header !px-5 bg-[#00B7A2] border-b-[6px] border-[#E8FF33]">
+      <div class="drawer__header !px-5 bg-[#00B7A2] border-b-[6px] border-[#E8FF33] flex items-center justify-between">
+        {% unless cart == empty %}
+          <div class="">
+            <h3 class="drawer__heading !text-[#000C38] font-bold uppercase !mb-0">
+              {{ 'sections.cart.title' | t }}
+              <span class="cart-count">({{ cart.item_count }})</span>
+            </h3>
+          </div>
+        {% endunless %}
         <button
           class="drawer__close !right-0"
           type="button"
@@ -85,16 +93,7 @@
             {{ settings.sub_heading }}
           </span>
         </div>
-      {% endcomment %}
-
-      {% unless cart == empty %}
-        <div class="bg-white p-4">
-          <h3 class="drawer__heading !text-[#000C38] font-bold uppercase !mb-0">
-            {{ 'sections.cart.title' | t }}
-            <span class="cart-count">({{ cart.item_count }})</span>
-          </h3>
-        </div>
-      {% endunless %}
+      {% endcomment %} 
 
       <cart-drawer-items
         {% if cart == empty %}
