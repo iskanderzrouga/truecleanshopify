@@ -273,26 +273,16 @@
       animation: homeBannerImageHorizontalAnimation 30s linear infinite;
       width: 850px;
     }
+    .home-banner-img-animation-secondary {
+      animation: homeBannerImageHorizontalAnimation 30s linear infinite reverse;
+      width: 850px;
+    }
     @keyframes homeBannerImageHorizontalAnimation {
       0% {
         transform: translateX(0);
       }
       100% {
         transform: translateX(-425px);
-      }
-    }
-
-    .home-banner-img-animation-secondary {
-      animation: homeBannerImageHorizontalAnimationSecondary 30s linear infinite;
-      width: 850px;
-      animation-direction: reverse;
-    }
-    @keyframes homeBannerImageHorizontalAnimationSecondary {
-      0% {
-        transform: translateX(-425px);
-      }
-      100% {
-        transform: translateX(0);
       }
     }
   }
