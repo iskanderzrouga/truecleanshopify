@@ -214,35 +214,13 @@
 </div>
 
 <style>
-  {% comment %} .home-banner-img-animation-mobile {
-    animation: homeBannerImageHorizontalAnimation 30s linear infinite;
-    width: 2760px;
-  }
-  @keyframes homeBannerImageHorizontalAnimation {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1380px);
-    }
-  }
-
-  .home-banner-img-animation-mobile-secondary {
-    animation: homeBannerImageHorizontalAnimationSecondary 30s linear infinite;
-    width: 2760px;
-  }
-  @keyframes homeBannerImageHorizontalAnimationSecondary {
-    0% {
-      transform: translateX(-1380px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  } {% endcomment %}
-
   @media only screen and (min-width: 750px) {
     .home-banner-img-animation-primary {
       animation: homeBannerImageVerticalAnimationPrimary 30s linear infinite;
+      height: 2040px;
+    }
+    .home-banner-img-animation-secondary {
+      animation: homeBannerImageVerticalAnimationPrimary 30s linear infinite reverse;
       height: 2040px;
     }
     @keyframes homeBannerImageVerticalAnimationPrimary {
@@ -251,19 +229,6 @@
       }
       100% {
         transform: translateY(-1020px);
-      }
-    }
-
-    .home-banner-img-animation-secondary {
-      animation: homeBannerImageVerticalAnimationSecondary 30s linear infinite;
-      height: 2040px;
-    }
-    @keyframes homeBannerImageVerticalAnimationSecondary {
-      0% {
-        transform: translateY(-1020px);
-      }
-      100% {
-        transform: translateY(0);
       }
     }
   }
