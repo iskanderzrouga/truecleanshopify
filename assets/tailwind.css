@@ -657,9 +657,6 @@ html {
   .max-h-48 {
     max-height: calc(var(--spacing) * 48);
   }
-  .max-h-\[28px\] {
-    max-height: 28px;
-  }
   .max-h-\[50px\] {
     max-height: 50px;
   }
@@ -701,9 +698,6 @@ html {
   }
   .min-h-\[10px\] {
     min-height: 10px;
-  }
-  .min-h-\[28px\] {
-    min-height: 28px;
   }
   .min-h-\[80px\] {
     min-height: 80px;
@@ -942,9 +936,6 @@ html {
   .max-w-\[500px\] {
     max-width: 500px;
   }
-  .max-w-\[600px\] {
-    max-width: 600px;
-  }
   .max-w-\[630px\] {
     max-width: 630px;
   }
@@ -1034,9 +1025,6 @@ html {
   }
   .min-w-\[570px\] {
     min-width: 570px;
-  }
-  .min-w-\[600px\] {
-    min-width: 600px;
   }
   .flex-1 {
     flex: 1;
@@ -2259,14 +2247,44 @@ html {
       width: fit-content !important;
     }
   }
+  .max-md\:w-\[165px\] {
+    @media (width < 48rem) {
+      width: 165px;
+    }
+  }
+  .max-md\:w-\[175px\] {
+    @media (width < 48rem) {
+      width: 175px;
+    }
+  }
   .max-md\:\!max-w-\[100px\] {
     @media (width < 48rem) {
       max-width: 100px !important;
     }
   }
+  .max-md\:max-w-\[165px\] {
+    @media (width < 48rem) {
+      max-width: 165px;
+    }
+  }
+  .max-md\:max-w-\[175px\] {
+    @media (width < 48rem) {
+      max-width: 175px;
+    }
+  }
   .max-md\:max-w-\[360px\] {
     @media (width < 48rem) {
       max-width: 360px;
+    }
+  }
+  .max-md\:min-w-\[165px\] {
+    @media (width < 48rem) {
+      min-width: 165px;
+    }
+  }
+  .max-md\:min-w-\[175px\] {
+    @media (width < 48rem) {
+      min-width: 175px;
     }
   }
   .max-md\:items-center {
@@ -2284,10 +2302,20 @@ html {
       gap: calc(var(--spacing) * 4);
     }
   }
+  .max-md\:rounded-\[20px\] {
+    @media (width < 48rem) {
+      border-radius: 20px;
+    }
+  }
   .max-md\:border-t {
     @media (width < 48rem) {
       border-top-style: var(--tw-border-style);
       border-top-width: 1px;
+    }
+  }
+  .max-md\:object-contain {
+    @media (width < 48rem) {
+      object-fit: contain;
     }
   }
   .max-md\:\!px-2 {
@@ -2313,6 +2341,11 @@ html {
   .max-md\:pt-6 {
     @media (width < 48rem) {
       padding-top: calc(var(--spacing) * 6);
+    }
+  }
+  .max-md\:pr-\[10px\] {
+    @media (width < 48rem) {
+      padding-right: 10px;
     }
   }
   .max-md\:text-center {
@@ -2445,9 +2478,14 @@ html {
       height: 48px;
     }
   }
-  .md\:max-h-\[48px\] {
+  .md\:h-\[320px\] {
     @media (width >= 48rem) {
-      max-height: 48px;
+      height: 320px;
+    }
+  }
+  .md\:h-\[340px\] {
+    @media (width >= 48rem) {
+      height: 340px;
     }
   }
   .md\:max-h-\[70px\] {
@@ -2470,9 +2508,24 @@ html {
       max-height: 150px;
     }
   }
+  .md\:max-h-\[320px\] {
+    @media (width >= 48rem) {
+      max-height: 320px;
+    }
+  }
+  .md\:max-h-\[340px\] {
+    @media (width >= 48rem) {
+      max-height: 340px;
+    }
+  }
   .md\:max-h-\[360px\] {
     @media (width >= 48rem) {
       max-height: 360px;
+    }
+  }
+  .md\:max-h-\[830px\] {
+    @media (width >= 48rem) {
+      max-height: 830px;
     }
   }
   .md\:min-h-10 {
@@ -2480,14 +2533,19 @@ html {
       min-height: calc(var(--spacing) * 10);
     }
   }
-  .md\:min-h-\[48px\] {
-    @media (width >= 48rem) {
-      min-height: 48px;
-    }
-  }
   .md\:min-h-\[125px\] {
     @media (width >= 48rem) {
       min-height: 125px;
+    }
+  }
+  .md\:min-h-\[320px\] {
+    @media (width >= 48rem) {
+      min-height: 320px;
+    }
+  }
+  .md\:min-h-\[340px\] {
+    @media (width >= 48rem) {
+      min-height: 340px;
     }
   }
   .md\:w-6 {
@@ -2498,11 +2556,6 @@ html {
   .md\:w-10 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:w-\[180px\] {
-    @media (width >= 48rem) {
-      width: 180px;
     }
   }
   .md\:w-fit {
@@ -2630,11 +2683,6 @@ html {
       max-width: 420px;
     }
   }
-  .md\:max-w-\[1000px\] {
-    @media (width >= 48rem) {
-      max-width: 1000px;
-    }
-  }
   .md\:min-w-10 {
     @media (width >= 48rem) {
       min-width: calc(var(--spacing) * 10);
@@ -2643,11 +2691,6 @@ html {
   .md\:min-w-\[40\%\] {
     @media (width >= 48rem) {
       min-width: 40%;
-    }
-  }
-  .md\:min-w-\[180px\] {
-    @media (width >= 48rem) {
-      min-width: 180px;
     }
   }
   .md\:min-w-\[400px\] {
@@ -2891,6 +2934,11 @@ html {
       border-left-width: 1px;
     }
   }
+  .md\:object-cover {
+    @media (width >= 48rem) {
+      object-fit: cover;
+    }
+  }
   .md\:\!p-0 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 0) !important;
@@ -3029,6 +3077,11 @@ html {
   .md\:pr-6 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:pb-5 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 5);
     }
   }
   .md\:pb-6 {
