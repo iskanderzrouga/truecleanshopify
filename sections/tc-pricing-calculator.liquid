@@ -1,418 +1,457 @@
-{%- assign product = section.settings.product -%}
+{% if section.settings.product != blank %}
+  {% assign product = section.settings.product %}
+{% endif %}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top_m }}px;
-    padding-bottom: {{ section.settings.padding_bottom_m }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-card {
-    background: #ffffff;
-    border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-option {
-    border: 1px solid #e5e7eb;
-    background: #f5f7f8;
-    border-radius: 14px;
-    transition: all 0.2s ease;
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-option:hover {
-    background: #f0ffb3;
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-option.is-active {
-    background: #e8ff33;
-    border-color: #001c19;
-    transform: scale(1.02);
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-summary {
-    background: #f5fffe;
-    border: 1px solid #d9ede9;
-    border-radius: 20px;
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-total {
-    background: #001c19;
-    border-radius: 20px;
-  }
-
-  .section-{{ section.id }}-padding .tc-pricing-note {
-    color: #e8ff33;
-  }
-{%- endstyle -%}
-
-<div
-  id="{{ section.settings.section_id }}"
-  class="section-{{ section.id }}-padding px-5"
-  style="background-color: {{ section.settings.bgcolor }};"
+<section
+  id="{{ section.settings.anchor_id | default: 'pricing' }}"
+  class="section-{{ section.id }}-padding"
+  data-tc-pricing="{{ section.id }}"
+  data-toilets-option="{{ section.settings.toilets_option_name | default: '' }}"
+  data-duration-option="{{ section.settings.duration_option_name | default: '' }}"
 >
-  <div class="mx-auto w-full" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex flex-col items-center justify-center gap-3 text-center mb-8 md:mb-12">
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_m }}px;
+      padding-bottom: {{ section.settings.padding_bottom_m }}px;
+      background: #f4f4f6;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    .section-{{ section.id }}-padding .tc-pricing-selector {
+      border: 1px solid #d9dde0;
+      background-color: #fafafa;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .section-{{ section.id }}-padding .tc-pricing-selector.is-active {
+      border-color: #00b7a2;
+      background-color: #f5fffe;
+      box-shadow: 0 0 0 1px #00b7a2 inset;
+    }
+
+    .section-{{ section.id }}-padding .tc-pricing-selector:focus-visible {
+      outline: 2px solid #00b7a2;
+      outline-offset: 2px;
+    }
+
+    .section-{{ section.id }}-padding .tc-pricing-selector[aria-pressed='true'] {
+      border-color: #00b7a2;
+      background-color: #f5fffe;
+    }
+  {%- endstyle -%}
+
+  <div class="mx-auto w-full relative px-4 md:px-0" style="max-width: {{ section.settings.max_width }}px;">
+    {% if section.settings.show_shipping_banner %}
+      <div class="max-md:px-0">
+        <div class="flex justify-center gap-2 py-3 px-4 mb-6 rounded-lg border-[#000000] border bg-[#E8FF33]">
+          <span class="min-w-[20px]">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.0822 2.62305L18.2772 15.0847C18.3869 15.2747 18.4446 15.4903 18.4446 15.7097C18.4446 15.9291 18.3869 16.1447 18.2772 16.3347C18.1675 16.5247 18.0097 16.6825 17.8196 16.7922C17.6296 16.9019 17.4141 16.9597 17.1947 16.9597H2.80466C2.58524 16.9597 2.36969 16.9019 2.17967 16.7922C1.98965 16.6825 1.83185 16.5247 1.72215 16.3347C1.61244 16.1447 1.55469 15.9291 1.55469 15.7097C1.55469 15.4903 1.61245 15.2747 1.72216 15.0847L8.91716 2.62305C9.39799 1.78971 10.6005 1.78971 11.0822 2.62305ZM9.99966 12.4997C9.77864 12.4997 9.56668 12.5875 9.4104 12.7438C9.25412 12.9001 9.16632 13.112 9.16632 13.333C9.16632 13.5541 9.25412 13.766 9.4104 13.9223C9.56668 14.0786 9.77864 14.1664 9.99966 14.1664C10.2207 14.1664 10.4326 14.0786 10.5889 13.9223C10.7452 13.766 10.833 13.5541 10.833 13.333C10.833 13.112 10.7452 12.9001 10.5889 12.7438C10.4326 12.5875 10.2207 12.4997 9.99966 12.4997ZM9.99966 6.66638C9.79554 6.66641 9.59854 6.74134 9.44601 6.87698C9.29348 7.01261 9.19604 7.1995 9.17216 7.40221L9.16632 7.49971V10.833C9.16656 11.0454 9.24789 11.2497 9.3937 11.4042C9.5395 11.5586 9.73878 11.6516 9.95082 11.664C10.1629 11.6765 10.3716 11.6075 10.5345 11.4712C10.6974 11.3348 10.8021 11.1415 10.8272 10.9305L10.833 10.833V7.49971C10.833 7.2787 10.7452 7.06674 10.5889 6.91046C10.4326 6.75418 10.2207 6.66638 9.99966 6.66638Z" fill="black"/>
+            </svg>
+          </span>
+          {% assign target_date = '2026-01-20' | date: '%s' %}
+          {% assign today_date = 'now' | date: '%s' %}
+          {% assign diff_seconds = target_date | minus: today_date %}
+          {% assign diff_days = diff_seconds | divided_by: 86400 %}
+
+          {% assign today = 'now' | date: '%-d %b' | upcase %}
+          <p class="text-[13px] md:text-[18px] font-medium text-[#000000] !leading-tight">
+            <span class="underline font-bold">Urgent Update: {{ today }}</span>, {{ section.settings.shipping_heading | replace: 'DATEPLACEHOLDER', diff_days }}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.show_urgency_banner %}
+      <div class="text-center py-3 px-4 mb-6 rounded-lg" style="background-color: #D30101 !important; color: #ffffff !important;">
+        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1" style="color: #ffffff !important;">
+          {{ section.settings.urgency_heading }}
+        </p>
+        <p class="text-[14px] md:text-[16px] m-0" style="color: rgba(255,255,255,0.9) !important;">
+          {{ section.settings.urgency_subheading }}
+        </p>
+      </div>
+    {% endif %}
+
+    <div class="text-center mb-10">
       {% if section.settings.heading != blank %}
-        <h2
-          class="text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]"
-          style="color: {{ section.settings.heading_color }};"
-        >
+        <h2 class="text-[26px] md:text-[34px] font-bold text-[#001C19] mb-3" style="color: {{ section.settings.heading_color }};">
           {{ section.settings.heading }}
         </h2>
       {% endif %}
       {% if section.settings.description != blank %}
-        <div class="text-[17px] md:text-[20px] font-medium !leading-tight text-[#001C19]">
+        <div class="text-[18px] md:text-[20px] font-medium text-[#001C19]">
           {{ section.settings.description }}
         </div>
       {% endif %}
     </div>
 
-    <div
-      id="tc-pricing-{{ section.id }}"
-      class="tc-pricing-card p-6 md:p-8"
-      data-default-toilets="{{ section.settings.default_toilets }}"
-      data-default-months="{{ section.settings.default_months }}"
-    >
+    <div class="bg-white rounded-[24px] shadow-md p-5 md:p-8">
       <div class="mb-6">
-        <div class="text-[18px] font-bold text-[#001C19] mb-4">
-          {{ section.settings.step1_label }}
-        </div>
+        <label class="block text-[18px] md:text-[20px] font-bold text-[#001C19] mb-4">
+          Step 1: How many toilets?
+        </label>
         <div class="grid grid-cols-4 gap-3">
-          {% for num in (1..4) %}
+          {% for count in (1..4) %}
             <button
               type="button"
-              class="tc-pricing-option py-4 px-3 text-center font-semibold text-[#001C19]"
-              data-toilets="{{ num }}"
+              class="tc-pricing-selector tc-toilet-btn rounded-[14px] py-4 px-2 text-center font-semibold text-[#001C19]"
+              data-toilets="{{ count }}"
+              aria-pressed="false"
             >
-              <div class="text-[22px] mb-1">
-                {% if num == 1 %}🚽{% elsif num == 2 %}🚽🚽{% elsif num == 3 %}🚽🚽🚽{% else %}🚽🚽🚽🚽{% endif %}
-              </div>
-              <div>{{ num }}</div>
+              <div class="text-[30px] md:text-[34px] mb-1">{% for i in (1..count) %}🚽{% endfor %}</div>
+              <div class="text-[15px] md:text-[16px]">{{ count }}</div>
             </button>
           {% endfor %}
         </div>
       </div>
 
       <div class="mb-6">
-        <div class="text-[18px] font-bold text-[#001C19] mb-4">
-          {{ section.settings.step2_label }}
-        </div>
+        <label class="block text-[18px] md:text-[20px] font-bold text-[#001C19] mb-4" data-step-two-label>
+          Step 2: How long?
+        </label>
         <div class="grid grid-cols-4 gap-3">
-          {% assign durations = "3,6,12,24" | split: "," %}
-          {% for months in durations %}
-            {% assign label_id = 'duration_label_' | append: months %}
+          {% assign duration_labels = 'Try it,Popular,Save 15%,Best Value' | split: ',' %}
+          {% assign duration_values = '3,6,12,24' | split: ',' %}
+          {% for duration in duration_values %}
+            {% assign index = forloop.index0 %}
+            {% assign badge = duration_labels[index] %}
             <button
               type="button"
-              class="tc-pricing-option py-4 px-3 text-center font-semibold text-[#001C19]"
-              data-months="{{ months }}"
+              class="tc-pricing-selector tc-duration-btn rounded-[14px] py-4 px-2 text-center font-semibold text-[#001C19]"
+              data-months="{{ duration }}"
+              aria-pressed="false"
             >
-              <div class="text-[12px] text-[#4b5563]">
-                {{ section.settings[label_id] }}
-              </div>
-              <div class="text-[16px]">
-                {% if months == '12' %}1 year{% elsif months == '24' %}2 years{% else %}{{ months }} mo{% endif %}
+              <div class="text-[12px] text-[#666]">{{ badge }}</div>
+              <div class="text-[16px] md:text-[17px]">
+                {% if duration == '12' %}
+                  1 year
+                {% elsif duration == '24' %}
+                  2 years
+                {% else %}
+                  {{ duration }} mo
+                {% endif %}
               </div>
             </button>
           {% endfor %}
         </div>
       </div>
 
-      <div class="tc-pricing-summary p-5 md:p-6 mb-6">
-        <div class="text-center mb-6 pb-6 border-b border-[#cde3de]">
-          <div class="text-[#4b5563] mb-1">Your order:</div>
-          <div class="text-[22px] md:text-[26px] font-bold text-[#001C19]" data-order-summary>
-            --
-          </div>
-          <div class="text-[#00b7a2] font-medium mt-1" data-includes>
-            --
-          </div>
+      <div class="bg-[#F5FFFE] rounded-[18px] p-5 md:p-6 mb-6 border border-[#DFF4F4]">
+        <div class="text-center mb-6 pb-6 border-b border-[#DFF4F4]">
+          <div class="text-[#666] mb-2 text-[16px] md:text-[18px]">Your order:</div>
+          <div class="text-[24px] md:text-[28px] font-bold text-[#001C19]" id="order-summary-{{ section.id }}"></div>
+          <div class="text-[#00B7A2] font-semibold mt-2 text-[17px] md:text-[19px]" id="includes-text-{{ section.id }}"></div>
         </div>
 
         <div class="text-center">
-          <div class="text-[#6b7280] text-[13px] mb-1">Price per toilet:</div>
           <div class="flex items-center justify-center gap-3">
-            <span class="text-[#9ca3af] line-through text-[22px]" data-original-price></span>
-            <span class="text-[40px] md:text-[48px] font-black text-[#001C19]" data-price-each>--</span>
-            <span class="text-[#6b7280] text-[16px]">/each</span>
+            <span class="text-[26px] md:text-[30px] font-black text-[#001C19]" id="price-each-{{ section.id }}"></span>
+            <span class="text-[#999] line-through text-[13px] md:text-[14px]" id="original-price-{{ section.id }}"></span>
           </div>
-          <div class="text-[#00b7a2] font-semibold mt-1" data-savings-percent></div>
-          <div class="text-[#6b7280] text-[13px] mt-1" data-per-month></div>
+          <div class="text-[#00B67A] font-semibold mt-1" id="savings-percent-{{ section.id }}"></div>
+          <div class="text-[#666] text-[13px] md:text-[14px] mt-1" id="per-month-{{ section.id }}"></div>
         </div>
       </div>
 
-      <div class="tc-pricing-total p-6 text-white">
+      <div class="bg-[#001C19] rounded-[18px] p-5 md:p-6">
         <div class="flex items-center justify-between mb-4">
-          <div>
-            <div class="text-[12px] text-[#cbd5e1]">Order Total:</div>
-            <div class="text-[28px] md:text-[32px] font-black" data-final-price>--</div>
+          <div class="text-white">
+            <div class="text-[12px] text-[#9CA3AF]">Order Total:</div>
+            <div class="text-[26px] md:text-[30px] font-black" id="final-price-{{ section.id }}"></div>
           </div>
-          <div class="text-right">
-            <div class="text-[#e8ff33] font-semibold" data-savings-text></div>
-            <div class="text-[#cbd5e1] text-[12px]">Free shipping included</div>
+          <div class="text-right text-white">
+            <div class="text-[#A7F3D0] font-semibold" id="savings-text-{{ section.id }}"></div>
+            <div class="text-[#9CA3AF] text-[12px]">Free shipping included</div>
           </div>
         </div>
-        <button
-          type="button"
-          class="new-button--primary w-full !justify-center"
-          data-cta
-        >
-          {{ section.settings.cta_label }}
-        </button>
-        <div class="text-center text-[12px] mt-3 hidden" data-cta-note>
-          {{ section.settings.cta_unavailable_label }}
-        </div>
+        <form method="post" action="/cart/add" class="tc-pricing-form">
+          <input type="hidden" name="id" id="variant-id-{{ section.id }}" value="">
+          <button
+            type="submit"
+            class="w-full bg-[#00B7A2] hover:bg-[#00A190] text-white font-bold text-[18px] py-4 rounded-[12px] transition"
+            id="add-to-cart-{{ section.id }}"
+          >
+            Add To Cart →
+          </button>
+        </form>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mt-6 text-[13px] text-[#6b7280]">
-        {% if section.settings.trust_1 != blank %}<span>{{ section.settings.trust_1 }}</span>{% endif %}
-        {% if section.settings.trust_2 != blank %}<span>{{ section.settings.trust_2 }}</span>{% endif %}
-        {% if section.settings.trust_3 != blank %}<span>{{ section.settings.trust_3 }}</span>{% endif %}
+      <div class="flex flex-wrap justify-center gap-4 mt-6 text-[12px] text-[#6B7280]">
+        <span>🔒 Secure Checkout</span>
+        <span>🚚 Free Shipping</span>
+        <span>↩️ 90-Day Guarantee</span>
       </div>
-
-      <form data-pricing-form action="/cart/add" method="post" class="hidden">
-        <input type="hidden" name="id" value="">
-        <input type="hidden" name="quantity" value="1">
-      </form>
-
-      {% for block in section.blocks %}
-        {% if block.type == 'variant_map' %}
-          <div
-            class="hidden"
-            data-variant-map
-            data-toilets="{{ block.settings.toilets }}"
-            data-months="{{ block.settings.months }}"
-            data-variant-id="{{ block.settings.variant_id }}"
-          ></div>
-        {% endif %}
-      {% endfor %}
     </div>
   </div>
-</div>
 
-{% if product != blank %}
-  <script type="application/json" id="PricingVariants-{{ section.id }}">
-    [
-      {%- for variant in product.variants -%}
-        {
-          "id": {{ variant.id }},
-          "price": {{ variant.price | json }},
-          "compare_at_price": {{ variant.compare_at_price | default: 0 | json }},
-          "available": {{ variant.available | json }}
-        }{%- unless forloop.last -%},{%- endunless -%}
-      {%- endfor -%}
-    ]
+  <script type="application/json" data-variants>
+    {{ product.variants | json }}
   </script>
-{% endif %}
+  <script type="application/json" data-options>
+    {{ product.options | json }}
+  </script>
+  {% capture variant_map_items %}
+    {% assign first_map = true %}
+    {% for block in section.blocks %}
+      {% if block.type == 'variant_map' %}
+        {% unless first_map %},{% endunless %}
+        {"toilets":{{ block.settings.toilets | default: 0 }},"months":{{ block.settings.months | default: 0 }},"variant_id":{{ block.settings.variant_id | default: 0 }}}
+        {% assign first_map = false %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+  <script type="application/json" data-variant-maps>
+    [{{ variant_map_items | strip }}]
+  </script>
 
-<script type="application/json" id="PricingConfig-{{ section.id }}">
-  {
-    "base_price": {{ section.settings.base_price | json }},
-    "duration_discounts": {
-      "3": {{ section.settings.discount_3 | divided_by: 100.0 | json }},
-      "6": {{ section.settings.discount_6 | divided_by: 100.0 | json }},
-      "12": {{ section.settings.discount_12 | divided_by: 100.0 | json }},
-      "24": {{ section.settings.discount_24 | divided_by: 100.0 | json }}
-    },
-    "toilet_discounts": {
-      "1": {{ section.settings.discount_1 | divided_by: 100.0 | json }},
-      "2": {{ section.settings.discount_2 | divided_by: 100.0 | json }},
-      "3": {{ section.settings.discount_3_toilets | divided_by: 100.0 | json }},
-      "4": {{ section.settings.discount_4 | divided_by: 100.0 | json }}
-    },
-    "max_discount": {{ section.settings.max_discount | divided_by: 100.0 | json }}
-  }
-</script>
+  <script>
+    (() => {
+      const section = document.querySelector('[data-tc-pricing="{{ section.id }}"]');
+      if (!section) return;
 
-<script>
-  (() => {
-    const root = document.getElementById('tc-pricing-{{ section.id }}');
-    if (!root) return;
+      const toiletButtons = Array.from(section.querySelectorAll('[data-toilets]'));
+      const durationButtons = Array.from(section.querySelectorAll('[data-months]'));
+      const stepTwoLabel = section.querySelector('[data-step-two-label]');
+      const orderSummary = section.querySelector('#order-summary-{{ section.id }}');
+      const includesText = section.querySelector('#includes-text-{{ section.id }}');
+      const originalPriceEl = section.querySelector('#original-price-{{ section.id }}');
+      const priceEachEl = section.querySelector('#price-each-{{ section.id }}');
+      const savingsPercentEl = section.querySelector('#savings-percent-{{ section.id }}');
+      const perMonthEl = section.querySelector('#per-month-{{ section.id }}');
+      const finalPriceEl = section.querySelector('#final-price-{{ section.id }}');
+      const savingsTextEl = section.querySelector('#savings-text-{{ section.id }}');
+      const variantInput = section.querySelector('#variant-id-{{ section.id }}');
+      const addToCartButton = section.querySelector('#add-to-cart-{{ section.id }}');
 
-    const configEl = document.getElementById('PricingConfig-{{ section.id }}');
-    const config = configEl ? JSON.parse(configEl.textContent || '{}') : {};
+      const variants = JSON.parse(section.querySelector('[data-variants]').textContent || '[]') || [];
+      const options = JSON.parse(section.querySelector('[data-options]').textContent || '[]') || [];
+      const variantMaps = JSON.parse(section.querySelector('[data-variant-maps]').textContent || '[]') || [];
 
-    const variantsEl = document.getElementById('PricingVariants-{{ section.id }}');
-    const variants = variantsEl ? JSON.parse(variantsEl.textContent || '[]') : [];
+      const moneyFormat = {{ shop.money_format | json }};
+      const currencyCode = {{ cart.currency.iso_code | default: shop.currency | json }};
 
-    const variantMaps = Array.from(root.querySelectorAll('[data-variant-map]')).map((el) => ({
-      toilets: parseInt(el.dataset.toilets, 10),
-      months: parseInt(el.dataset.months, 10),
-      variantId: parseInt(el.dataset.variantId, 10) || null
-    }));
-
-    const currencyFormat = {{ shop.money_format | json }};
-    const formatMoney = (cents) => {
-      if (window.Shopify && typeof Shopify.formatMoney === 'function') {
-        return Shopify.formatMoney(cents, currencyFormat);
-      }
-      const value = (cents / 100).toFixed(2);
-      return `$${value}`;
-    };
-
-    const optionButtons = Array.from(root.querySelectorAll('.tc-pricing-option'));
-    const orderSummary = root.querySelector('[data-order-summary]');
-    const includesText = root.querySelector('[data-includes]');
-    const originalPriceEl = root.querySelector('[data-original-price]');
-    const priceEachEl = root.querySelector('[data-price-each]');
-    const savingsPercentEl = root.querySelector('[data-savings-percent]');
-    const perMonthEl = root.querySelector('[data-per-month]');
-    const finalPriceEl = root.querySelector('[data-final-price]');
-    const savingsTextEl = root.querySelector('[data-savings-text]');
-    const ctaButton = root.querySelector('[data-cta]');
-    const ctaNote = root.querySelector('[data-cta-note]');
-    const pricingForm = root.querySelector('[data-pricing-form]');
-
-    let selectedToilets = parseInt(root.dataset.defaultToilets || '2', 10);
-    let selectedMonths = parseInt(root.dataset.defaultMonths || '6', 10);
-
-    const getVariant = (id) => variants.find((variant) => Number(variant.id) === Number(id));
-
-    const updateActiveButtons = () => {
-      optionButtons.forEach((button) => {
-        const toilets = button.dataset.toilets ? parseInt(button.dataset.toilets, 10) : null;
-        const months = button.dataset.months ? parseInt(button.dataset.months, 10) : null;
-        const isActive = (toilets && toilets === selectedToilets) || (months && months === selectedMonths);
-        button.classList.toggle('is-active', isActive);
-      });
-    };
-
-    const updateSummary = () => {
-      const durationText = selectedMonths === 12 ? '1 year' : selectedMonths === 24 ? '2 years' : `${selectedMonths} months`;
-      const cartridgeCount = Math.max(1, (selectedMonths / 3) * selectedToilets);
-
-      orderSummary.textContent = `${selectedToilets} toilet${selectedToilets > 1 ? 's' : ''} × ${durationText} of cleaning each`;
-      includesText.textContent = `Includes ${selectedToilets} FREE dispenser${selectedToilets > 1 ? 's' : ''} + ${cartridgeCount} cleaning cartridge${cartridgeCount > 1 ? 's' : ''}`;
-
-      const mapping = variantMaps.find((item) => item.toilets === selectedToilets && item.months === selectedMonths && item.variantId);
-      const variant = mapping ? getVariant(mapping.variantId) : null;
-
-      let priceCents = null;
-      let compareCents = null;
-      let savingsPercent = 0;
-
-      if (variant) {
-        priceCents = Number(variant.price);
-        compareCents = Number(variant.compare_at_price || 0);
-        if (compareCents > priceCents) {
-          savingsPercent = Math.round(((compareCents - priceCents) / compareCents) * 100);
+      const formatMoney = (cents) => {
+        if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+          return window.Shopify.formatMoney(cents, moneyFormat);
         }
-      } else {
-        const base = parseFloat(config.base_price || 0);
-        if (base > 0) {
-          const baseTotal = base * (selectedMonths / 3) * selectedToilets;
-          const durationDiscount = config.duration_discounts?.[selectedMonths] || 0;
-          const toiletDiscount = config.toilet_discounts?.[selectedToilets] || 0;
-          const totalDiscount = Math.min(durationDiscount + toiletDiscount, config.max_discount || 0);
-          const finalTotal = baseTotal * (1 - totalDiscount);
-          priceCents = Math.round(finalTotal * 100);
-          compareCents = Math.round(baseTotal * 100);
-          savingsPercent = Math.round(totalDiscount * 100);
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: currencyCode
+        }).format((cents || 0) / 100);
+      };
+
+      const extractNumber = (value) => {
+        if (!value) return null;
+        const match = String(value).match(/\d+/);
+        return match ? parseInt(match[0], 10) : null;
+      };
+
+      const findVariant = (toilets, months) => {
+        const mapMatch = variantMaps.find((map) => Number(map.toilets) === toilets && Number(map.months) === months && Number(map.variant_id) > 0);
+        if (mapMatch) {
+          return variants.find((variant) => Number(variant.id) === Number(mapMatch.variant_id));
         }
-      }
 
-      if (!priceCents) {
-        originalPriceEl.textContent = '';
-        originalPriceEl.style.display = 'none';
-        priceEachEl.textContent = '--';
-        savingsPercentEl.textContent = '';
-        perMonthEl.textContent = '';
-        finalPriceEl.textContent = '--';
-        savingsTextEl.textContent = '';
-        ctaButton.disabled = true;
-        ctaButton.classList.add('opacity-50', 'cursor-not-allowed');
-        ctaNote.classList.remove('hidden');
-        return;
-      }
+        const toiletsOptionName = section.dataset.toiletsOption;
+        const durationOptionName = section.dataset.durationOption;
+        const toiletsIndex = toiletsOptionName ? options.indexOf(toiletsOptionName) : -1;
+        const durationIndex = durationOptionName ? options.indexOf(durationOptionName) : -1;
 
-      const perToiletCents = Math.round(priceCents / selectedToilets);
-      const perMonthCents = Math.round(priceCents / selectedToilets / selectedMonths);
-      const totalSavings = compareCents && compareCents > priceCents ? compareCents - priceCents : 0;
+        const matches = variants.filter((variant) => {
+          const variantOptions = variant.options || [];
+          const optionToilets = toiletsIndex >= 0 ? variantOptions[toiletsIndex] : variantOptions.find((opt) => extractNumber(opt) === toilets);
+          const optionDuration = durationIndex >= 0 ? variantOptions[durationIndex] : variantOptions.find((opt) => extractNumber(opt) === months);
+          return extractNumber(optionToilets) === toilets && extractNumber(optionDuration) === months;
+        });
 
-      if (compareCents && compareCents > priceCents) {
-        originalPriceEl.textContent = formatMoney(Math.round(compareCents / selectedToilets));
-        originalPriceEl.style.display = 'inline';
-        savingsPercentEl.textContent = `Save ${savingsPercent}%`;
-      } else {
-        originalPriceEl.textContent = '';
-        originalPriceEl.style.display = 'none';
-        savingsPercentEl.textContent = '';
-      }
+        return matches.find((variant) => variant.available) || matches[0] || null;
+      };
 
-      priceEachEl.textContent = formatMoney(perToiletCents);
-      perMonthEl.textContent = `Just ${formatMoney(perMonthCents)}/month per toilet`;
-      finalPriceEl.textContent = formatMoney(priceCents);
+      let selectedToilets = 2;
+      let selectedDuration = 6;
 
-      if (totalSavings > 0) {
-        savingsTextEl.textContent = `You save ${formatMoney(totalSavings)}!`;
-      } else {
-        savingsTextEl.textContent = '';
-      }
+      const setActive = (buttons, value, dataAttr) => {
+        buttons.forEach((button) => {
+          const isActive = Number(button.dataset[dataAttr]) === value;
+          button.classList.toggle('is-active', isActive);
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      };
 
-      ctaButton.disabled = false;
-      ctaButton.classList.remove('opacity-50', 'cursor-not-allowed');
-      ctaNote.classList.add('hidden');
+      const getDefaultValue = (buttons, preferred) => {
+        if (buttons.some((button) => Number(button.dataset[preferred.key]) === preferred.value)) {
+          return preferred.value;
+        }
+        const first = buttons[0];
+        return first ? Number(first.dataset[preferred.key]) : preferred.value;
+      };
 
-      ctaButton.dataset.variantId = variant ? variant.id : '';
-    };
+      const updateStepLabel = () => {
+        if (!stepTwoLabel) return;
+        stepTwoLabel.textContent = selectedToilets > 1 ? 'Step 2: How long for each?' : 'Step 2: How long?';
+      };
 
-    const setToilets = (value) => {
-      selectedToilets = value;
-      updateActiveButtons();
-      updateSummary();
-    };
+      const durationLabel = (months) => `${months} month${months === 1 ? '' : 's'}`;
 
-    const setMonths = (value) => {
-      selectedMonths = value;
-      updateActiveButtons();
-      updateSummary();
-    };
+      const updateSummary = () => {
+        const toiletLabel = selectedToilets === 1 ? 'toilet' : 'toilets';
+        orderSummary.textContent = `${selectedToilets} ${toiletLabel} × ${durationLabel(selectedDuration)} of cleaning`;
 
-    optionButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const toilets = button.dataset.toilets ? parseInt(button.dataset.toilets, 10) : null;
-        const months = button.dataset.months ? parseInt(button.dataset.months, 10) : null;
-        if (toilets) setToilets(toilets);
-        if (months) setMonths(months);
+        const cartridgesPerToilet = Math.max(1, Math.round(selectedDuration / 3));
+        const dispensers = selectedToilets;
+        const cartridges = selectedToilets * cartridgesPerToilet;
+        includesText.textContent = `Includes ${dispensers} FREE dispenser${dispensers === 1 ? '' : 's'} + ${cartridges} cleaning cartridge${cartridges === 1 ? '' : 's'}`;
+      };
+
+      const updatePricing = () => {
+        const variant = findVariant(selectedToilets, selectedDuration);
+        if (!variant) {
+          originalPriceEl.textContent = '';
+          priceEachEl.textContent = '—';
+          savingsPercentEl.textContent = '';
+          perMonthEl.textContent = '';
+          finalPriceEl.textContent = '—';
+          savingsTextEl.textContent = '';
+          variantInput.value = '';
+          addToCartButton.disabled = true;
+          addToCartButton.classList.add('opacity-50');
+          return;
+        }
+
+        const price = Number(variant.price || 0);
+        const compareAt = Number(variant.compare_at_price || 0);
+        const hasSavings = compareAt > price;
+
+        priceEachEl.textContent = formatMoney(price);
+        finalPriceEl.textContent = formatMoney(price);
+
+        if (hasSavings) {
+          originalPriceEl.textContent = formatMoney(compareAt);
+          const savings = compareAt - price;
+          const savingsPercent = Math.round((savings / compareAt) * 100);
+          savingsPercentEl.textContent = `Save ${savingsPercent}%`;
+          savingsTextEl.textContent = `You save ${formatMoney(savings)}!`;
+        } else {
+          originalPriceEl.textContent = '';
+          savingsPercentEl.textContent = '';
+          savingsTextEl.textContent = '';
+        }
+
+        const perMonthCents = selectedDuration ? Math.round(price / selectedDuration) : price;
+        perMonthEl.textContent = `Just ${formatMoney(perMonthCents)}/month`;
+
+        variantInput.value = variant.id;
+        addToCartButton.disabled = !variant.available;
+        addToCartButton.classList.toggle('opacity-50', !variant.available);
+      };
+
+      const initialize = () => {
+        selectedToilets = getDefaultValue(toiletButtons, { key: 'toilets', value: selectedToilets });
+        selectedDuration = getDefaultValue(durationButtons, { key: 'months', value: selectedDuration });
+
+        setActive(toiletButtons, selectedToilets, 'toilets');
+        setActive(durationButtons, selectedDuration, 'months');
+
+        updateStepLabel();
+        updateSummary();
+        updatePricing();
+      };
+
+      toiletButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selectedToilets = Number(button.dataset.toilets);
+          setActive(toiletButtons, selectedToilets, 'toilets');
+          updateStepLabel();
+          updateSummary();
+          updatePricing();
+        });
       });
-    });
 
-    ctaButton.addEventListener('click', () => {
-      const variantId = ctaButton.dataset.variantId;
-      if (!variantId) {
-        ctaNote.classList.remove('hidden');
-        return;
-      }
-      if (pricingForm) {
-        pricingForm.querySelector('input[name="id"]').value = variantId;
-        pricingForm.submit();
-      }
-    });
+      durationButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selectedDuration = Number(button.dataset.months);
+          setActive(durationButtons, selectedDuration, 'months');
+          updateSummary();
+          updatePricing();
+        });
+      });
 
-    updateActiveButtons();
-    updateSummary();
-  })();
-</script>
+      initialize();
+    })();
+  </script>
+</section>
 
 {% schema %}
 {
   "name": "TC Pricing Calculator",
   "settings": [
     {
-      "type": "text",
-      "id": "section_id",
-      "label": "Section ID"
-    },
-    {
       "type": "product",
       "id": "product",
       "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "pricing"
+    },
+    {
+      "type": "text",
+      "id": "toilets_option_name",
+      "label": "Toilets Option Name",
+      "default": "Bathrooms"
+    },
+    {
+      "type": "text",
+      "id": "duration_option_name",
+      "label": "Duration Option Name",
+      "default": "Duration"
+    },
+    {
+      "type": "header",
+      "content": "Urgency Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_banner",
+      "label": "Show Urgency Banner",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "shipping_heading",
+      "label": "Shipping Heading",
+      "default": ", Orders will ship in 2 weeks due to high demand"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_urgency_banner",
+      "label": "Show Urgency Banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "urgency_heading",
+      "label": "Urgency Heading",
+      "default": "GET UP TO 50% OFF WITH YOUR ORDER TODAY!"
+    },
+    {
+      "type": "text",
+      "id": "urgency_subheading",
+      "label": "Urgency Subheading",
+      "default": "Hurry! This special offer is only available while supplies last!"
+    },
+    {
+      "type": "header",
+      "content": "Content"
     },
     {
       "type": "text",
@@ -427,244 +466,70 @@
       "default": "<p>Pick your toilets. Pick your duration. Everything you need is included.</p>"
     },
     {
-      "type": "text",
-      "id": "step1_label",
-      "label": "Step 1 label",
-      "default": "Step 1: How many toilets?"
-    },
-    {
-      "type": "text",
-      "id": "step2_label",
-      "label": "Step 2 label",
-      "default": "Step 2: How long?"
-    },
-    {
-      "type": "text",
-      "id": "duration_label_3",
-      "label": "3 months label",
-      "default": "Try it"
-    },
-    {
-      "type": "text",
-      "id": "duration_label_6",
-      "label": "6 months label",
-      "default": "Popular"
-    },
-    {
-      "type": "text",
-      "id": "duration_label_12",
-      "label": "12 months label",
-      "default": "Save 15%"
-    },
-    {
-      "type": "text",
-      "id": "duration_label_24",
-      "label": "24 months label",
-      "default": "Best Value"
-    },
-    {
-      "type": "text",
-      "id": "cta_label",
-      "label": "CTA label",
-      "default": "Add To Cart →"
-    },
-    {
-      "type": "text",
-      "id": "cta_unavailable_label",
-      "label": "CTA unavailable text",
-      "default": "Add variant IDs in this section to enable checkout."
-    },
-    {
-      "type": "text",
-      "id": "trust_1",
-      "label": "Trust item 1",
-      "default": "Secure Checkout"
-    },
-    {
-      "type": "text",
-      "id": "trust_2",
-      "label": "Trust item 2",
-      "default": "Free Shipping"
-    },
-    {
-      "type": "text",
-      "id": "trust_3",
-      "label": "Trust item 3",
-      "default": "90-Day Guarantee"
-    },
-    {
-      "type": "range",
-      "id": "base_price",
-      "label": "Base price per toilet per 3 months (USD)",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "default": 19
-    },
-    {
-      "type": "range",
-      "id": "discount_1",
-      "label": "Discount for 1 toilet (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "discount_2",
-      "label": "Discount for 2 toilets (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "discount_3_toilets",
-      "label": "Discount for 3 toilets (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "discount_4",
-      "label": "Discount for 4 toilets (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "discount_3",
-      "label": "Discount for 3 months (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "discount_6",
-      "label": "Discount for 6 months (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "discount_12",
-      "label": "Discount for 12 months (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "discount_24",
-      "label": "Discount for 24 months (%)",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "range",
-      "id": "max_discount",
-      "label": "Max total discount (%)",
-      "min": 0,
-      "max": 60,
-      "step": 1,
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "default_toilets",
-      "label": "Default toilets",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 2
-    },
-    {
-      "type": "select",
-      "id": "default_months",
-      "label": "Default duration",
-      "options": [
-        {"value": "3", "label": "3 months"},
-        {"value": "6", "label": "6 months"},
-        {"value": "12", "label": "12 months"},
-        {"value": "24", "label": "24 months"}
-      ],
-      "default": "6"
-    },
-    {
-      "type": "color",
-      "id": "bgcolor",
-      "label": "Background color",
-      "default": "#f8f9fb"
-    },
-    {
       "type": "color",
       "id": "heading_color",
-      "label": "Heading color",
-      "default": "#001c19"
+      "label": "Heading Color",
+      "default": "#001C19"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
     },
     {
       "type": "range",
       "id": "max_width",
-      "label": "Max width",
-      "min": 600,
-      "max": 1600,
+      "min": 800,
+      "max": 1400,
       "step": 20,
-      "default": 1200
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1280
     },
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
       "default": 72
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
       "default": 72
     },
     {
       "type": "range",
       "id": "padding_top_m",
-      "label": "Padding top (mobile)",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
       "default": 36
     },
     {
       "type": "range",
       "id": "padding_bottom_m",
-      "label": "Padding bottom (mobile)",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
       "default": 36
     }
   ],
   "blocks": [
     {
       "type": "variant_map",
-      "name": "Variant Mapping",
+      "name": "Variant Map",
       "settings": [
         {
           "type": "select",
@@ -693,33 +558,14 @@
         {
           "type": "text",
           "id": "variant_id",
-          "label": "Variant ID",
-          "default": "0"
+          "label": "Variant ID"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "TC Pricing Calculator",
-      "blocks": [
-        {"type": "variant_map", "settings": {"toilets": "1", "months": "3", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "1", "months": "6", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "1", "months": "12", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "1", "months": "24", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "2", "months": "3", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "2", "months": "6", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "2", "months": "12", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "2", "months": "24", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "3", "months": "3", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "3", "months": "6", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "3", "months": "12", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "3", "months": "24", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "4", "months": "3", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "4", "months": "6", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "4", "months": "12", "variant_id": "0"}},
-        {"type": "variant_map", "settings": {"toilets": "4", "months": "24", "variant_id": "0"}}
-      ]
+      "name": "TC Pricing Calculator"
     }
   ]
 }
