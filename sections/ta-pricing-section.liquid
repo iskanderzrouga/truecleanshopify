@@ -1,2 +1,422 @@
 {{ 'section-ta-pricing-section.css' | asset_url | stylesheet_tag }}
 
+<section id="buy" class="product-section section">
+  <div class="container">
+    <div class="tc">
+      <h2 class="hl">Get Your <span class="highlight">Swoosh n' Shine</span></h2>
+      <p class="sub" style="margin:12px auto 0;">
+        Pick your kit. Every order includes <strong>free dispensers + refill cartridges.</strong>
+      </p>
+    </div>
+
+    <div class="product-layout">
+      <!-- Left: Product image -->
+      <div class="product-visual">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0960/0453/8733/files/Rectangle_1001_16.png"
+          alt="Swoosh n' Shine Kit"
+          class="product-main-img"
+          id="product-img"
+        >
+      </div>
+
+      <!-- Right: Pricing panel -->
+      <div class="pricing-panel">
+        <div class="pp-rating">
+          <span class="stars">★★★★★</span>
+          <span class="count">4.85 · 5,247 reviews</span>
+        </div>
+
+        <h2 class="pp-title">Swoosh n' Shine Automatic Toilet Cleaner</h2>
+        <p class="pp-tagline">Clips in 60 seconds. Cleans with every flush.</p>
+
+        <!-- Step 1: How many toilets? -->
+        <div class="pp-step">
+          <div class="pp-step-label"><span class="pp-step-num">1</span> How many toilets?</div>
+          <div class="pp-grid pp-grid--4">
+            <button onclick="selectToilets(1)" class="pp-sel-btn toilet-btn" data-toilets="1">
+              <span class="emoji">🚽</span>1
+            </button>
+            <button onclick="selectToilets(2)" class="pp-sel-btn toilet-btn active" data-toilets="2">
+              <span class="emoji">🚽🚽</span>2
+            </button>
+            <button onclick="selectToilets(3)" class="pp-sel-btn toilet-btn" data-toilets="3">
+              <span class="emoji">🚽🚽🚽</span>3
+            </button>
+            <button onclick="selectToilets(4)" class="pp-sel-btn toilet-btn" data-toilets="4">
+              <span class="emoji">🚽🚽🚽🚽</span>4
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: How long? -->
+        <div class="pp-step">
+          <div class="pp-step-label"><span class="pp-step-num">2</span> How long?</div>
+          <div class="pp-grid pp-grid--4">
+            <button onclick="selectDuration(3)" class="pp-sel-btn duration-btn" data-months="3">
+              3 mo<span class="sub-label">Try it</span>
+            </button>
+            <button onclick="selectDuration(6)" class="pp-sel-btn duration-btn active" data-months="6">
+              6 mo<span class="sub-label">Popular</span>
+            </button>
+            <button onclick="selectDuration(12)" class="pp-sel-btn duration-btn" data-months="12">
+              1 year<span class="sub-label">Save 15%</span>
+            </button>
+            <button onclick="selectDuration(24)" class="pp-sel-btn duration-btn" data-months="24">
+              2 years<span class="sub-label">Best Value</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Price display -->
+        <div class="pp-price-box">
+          <div class="pp-order-summary" id="order-summary">2 toilets × 6 months of cleaning each</div>
+          <div class="pp-includes" id="includes-text">Includes 2 FREE dispensers + 4 cleaning cartridges</div>
+          <div class="pp-per-toilet">Price per toilet:</div>
+          <div>
+            <span class="pp-price-was" id="original-price-each">$38</span>
+            <span class="pp-price-big" id="price-each">$24.50</span>
+            <span style="font-size:0.9rem; color:var(--text-muted);">/each</span>
+          </div>
+          <div class="pp-save-pct" id="savings-percent">Save 35%</div>
+          <div class="pp-per-month" id="per-month">Just $4.08/month per toilet</div>
+        </div>
+
+        <!-- Total bar -->
+        <div class="pp-total-bar">
+          <div>
+            <div class="pp-total-label">Order Total:</div>
+            <div class="pp-total-price" id="final-price">$49</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="pp-total-save" id="savings-text">You save $29!</div>
+            <div class="pp-total-ship">Free shipping included</div>
+          </div>
+        </div>
+
+        <button class="pp-cta">Add To Cart →</button>
+
+        <div class="pp-trust">
+          <span>🔒 Secure Checkout</span>
+          <span>🚚 Free Shipping</span>
+          <span>↩️ 3-Month Guarantee</span>
+        </div>
+
+        <div class="pp-guarantee">
+          <span class="icon">🛡️</span>
+          <p><strong>3-Month Money Back.</strong> Not happy? Full refund. No return needed. No questions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TA Pricing Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_m_center",
+      "label": "Heading Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_d_center",
+      "label": "Heading Desktop Center",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#001C19"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_m_center",
+      "label": "Description Mobile Center",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "description_d_center",
+      "label": "Description Desktop Center",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#001C19"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Image Right",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "richtext",
+      "id": "btn_bottom_text",
+      "label": "Btn Bottom Text"
+    },
+    {
+      "type": "color",
+      "id": "btn_bottom_text_color",
+      "label": "Buttom Bottom Text Color",
+      "default": "#001C19"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "star_review",
+      "name": "Star Review",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "center",
+          "label": "Center",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#001C19"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bgcolor",
+          "label": "Background Color",
+          "default": "#F4F4F6"
+        },
+        {
+          "type": "html",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "checkbox",
+          "id": "label_m_center",
+          "label": "Label Mobile Center",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "label_d_center",
+          "label": "Label Desktop Center",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "label": "Label Color",
+          "default": "#001C19"
+        },
+        {
+          "type": "html",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_m_center",
+          "label": "Heading Mobile Center",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_d_center",
+          "label": "Heading Desktop Center",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#001C19"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "description_m_center",
+          "label": "Description Mobile Center",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "description_d_center",
+          "label": "Description Desktop Center",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "small_description",
+          "label": "Description Small",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#001C19"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "richtext",
+          "id": "btn_bottom_text",
+          "label": "Btn Bottom Text"
+        },
+        {
+          "type": "color",
+          "id": "btn_bottom_text_color",
+          "label": "Buttom Bottom Text Color",
+          "default": "#001C19"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TA Pricing Section"
+    }
+  ]
+}
+{% endschema %}
