@@ -140,7 +140,7 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="listicle-tldr text-[17px] md:text-[20px] font-semibold !leading-[1.55] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  class="listicle-tldr text-[16px] md:text-[18px] font-semibold !leading-[1.5] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
                   style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
@@ -162,7 +162,7 @@
             {% if block.type == 'list' %}
               <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
                 {% if block.settings.heading != blank %}
-                  <div class="md:hidden text-[#000] text-[24px] font-bold leading-tight">
+                  <div class="md:hidden text-[#000] text-[22px] font-bold leading-tight">
                     {{ block.settings.heading }}
                   </div>
                 {% endif %}
@@ -179,14 +179,14 @@
                   </div>
                 {% endif %}
                 <div class="order-3 md:order-1">
-                  <div class="flex flex-col gap-[16px] md:gap-[24px] justify-center h-full">
+                  <div class="flex flex-col gap-[12px] md:gap-[16px] justify-center h-full">
                     {% if block.settings.heading != blank %}
-                      <div class="hidden md:block text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
+                      <div class="hidden md:block text-[#000] text-[22px] lg:text-[28px] font-bold leading-tight md:leading-tight">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="listicle-copy text-[#001c19] text-[17px] md:text-[18px] lg:text-[19px] font-medium leading-[1.55] md:leading-[1.6]">
+                      <div class="listicle-copy text-[#001c19] text-[15px] md:text-[16px] lg:text-[17px] font-normal leading-[1.5] md:leading-[1.55]">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
@@ -326,10 +326,10 @@
     margin: 0;
   }
   .listicle-copy {
-    max-width: 64ch;
+    max-width: 60ch;
   }
   .listicle-copy p {
-    margin: 0 0 0.7em;
+    margin: 0 0 0.55em;
   }
   .listicle-copy p:last-child {
     margin-bottom: 0;
