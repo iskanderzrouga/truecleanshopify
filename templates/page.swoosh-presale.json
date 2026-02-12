@@ -142,7 +142,7 @@
             "bg": "#fbffe6",
             "show_bg": true,
             "color": "#000000",
-            "text": "<p><strong>TLDR:</strong> TrueClean uses real chemistry — not magnets, not bleach — to stop hard water stains before they form. Every flush prevents buildup... kills pink slime... and keeps your bowl clean without scrubbing. No gimmicks.</p>"
+            "text": "<p><strong>TLDR:</strong> TRUECLEAN USES REAL CHEMISTRY — NOT MAGNETS, NOT BLEACH — TO STOP HARD WATER STAINS BEFORE THEY FORM. EVERY FLUSH PREVENTS BUILDUP... KILLS PINK SLIME... AND KEEPS YOUR BOWL CLEAN WITHOUT SCRUBBING. NO GIMMICKS.</p>"
           }
         },
         "list_XffmV4": {
@@ -264,17 +264,17 @@
             "review_name2": "",
             "review_text3": "",
             "review_verified": "",
-            "button_label": "Get Up To 35% Off ->",
-            "button_url": "shopify://pages/swooshnshine",
+            "button_label": "",
+            "button_url": "",
             "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+            "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19"
           }
         },
         "list_XcLaRB": {
           "type": "list",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_240648346_2_8afed8a2-f6cf-4d91-8d86-6c544fb16437.png",
+            "image": "shopify://shop_images/Rectangle_240648346_4_1b22c5e1-4e4d-4b4c-b0d1-5c2b9944ef39.png",
             "heading": "6. 200,000+ Households Already Stopped Scrubbing",
             "text": "<p>4.85 stars. 5,247+ reviews.</p><p>Their words, not mine.</p><p>Hard water results. Pet safety. Easy install.</p><p>“Wish I found this sooner.”</p><p><strong>200,000+ homes stopped fighting hard water. They started preventing it.</strong></p>",
             "star_text1": "",
@@ -290,73 +290,6 @@
             "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19",
             "btn_bottom_icon": ""
-          }
-        },
-        "list_BLwK7W": {
-          "type": "list",
-          "settings": {
-            "image": "shopify://shop_images/off.png",
-            "heading": "Try It Risk-Free For 90 Days",
-            "text": "<p>Try it risk-free for 90 days.</p><p>1 dispenser + 2 cartridges = up to 6 months.</p><p>Bundle pricing for 1, 2, 3, or 4 devices.</p>",
-            "star_text1": "",
-            "star_text2": "",
-            "review_text1": "",
-            "review_name1": "",
-            "review_text2": "",
-            "review_name2": "",
-            "review_text3": "",
-            "review_verified": "",
-            "button_label": "",
-            "button_url": "",
-            "btn_bottom_icon": "",
-            "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
-          }
-        },
-        "list_NypkVi": {
-          "type": "list",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_240648346_8.png",
-            "heading": "Your Toilet Has Been Losing The Hard Water Fight For Years",
-            "text": "<p>This is the backup your toilet needed.</p>",
-            "star_text1": "",
-            "star_text2": "",
-            "review_text1": "",
-            "review_name1": "",
-            "review_text2": "",
-            "review_name2": "",
-            "review_text3": "",
-            "review_verified": "",
-            "button_label": "",
-            "button_url": "",
-            "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19",
-            "btn_bottom_icon": ""
-          }
-        },
-        "list_jLmy3H": {
-          "type": "list",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_240648346_4_1b22c5e1-4e4d-4b4c-b0d1-5c2b9944ef39.png",
-            "heading": "Real Customer Results",
-            "text": "<p>Free US Shipping | Plant-Derived | Pet-Safe | No Bleach | Safe for Tanks | 90-Day Guarantee</p>",
-            "stars": "shopify://shop_images/stars.png",
-            "star_text1": "<p><strong>4.85 stars</strong> from verified Swoosh n Shine shoppers</p>",
-            "star_text2": "",
-            "review_avatar1": "shopify://shop_images/Ellipse_88.png",
-            "review_text1": "<p><em>\"Hard water rings used to come back in days. Now the bowl stays cleaner with almost no effort.\"</em></p>",
-            "review_name1": "<p><em><strong>- Melissa R.</strong></em></p>",
-            "review_avatar2": "shopify://shop_images/Ellipse_88_1.png",
-            "review_text2": "<p><em>\"Install took less than a minute, and we've cut scrubbing way down.\"</em></p>",
-            "review_name2": "<p><em><strong>- Chris D.</strong></em></p>",
-            "review_text3": "",
-            "review_verifeid_icon": "shopify://shop_images/material-symbols_verified_a39a29c8-c23a-443d-898b-06fa4d2ce0c6.png",
-            "review_verified": "<p>Verified Review</p>",
-            "button_label": "",
-            "button_url": "",
-            "btn_bottom_icon": "",
-            "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
           }
         }
       },
@@ -379,14 +312,11 @@
         "list_PxKXFA",
         "list_chkYbA",
         "list_fRYfx9",
-        "list_XcLaRB",
-        "list_BLwK7W",
-        "list_NypkVi",
-        "list_jLmy3H"
+        "list_XcLaRB"
       ],
       "settings": {
-        "heading": "Your Water Is. 6 Reasons Swoosh n Shine Fixes What Scrubbing Can’t",
-        "text": "<p>Your toilet isn’t dirty —</p>",
+        "heading": "6 Reasons Swoosh n Shine Fixes What Scrubbing Can’t",
+        "text": "<p>Your toilet isn’t dirty — Your Water Is.</p>",
         "divider": false,
         "button_text": "Get 35% OFF Today",
         "button_url": "",
@@ -424,8 +354,8 @@
         "name": "",
         "verified": "",
         "review": "",
-        "note_text": "Your toilet's been losing the hard water fight for years. This is the backup it needed.",
-        "image": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
+        "note_text": "Your Toilet Has Been Losing The Hard Water Fight For Years. This is the backup it needed.",
+        "image": "shopify://shop_images/Rectangle_240648346_8.png",
         "image_mobile": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
         "button_text": "Get Up To 35% Off Today",
         "button_url": "shopify://pages/swooshnshine",
