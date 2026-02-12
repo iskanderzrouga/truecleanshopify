@@ -142,7 +142,7 @@
             "bg": "#fbffe6",
             "show_bg": true,
             "color": "#000000",
-            "text": "<p>SwooshnShine by TrueClean uses real chemistry — not magnets, not bleach — to stop hard water stains before they form. Every flush prevents buildup... kills pink slime... and keeps your bowl clean without scrubbing. No gimicks.</p>"
+            "text": "<p>SwooshnShine by TrueClean uses real chemistry — not magnets, not bleach — to stop hard water stains before they form. Every flush prevents buildup... kills pink slime... and keeps your bowl clean without scrubbing. No gimmicks.</p>"
           }
         },
         "list_XffmV4": {
@@ -296,7 +296,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/off.png",
-            "heading": "8. Try It Risk-Free For 90 Days",
+            "heading": "Try It Risk-Free For 90 Days",
             "text": "<p>Try it risk-free for 90 days.</p><p>1 dispenser + 2 cartridges = up to 6 months.</p><p>Bundle pricing for 1, 2, 3, or 4 devices.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -416,7 +416,7 @@
         "feature_3_MLpWQb"
       ],
       "settings": {
-        "product_id": "pluxy-epil-pro-3-1",
+        "product_id": "",
         "label": "Pre-sale offer",
         "heading": "Try it risk-free for 90 days. If your toilet isn't the cleanest it's been in years, you pay nothing.",
         "subheading": "LIMITED PRE-SALE PRICING",
@@ -427,7 +427,7 @@
         "note_text": "Your toilet's been losing the hard water fight for years. This is the backup it needed.",
         "image": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
         "image_mobile": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
-        "button_text": "",
+        "button_text": "Get Up To 35% Off Today",
         "button_url": "shopify://pages/swooshnshine",
         "sub_text": "<p>Free US Shipping | Plant-Derived | Pet-Safe | No Bleach | Safe for Tanks | 90-Day Guarantee</p>",
         "show_background": true,
