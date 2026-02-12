@@ -140,7 +140,7 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="listicle-tldr text-[16px] md:text-[18px] font-normal !leading-[1.65] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  class="listicle-tldr text-[17px] md:text-[20px] font-semibold !leading-[1.55] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
                   style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
@@ -160,26 +160,16 @@
             {% endif %}
 
             {% if block.type == 'list' %}
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
-                {% if block.settings.image != blank %}
-                  <img
-                    class="w-full"
-                    src="{{ block.settings.image | image_url : width: 700 }}"
-                    width="auto"
-                    height="auto"
-                    alt=""
-                    loading="lazy"
-                  >
-                {% endif %}
+              <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
                 <div class="">
-                  <div class="flex flex-col gap-[12px] md:gap-[18px] justify-center h-full">
+                  <div class="flex flex-col gap-[16px] md:gap-[24px] justify-center h-full">
                     {% if block.settings.heading != blank %}
                       <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="listicle-copy text-[#001c19] text-[16px] lg:text-[18px] font-normal leading-[1.75] md:leading-[1.8]">
+                      <div class="listicle-copy text-[#001c19] text-[17px] md:text-[18px] lg:text-[19px] font-medium leading-[1.55] md:leading-[1.6]">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
@@ -286,6 +276,18 @@
                     {% endif %}
                   </div>
                 </div>
+                {% if block.settings.image != blank %}
+                  <div class="flex justify-center md:justify-end">
+                    <img
+                      class="w-full max-w-[360px] sm:max-w-[430px] md:max-w-[520px]"
+                      src="{{ block.settings.image | image_url : width: 700 }}"
+                      width="auto"
+                      height="auto"
+                      alt=""
+                      loading="lazy"
+                    >
+                  </div>
+                {% endif %}
               </div>
             {% endif %}
           {% endfor %}
@@ -319,16 +321,19 @@
     margin: 0;
   }
   .listicle-copy {
-    max-width: 62ch;
+    max-width: 64ch;
   }
   .listicle-copy p {
-    margin: 0 0 0.85em;
+    margin: 0 0 0.7em;
   }
   .listicle-copy p:last-child {
     margin-bottom: 0;
   }
   .listicle-copy strong {
     font-weight: 700;
+  }
+  .listicle-tldr strong {
+    font-weight: 800;
   }
   @media screen and (max-width: 768px) {
     .fixed-button-bottom.active {
