@@ -61,7 +61,15 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header !px-5 bg-[#00B7A2] border-b-[6px] border-[#E8FF33]">
+      <div class="drawer__header !px-5 bg-[#00B7A2] border-b-[6px] border-[#E8FF33] flex items-center !justify-start !mb-4">
+        {% unless cart == empty %}
+          <div class="">
+            <h3 class="drawer__heading !text-[#fff] font-bold uppercase !mb-0">
+              {{ 'sections.cart.title' | t }}
+              <span class="cart-count">({{ cart.item_count }})</span>
+            </h3>
+          </div>
+        {% endunless %}
         <button
           class="drawer__close !right-0"
           type="button"
@@ -70,11 +78,25 @@
         >
           <span class="svg-wrapper text-white">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 15.964L14.0375 12.0007L17.9986 8.03817L15.9626 6L11.9993 9.96255L8.03673 6L6 8.03817L9.96111 12.0007L6 15.9633L8.03817 18L11.9993 14.0375L15.9604 18L18 15.964Z" fill="#333333"/>
+              <path d="M18 15.964L14.0375 12.0007L17.9986 8.03817L15.9626 6L11.9993 9.96255L8.03673 6L6 8.03817L9.96111 12.0007L6 15.9633L8.03817 18L11.9993 14.0375L15.9604 18L18 15.964Z" fill="#fff"/>
             </svg>
           </span>
         </button>
       </div>
+
+      {% comment %} {% assign seconds_since_epoch = 'now' | date: '%s' | plus: 0 %}
+{% assign seconds_into_block = seconds_since_epoch | modulo: 600 %}
+{% assign seconds_remaining = 600 | minus: seconds_into_block %}
+{% assign minutes_remaining = seconds_remaining | divided_by: 60 %}
+{% assign seconds_remaining_final = seconds_remaining | modulo: 60 %}
+
+<div id="cart-timer" class="text-[16px] font-semibold text-white bg-[#00B7A2] p-3 text-center mb-4">
+  Limited inventory! Your cart is reserved for
+  <span id="countdown">
+    {{ minutes_remaining | prepend: '0' | slice: -2, 2 }}:{{ seconds_remaining_final | prepend: '0' | slice: -2, 2 }}
+  </span>
+</div> {% endcomment %}
+
 
       {% comment %}
         <div class="bg-[#084c2521] px-5 py-4 flex items-center justify-center gap-4 mb-5">
@@ -85,16 +107,7 @@
             {{ settings.sub_heading }}
           </span>
         </div>
-      {% endcomment %}
-
-      {% unless cart == empty %}
-        <div class="bg-white p-4">
-          <h3 class="drawer__heading !text-[#000C38] font-bold uppercase !mb-0">
-            {{ 'sections.cart.title' | t }}
-            <span class="cart-count">({{ cart.item_count }})</span>
-          </h3>
-        </div>
-      {% endunless %}
+      {% endcomment %} 
 
       <cart-drawer-items
         {% if cart == empty %}

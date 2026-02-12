@@ -7,22 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    <script>
-window['__cvg_shopify_info'] = {
-  product: {{ product | json }},
-  variant: {{ product.selected_or_first_available_variant | json }},
-  currency: {{ shop.currency | json }},
-  collection: {...{{ collection | json }}, products: {{ collection.products | json }}},
-  search: {{ search.terms | json }},
-};
-</script>
-<script src="https://static.runconverge.com/pixels/UC0qsF.js" async></script>
-<script>
-  window.cvg||(cvg=function(){cvg.process?cvg.process.apply(cvg,arguments):cvg.queue.push(arguments)},cvg.queue=[]);
-  cvg({method:"track",eventName:"$page_load"});
-</script>
-
-
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -330,12 +314,14 @@ window['__cvg_shopify_info'] = {
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% comment %} {% section 'nl-animation-secondary' %}
-    {% if template == 'page.goodpaw-main' %}
-      {% section 'nl-header-secondary' %}
-    {% else %}
-      {% section 'nl-header' %}
-    {% endif %} {% endcomment %}
+    {% comment %}
+      {% section 'nl-animation-secondary' %}
+      {% if template == 'page.goodpaw-main' %}
+        {% section 'nl-header-secondary' %}
+      {% else %}
+        {% section 'nl-header' %}
+      {% endif %}
+    {% endcomment %}
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -401,5 +387,81 @@ window['__cvg_shopify_info'] = {
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% comment %} Script that update Judget me Count and rate {% endcomment %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const targetValues = {
+          totalReviews: '50,173 Reviews',
+          avgRating: '4.85',
+          stars: [
+            { count: '44,654', width: '89%' },
+            { count: '3,512', width: '7%' },
+            { count: '1,003', width: '2%' },
+            { count: '502', width: '1%' },
+            { count: '502', width: '1%' },
+          ],
+        };
+
+        function updateJudgeMeValues() {
+          const countEl = document.querySelector(
+            '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(2)'
+          );
+          const rateEl = document.querySelector(
+            '#judgeme_product_reviews .jm-average-rating-display .jm-cluster p:nth-child(1)'
+          );
+
+          if (countEl && countEl.textContent !== targetValues.totalReviews) {
+            countEl.textContent = targetValues.totalReviews;
+          }
+          if (rateEl && rateEl.textContent !== targetValues.avgRating) {
+            rateEl.textContent = targetValues.avgRating;
+          }
+
+          targetValues.stars.forEach((star, index) => {
+            const freqEl = document.querySelector(
+              `#judgeme_product_reviews .jm-histogram-row:nth-child(${index + 1}) .jm-histogram-row__frequency`
+            );
+            const progressEl = document.querySelector(
+              `#judgeme_product_reviews .jm-histogram-row:nth-child(${index + 1}) .jm-progress-bar__fill`
+            );
+
+            if (freqEl && freqEl.textContent !== star.count) {
+              freqEl.textContent = star.count;
+            }
+            if (progressEl && progressEl.style.width !== star.width) {
+              progressEl.style.width = star.width;
+            }
+          });
+        }
+
+        // Watch for Judge.me widget to load/change
+        const observer = new MutationObserver(function (mutations) {
+          updateJudgeMeValues();
+        });
+
+        // Start observing once the container exists
+        function startObserver() {
+          const container = document.querySelector('#judgeme_product_reviews');
+          if (container) {
+            observer.observe(container, {
+              childList: true,
+              subtree: true,
+              characterData: true,
+            });
+            updateJudgeMeValues();
+          } else {
+            // Container not ready yet, try again
+            setTimeout(startObserver, 500);
+          }
+        }
+
+        startObserver();
+
+        // Also run on window load as backup
+        window.addEventListener('load', updateJudgeMeValues);
+      });
+    </script>
+    {% comment %} Script that update Judget me Count and rate {% endcomment %}
   </body>
 </html>

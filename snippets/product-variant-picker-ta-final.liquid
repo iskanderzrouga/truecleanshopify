@@ -1,0 +1,277 @@
+{%- unless product.has_only_default_variant -%}
+  {%- assign has_variant_param = false -%}
+  {%- if request.query_string contains 'variant=' -%}
+    {%- assign has_variant_param = true -%}
+  {%- endif -%}
+  {%- assign has_option_values_param = false -%}
+  {%- if request.query_string contains 'option_values=' -%}
+    {%- assign has_option_values_param = true -%}
+  {%- endif -%}
+
+  {%- assign default_variant = product.selected_or_first_available_variant -%}
+  {%- unless has_variant_param or has_option_values_param -%}
+    {%- for v in product.variants -%}
+      {%- if v.available and v.options contains '4 Toilets' and v.options contains '6 Months' -%}
+        {%- assign default_variant = v -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endunless -%}
+
+  {%- comment -%} Pre-calculate per-unit prices for each toilet count at 6 Months {%- endcomment -%}
+  {%- for v in product.variants -%}
+    {%- assign vtitle = v.title | downcase | strip -%}
+    {%- unless vtitle contains '6 months' -%}{%- continue -%}{%- endunless -%}
+    {%- if vtitle contains '1 toilet' -%}
+      {%- assign price_1 = v.price | divided_by: 1 -%}
+      {%- assign compare_1 = v.compare_at_price | divided_by: 1 -%}
+    {%- endif -%}
+    {%- if vtitle contains '2 toilet' -%}
+      {%- assign price_2 = v.price | divided_by: 2 -%}
+      {%- assign compare_2 = v.compare_at_price | divided_by: 2 -%}
+    {%- endif -%}
+    {%- if vtitle contains '3 toilet' -%}
+      {%- assign price_3 = v.price | divided_by: 3 -%}
+      {%- assign compare_3 = v.compare_at_price | divided_by: 3 -%}
+    {%- endif -%}
+    {%- if vtitle contains '4 toilet' -%}
+      {%- assign price_4 = v.price | divided_by: 4 -%}
+      {%- assign compare_4 = v.compare_at_price | divided_by: 4 -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ section.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {% if option.name == 'Bathrooms' %}
+        <fieldset class="js product-form__input product-form__input--pill pp-step">
+          <div class="pp-offer-grid">
+            {%- assign product_form_id_bath = 'product-form-' | append: section.id -%}
+            {%- for value in option.values -%}
+              {%- for blk in section.blocks -%}
+                {%- if blk.type == 'option1' and blk.settings.option_name == value -%}
+                  {%- assign main_block = blk -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- capture input_id -%}{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{%- endcapture -%}
+
+              {%- assign is_default_value = false -%}
+              {%- if default_variant and has_variant_param == false and has_option_values_param == false -%}
+                {%- assign idx = option.position | minus: 1 -%}
+                {%- assign default_value = default_variant.options[idx] -%}
+                {%- if default_value == value -%}
+                  {%- assign is_default_value = true -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- assign should_check = false -%}
+              {%- if has_variant_param or has_option_values_param -%}
+                {%- if value.selected -%}{%- assign should_check = true -%}{%- endif -%}
+              {%- elsif is_default_value -%}
+                {%- assign should_check = true -%}
+              {%- endif -%}
+
+              {%- assign count = main_block.settings.count | default: '1' | plus: 0 -%}
+              {%- assign unit_price = 0 -%}
+              {%- if count == 1 -%}{%- assign unit_price = price_1 -%}
+              {%- elsif count == 2 -%}{%- assign unit_price = price_2 -%}
+              {%- elsif count == 3 -%}{%- assign unit_price = price_3 -%}
+              {%- elsif count == 4 -%}{%- assign unit_price = price_4 -%}
+              {%- endif -%}
+
+              {%- assign is_best_deal = false -%}
+              {%- if count == 4 -%}{%- assign is_best_deal = true -%}{%- endif -%}
+
+              {%- comment -%} Reverse visual order: 4 top-left, 3 top-right, 2 bottom-left, 1 bottom-right {%- endcomment -%}
+              {%- assign visual_order = 5 | minus: count -%}
+
+              <input
+                type="radio"
+                id="{{ input_id }}"
+                name="{{ option.name }}-{{ option.position }}"
+                value="{{ value | escape }}"
+                form="{{ product_form_id_bath }}"
+                {% if should_check %}checked{% endif %}
+                data-product-url="{{ value.product_url }}"
+                data-option-value-id="{{ value.id }}"
+              >
+
+              <label class="pp-variant-label pp-offer-card-label !p-0 !m-0 !border-none !bg-transparent" for="{{ input_id }}" style="order: {{ visual_order }};">
+                <div class="pp-offer-card{% if is_best_deal %} pp-offer-card--best{% endif %}">
+                  {%- if is_best_deal -%}
+                    <div class="pp-offer-badge">BEST DEAL</div>
+                  {%- endif -%}
+                  <div class="pp-offer-count">{{ count }} Device{% if count > 1 %}s{% endif %}</div>
+                  <div class="pp-offer-price"><span class="pp-offer-price-amount">{{ unit_price | money }}</span>/each*</div>
+                </div>
+              </label>
+            {%- endfor -%}
+          </div>
+          <div class="pp-offer-more-save">The more you buy, the more you save!</div>
+        </fieldset>
+      {% endif %}
+
+      {% if option.name == 'Duration' %}
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        <fieldset class="js product-form__input product-form__input--pill" style="display:none;">
+          {%- for value in option.values -%}
+            {%- if value == '6 Months' -%}
+              <input
+                type="radio"
+                id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                name="{{ option.name }}-{{ option.position }}"
+                value="{{ value | escape }}"
+                form="{{ product_form_id }}"
+                checked
+                data-product-url="{{ value.product_url }}"
+                data-option-value-id="{{ value.id }}"
+              >
+            {%- endif -%}
+          {%- endfor -%}
+        </fieldset>
+      {% endif %}
+    {%- endfor -%}
+
+    <script type="application/json" data-selected-variant>
+      {{ default_variant | json }}
+    </script>
+  </variant-selects>
+
+  {% comment %} Supply includes line moved to section level {% endcomment %}
+{%- endunless -%}
+
+<style>
+  .pp-variant-label::after,
+  .pp-variant-label::before {
+    display: none !important;
+  }
+
+  /* Offer grid - 2x2 like competitor */
+  .pp-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Hide the native radio */
+  .pp-offer-grid input[type="radio"] {
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+  }
+
+  /* Each offer card */
+  .pp-offer-card {
+    position: relative;
+    border: 2.5px solid var(--dark, #0A1F1C);
+    border-radius: 16px;
+    padding: 20px 12px;
+    background: var(--cream, #FFFDF7);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 2px 2px 0 var(--dark, #0A1F1C);
+  }
+
+  .pp-offer-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--dark, #0A1F1C);
+  }
+
+  /* Selected state */
+  .pp-offer-grid input[type="radio"]:checked + label .pp-offer-card {
+    background: var(--mint, #EDFCF8);
+    border-color: var(--dark, #0A1F1C);
+    border-width: 2.5px;
+    box-shadow: 3px 3px 0 var(--dark, #0A1F1C);
+  }
+
+  /* Unselected state – subtle */
+  .pp-offer-grid input[type="radio"]:not(:checked) + label .pp-offer-card {
+    background: #FAFAFA;
+    border-color: #D9DFDD;
+    opacity: 0.75;
+  }
+
+  .pp-offer-grid input[type="radio"]:not(:checked) + label .pp-offer-card:hover {
+    opacity: 1;
+    border-color: #B0BAB6;
+  }
+
+  /* Best deal card highlight */
+  .pp-offer-card--best {
+    border-color: var(--dark, #0A1F1C);
+  }
+
+  /* Badge */
+  .pp-offer-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neon, #BDFF00);
+    color: var(--dark, #0A1F1C);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 12px;
+    border-radius: 9999px;
+    border: 2px solid var(--dark, #0A1F1C);
+    white-space: nowrap;
+  }
+
+  /* Count text */
+  .pp-offer-count {
+    font-family: var(--display, 'Bricolage Grotesque', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text, #0A1F1C);
+    margin-bottom: 6px;
+  }
+
+  /* Price text */
+  .pp-offer-price {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: var(--text-muted, #6E9A8E);
+  }
+
+  .pp-offer-price-amount {
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: -0.03em;
+    color: var(--text, #0A1F1C);
+  }
+
+  /* "The more you buy" line */
+  .pp-offer-more-save {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted, #6E9A8E);
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  /* Supply includes line */
+  .pp-supply-includes {
+    text-align: center;
+    background: var(--mint, #EDFCF8);
+    border: 2px solid var(--primary, #00BFA6);
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin-top: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text, #0A1F1C);
+  }
+</style>

@@ -1,0 +1,166 @@
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values reversed limit: 3 -%}
+  {%- liquid
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- comment -%} Get the variant with highest price for this option value (one-time, not subscription) {%- endcomment -%}
+  {%- assign variant = null -%}
+  {%- assign highest_price = 0 -%}
+  {%- for v in product.variants -%}
+    {%- if v.title contains value -%}
+      {%- if v.price > highest_price -%}
+        {%- assign variant = v -%}
+        {%- assign highest_price = v.price -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <div class="flex flex-col justify-end product-variant--{{forloop.index}}">
+    <input
+      type="radio"
+      class="new-lp-variant--input"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    <label
+      for="{{ input_id }}"
+      data-total-price="{{ variant.price | money_without_trailing_zeros }}"
+      class="!p-0 !bg-transparent !rounded-[16px] !border-none !m-0 cursor-pointer"
+    >
+      <div class="new-lp-variant-content flex flex-col items-center justify-between gap-2 border border-[#D9DDE0] bg-[#FAFAFA] rounded-[10px] relative p-2 md:p-3 transition-all duration-200">
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="absolute left-1/2 -translate-x-1/2 -top-[18px] md:-top-[14px] min-w-[90%] tracking-normal md:whitespace-nowrap w-fit text-[9px] md:text-[11px] font-bold text-[#fff] !leading-tight px-[6px] md:px-2 py-1 md:py-[6px] rounded-[5px] text-center"
+            style="background-color: {{ variant.metafields.custom.badge_color }};"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
+
+        {% if variant.metafields.custom.custom_variant_image != blank %}
+          {{
+            variant.metafields.custom.custom_variant_image
+            | image_url: width: 300
+            | image_tag: class: 'h-full max-h-[80px] md:max-h-[140px] w-auto max-w-full object-contain mt-3'
+          }}
+        {% endif %}
+
+        {% if variant.metafields.custom.info_text != blank %}
+          <div class="text-[14px] md:text-[16px] font-medium text-[#001C19] !leading-tight">
+            {{- variant.metafields.custom.info_text -}}
+          </div>
+        {% endif %}
+
+        {% if variant.metafields.custom.kit_price != blank %}
+          <div class="text-[11px] md:text-[16px] font-bold text-[#001C19] !leading-tight">
+            {{- variant.metafields.custom.kit_price -}}
+          </div>
+        {% endif %}
+
+        <div class="flex items-center gap-1">
+          <div class="text-[11px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal w-fit ">
+            {{- variant.price | money_without_trailing_zeros -}}
+          </div>
+          {% if variant.compare_at_price > variant.price %}
+            <div class="text-[11px] md:text-[16px] font-normal !leading-tight text-[#8E8E8E] line-through tracking-normal w-fit ">
+              {{ variant.compare_at_price | money_without_trailing_zeros }}
+            </div>
+
+            <div class="text-[8px] md:text-[11px] font-bold !leading-tight text-[#000] tracking-normal bg-[#E8FF33] rounded-[4px] w-fit px-[6px] md:px-2 py-[3px] md:py-1">
+              Save {{ variant.compare_at_price | minus: variant.price | money_without_trailing_zeros }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if variant.metafields.custom.free_shipping_text != blank %}
+          <div class="text-[8px] md:text-[11px] font-bold !leading-tight text-[#000] tracking-normal bg-[#E8FF33] rounded-[5px] w-fit px-[6px] md:px-2 py-[3px] md:py-1 border border-black">
+            {{- variant.metafields.custom.free_shipping_text -}}
+          </div>
+        {% endif %}
+      </div>
+    </label>
+  </div>
+{%- endfor -%}
+
+{% comment %} CSS-only checked state styling - no JavaScript needed {% endcomment %}
+<style>
+  /* Hide radio inputs visually */
+  .new-lp-variant--input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Default unchecked state */
+  .new-lp-variant--input + label .new-lp-variant-content {
+    border-color: #d9dde0;
+    background-color: #fafafa;
+  }
+
+  .new-lp-variant--input + label .new-lp-variant-radio {
+    border-color: #ccc;
+  }
+
+  .new-lp-variant--input + label .new-lp-variant-radio__circle {
+    display: none;
+  }
+
+  /* Checked state */
+  .new-lp-variant--input:checked + label .new-lp-variant-content {
+    border-color: #00b7a2;
+    background-color: #f5fffe;
+  }
+
+  .new-lp-variant--input:checked + label .new-lp-variant-radio {
+    border-color: #00b7a2;
+  }
+
+  .new-lp-variant--input:checked + label .new-lp-variant-radio__circle {
+    display: block;
+  }
+
+  /* CRITICAL: Hide duplicate variant-selects during Shopify viewTransition
+     When HTML is swapped, new element is inserted before old, causing flash.
+     This hides any sibling variant-selects (the old one being replaced) */
+  variant-selects ~ variant-selects {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  /* Also hide fieldsets that might appear as siblings during transition */
+  .product-form__input--pill ~ .product-form__input--pill[style*='display: none'] + .product-form__input--pill {
+    display: none !important;
+  }
+</style>

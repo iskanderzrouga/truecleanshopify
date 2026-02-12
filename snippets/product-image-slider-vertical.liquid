@@ -8,25 +8,31 @@
             {% if media.alt contains 'carousel-hidden' %}
             {% else %}
               <li class="splide__slide">
-                {{ media.src | image_url: width: 600 | image_tag: class: '' }}
+                {% if section.settings.above_fold %}
+                  {{ media.src | image_url: width: 600 | image_tag: class: '', preload: true }}
+                {% else %}
+                  {{ media.src | image_url: width: 600 | image_tag: class: '' }}
+                {% endif %}
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
             <li class="splide__slide">
-              {% render 'product-thumbnail-2',
-                media: media,
-                media_count: 0,
-                position: 1,
-                desktop_layout: 'thumbnail_slider',
-                mobile_layout: 'show',
-                loop: false,
-                modal_id: section.id,
-                xr_button: true,
-                media_width: media_width,
-                media_fit: 'cover',
-                constrain_to_viewport: true,
-                lazy_load: false
-              %}
+              <div class="product-image-slider__video-wrapper">
+                {% render 'product-thumbnail-2',
+                  media: media,
+                  media_count: 0,
+                  position: 1,
+                  desktop_layout: 'thumbnail_slider',
+                  mobile_layout: 'show',
+                  loop: false,
+                  modal_id: section.id,
+                  xr_button: true,
+                  media_width: media_width,
+                  media_fit: 'cover',
+                  constrain_to_viewport: true,
+                  lazy_load: false
+                %}
+              </div>
             </li>
           {% endif %}
         {% endfor %}
@@ -42,7 +48,11 @@
             {% if media.alt contains 'carousel-hidden' %}
             {% else %}
               <li class="splide__slide">
-                <img src="{{ media.src | image_url }}" width="90" height="90" alt="{{ media.alt }}">
+                {% if section.settings.above_fold %}
+                  {{ media.src | image_url: width: 90 | image_tag: class: '', preload: true }}
+                {% else %}
+                  {{ media.src | image_url: width: 90 | image_tag: class: '' }}
+                {% endif %}
               </li>
             {% endif %}
           {% elsif media.media_type == 'video' %}
@@ -52,7 +62,11 @@
               </video>
             {% endcomment %}
             <li class="splide__slide">
-              <img src="{{ media.preview_image | image_url }}" width="90" height="90" alt="{{ media.alt }}">
+              {% if section.settings.above_fold %}
+                {{ media.preview_image | image_url: width: 90 | image_tag: class: '', preload: true }}
+              {% else %}
+                {{ media.preview_image | image_url: width: 90 | image_tag: class: '' }}
+              {% endif %}
             </li>
           {% endif %}
         {% endfor %}
@@ -78,16 +92,16 @@
     border-radius: 10px;
   }
   .product-thumbnail-slider-nav .splide__track--nav > .splide__list > .splide__slide.is-active {
-    border: 2px solid #000C38;
+    border: 2px solid #000c38;
   }
   .product-thumbnail-slider-nav .splide__arrow {
     width: 20px;
     height: 20px;
     background: transparent;
-    border: 1px solid #000C38;
+    border: 1px solid #000c38;
   }
   .product-thumbnail-slider-nav .splide__arrow svg {
-    fill: #000C38;
+    fill: #000c38;
     height: 10px;
     width: 10px;
   }
@@ -96,7 +110,7 @@
     background: unset;
     width: 48px;
     height: 48px;
-    background-color: #001C19;
+    background-color: #001c19;
     opacity: 1;
   }
   .product-main-slider .splide__arrow svg {
@@ -111,6 +125,15 @@
     height: 100%;
     background-color: #fff;
     border-radius: 20px;
+  }
+
+  .product-image-slider__video-wrapper .product-media-container {
+    --ratio: 1 !important;
+    --preview-ratio: 1 !important;
+  }
+  .product-image-slider__video-wrapper .product-media-container video {
+    object-fit: cover;
+    object-position: center;
   }
 
   @media screen and (max-width: 750px) {
@@ -133,13 +156,20 @@
     .product-thumbnail-slider-nav .splide__list {
       justify-content: center;
     }
+    /* .product-image-slider__video-wrapper .product-media-container video {
+      height: calc(100% - 120px)!important;
+    }
+    .product-image-slider__video-wrapper .product-media-container .deferred-media__poster, 
+    .product-image-slider__video-wrapper .product-media-container .deferred-media__poster img {
+      height: calc(100% - 120px)!important;
+    } */
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var mainEl = document.getElementById('product-main-slider-{{ slider_id }}');
-    var thumbEl = document.getElementById('product-thumbnail-slider-{{ slider_id }}');
+    var mainEl = document.querySelector('#MainProduct-{{ section.id }} #product-main-slider-{{ slider_id }}');
+    var thumbEl = document.querySelector('#MainProduct-{{ section.id }} #product-thumbnail-slider-{{ slider_id }}');
 
     if (!mainEl || !thumbEl) return;
 

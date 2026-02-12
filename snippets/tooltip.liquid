@@ -1,0 +1,50 @@
+<div
+	class="info-icon w-5 h-5 rounded-[20px] flex items-center justify-center text-base text-white bg-[#01afa9] relative cursor-pointer">
+	<span>!</span>
+	<div class="tooltip absolute bottom-6 left-1/2 translate-x-1/2 md:-translate-x-1/2
+              max-w-[300px] w-full min-w-[250px] whitespace-normal px-3 py-2 rounded bg-black text-white text-xs
+              opacity-0 invisible transition-all duration-200">
+		{{ block.settings.info_text }}
+	</div>
+</div>
+
+<style>
+	/* Desktop hover */
+	@media (min-width: 768px) {
+		.info-icon:hover .tooltip {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	/* Mobile positioning: right aligned */
+	@media (max-width: 767px) {
+		.info-icon .tooltip {
+			left: auto;
+			right: 0;
+			transform: none;
+		}
+	}
+
+	.tooltip.open {
+		opacity: 1;
+		visibility: visible;
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const icons = document.querySelectorAll('.info-icon');
+
+		icons.forEach(icon => {
+			const tooltip = icon.querySelector('.tooltip');
+
+			icon.addEventListener('click', () => {
+				// Toggle only on mobile
+				if (window.innerWidth <= 767) {
+					tooltip.classList.toggle('open');
+				}
+			});
+		});
+	});
+</script>

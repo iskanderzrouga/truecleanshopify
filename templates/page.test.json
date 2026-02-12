@@ -1,0 +1,302 @@
+{
+  "sections": {
+    "tc_pricing_section_below_guarantee": {
+      "type": "tc-pricing-section",
+      "blocks": {
+        "review_below": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_46485.png",
+            "heading": "<p>Rated 4.85\/5 • 50,173+ Reviews<\/p>"
+          }
+        },
+        "feature_1_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>No Rings, Slime, Or Stains<\/p>"
+          }
+        },
+        "feature_2_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>60-Second Install. No Tools.<\/p>"
+          }
+        },
+        "feature_3_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Guest-Ready 24\/7<\/p>"
+          }
+        },
+        "feature_4_below": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/material-symbols_check-circle.png",
+            "description": "<p>Fits Any Toilet<\/p>"
+          }
+        },
+        "variant_picker_below": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "horizontal_type": true,
+            "updated_version": false,
+            "feature_icon": "shopify:\/\/shop_images\/fe_check_959e2d00-4244-46b0-a296-d45da84ae743.png",
+            "sub_feature1": "Free dispensers with first order",
+            "sub_feature2": "Free fast shipping, always",
+            "sub_feature3": "Dispenser breaks? We replace it free",
+            "sub_feature4": "Priority support",
+            "sub_feature5": "Never run out - auto-delivery",
+            "sub_feature6": "Price locked in forever",
+            "sub_feature7": "",
+            "sub_feature8": ""
+          }
+        },
+        "variant_picker_updated_Cw6DHJ": {
+          "type": "variant_picker_updated",
+          "settings": {
+            "icon1": "shopify:\/\/shop_images\/material-symbols_home-rounded.png",
+            "description1": "<p>1 dispenser = 1 toilet<\/p>",
+            "icon2": "shopify:\/\/shop_images\/lets-icons_date-fill.png",
+            "description2": "<p>Each refill = 90 days<\/p>"
+          }
+        },
+        "ship_by_below": {
+          "type": "ship_by",
+          "settings": {
+            "text": "Ships by 20th Jan 2026",
+            "icon": "shopify:\/\/shop_images\/ship-icon.png",
+            "info_text": "<p>Due to high demand over new years we can ship your order by the 20th of Jan<\/p>"
+          }
+        },
+        "buy_buttons_below": {
+          "type": "buy_buttons",
+          "settings": {
+            "quantity_selector": false,
+            "redirect_checkout": false,
+            "show_dynamic_checkout": false,
+            "custom_text": "ADD TO CART",
+            "icon1": "shopify:\/\/shop_images\/image_6.png",
+            "text1": "90-Day Money-Back Guarantee",
+            "icon2": "shopify:\/\/shop_images\/image_7_1.png",
+            "text2": "Free Shipping on All Orders",
+            "icon3": "shopify:\/\/shop_images\/image_8.png",
+            "text3": "Secure Checkout"
+          }
+        },
+        "collapsible_tab_X6ii9R": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do the refills work?",
+            "icon": "none",
+            "content": "<p>Your first order comes with a dispenser + 6 months worth of cleaning refills (2). Simply order more refills before your final cartridge runs out!<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wDCwiA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will it fit my toilet?",
+            "icon": "none",
+            "content": "<p>TrueClean fits 98% of US toilets - standard, low-flow, dual-flush, and elongated. Clips to your overflow tube in 60 seconds. Doesn't fit? Return it for a full refund. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_nHJrMB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Try it 100% risk-free",
+            "icon": "none",
+            "content": "<p>Still scrubbing after 90 days? Full refund. No return needed, no questions asked. We've got 50,000+ clean toilets proving it works - but if yours isn't one of them, you pay nothing.<\/p>",
+            "page": ""
+          }
+        },
+        "testimonial_GtzPCX": {
+          "type": "testimonial",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Ellipse_21_2409e1b5-38d7-4f9a-8541-277d174ebe01.png",
+            "heading": "",
+            "description": "<p>I was scrubbing my toilet every week and dreading it. But since installing TrueClean, I haven't touched a brush in 3 months. My toilet looks cleaner than ever!<\/p>",
+            "name": "- Rachel M. Tx.",
+            "icon": "shopify:\/\/shop_images\/material-symbols_verified_a39a29c8-c23a-443d-898b-06fa4d2ce0c6.png",
+            "verified": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_below",
+        "feature_1_below",
+        "feature_2_below",
+        "feature_3_below",
+        "feature_4_below",
+        "variant_picker_below",
+        "variant_picker_updated_Cw6DHJ",
+        "ship_by_below",
+        "buy_buttons_below",
+        "collapsible_tab_X6ii9R",
+        "collapsible_tab_wDCwiA",
+        "collapsible_tab_nHJrMB",
+        "testimonial_GtzPCX"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "swooshnshine",
+        "show_shipping_banner": true,
+        "shipping_heading": "Due to extremely high demand over the New Year we are currently restocking TrueClean and will be able to ship your order within DATEPLACEHOLDER days. Thank you for your understanding and patience!",
+        "show_urgency_banner": false,
+        "urgency_heading": "GET UP TO 35% OFF WITH YOUR ORDER TODAY!",
+        "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
+        "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
+        "heading_color": "#001c19",
+        "max_width": 1280,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    },
+    "new_lp_featured_product_ta_LU3wti": {
+      "type": "new-lp-featured-product-ta",
+      "blocks": {
+        "variant_picker_CQT9Th": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "horizontal_type": true,
+            "updated_version": false,
+            "sub_feature1": "Free dispensers with first order",
+            "sub_feature2": "Free fast shipping, always",
+            "sub_feature3": "Dispenser breaks? We replace it free",
+            "sub_feature4": "Priority support",
+            "sub_feature5": "Never run out - auto-delivery",
+            "sub_feature6": "Price locked in forever",
+            "sub_feature7": "",
+            "sub_feature8": ""
+          }
+        },
+        "buy_buttons_MCC3GF": {
+          "type": "buy_buttons",
+          "settings": {
+            "quantity_selector": false,
+            "redirect_checkout": false,
+            "show_dynamic_checkout": false,
+            "custom_text": "ADD TO CART",
+            "text1": "🔒 Secure Checkout",
+            "text2": "🚚 Free Shipping",
+            "text3": "↩️ 3-Month Guarantee"
+          }
+        },
+        "option1_J4kVB9": {
+          "type": "option1",
+          "settings": {
+            "option_name": "1 Toilet",
+            "index": "1",
+            "icon": "🚽",
+            "count": "1"
+          }
+        },
+        "option1_PBcUTN": {
+          "type": "option1",
+          "settings": {
+            "option_name": "2 Toilets",
+            "index": "2",
+            "icon": "🚽🚽",
+            "count": "2"
+          }
+        },
+        "option1_rVkeMA": {
+          "type": "option1",
+          "settings": {
+            "option_name": "3 Toilets",
+            "index": "3",
+            "icon": "🚽🚽🚽",
+            "count": "3"
+          }
+        },
+        "option1_yqPjH4": {
+          "type": "option1",
+          "settings": {
+            "option_name": "4 Toilets",
+            "index": "4",
+            "icon": "🚽🚽🚽🚽",
+            "count": "4"
+          }
+        },
+        "option2_b7Bt6g": {
+          "type": "option2",
+          "settings": {
+            "option_name": "3 Months",
+            "index": "1",
+            "heading": "3 mo",
+            "text": "Try it"
+          }
+        },
+        "option2_3AzfUy": {
+          "type": "option2",
+          "settings": {
+            "option_name": "6 Months",
+            "index": "2",
+            "heading": "6 mo",
+            "text": "Popular"
+          }
+        },
+        "option2_eJV7KT": {
+          "type": "option2",
+          "settings": {
+            "option_name": "1 Year",
+            "index": "3",
+            "heading": "1 year",
+            "text": "Save 15%"
+          }
+        },
+        "option2_GkfhPG": {
+          "type": "option2",
+          "settings": {
+            "option_name": "2 Years",
+            "index": "4",
+            "heading": "2 years",
+            "text": "Best Value"
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker_CQT9Th",
+        "buy_buttons_MCC3GF",
+        "option1_J4kVB9",
+        "option1_PBcUTN",
+        "option1_rVkeMA",
+        "option1_yqPjH4",
+        "option2_b7Bt6g",
+        "option2_3AzfUy",
+        "option2_eJV7KT",
+        "option2_GkfhPG"
+      ],
+      "name": "Test",
+      "settings": {
+        "product": "trueclean-swoosh-n-shine",
+        "show_shipping_banner": true,
+        "shipping_heading": ", Orders will ship in 2 weeks due to high demand",
+        "show_urgency_banner": true,
+        "urgency_heading": "GET UP TO 50% OFF WITH YOUR ORDER TODAY!",
+        "urgency_subheading": "Hurry! This special offer is only available while supplies last!",
+        "heading": "Keep Your Toilet Sparkling Clean With Every Flush.",
+        "description": "<p>Clips in 60 seconds. Cleans automatically with every flush.<\/p>",
+        "heading_color": "#001c19",
+        "max_width": 1280,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_m": 36,
+        "padding_bottom_m": 36
+      }
+    }
+  },
+  "order": [
+    "tc_pricing_section_below_guarantee",
+    "new_lp_featured_product_ta_LU3wti"
+  ]
+}

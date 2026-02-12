@@ -25,22 +25,18 @@
         </h2>
       {% endif %}
 
-      <div class="p-logos-animation flex items-center justify-center">
-        {% for i in (1..10) %}
-          <div class="flex items-center justify-between w-full min-w-[600px] max-w-[600px] md:max-w-[1000px] {% unless forloop.first %} md:hidden {% endunless %}">
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when 'logo' %}
-                  <div class="h-[28px] md:h-[48px] min-h-[28px] md:min-h-[48px] max-h-[28px] md:max-h-[48px] px-5 md:w-[180px] md:min-w-[180px] max-w-[180px] flex items-center justify-center">
-                    {{
-                      block.settings.image
-                      | image_url: width: 300
-                      | image_tag: class: 'w-auto h-full object-contain', sizes: '300px'
-                    }}
-                  </div>
-              {% endcase %}
-            {% endfor %}
-          </div>
+      <div class="flex items-center justify-center gap-8 md:gap-12 flex-wrap">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'logo' %}
+              <div class="h-[28px] md:h-[48px] flex items-center justify-center">
+                {{
+                  block.settings.image
+                  | image_url: width: 300
+                  | image_tag: class: 'w-auto h-full object-contain', loading: 'lazy', sizes: '300px'
+                }}
+              </div>
+          {% endcase %}
         {% endfor %}
       </div>
 
@@ -53,8 +49,8 @@
             %}
             {% render 'sk-add-to-cart-button', section: section, product_form_id: product_form_id, product: product %}
           {% else %}
-            <a
-              href="{{ section.settings.button_url }}"
+<a
+  href="{{ section.settings.button_url }}"
               data-scroll-to-section
               class="new-button--secondary"
             >
@@ -87,35 +83,6 @@
     </div>
   </div>
 </div>
-
-<style>
-  /* .p-logos-animation {
-    animation: PLogosAnimation 50s linear infinite;
-    width: 4000px;
-  }
-  @keyframes PLogosAnimation {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-2000px);
-    }
-  } */
-  @media screen and (max-width: 768px) {
-    .p-logos-animation {
-      animation: PLogosAnimation 55s linear infinite;
-      width: 6000px;
-    }
-    @keyframes PLogosAnimation {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-3000px);
-      }
-    }
-  }
-</style>
 
 {% schema %}
 {

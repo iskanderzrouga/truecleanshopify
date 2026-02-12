@@ -50,7 +50,7 @@
 
         {% if section.settings.description != blank %}
           <div
-            class="text-[16px] md:text-[17px] font-medium !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+            class="text-[17px] md:text-[17px] font-medium !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
             style="color: {{ section.settings.description_color }};"
           >
             {{ section.settings.description }}
@@ -72,18 +72,18 @@
       {% if section.blocks.size > 0 %}
         <div class="w-full flex flex-col gap-6">
           <div
-            class="w-full grid grid-cols-2 border border-[#D5D5D5] rounded-[10px] md:rounded-[25px] px-3 md:px-6 py-4 md:py-7"
+            class="w-full grid grid-cols-2 border border-[#D5D5D5] rounded-[10px] md:rounded-[25px] px-3 md:px-6 py-4 md:py-7 bg-white"
             style="box-shadow: 0px 0px 10px 0px #0000000D;"
           >
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'row' %}
-                  <div class="flex flex-col w-full gap-4 items-center {% if forloop.last %} border-l border-[#D5D5D5] pl-4 {% endif %}">
+                  <div class="flex flex-col w-full gap-4 items-center {% if forloop.last %} border-l border-[#D5D5D5] pl-4 {% else %} pr-4 {% endif %}">
                     {% assign icon = block.settings.icon %}
 
                     {% if block.settings.label != blank %}
                       <div
-                        class="text-[16px] md:text-[17px] font-normal !leading-tight text-[#001C19] flex items-center justify-center gap-2 {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
+                        class="text-[16px] md:text-[17px] font-medium !leading-tight text-[#001C19] flex items-center justify-center gap-2 {% if block.settings.label_m_center %} max-md:text-center {% endif %} {% if block.settings.label_d_center %} md:text-center {% endif %}"
                         style="color: {{ block.settings.label_color }};"
                       >
                         {% if icon != blank %}
@@ -108,6 +108,8 @@
                       }}
                     {% endif %}
 
+                    {% assign main_forloop_first= forloop.first %}
+
                     <div class="w-fit mx-auto flex flex-col gap-1 md:gap-2">
                       {% for i in (1..8) %}
                         {% assign description_name = 'description' | append: i %}
@@ -123,7 +125,7 @@
                               }}
                             {% endif %}
                             <div
-                              class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-normal !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                              class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[15px] md:text-[17px] {% endif %} {% if main_forloop_first %} font-medium {%  else %} font-bold {% endif %} !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                               style="color: {{ block.settings.description_color }};"
                             >
                               {{ description }}
@@ -151,10 +153,10 @@
 
                   <div
                     class="flex flex-col gap-[10px] flex-1 bg-white rounded-[10px] md:rounded-[25px] px-3 md:px-6 py-4 md:py-7"
-                    style="box-shadow: 0px 0px 10px 0px #0000000D;"
+                    style="box-shadow: 0px 0px 10px 0px #00000033;"
                   >
                     {% if block.settings.description != blank %}
-                      <div class="text-[14px] md:text-[17px] font-normal !leading-tight text-[#001C19] [&>p>strong]:font-medium">
+                      <div class="text-[14px] md:text-[17px] font-medium !leading-tight text-[#001C19]">
                         {{ block.settings.description }}
                       </div>
                     {% endif %}

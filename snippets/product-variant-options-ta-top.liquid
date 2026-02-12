@@ -1,0 +1,62 @@
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- for block in section.blocks -%}
+    {% if block.type == 'option1' and block.settings.option_name == value %}
+      {% assign main_block = block %}
+    {% endif %}
+  {% endfor %}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  <input
+    type="radio"
+    id="{{ input_id }}"
+    name="{{ input_name | escape }}"
+    value="{{ value | escape }}"
+    form="{{ product_form_id }}"
+    {% if value.selected %}
+      checked
+    {% endif %}
+    {% if option_disabled %}
+      class="disabled"
+    {% endif %}
+    {{ input_dataset }}
+  >
+
+  <label class="pp-variant-label !p-0 !m-0 !border-none !bg-transparent" for="{{ input_id }}" style="">
+    <div class="pp-sel-btn toilet-btn h-full flex flex-col items-center justify-center gap-3">
+      <span class="emoji">
+        {% if main_block.settings.icon != blank %}
+          {{ main_block.settings.icon }}
+        {% endif %}
+      </span>
+      {% if main_block.settings.count != blank %}
+        {{ main_block.settings.count }}
+      {% endif %}
+    </div>
+    {% comment %}
+      {{ value -}}
+      {{ label_unavailable }}
+    {% endcomment %}
+  </label>
+{%- endfor -%}

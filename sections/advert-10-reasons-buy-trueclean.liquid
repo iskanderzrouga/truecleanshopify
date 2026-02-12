@@ -1,0 +1,692 @@
+<section class="bg-[#fff] p-5 lg:p-[40px]">
+  <div class="max-w-[1000px] mx-auto w-full">
+    <div class="">
+      <div class="flex flex-col gap-[20px] md:gap-[30px]">
+        {% if section.settings.heading != blank or section.settings.text != blank or section.settings.divider %}
+          <div class="flex flex-col gap-[15px] md:gap-[30px]">
+            {% if section.settings.heading != blank %}
+              <h1 class="text-[30px] lg:text-[50px] !leading-tight text-[#000] font-extrabold">
+                {{ section.settings.heading }}
+              </h1>
+            {% endif %}
+            {% if section.settings.text != blank %}
+              <div class="text-[17px] lg:text-[20px] !leading-normal text-[#000] font-normal">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+            {% if section.settings.divider %}
+              <div class="!block w-full h-[3px] bg-[#7A5EC5]"></div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div class="gap-4 md:gap-8 w-full flex flex-col">
+          {% for block in section.blocks %}
+            {% if block.type == 'avatar' %}
+              <div
+                class="flex items-center gap-3"
+              >
+                {% if block.settings.image != blank %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 64
+                    | image_tag: class: 'w-full rounded-[64px] max-w-[64px]'
+                  }}
+                {% endif %}
+
+                <div class="flex-col gap-2">
+                  <div class="flex items-center gap-2">
+                    {% if block.settings.heading != blank %}
+                      <div class="text-[#262626] text-[20px] md:text-[20px] font-bold !leading-tight">
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.verified != blank %}
+                      <div class="text-[#262626] text-[14px] md:text-[14px] font-normal !leading-tight border rounded-[50px] border-black px-4 py-1 flex items-center gap-1">
+                        {% if block.settings.icon != blank %}
+                          {{ block.settings.icon | image_url: width: 12 | image_tag: class: 'w-full max-w-[12px]' }}
+                        {% endif %}
+                        {{ block.settings.verified }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.text != blank %}
+                    <div class="text-[#262626] text-[14px] md:text-[14px] font-normal !leading-[1.5]">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if block.type == 'highlight' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="text-[14px] md:text-[20px] font-normal !leading-tight text-[#000] px-4 py-3 md:py-5 border-l-[5px] rounded-[5px]"
+                  style="color: {{ block.settings.color }}; background-color: {{ block.settings.bgcolor }}; border-color: {{ block.settings.border_color }};"
+                >
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if block.type == 'table' %}
+              <div class="w-full relative py-10 mb-10">
+                <div
+                  class="flex w-full flex-col relative rounded-[15px] md:rounded-[20px] bg-[#EFF6F6]"
+                >
+                  <div
+                    class="absolute left-[33%] -top-[30px] w-full max-w-[33%] h-full rounded-[15px] md:rounded-[20px] border !block bg-[#EDFFFD] border-[#00B7A2]"
+                    style="height: calc(100% + 60px);"
+                  ></div>
+
+                  {% for block in section.blocks %}
+                    {% if block.type == 'table_row' %}
+                      <div
+                        class="relative grid grid-cols-3"
+                      >
+                        <div class="!block w-full border-b" style="border-color: {{ block.settings.border_color }};">
+                          {% if block.settings.text1 != blank %}
+                            {% render 'table-row-comparison',
+                              text: block.settings.text1,
+                              icon: block.settings.icon1,
+                              color: block.settings.color1,
+                              block: block,
+                              center: false
+                            %}
+                          {% endif %}
+                        </div>
+                        <div
+                          class="!block w-full border-dashed border-b"
+                          style="border-color: {{ block.settings.border_color }};"
+                        >
+                          <div class="w-full flex items-center justify-center">
+                            {% if block.settings.image2 != blank %}
+                              {{
+                                block.settings.image2
+                                | image_url: width: 250
+                                | image_tag: class: 'w-full max-w-[70%]'
+                              }}
+                            {% endif %}
+                          </div>
+                          {% if block.settings.text2 != blank %}
+                            {% render 'table-row-comparison',
+                              text: block.settings.text2,
+                              icon: block.settings.icon2,
+                              color: block.settings.color2,
+                              block: block,
+                              center: false
+                            %}
+                          {% endif %}
+                        </div>
+                        <div class="!block w-full border-b" style="border-color: {{ block.settings.border_color }};">
+                          {% if block.settings.text3 != blank %}
+                            {% render 'table-row-comparison',
+                              text: block.settings.text3,
+                              color: block.settings.color3,
+                              icon: block.settings.icon3,
+                              block: block,
+                              center: false
+                            %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if block.type == 'description' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="text-[17px] md:text-[20px] font-normal !leading-tight text-[#000] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
+                >
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if block.type == 'heading' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="text-[24px] md:text-[32px] font-normal !leading-tight text-[#000]"
+                  style="color: {{ block.settings.color }};"
+                >
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if block.type == 'list' %}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
+                {% if block.settings.image != blank %}
+                  <img
+                    class="w-full"
+                    src="{{ block.settings.image | image_url : width: 700 }}"
+                    width="auto"
+                    height="auto"
+                    alt=""
+                    loading="lazy"
+                  >
+                {% endif %}
+                <div class="">
+                  <div class="flex flex-col gap-[15px] md:gap-[30px] justify-center h-full">
+                    {% if block.settings.heading != blank %}
+                      <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
+                        {{ block.settings.heading }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.text != blank %}
+                      <div class="text-[#000] text-[17px] lg:text-[20px] font-semibold leading-normal md:leading-normal">
+                        {{ block.settings.text }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.stars != blank %}
+                      <div class="flex flex-col gap-1">
+                        <div class="flex items-center gap-2">
+                          {{
+                            block.settings.stars
+                            | image_url: width: 120
+                            | image_tag: class: 'w-full max-w-[80px] md:max-w-[120px]', sizes: '120px'
+                          }}
+                          {% if block.settings.star_text1 != blank %}
+                            <div class="text-[#000] text-[16px] lg:text-[18px] font-normal leading-normal md:leading-normal">
+                              {{ block.settings.star_text1 }}
+                            </div>
+                          {% endif %}
+                        </div>
+                        {% if block.settings.star_text2 != blank %}
+                          <div class="text-[#000] text-[16px] lg:text-[18px] font-normal leading-normal md:leading-normal">
+                            {{ block.settings.star_text2 }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
+                    {% for i in (1..2) %}
+                      {% assign description_name = 'review_text' | append: i %}
+                      {% assign description = block.settings[description_name] %}
+                      {% assign name_name = 'review_name' | append: i %}
+                      {% assign name = block.settings[name_name] %}
+                      {% assign avatar_name = 'review_avatar' | append: i %}
+                      {% assign avatar = block.settings[avatar_name] %}
+                      {% if description != blank %}
+                        <div
+                          class="flex gap-2 bg-[#EFF6F6] rounded-[10px] p-4"
+                          style="color: {{ block.settings.color }};"
+                        >
+                          {% if avatar != blank %}
+                            {{
+                              avatar
+                              | image_url: width: 48
+                              | image_tag: class: 'w-full max-w-[48px] h-fit object-contain', sizes: '48px'
+                            }}
+                          {% endif %}
+
+                          <div class="flex flex-col gap-2">
+                            <div
+                              class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]"
+                            >
+                              {{ description }}
+                            </div>
+                            <div class="flex items-center justify-between">
+                              {% if name != blank %}
+                                <div
+                                  class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#000]"
+                                >
+                                  {{ name }}
+                                </div>
+                              {% endif %}
+
+                              <div class="flex gap-2">
+                                {% if block.settings.review_verifeid_icon != blank %}
+                                  {{
+                                    block.settings.review_verifeid_icon
+                                    | image_url: width: 16
+                                    | image_tag: class: 'w-full max-w-[16px]', sizes: '16px'
+                                  }}
+                                {% endif %}
+                                {% if block.settings.review_verified != blank %}
+                                  <div
+                                    class="text-[12px] md:text-[12px] font-normal !leading-tight text-[#000]"
+                                  >
+                                    {{ block.settings.review_verified }}
+                                  </div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if block.settings.button_label != blank %}
+                      <div class="w-full md:w-fit flex flex-col items-center justify-center gap-3">
+                        <a href="{{ block.settings.button_url }}" class="new-button--primary">
+                          {{ block.settings.button_label }}
+                        </a>
+                        {% if block.settings.btn_bottom_text != blank %}
+                          <div
+                            class="text-[13px] md:text-[13px] font-medium !leading-tight text-[#001C19] flex items-center justify-center gap-2"
+                            style="color: {{ block.settings.btn_bottom_text_color }};"
+                          >
+                            {% if block.settings.btn_bottom_icon != blank %}
+                              {{
+                                block.settings.btn_bottom_icon
+                                | image_url: width: 16
+                                | image_tag: class: 'w-full max-w-[16px] h-fit object-contain', sizes: '16px'
+                              }}
+                            {% endif %}
+                            {{ block.settings.btn_bottom_text }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% if section.settings.show_button %}
+      <div class="fixed-button-bottom fixed bottom-0 left-0 hidden items-center justify-center w-full p-4 md:hidden">
+        {% if section.settings.button_text != blank %}
+          <div class="w-full">
+            <a
+              class="!text-white text-[18px] lg:text-[24px] font-bold flex items-center gap-2 p-[18px] md:p-4 !bg-[#7A5EC5] rounded-[50px] justify-center mx-auto text-center w-full max-w-[340px] !no-underline"
+              href="{{ section.settings.button_url }}"
+            >
+              <span>{{ section.settings.button_text }}</span>
+              {% render 'icon-arrow-right' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #gorgias-chat-container {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .fixed-button-bottom.active {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('scroll', () => {
+    const fixedButton = document.querySelector('.fixed-button-bottom');
+    if (window.scrollY > 400) {
+      fixedButton.classList.add('active');
+    } else {
+      fixedButton.classList.remove('active');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Adv 10 reasons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Divider",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get 35% OFF Today"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "avatar",
+      "name": "Avatar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Verified"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Table",
+      "settings": [
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent Color",
+          "default": "#7A5EC5"
+        }
+      ]
+    },
+    {
+      "type": "table_row",
+      "name": "Table Row",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "richtext",
+          "id": "text1",
+          "label": "Text 1"
+        },
+        {
+          "type": "color",
+          "id": "color1",
+          "label": "Color 1",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "richtext",
+          "id": "text2",
+          "label": "Text 2"
+        },
+        {
+          "type": "color",
+          "id": "color2",
+          "label": "Color 2",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "richtext",
+          "id": "text3",
+          "label": "Text 3"
+        },
+        {
+          "type": "color",
+          "id": "color3",
+          "label": "Color 3",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#D9CFCF"
+        },
+        {
+          "type": "checkbox",
+          "id": "header",
+          "label": "Header",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bgcolor",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#D7CDE5"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "Background Color",
+          "default": "#FBFFE6"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bg",
+          "label": "Show Background",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "name": "List",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "stars",
+          "label": "Stars"
+        },
+        {
+          "type": "richtext",
+          "id": "star_text1",
+          "label": "Star Text 1"
+        },
+        {
+          "type": "richtext",
+          "id": "star_text2",
+          "label": "Star Text 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "review_avatar1",
+          "label": "Review Avatar 1"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text1",
+          "label": "Review Text 1"
+        },
+        {
+          "type": "richtext",
+          "id": "review_name1",
+          "label": "Review Name 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "review_avatar2",
+          "label": "Review Avatar 2"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text2",
+          "label": "Review Text 2"
+        },
+        {
+          "type": "richtext",
+          "id": "review_name2",
+          "label": "Review Name 2"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text3",
+          "label": "Review Text 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "review_verifeid_icon",
+          "label": "Review Verifeid Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "review_verified",
+          "label": "Review Verifeid"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "btn_bottom_icon",
+          "label": "Btn Bottom Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "btn_bottom_text",
+          "label": "Btn Bottom Text"
+        },
+        {
+          "type": "color",
+          "id": "btn_bottom_text_color",
+          "label": "Buttom Bottom Text Color",
+          "default": "#001C19"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Adv 10 reasons"
+    }
+  ]
+}
+{% endschema %}

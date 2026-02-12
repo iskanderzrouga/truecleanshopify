@@ -111,7 +111,7 @@
     <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[80px] product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="md:col-span-5">
         <div class="w-full">
-          {% render 'product-image-slider-vertical', product: product %}
+          {% render 'product-image-slider-vertical', product: product, section: section %}
         </div>
 
         {% comment %}
@@ -123,9 +123,11 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {% when 'testimonial' %}
-              <div class="hidden md:block w-full mt-7">
-                {% render 'new-lp-featured-product-testimonial', block: block %}
-              </div>
+              {% if block.settings.desktop_under_slider %}
+                <div class="hidden md:block w-full mt-7">
+                  {% render 'new-lp-featured-product-testimonial', block: block %}
+                </div>
+              {% endif %}
           {% endcase %}
         {% endfor %}
       </div>
@@ -257,14 +259,14 @@
                 </div>
               {% when 'heading' %}
                 {% if block.settings.heading != blank %}
-                  <h1 class="new-lp-featured-product__heading text-[20px] lg:text-[22px] font-bold !leading-tight text-[#001C19] !mt-2 !mb-2">
+                  <h1 class="new-lp-featured-product__heading text-[24px] lg:text-[24px] font-bold !leading-tight text-[#001C19] !mt-2 !mb-2">
                     {{ block.settings.heading }}
                   </h1>
                 {% endif %}
 
               {% when 'description' %}
                 {% if block.settings.description != blank %}
-                  <div class="new-lp-featured-product__description text-[14px] md:text-[14px] font-normal !leading-snug text-[#4a5555] !m-0">
+                  <div class="new-lp-featured-product__description text-[18px] md:text-[20px] font-medium !leading-snug text-[#001C19] !m-0">
                     {{ block.settings.description }}
                   </div>
                 {% endif %}
@@ -277,7 +279,7 @@
                 {% endif %}
 
               {% when 'testimonial' %}
-                <div class="block md:hidden w-full">
+                <div class="block {% if block.settings.desktop_under_slider %} md:hidden {% endif %} w-full">
                   {% render 'new-lp-featured-product-testimonial', block: block %}
                 </div>
 
@@ -287,18 +289,25 @@
                     {{
                       block.settings.icon
                       | image_url: width: 24
-                      | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px', preload: true
+                      | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px'
                     }}
                   {% endif %}
-
                   {% if block.settings.text != blank %}
                     {% assign date_day = 'now' | date: '%d' %}
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
-                    {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year  %}
-                    <div class="text-xs md:text-[16px] font-normal !leading-tight text-[#001C19]">
-                      {{ block.settings.text |  highlight: "DATEPLACEHOLDER" | replace: 'DATEPLACEHOLDER', date_string }}
+                    {% assign date_string = date_day
+                      | append: ' '
+                      | append: date_month
+                      | append: ' '
+                      | append: date_year
+                    %}
+                    <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
+                      {{ block.settings.text | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
+                  {% endif %}
+                  {% if block.settings.info_text != blank %}
+                    {% render 'tooltip', block: block %}
                   {% endif %}
                 </div>
 
@@ -362,7 +371,7 @@
                 </div>
 
               {% when 'feature_wrapper' %}
-                <div class="flex flex-col gap-2 !my-4 rounded-lg p-3 md:p-4" style="background: linear-gradient(135deg, #f7fcfb 0%, #f0f9f7 100%);">
+                <div class="flex flex-col gap-2 !my-4">
                   {% for block in section.blocks %}
                     {% if block.type == 'feature' %}
                       <div class="flex items-start gap-2">
@@ -372,7 +381,7 @@
                           | image_tag: class: 'w-5 h-5 mt-0.5 object-contain flex-shrink-0', preload: true
                         }}
                         <div
-                          class="text-[#001C19] text-[15px] md:text-[16px] font-bold !leading-normal"
+                          class="text-[#001C19] text-[16px] md:text-[16px] font-semibold !leading-normal"
                           style="color: {{section.settings.color_primary}};"
                         >
                           {{ block.settings.description }}
@@ -727,7 +736,8 @@
                     {% render 'product-variant-picker-quinary',
                       product: product,
                       block: block,
-                      product_form_id: product_form_id
+                      product_form_id: product_form_id,
+                      section: section
                     %}
                   {% else %}
                     {% render 'product-variant-picker-tertiary',
@@ -1352,6 +1362,12 @@
       "name": "Testimonial",
       "settings": [
         {
+          "type": "checkbox",
+          "id": "desktop_under_slider",
+          "label": "Desktop Under Slider",
+          "default": true
+        },
+        {
           "type": "image_picker",
           "id": "avatar",
           "label": "Avatar"
@@ -1401,6 +1417,11 @@
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "info_text",
+          "label": "Info Text"
         }
       ]
     },
@@ -1717,6 +1738,12 @@
       "name": "t:sections.main-product.blocks.buy_buttons.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "subscription_default",
+          "default": false,
+          "label": "Subscription Button as Default"
+        },
         {
           "type": "checkbox",
           "id": "quantity_selector",
@@ -2942,6 +2969,12 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "above_fold",
+      "label": "Above Fold",
+      "default": false
+    },
     {
       "type": "product",
       "id": "product",

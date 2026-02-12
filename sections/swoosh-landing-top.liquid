@@ -1,0 +1,653 @@
+{{ 'new-lp-global.css' | asset_url | stylesheet_tag }}
+{{ 'swoosh-final-overrides.css' | asset_url | stylesheet_tag }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+<div class="swoosh-final">
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="badge badge--white" style="margin-bottom:12px; font-size:0.72rem; color:var(--text); border:1.5px solid #ccc; box-shadow:1px 1px 0 #ccc;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round" style="vertical-align:middle;margin-right:3px;">
+            <polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/>
+          </svg>
+          200,000+ Homeowners Stopped Scrubbing
+        </div>
+        <h1 class="hl hero-hl">Your Brush Can't Fix Hard Water. This 60-Second Clip-On<span class="neon-hl">Can.</span></h1>
+        <p class="sub">SwooshnShine™ treats your water every flush — neutralizing minerals before they bond to porcelain. Rings never form. Scrubbing drops 80%. One cartridge lasts 3 months.</p>
+
+        <div class="hero-img-mobile">
+          <img src="https://truecleanhome.com/cdn/shop/files/Rectangle_240648346_3_5577e125-3cc7-4cf0-97ae-c1190d772bdd.png?v=1769544255&width=700" alt="TrueClean Kit" class="hero-product-img" fetchpriority="high">
+        </div>
+
+        <div class="hero-pills">
+          <span class="hero-pill"><span class="dot"></span> 4.85 Stars · 5,247+ Reviews</span>
+          <span class="hero-pill"><span class="dot"></span> 60-Sec Install</span>
+          <span class="hero-pill"><span class="dot"></span> Fits Any Toilet</span>
+          <span class="hero-pill"><span class="dot"></span> Pet-Safe Formula</span>
+        </div>
+
+        <div class="hero-quote" style="display:flex; align-items:center; gap:16px;">
+          <img src="{{ 'customer-avatar.png' | asset_url }}" alt="Rachel M." style="width:72px; height:72px; border-radius:50%; border:3px solid var(--primary); object-fit:cover; flex-shrink:0;">
+          <div>
+            <q>I have the worst hard water in Texas. Now a quick wipe and everything comes right off. No more mineral rings.</q>
+            <div class="attr">- Rachel M., Texas
+              <svg class="hero-star" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              <svg class="hero-star" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              <svg class="hero-star" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              <svg class="hero-star" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              <svg class="hero-star" viewBox="0 0 24 24" fill="#BDFF00" stroke="#0A1F1C" stroke-width="2" stroke-linejoin="round"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+            </div>
+          </div>
+        </div>
+        <a href="#buy" class="btn btn--neon">Treat Your Water →</a>
+      </div>
+      <div class="hero-visual">
+        <img src="https://truecleanhome.com/cdn/shop/files/Rectangle_240648346_3_5577e125-3cc7-4cf0-97ae-c1190d772bdd.png?v=1769544255&width=700" alt="TrueClean Kit" class="hero-product-img" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-items">
+        <span class="marquee-item">✨ Works Between Flushes</span>
+        <span class="marquee-item">🫧 Always Guest-Ready</span>
+        <span class="marquee-item">💪 Every Flush Cleans Your Bowl </span>
+        <span class="marquee-item">⚡ 60-Second Install</span>
+        <span class="marquee-item">🎉 200,000+ Happy Homes</span>
+        <span class="marquee-item">🧼 Cleans While You Sleep</span>
+        <span class="marquee-item">🐾 Pet-Safe Formula</span>
+      </div>
+      <div class="marquee-items">
+        <span class="marquee-item">✨ Works Between Flushes</span>
+        <span class="marquee-item">🫧 Always Guest-Ready</span>
+        <span class="marquee-item">💪 Every Flush Cleans Your Bowl</span>
+        <span class="marquee-item">⚡ 60-Second Install</span>
+        <span class="marquee-item">🎉 200,000+ Happy Homes</span>
+        <span class="marquee-item">🧼 Cleans While You Sleep</span>
+        <span class="marquee-item">🐾 Pet-Safe Formula</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM -->
+  <section class="problem section tc">
+    <div class="container">
+      <h2 class="hl">You Scrub. It Comes Back. <span class="highlight">It's Not You — It's Your Water.</span></h2>
+      <p class="sub" style="margin:12px auto 0;">85% of US homes have hard water. Every flush deposits minerals onto your porcelain. No brush can fix that.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <img src="{{ 'problem-1-every-flush-stains.png' | asset_url }}" alt="Every Flush Deposits Minerals" class="card-img" loading="lazy">
+          <h3>Every Flush Deposits Minerals</h3>
+          <p>Hard water coats your bowl with calcium and magnesium <strong>every single flush.</strong> They harden within days.</p>
+        </div>
+        <div class="problem-card">
+          <img src="{{ 'problem-2-scrubbing-cant-keep-up.png' | asset_url }}" alt="The Surface Gets Rougher" class="card-img" loading="lazy">
+          <h3>The Surface Gets Rougher</h3>
+          <p>As minerals build up, your porcelain gets rough — <strong>like sandpaper.</strong> Now dirt and bacteria stick even faster.</p>
+        </div>
+        <div class="problem-card">
+          <img src="{{ 'problem-3-cleaners-attack-late.png' | asset_url }}" alt="Other Cleaners? Wrong Battle." class="card-img" loading="lazy">
+          <h3>Other Cleaners? Wrong Battle.</h3>
+          <p>They scrub the symptom. Your water puts it right back. <strong>You need to treat the water itself.</strong></p>
+        </div>
+        <div class="problem-card">
+          <img src="https://cdn.shopify.com/s/files/1/0960/0453/8733/files/1whira75cwy_2.jpg?v=1770044345" alt="Hard Water Buildup" class="card-img" loading="lazy">
+          <h3>Hard Water Buildup</h3>
+          <p>Calcium and lime harden into cement-like buildup within days. <strong>The rough surface traps dirt and bacteria</strong> — that's why it gets worse over time, not better.</p>
+        </div>
+        <div class="problem-card">
+          <img src="https://cdn.shopify.com/s/files/1/0960/0453/8733/files/images_1_1.jpg?v=1770044345" alt="Pink Slime Keeps Coming Back" class="card-img" loading="lazy">
+          <h3>Pink Slime Keeps Coming Back</h3>
+          <p>That pink ring isn't dirt — it's bacteria that colonizes the rough mineral buildup hard water creates. <strong>Clean the surface, but the rough minerals underneath let it regrow in days.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. INTRODUCING + HOW IT WORKS -->
+  <section class="intro section tc">
+    <div class="container">
+      <div class="badge badge--white" style="margin-bottom:20px;">
+        <img src="{{ 'icon-lightbulb.png' | asset_url }}" alt="Idea" style="width:24px;height:24px;vertical-align:middle;margin-right:3px;margin-top:-3px;margin-bottom:-3px;border-radius:50%;">
+        The Fix
+      </div>
+      <h2 class="hl">What If Every Flush @span class="highlight">Treated the Water Instead?</span></h2>
+      <p class="intro-desc">TrueClean clips onto your bowl and treats the water itself. Every flush releases a naturally derived formula that <strong>neutralizes minerals before they can bond to porcelain.</strong></p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-header"><div class="step-num">1</div><h3>Clip It In</h3></div>
+          <img src="{{ 'step1-clip-it-in.gif' | asset_url }}" alt="Clip It In" class="step-img" loading="lazy">
+          <p><strong>60 seconds.</strong> Clip the dispenser, plug in the cartridge, done. No tools needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-header"><div class="step-num">2</div><h3>Flush & Forget</h3></div>
+          <img src="{{ 'step2-flush-as-usual.gif' | asset_url }}" alt="Flush As Usual" class="step-img" loading="lazy">
+          <p>Every flush releases a <strong>naturally derived cleaning formula</strong> straight into the bowl. Minerals don't stand a chance.</p>
+        </div>
+        <div class="step">
+          <div class="step-header"><div class="step-num">3</div><h3>Stay Clean 24/7</h3></div>
+          <img src="{{ 'step3-rings-never-form.gif' | asset_url }}" alt="Rings Never Form" class="step-img" loading="lazy">
+          <p>Minerals dissolve and flush away instead of bonding. <strong>The surface stays smooth. Nothing sticks.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHAT'S INSIDE -->
+  <section class="inside section tc">
+    <div class="container">
+      <h2 class="hl">What's Inside <span class="highlight">Your Kit</span></h2>
+
+      <div class="inside-grid">
+        <div class="inside-card">
+          <img src="{{ 'stain-blaster-cartridge.png' | asset_url }}" alt="Cleaning Cartridge" class="inside-img" loading="lazy">
+          <h3>The Treatment Cartridge</h3>
+          <ul>
+            <li><span class="check"><img src="{{ 'icon-blast.png' | asset_url }}" alt=""></span> <strong>Blasts away</strong> stains & buildup</li>
+            <li><span class="check"><img src="{{ 'icon-bacteria.png' | asset_url }}" alt=""></span> <strong>Neutralizes</strong> minerals & bacteria</li>
+            <li><span class="check"><img src="{{ 'icon-calendar.png' | asset_url }}" alt=""></span> <strong>3 months</strong> per cartridge</li>
+          </ul>
+        </div>
+        <div class="inside-card">
+          <img src="{{ 'smart-dispenser.png' | asset_url }}" alt="Bowl Dispenser" class="inside-img" loading="lazy">
+          <h3>The Smart Dispenser</h3>
+          <ul>
+            <li><span class="check"><img src="{{ 'icon-target.png' | asset_url }}" alt=""></span> <strong>Concentrates</strong> cleaner between flushes</li>
+            <li><span class="check"><img src="{{ 'icon-droplet.png' | asset_url }}" alt=""></span> <strong>Right dose</strong>, every single flush</li>
+            <li><span class="check"><img src="{{ 'icon-lightning.png' | asset_url }}" alt=""></span> <strong>Clips on</strong> in seconds — no tools</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. KEY FEATURES -->
+  <section class="features section">
+    <div class="container">
+      <div class="tc">
+        <h2 class="hl">Here's What Happens <span class="highlight">After You Flush</span></h2>
+        <p class="sub" style="margin:12px auto 0;">Spoiler: your toilet starts doing the work for you.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-block">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--white);border:2.5px solid var(--dark);box-shadow:2px 2px 0 var(--dark);flex-shrink:0;">
+              <img src="{{ 'icon-droplet-feature.png' | asset_url }}" alt="Water drop" style="width:36px;height:36px;border-radius:50%;">
+            </span>
+            <h3>Every Flush Cleans Your Bowl</h3>
+          </div>
+          <p>From flush one, citric acid and plant-derived surfactants <strong>dissolve minerals and break down grime before they bond</strong> to your bowl. No buildup = no rings. Existing stains? <strong>Start dissolving from flush one.</strong></p>
+        </div>
+        <div class="feature-block">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--white);border:2.5px solid var(--dark);box-shadow:2px 2px 0 var(--dark);flex-shrink:0;">
+              <img src="{{ 'icon-microscope.png' | asset_url }}" alt="Active cleaning" style="width:36px;height:36px;border-radius:50%;">
+            </span>
+            <h3>Works Between Flushes Too</h3>
+          </div>
+          <p>The formula doesn't just rinse and disappear. It <strong>stays concentrated in the bowl water</strong>, actively cleaning even when nobody's home. Hard water rings, pink slime, grime — <strong>handled around the clock.</strong> And every ingredient is naturally derived and pet-safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VS COMPARISON -->
+  <section class="vs section">
+    <div class="container">
+      <div class="tc">
+        <h2 class="hl">"Why Not Just Use <span class="highlight">Tank Tablets?</span>"</h2>
+        <p class="sub" style="margin:12px auto 0;">Cheap? Yes. Smart? <strong>Not so much.</strong></p>
+      </div>
+
+      <div class="vs-box">
+        <div class="vs-grid">
+          <div class="vs-col vs-col--bad">
+            <img src="{{ 'vs-tank-tablets.png' | asset_url }}" alt="Tank Tablets damage" class="vs-img" loading="lazy">
+            <h3>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--white);border:2.5px solid var(--dark);box-shadow:2px 2px 0 var(--dark);vertical-align:middle;margin-right:8px;">
+                <img src="{{ 'icon-skull.png' | asset_url }}" alt="Danger" style="width:28px;height:28px;border-radius:50%;">
+              </span>
+              Tank Tablets
+            </h3>
+            <ul class="vs-list">
+              <li><span class="vs-icon vs-icon--bad">✗</span>Dissolves in days, not months</li>
+              <li><span class="vs-icon vs-icon--bad">✗</span>Corrodes your toilet parts</li>
+              <li><span class="vs-icon vs-icon--bad">✗</span>Causes leaks over time</li>
+              <li><span class="vs-icon vs-icon--bad">✗</span>$300+ plumber repair bills</li>
+            </ul>
+          </div>
+          <div class="vs-col vs-col--good">
+            <img src="{{ 'vs-swoosh-product.png' | asset_url }}" alt="TrueClean safe" class="vs-img" loading="lazy">
+            <h3>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--white);border:2.5px solid var(--dark);box-shadow:2px 2px 0 var(--dark);vertical-align:middle;margin-right:8px;">
+                <img src="{{ 'icon-sparkle.png' | asset_url }}" alt="Sparkle" style="width:28px;height:28px;border-radius:50%;">
+              </span>
+              TrueClean
+            </h3>
+            <ul class="vs-list">
+              <li><span class="vs-icon vs-icon--good">✓</span>Cleans every flush, automatically</li>
+              <li><span class="vs-icon vs-icon--good">✓</span>1 cartridge lasts 3 months</li>
+              <li><span class="vs-icon vs-icon--good">✓</span>Works between flushes too</li>
+              <li><span class="vs-icon vs-icon--good">✓</span>Naturally derived. Pet-safe.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pro-quote">
+        <img src="{{ 'plumber-avatar.png' | asset_url }}" alt="Plumber Mike R." class="pro-quote-avatar" loading="lazy">
+        <div>
+          <q>I tell every homeowner with hard water the same thing — stop scrubbing the symptom. TrueClean treats the water itself. It's the only system I recommend.</q>
+          <span class="attr">- Mike R., Licensed Plumber, 15 years</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FULL COMPARISON TABLE -->
+  <section class="compare-table-section section tc">
+    <div class="container">
+      <h2 class="hl">How TrueClean <span class="highlight">Compares</span></h2>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="tc-col">TrueClean</th>
+              <th>Tank Tabs</th>
+              <th>Brush & Bleach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Keeps your tank safe</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><td>Won't wreck your plumbing</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="yes">✓</span></td></tr>
+            <tr><td>Stops stains before they start</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>No choking fumes</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>Works while you sleep</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>Clip it & forget it</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>Money-back guarantee</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>Treats hard water at the source</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+            <tr><td>Pet-safe ingredients</td><td class="tc-highlight"><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7b. REFILL COST BREAKDOWN -->
+  <section class="refill-section section tc">
+    <div class="container">
+      <h2 class="hl">"But Won't I Keep <span class="highlight">Paying for Refills?</span>"</h2>
+      <p class="sub" style="margin:8px auto 0;">Let's do the math. You're already spending more.</p>
+
+      <div class="refill-compare">
+        <!-- What you're doing now -->
+        <div class="refill-col refill-col--old">
+          <div class="refill-col__header refill-col__header--old">What You're Doing Now</div>
+          <div class="refill-col__body">
+            <div class="refill-row">
+              <span class="refill-label">CLR, Lime-A-Way, pumice stones</span>
+              <span class="refill-cost">$5–10<span class="refill-per">/mo</span></span>
+            </div>
+            <div class="refill-row">
+              <span class="refill-label">Bleach + brush + your weekends</span>
+              <span class="refill-cost">$5–8<span class="refill-per">/mo</span></span>
+            </div>
+            <div class="refill-row">
+              <span class="refill-label">That pumice stone that scratched your porcelain</span>
+              <span class="refill-cost">$8</span>
+            </div>
+            <div class="refill-row">
+              <span class="refill-label">Plumber when things break</span>
+              <span class="refill-cost">$300<span class="refill-per">+</span></span>
+            </div>
+            <div class="refill-total refill-total--old">
+              <span>Total</span>
+              <span>$10–15+/mo <em>(plus surprise bills)</em></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TrueClean -->
+        <div class="refill-col refill-col--new">
+          <div class="refill-col__header refill-col__header--new">TrueClean Refills</div>
+          <div class="refill-col__body">
+            <div class="refill-row">
+              <span class="refill-label">1 cartridge = 3 months of clean</span>
+              <span class="refill-cost refill-cost--good">~$4<span class="refill-per">/mo</span></span>
+            </div>
+            <div class="refill-row">
+              <span class="refill-label">No brushes. No bleach. No plumber.</span>
+              <span class="refill-cost refill-cost--good">$0</span>
+            </div>
+            <div class="refill-total refill-total--new">
+              <span>Total</span>
+              <span>~$4/mo. That's it.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom callout -->
+      <div class="refill-callout">
+        <div class="refill-callout__main">
+          <span class="refill-callout__icon">✨</span>
+          <div>
+            <strong>One cartridge. Three months. Four bucks a month.</strong>
+            <span class="refill-callout__sub">Less than the CLR and pumice stones you're buying now — and it actually works.</span>
+          </div>
+        </div>
+        <div class="refill-callout__stock">
+          $12/cartridge — or grab a <strong>3-pack for $30</strong> and forget about it for 9 months.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* ── Refill Cost Section ── */
+    .refill-section {
+      background: var(--warm, #FFF9EE);
+    }
+    .refill-section .hl {
+      font-size: 2.8rem;
+    }
+    .refill-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 44px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .refill-col {
+      background: var(--white, #fff);
+      border: var(--border, 3px solid #0A1F1C);
+      border-radius: var(--r-lg, 24px);
+      box-shadow: var(--shadow, 5px 5px 0 #0A1F1C);
+      overflow: hidden;
+    }
+    .refill-col__header {
+      padding: 14px 20px;
+      font-family: var(--display, 'Bricolage Grotesque', sans-serif);
+      font-weight: 800;
+      font-size: 1rem;
+      text-align: center;
+      border-bottom: var(--border, 3px solid #0A1F1C);
+    }
+    .refill-col__header--old {
+      background: #FFF0F0;
+      color: var(--dark, #0A1F1C);
+    }
+    .refill-col__header--new {
+      background: var(--primary, #00BFA6);
+      color: var(--white, #fff);
+    }
+    .refill-col__body {
+      padding: 18px 20px;
+    }
+    .refill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #E8ECE9;
+      gap: 12px;
+    }
+    .refill-row:last-of-type {
+      border-bottom: none;
+    }
+    .refill-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text, #0A1F1C);
+      text-align: left;
+    }
+    .refill-note {
+      color: var(--red, #FF4D4D);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .refill-cost {
+      font-family: var(--display, 'Bricolage Grotesque', sans-serif);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark, #0A1F1C);
+      white-space: nowrap;
+    }
+    .refill-cost--good {
+      color: var(--primary, #00BFA6);
+    }
+    .refill-per {
+      font-weight: 500;
+      font-size: 0.78rem;
+      color: var(--text-mid, #6B7B76);
+    }
+    .refill-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: var(--r-md, 16px);
+      font-family: var(--display, 'Bricolage Grotesque', sans-serif);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    .refill-total--old {
+      background: #FFF0F0;
+      color: var(--red, #FF4D4D);
+    }
+    .refill-total--old em {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+    .refill-total--new {
+      background: var(--mint, #EDFCF8);
+      color: var(--primary, #00BFA6);
+    }
+
+    /* Callout */
+    .refill-callout {
+      max-width: 820px;
+      margin: 32px auto 0;
+      background: var(--white, #fff);
+      border: var(--border, 3px solid #0A1F1C);
+      border-radius: var(--r-lg, 24px);
+      box-shadow: var(--shadow, 5px 5px 0 #0A1F1C);
+      overflow: hidden;
+    }
+    .refill-callout__main {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: var(--border, 3px solid #0A1F1C);
+    }
+    .refill-callout__icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .refill-callout__main strong {
+      font-family: var(--display, 'Bricolage Grotesque', sans-serif);
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .refill-callout__sub {
+      font-size: 0.88rem;
+      color: var(--text-mid, #6B7B76);
+    }
+    .refill-callout__stock {
+      padding: 14px 24px;
+      background: var(--mint, #EDFCF8);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--dark, #0A1F1C);
+      text-align: center;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .refill-section .hl {
+        font-size: 1.8rem;
+      }
+      .refill-compare {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .refill-col__body {
+        padding: 14px 16px;
+      }
+      .refill-label {
+        font-size: 0.82rem;
+      }
+      .refill-cost {
+        font-size: 0.92rem;
+      }
+      .refill-total {
+        font-size: 0.85rem;
+        padding: 10px 14px;
+      }
+      .refill-callout__main {
+        padding: 16px 18px;
+      }
+      .refill-callout__main strong {
+        font-size: 0.95rem;
+      }
+      .refill-callout__stock {
+        padding: 12px 18px;
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+
+  <!-- 8. SOCIAL PROOF -->
+  <section class="social-proof section tc">
+    <div class="container">
+      <h2 class="hl" style="font-size:3.2rem;">Trusted by Over <span style="color:var(--primary);">200K</span> Homeowners</h2>
+
+      <div class="social-photos">
+        <img src="{{ 'customer-result-1.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="{{ 'customer-result-2.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="{{ 'customer-result-3.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="{{ 'customer-result-4.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="{{ 'customer-result-5.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="{{ 'customer-result-6.png' | asset_url }}" alt="Customer result" class="social-photo social-photo--desktop" loading="lazy">
+        <img src="https://truecleanhome.com/cdn/shop/files/Rectangle_240648346_4_1b22c5e1-4e4d-4b4c-b0d1-5c2b9944ef39.png?v=1769541257&width=700" alt="Customer results collage" class="social-photo social-photo--mobile" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. RISK-FREE CTA -->
+  <section class="risk-free section">
+    <h2>Try TrueClean 100% Risk-Free for 3 Months</h2>
+    <img src="https://truecleanhome.com/cdn/shop/files/Rectangle_240648346_8.png?v=1769540897&width=700" alt="Money Back Guarantee" class="guarantee-img" loading="lazy">
+    <p class="rf-sub">We're so confident TrueClean will beat your hard water, we'll give you 3 full months to prove us wrong. If those rings come back — full refund, zero drama.</p>
+    <a href="#buy" class="btn btn--dark">Try TrueClean Risk-Free →</a>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews section tc">
+    <div class="container">
+      <h2 class="hl" style="text-wrap:balance;">Don't Take Our Word <span class="highlight">For It</span></h2>
+
+      <div class="reviews-header">
+        <div class="big-score">4.85</div>
+        <div class="stars-block">
+          <div class="stars">★★★★★</div>
+          <div class="count">5,247 Reviews</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="rev">
+          <div class="stars">★★★★★</div>
+          <h4>A Whiff of Clean. NOT That Other Thing.</h4>
+          <q>We have well water, and without treatment the bowls just wouldn't stay clean. I was spending way too long scrubbing hard water rings. Since installing this, a quick wipe is all it takes — the mineral buildup just comes right off. No more fighting with the brush every week.</q>
+          <div class="rev-who">
+            <div class="rev-av">R</div>
+            <div><div class="name">Rebecca</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+
+        <div class="rev">
+          <img src="{{ 'review-img-1.png' | asset_url }}" alt="Fred R. review" class="rev-img" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <h4>Life Changing!</h4>
+          <q>OK, the headline may be a little dramatic but solving little aggravations can have a huge impact on daily life. Our toilets had to be cleaned every 3-4 days or they'd get that nasty black stuff. Each toilet had a different problem - rings, black spots, dripping down the sides. This solved all of them. Our toilets are perfectly clean with zero algae. Worth every penny.</q>
+          <div class="rev-who">
+            <div class="rev-av">F</div>
+            <div><div class="name">Fred R.</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+
+        <div class="rev">
+          <div class="stars">★★★★★</div>
+          <h4>Licensed Plumber - I Recommend This to My Customers</h4>
+          <q>As a licensed plumber, I tried this at our house first before recommending it to customers. It works great and keeps the ring out of the bowl. Very easy to install - I haven't found a toilet it doesn't work on yet. The cartridges last about 3 months depending on how often you flush.</q>
+          <div class="rev-who">
+            <div class="rev-av">D</div>
+            <div><div class="name">David</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+
+        <div class="rev">
+          <img src="https://www.truecleanhome.com/cdn/shop/files/clipboard-image-1769533490.png?v=1769533539&width=300" alt="Carol N. review" class="rev-img" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <h4>These Suckers Work!!!</h4>
+          <q>I am blown away! I've lived in this house for almost 8 years fighting to keep the toilets clean. Had to clean twice a week to keep them presentable. Since installing these I barely have to touch a brush - maybe a quick once-over every few weeks at most. I am beyond thrilled!</q>
+          <div class="rev-who">
+            <div class="rev-av">C</div>
+            <div><div class="name">Carol N.</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+
+        <div class="rev">
+          <div class="stars">★★★★★</div>
+          <h4>Best Toilet Product in Ages!</h4>
+          <q>This keeps the bowl clean with only an occasional light scrub - maybe once a month. I prefer the bleach version which gives the bathroom a light, clean smell and keeps the bowl crystal clear. I've been using it in 2 bathrooms for over a year and it's already saved me money. You will not regret this!</q>
+          <div class="rev-who">
+            <div class="rev-av">D</div>
+            <div><div class="name">Desert734</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+
+        <div class="rev">
+          <img src="{{ 'review-img-6.png' | asset_url }}" alt="Andy F. review" class="rev-img" loading="lazy">
+          <div class="stars">★★★★★</div>
+          <h4>Life-Changing for Busy People</h4>
+          <q>Now I only clean the bowl once a month instead of every other week. Just change the cartridge every three months. It releases a little bit of cleaner every time you flush. Game-changing product, especially for us busy folks. Saves mad time!</q>
+          <div class="rev-who">
+            <div class="rev-av">A</div>
+            <div><div class="name">Andy F.</div><div class="tag">Verified Buyer</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Swoosh Landing Top",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Swoosh Landing Top"
+    }
+  ]
+}
+{% endschema %}

@@ -10,6 +10,7 @@
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
+    class="subscription-type-variant-select"
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
     {{ block.shopify_attributes }}
@@ -27,47 +28,12 @@
           endif
         endif
       -%}
-      {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
-            </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
-      {%- elsif picker_type == 'button' -%}
+
+      {% if option.name == 'Count' %}
         <fieldset class="js product-form__input product-form__input--pill">
-          {% if block.settings.label1 != blank %}
-            <div class="pb-4 pt-2">
-              <legend class="form__label text-[#333333] font-normal !leading-tight max-md:!text-xs !text-[18px] !flex justify-center relative w-full text-center">
-                <div class="absolute w-full h-[1px] bg-[#333333] left-0 top-[6px] !block"></div>
-                <div class="relative bg-[#fffaee] w-fit px-4 flex items-center justify-center gap-1">
-                  {% if block.settings.label_icon != blank %}
-                    {{
-                      block.settings.label_icon
-                      | image_url: width: 20
-                      | image_tag: class: 'w-full max-w-[20px]', sizes: '20px'
-                    }}
-                  {% endif %}
-                  <span>{{ block.settings.label1 }}</span>
-                </div>
-              </legend>
-            </div>
-          {% endif %}
-          {% if block.settings.label2 != blank %}
-            <div class="text-[#333333] font-normal !leading-tight max-md:!text-xs !text-[16px] !mb-2">
-              {{ block.settings.label2 }}
-            </div>
-          {% endif %}
-          <div class="grid grid-cols-{{ product.variants.size }} gap-1 md:gap-3">
-            {% render 'product-variant-options-quinary',
+          {% comment %} <legend class="form__label">{{ option.name }}</legend> {% endcomment %}
+          <div class="grid grid-cols-3 gap-2 md:gap-3">
+            {% render 'product-variant-options-quinary-sibling',
               product: product,
               option: option,
               block: block,
@@ -75,39 +41,21 @@
             %}
           </div>
         </fieldset>
-      {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-          <div class="select">
-            {%- if picker_type == 'swatch_dropdown' -%}
-              <span
-                data-selected-value
-                class="dropdown-swatch"
-              >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
-              </span>
-            {%- endif -%}
-            <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
-              name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
-              {% render 'product-variant-options',
-                product: product,
-                option: option,
-                block: block,
-                picker_type: picker_type
-              %}
-            </select>
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
-          </div>
-        </div>
-      {%- endif -%}
+      {% else %}
+        <fieldset class="js product-form__input product-form__input--pill">
+          {% if option.name == 'Scent' %}
+            <legend class="form__label !text-[#001C19] font-semibold">Select your scent</legend>
+          {% else %}
+            <legend class="form__label">{{ option.name }}</legend>
+          {% endif %}
+          {% render 'product-variant-options-quinary',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {% endif %}
     {%- endfor -%}
 
     <script type="application/json" data-selected-variant>
@@ -115,3 +63,160 @@
     </script>
   </variant-selects>
 {%- endunless -%}
+
+{% assign first_variant = product.selected_or_first_available_variant %}
+<div class="flex flex-col gap-3 mt-5 w-full">
+  <div
+    data-type="subscription"
+    onclick="switchOnetimeSub(this)"
+    class="variant-picker-quinary-tab group active border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] [&.active]:bg-white cursor-pointer"
+  >
+    <div class="flex items-center justify-between gap-3 w-full">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
+          <div
+            class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
+          ></div>
+        </div>
+        <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+          Subscribe & Save
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+          {% assign sub_percent = first_variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+          {% assign inverted_percent = 1 | minus: sub_percent %}
+          {% assign inverted_percent_plus = 1 | plus: sub_percent %}
+          <span class="pvpq-v-s-price">{{ first_variant.price | times: inverted_percent | money }}</span>
+        </div>
+        {% if first_variant.compare_at_price >= first_variant.price %}
+          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal line-through">
+            <span class="pvpq-v-s-compare-price">{{ first_variant.compare_at_price | money }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="flex items-center gap-2">
+        {% if block.settings.feature_icon != blank %}
+          {{
+            block.settings.feature_icon
+            | image_url: width: 14
+            | image_tag: class: 'w-full h-fit object-contain max-w-[14px]'
+          }}
+        {% endif %}
+        <div
+          class="text-[12px] md:text-sm font-normal !leading-[1.5] text-[#001C19]"
+        >
+          <span pvpq-sub-refills class="font-medium">4 refills</span> shipped
+          <span class="font-medium underline"> Every <span pvpq-sub-duration>12</span> months</span>
+        </div>
+      </div>
+      {% for i in (1..5) %}
+        {% assign description_name = 'sub_feature' | append: i %}
+        {% assign description = block.settings[description_name] %}
+
+        {% if description != blank %}
+          <div
+            class="flex items-center gap-2"
+          >
+            {% if block.settings.feature_icon != blank %}
+              {{
+                block.settings.feature_icon
+                | image_url: width: 14
+                | image_tag: class: 'w-full h-fit object-contain max-w-[14px]'
+              }}
+            {% endif %}
+            <div
+              class="text-[12px] md:text-sm font-medium !leading-[1.5] text-[#001C19]"
+            >
+              {{ description }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div
+    data-type="onetime"
+    onclick="switchOnetimeSub(this)"
+    class="variant-picker-quinary-tab group border border-[#D9DDE0] rounded-[10px] p-3 md:p-4 [&.active]:border-[#00B7A2] [&.active]:bg-white flex items-center justify-between cursor-pointer"
+  >
+    <div class="flex items-center justify-between gap-3 w-full">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 min-w-5 min-h-5 flex items-center justify-center rounded-[20px] border border-[#D9DDE0] group-[.active]:border-[#00B7A2]">
+          <div
+            class="w-[10px] h-[10px] min-w-[10px] min-h-[10px] rounded-[20px] bg-[#00B7A2] !hidden group-[.active]:!block"
+          ></div>
+        </div>
+        <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+          One Time Purchase
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#001C19] tracking-normal">
+          <span class="pvpq-v-price">{{ first_variant.price | money }}</span>
+        </div>
+        {% if first_variant.compare_at_price > first_variant.price %}
+          <div class="text-[14px] md:text-[16px] font-bold !leading-tight text-[#8E8E8E] tracking-normal line-through">
+            <span class="pvpq-v-compare-price">{{ first_variant.compare_at_price | money }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function switchOnetimeSub(el) {
+    const tabs = document.querySelectorAll('.section-{{ section.id }}-padding .variant-picker-quinary-tab');
+    if (!tabs.length) return;
+
+    // Remove active from all tabs
+    tabs.forEach(t => t.classList.remove('active'));
+
+    // Add active to clicked tab
+    el.classList.add('active');
+
+    // Selling plan input
+    const input = document.querySelector('.section-{{ section.id }}-padding input[re-sub-widget__selling-plan-input]');
+    if (!input) return;
+
+    const type = el.getAttribute('data-type');
+
+    const saveElements = document.querySelectorAll('.section-{{ section.id }}-padding [pvpq-save]');
+
+    // ONETIME → clear input
+    if (type === 'onetime') {
+      saveElements.forEach(t => t.classList.add('inactive'));
+      input.value = '';
+      return;
+    }
+
+    // SUBSCRIPTION → get active pvpq-label subscription ID
+    if (type === 'subscription') {
+      saveElements.forEach(t => t.classList.remove('inactive'));
+
+      const activeLabel = document.querySelector('.section-{{ section.id }}-padding .pvpq-label.active');
+      if (!activeLabel) return;
+
+      const subId = activeLabel.getAttribute('data-subscription-id');
+      input.value = subId || '';
+    }
+  }
+</script>
+
+<style>
+  .subscription-type-variant-select .product-form__input--pill input[type='radio'] + label {
+    border: 1px solid #d9dde0;
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #001c19;
+  }
+  .subscription-type-variant-select .product-form__input--pill input[type='radio']:checked + label {
+    border: 1px solid #00b7a2;
+    background: #edfffd;
+  }
+</style>

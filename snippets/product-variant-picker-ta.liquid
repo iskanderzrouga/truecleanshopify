@@ -1,0 +1,44 @@
+{%- unless product.has_only_default_variant -%}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ section.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {% if option.name == 'Bathrooms' %}
+        <fieldset class="js product-form__input product-form__input--pill pp-step">
+          <div class="pp-step-label"><span class="pp-step-num">1</span> How many toilets?</div>
+          <div class="pp-grid pp-grid--4">
+            {% render 'product-variant-options-ta-top', product: product, option: option, block: block %}
+          </div>
+        </fieldset>
+      {% endif %}
+
+      {% if option.name == 'Duration' %}
+        <fieldset class="js product-form__input product-form__input--pill pp-step">
+          <div class="pp-step-label"><span class="pp-step-num">2</span> How long?</div>
+          <div class="pp-grid pp-grid--4">
+            {% render 'product-variant-options-ta-bottom', product: product, option: option, block: block %}
+          </div>
+        </fieldset>
+      {% endif %}
+    {%- endfor -%}
+
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}
+
+<style>
+  .pp-variant-label::after,
+  .pp-variant-label::before {
+    display: none !important;
+  }
+  .product-form__input--pill input[type=radio]:checked+label  .pp-sel-btn {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary-dark);
+    box-shadow: 3px 3px 0 var(--primary-dark);
+}
+</style>

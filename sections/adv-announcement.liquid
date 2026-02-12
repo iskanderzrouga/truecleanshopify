@@ -1,0 +1,135 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_m }}px;
+    padding-bottom: {{ section.settings.padding_bottom_m }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="section-{{ section.id }}-padding px-5 relative border-b"
+  style="background-color: {{ section.settings.bgcolor }}; border-color: {{ section.settings.border_color }};"
+>
+  <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex flex-col items-center justify-center">
+      {% if section.settings.description != blank %}
+        <div
+          class="text-[14px] md:text-[16px] font-semibold !leading-tight text-[#272727] [&>p>a]:underline text-center"
+          style="color: {{ section.settings.color }};"
+        >
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.hide_header %}
+  <style>
+    .announcement-bar-section,
+    .shopify-section-group-header-group {
+      display: none !important;
+    }
+  </style>
+{% endif %}
+
+{% render 'global-countdown-script', resetTime: '00:00:00' %}
+
+{% schema %}
+{
+  "name": "ADV Announcement C",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_header",
+      "label": "Hide Header",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#D7CDE5"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#D7CDE5"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Max Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top_m",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_m",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 36
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "ADV Announcement C"
+    }
+  ]
+}
+{% endschema %}

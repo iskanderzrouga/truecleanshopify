@@ -1,0 +1,153 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  {%- assign variant = null -%}
+  {%- assign highest_price = 0 -%}
+  {%- for v in product.variants -%}
+    {%- if v.title contains value -%}
+      {%- if v.price > highest_price -%}
+        {%- assign variant = v -%}
+        {%- assign highest_price = v.price -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <div>
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+
+    {% assign sub_percent = variant.metafields.custom.subscription_discount | plus: 0 | divided_by: 100.000 %}
+    {% assign inverted_percent = 1 | minus: sub_percent %}
+    {% assign inverted_percent_plus = 1 | plus: sub_percent %}
+
+    <label
+      for="{{ input_id }}"
+      pvpq-label
+      class="pvpq-label {% if forloop.first %} active {%  endif %} !rounded-[10px] !p-0 !m-0 !w-full"
+      data-section-class="section-{{ section.id }}-padding"
+      data-price="{{ variant.price | money }}"
+      data-compare-price="{{ variant.compare_at_price | money }}"
+      data-sub-price="{{ variant.price | times: inverted_percent | money }}"
+      data-sub-compare-price="{{ variant.compare_at_price | money }}"
+      data-title="{{ value | downcase }}"
+      {% if variant.metafields.custom.subscription_duration %}
+        data-duration="{{ variant.metafields.custom.subscription_duration }}"
+      {% endif %}
+      {% if variant.metafields.custom.subscription_id %}
+        data-subscription-id="{{ variant.metafields.custom.subscription_id }}"
+      {% endif %}
+    >
+      <div class="relative w-full h-full px-1 md:px-3 py-3 md:py-4 flex gap-2 md:gap-2 items-center flex-col">
+        {% if variant.metafields.custom.badge %}
+          <div
+            class="rounded-[5px] px-2 py-1 text-[10px] md:text-[12px] font-bold bg-[#000C38] !leading-tight text-[#fff] tracking-normal absolute whitespace-nowrap -top-3 left-1/2 -translate-x-1/2"
+            style="background-color: {{ variant.metafields.custom.badge_color }}"
+          >
+            {{ variant.metafields.custom.badge }}
+          </div>
+        {% endif %}
+        {% if variant.metafields.custom.custom_variant_image %}
+          {{
+            variant.metafields.custom.custom_variant_image
+            | image_url: width: 125
+            | image_tag:
+              class: 'w-full h-full min-h-[80px] md:min-h-[125px] object-contain max-w-[80px] md:max-w-[125px]',
+              sizes: '125px',
+              preload: true
+          }}
+        {% endif %}
+
+        {% if variant.metafields.custom.save_percent %}
+          <div
+            pvpq-save
+            class="[&.inactive]:hidden text-[10px] md:text-[12px] font-bold !leading-tight text-[#000000] tracking-normal rounded-[5px] bg-[#E8FF33] px-2 py-1 w-fit"
+          >
+            SAVE {{ variant.metafields.custom.save_percent }}%
+          </div>
+        {% endif %}
+
+        <div class="text-[14px] md:text-[17px] font-medium !leading-tight text-[#001C19] tracking-normal">
+          {{ value -}}
+          {{ label_unavailable }}
+        </div>
+
+        {% if variant.metafields.custom.info_text %}
+          <div
+            class="text-[12px] md:text-[14px] font-medium !leading-tight text-[#8E8E8E] tracking-normal"
+          >
+            {{ variant.metafields.custom.info_text }}
+          </div>
+        {% endif %}
+      </div>
+    </label>
+  </div>
+{%- endfor -%}

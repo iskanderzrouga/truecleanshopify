@@ -4,18 +4,18 @@
     padding-bottom: {{ section.settings.padding_bottom_m }}px;
   }
 
-  .section-{{ section.id }}-padding .tc-introduce {
+  /* .section-{{ section.id }}-padding .tc-introduce {
     background: radial-gradient(118.21% 91.82% at -13.77% -40.82%, #E8FF33 0%, #00B7A2 100%);
-  }
+  } */
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
-    .section-{{ section.id }}-padding .tc-introduce {
+    /* .section-{{ section.id }}-padding .tc-introduce {
       background: radial-gradient(26.21% 174.82% at 2.23% -94.82%, #E8FF33 0%, #00B7A2 100%);
-    }
+    } */
   }
 
   .section-{{ section.id }}-padding .section-main-image {
@@ -26,7 +26,7 @@
 <div
   id="{{ section.settings.section_id }}"
   class="section-{{ section.id }}-padding px-5 relative"
-  style="background-color: {{ section.settings.bgcolor }}; background: linear-gradient(180deg, #00B7A2 0%, #EFF6F6 52.14%);"
+  style="background-color: {{ section.settings.bgcolor }};"
 >
   {% if section.settings.bg != blank %}
     {{
@@ -38,38 +38,112 @@
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
     <div class="flex flex-col items-center justify-center gap-10 md:gap-[60px]">
-      <div class="flex flex-col items-center justify-center gap-6 md:gap-10 w-full">
-        {% if section.settings.label != blank %}
-          <div
-            class="max-w-[650px] mx-auto text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if section.settings.label_m_center %} max-md:text-center {% endif %} {% if section.settings.label_d_center %} md:text-center {% endif %}"
-            style="color: {{ section.settings.label_color }};"
-          >
-            {{ section.settings.label }}
-          </div>
-        {% endif %}
+      {% comment %}
+        <div class="flex flex-col items-center justify-center gap-6 md:gap-10 w-full">
+          {% if section.settings.label != blank %}
+            <div
+              class="max-w-[650px] mx-auto text-[28px] md:text-[36px] font-bold !leading-tight text-[#001C19]  {% if section.settings.label_m_center %} max-md:text-center {% endif %} {% if section.settings.label_d_center %} md:text-center {% endif %}"
+              style="color: {{ section.settings.label_color }};"
+            >
+              {{ section.settings.label }}
+            </div>
+          {% endif %}
 
-        {% if section.blocks.size > 0 %}
-          <div class="w-full grid md:grid-cols-3 gap-4 md:gap-6">
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when 'row' %}
-                  <div class="splide__slide">
+          {% if section.blocks.size > 0 %}
+            <div class="w-full grid md:grid-cols-3 gap-4 md:gap-6">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'row' %}
+                    <div class="splide__slide">
+                      <div
+                        class="flex flex-col w-full gap-3 p-4 rounded-[10px] h-full"
+                        style="background-color: {{ block.settings.bgcolor }};"
+                      >
+                        {% if block.settings.image != blank %}
+                          {{
+                            block.settings.image
+                            | image_url: width: 300
+                            | image_tag: class: 'w-full rounded-[10px] h-fit object-contain', sizes: '300px'
+                          }}
+                        {% endif %}
+
+                        <div class="flex-1 flex flex-col gap-2 items-center justify-center">
+                          {% if block.settings.heading != blank %}
+                            <div
+                              class="text-[18px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                              style="color: {{ block.settings.heading_color }};"
+                            >
+                              {{ block.settings.heading }}
+                            </div>
+                          {% endif %}
+
+                          {% if block.settings.description != blank %}
+                            <div
+                              class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                              style="color: {{ block.settings.description_color }};"
+                            >
+                              {{ block.settings.description }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endcomment %}
+
+      {% comment %}
+        <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+          {% if section.settings.heading != blank %}
+            <h2
+              class="max-w-[680px] mx-auto text-[28px] md:text-[48px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
+              style="color: {{ section.settings.heading_color }};"
+            >
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div
+              class="text-[16px] md:text-[20px] font-medium !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
+              style="color: {{ section.settings.description_color }};"
+            >
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.subheading1 != blank %}
+            <div
+              class="text-[20px] md:text-[28px] font-bold !leading-tight text-[#001C19]  text-center mt-6 mb-6"
+              style="color: {{ section.settings.subheading_color }};"
+            >
+              {{ section.settings.subheading1 }}
+            </div>
+          {% endif %}
+
+          {% if section.blocks.size > 0 %}
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[920px] mx-auto">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'row2' %}
                     <div
-                      class="flex flex-col w-full gap-3 p-4 rounded-[10px] h-full"
-                      style="background-color: {{ block.settings.bgcolor }};"
+                      class="flex md:flex-col items-center gap-3 md:gap-6"
                     >
                       {% if block.settings.image != blank %}
                         {{
                           block.settings.image
                           | image_url: width: 300
-                          | image_tag: class: 'w-full rounded-[10px] h-fit object-contain', sizes: '300px'
+                          | image_tag: class: 'w-full max-w-[100px] md:max-w-[300px] object-contain', sizes: '300px'
                         }}
                       {% endif %}
 
-                      <div class="flex-1 flex flex-col gap-2 items-center justify-center">
+                      <div class="flex flex-col items-start md:items-center gap-1 md:gap-2">
                         {% if block.settings.heading != blank %}
                           <div
-                            class="text-[18px] md:text-[20px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
+                            class="text-[17px] md:text-[17px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
                             style="color: {{ block.settings.heading_color }};"
                           >
                             {{ block.settings.heading }}
@@ -78,7 +152,7 @@
 
                         {% if block.settings.description != blank %}
                           <div
-                            class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[18px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                            class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-medium !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                             style="color: {{ block.settings.description_color }};"
                           >
                             {{ block.settings.description }}
@@ -86,82 +160,12 @@
                         {% endif %}
                       </div>
                     </div>
-                  </div>
-              {% endcase %}
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-
-      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
-        {% if section.settings.heading != blank %}
-          <h2
-            class="max-w-[680px] mx-auto text-[28px] md:text-[48px] font-bold !leading-tight text-[#001C19] {% if section.settings.heading_m_center %} max-md:text-center {% endif %} {% if section.settings.heading_d_center %} md:text-center {% endif %}"
-            style="color: {{ section.settings.heading_color }};"
-          >
-            {{ section.settings.heading }}
-          </h2>
-        {% endif %}
-
-        {% if section.settings.description != blank %}
-          <div
-            class="text-[16px] md:text-[20px] font-medium !leading-tight text-[#001C19] {% if section.settings.description_m_center %} max-md:text-center {% endif %} {% if section.settings.description_d_center %} md:text-center {% endif %}"
-            style="color: {{ section.settings.description_color }};"
-          >
-            {{ section.settings.description }}
-          </div>
-        {% endif %}
-
-        {% if section.settings.subheading1 != blank %}
-          <div
-            class="text-[20px] md:text-[28px] font-bold !leading-tight text-[#001C19]  text-center mt-6 mb-6"
-            style="color: {{ section.settings.subheading_color }};"
-          >
-            {{ section.settings.subheading1 }}
-          </div>
-        {% endif %}
-
-        {% if section.blocks.size > 0 %}
-          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[920px] mx-auto">
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when 'row2' %}
-                  <div
-                    class="flex md:flex-col items-center gap-3 md:gap-6"
-                  >
-                    {% if block.settings.image != blank %}
-                      {{
-                        block.settings.image
-                        | image_url: width: 300
-                        | image_tag: class: 'w-full max-w-[100px] md:max-w-[300px] object-contain', sizes: '300px'
-                      }}
-                    {% endif %}
-
-                    <div class="flex flex-col items-start md:items-center gap-1 md:gap-2">
-                      {% if block.settings.heading != blank %}
-                        <div
-                          class="text-[17px] md:text-[17px] font-bold !leading-tight text-[#001C19]  {% if block.settings.heading_m_center %} max-md:text-center {% endif %} {% if block.settings.heading_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.heading_color }};"
-                        >
-                          {{ block.settings.heading }}
-                        </div>
-                      {% endif %}
-
-                      {% if block.settings.description != blank %}
-                        <div
-                          class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-normal !leading-tight text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
-                          style="color: {{ block.settings.description_color }};"
-                        >
-                          {{ block.settings.description }}
-                        </div>
-                      {% endif %}
-                    </div>
-                  </div>
-              {% endcase %}
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endcomment %}
 
       <div class="flex flex-col items-center justify-center gap-6 md:gap-10">
         {% if section.settings.subheading2 != blank %}
@@ -176,13 +180,13 @@
         {% if section.blocks.size > 0 %}
           <div class="w-full flex flex-col gap-6">
             <div
-              class="tc-introduce w-full grid md:grid-cols-2 border border-[#D5D5D5] rounded-[10px] md:rounded-[25px] px-3 md:px-6 py-4 md:py-7 gap-5"
-              style=""
+              class="tc-introduce w-full grid md:grid-cols-2 rounded-[20px] md:rounded-[25px] px-3 md:px-6 py-4 md:py-7 gap-5 border-[4px] border-[#00B7A2]"
+              style="background: linear-gradient(180deg, #FCFFED 0%, #EEFAFA 100%);"
             >
               {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'row3' %}
-                    <div class="grid md:grid-cols-5 {% if forloop.last %} max-md:border-t md:border-l max-md:pt-5 md:pl-5 border-[#D5D5D5] {% endif %}">
+                    <div class="grid md:grid-cols-5 {% if forloop.last %} max-md:border-t md:border-l max-md:pt-5 md:pl-5 border-[#D5D5D5] {% endif %} md:items-center">
                       {% if block.settings.image != blank %}
                         <div class="md:col-span-2 flex items-center justify-center">
                           {{
@@ -225,12 +229,12 @@
                                   {% if icon != blank %}
                                     {{
                                       icon
-                                      | image_url: width: 16
-                                      | image_tag: class: 'w-full max-w-[16px] h-fit object-contain', sizes: '16px'
+                                      | image_url: width: 24
+                                      | image_tag: class: 'w-full max-w-[24px] h-fit object-contain', sizes: '24px'
                                     }}
                                   {% endif %}
                                   <div
-                                    class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[16px] md:text-[17px] {% endif %} font-normal !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
+                                    class="{% if block.settings.small_description %} text-[12px] md:text-[14px] {% else %} text-[17px] md:text-[17px] {% endif %} font-medium !leading-[1.5] text-[#000] {% if block.settings.description_m_center %} max-md:text-center {% endif %} {% if block.settings.description_d_center %} md:text-center {% endif %}"
                                     style="color: {{ block.settings.description_color }};"
                                   >
                                     {{ description }}
@@ -250,7 +254,7 @@
 
         {% if section.settings.text != blank %}
           <div
-            class="text-[16px] md:text-[17px] font-medium !leading-tight text-[#001C19]  text-center"
+            class="text-[17px] md:text-[17px] font-medium !leading-tight text-[#001C19]  text-center"
           >
             {{ section.settings.text }}
           </div>

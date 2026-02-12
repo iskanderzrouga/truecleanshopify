@@ -26,6 +26,9 @@ if (!customElements.get('product-info')) {
         );
 
         this.initQuantityHandlers();
+        if (this.dataset.localVariant === 'true') {
+          this.syncLocalVariant();
+        }
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
       }
 
@@ -65,6 +68,11 @@ if (!customElements.get('product-info')) {
 
         this.resetProductFormState();
 
+        if (this.dataset.localVariant === 'true') {
+          this.handleLocalVariantChange(target?.id);
+          return;
+        }
+
         const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
         this.pendingRequestUrl = productUrl;
         const shouldSwapProduct = this.dataset.url !== productUrl;
@@ -79,24 +87,115 @@ if (!customElements.get('product-info')) {
         });
       }
 
+      syncLocalVariant() {
+        this.handleLocalVariantChange();
+      }
+
+      handleLocalVariantChange(targetId) {
+        const variant = this.getVariantFromSelectedOptions();
+
+        if (!variant) {
+          this.setUnavailable();
+          return;
+        }
+
+        this.updateVariantInputs(variant.id);
+
+        const selectedVariantScript = this.querySelector('variant-selects [data-selected-variant]');
+        if (selectedVariantScript) {
+          selectedVariantScript.textContent = JSON.stringify(variant);
+        }
+
+        if (typeof this.taVariantUpdate === 'function') {
+          this.taVariantUpdate();
+        }
+
+        this.productForm?.toggleSubmitButton(!variant.available, window.variantStrings.soldOut);
+
+        if (targetId) {
+          this.rendersubscriptionID(targetId);
+        }
+      }
+
+      getVariantFromSelectedOptions() {
+        const variantData = this.getVariantData();
+        if (!variantData || !variantData.length) return null;
+
+        const selectedOptions = Array.from(
+          this.querySelectorAll('variant-selects fieldset input:checked')
+        ).map((input) => input.value);
+
+        return variantData.find((variant) =>
+          variant.options.every((option, index) => option === selectedOptions[index])
+        );
+      }
+
+      getVariantData() {
+        if (this.variantData) return this.variantData;
+
+        const dataEl = this.querySelector('[data-variants-json]');
+        this.variantData = dataEl ? JSON.parse(dataEl.textContent) : [];
+        return this.variantData;
+      }
+
+      taVariantUpdate() {
+        const variantId = document.querySelector('.product-section--ta input.product-variant-id')?.value;
+        if (!variantId) return;
+
+        // 1. Find all info boxes
+        const boxes = document.querySelectorAll('.product-section--ta-info-box');
+
+        // 2. Remove active from all
+        boxes.forEach(box => box.classList.remove('active'));
+
+        // 3. Add active to the matching one
+        const target = document.querySelector(`.product-section--ta-info-box[data-id="${variantId}"]`);
+        if (target) {
+          target.classList.add('active');
+        }
+      }
+
       rendersubscriptionID(targetId) {
+        console.log('targetId', targetId);
         // 1. Find the label with matching "for" attribute
         const label = document.querySelector(`label[for="${targetId}"]`);
         if (!label) return;
 
-        // 2. Get subscription ID from that label
-        const subId = label.getAttribute('data-subscription-id');
-        if (!subId) return;
+        if (label.classList.contains('pvpq-label')) {         
+          const dataSectionClass = label.getAttribute('data-section-class');
 
-        const toggle = document.querySelector('.sub-onetime-toggle');
-        const isSubActive = toggle && toggle.classList.contains('active');
+          document .querySelectorAll(`.${dataSectionClass} .pvpq-label`) .forEach(l => l.classList.remove('active'));
+          label.classList.add('active');
 
-        // 4. Find the correct selling plan input
-        const input = document.querySelector('input[re-sub-widget__selling-plan-input]');
-        if (!input) return;
+          const subRefills = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-refills]`);
+          const title = label.getAttribute('data-title'); subRefills.forEach(t => t.textContent = title);
 
-        // 5. Apply logic
-        input.value = isSubActive ? subId : '';
+          const subDuration = document.querySelectorAll(`.${dataSectionClass} span[pvpq-sub-duration]`);
+          const duration = label.getAttribute('data-duration'); subDuration.forEach(t => t.textContent = duration);
+
+          const elementPrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-price`);
+          const dataPrice = label.getAttribute('data-price'); elementPrice.forEach(t => t.textContent = dataPrice);
+          const elementComparePrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-compare-price`);
+          const dataComparePrice = label.getAttribute('data-compare-price'); elementComparePrice.forEach(t => t.textContent = dataComparePrice);
+          const elementSubPrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-s-price`);
+          const dataSubPrice = label.getAttribute('data-sub-price'); elementSubPrice.forEach(t => t.textContent = dataSubPrice);
+          const elementSubComparePrice = document.querySelectorAll(`.${dataSectionClass} .pvpq-v-s-compare-price`);
+          const dataSubComparePrice = label.getAttribute('data-sub-compare-price'); elementSubComparePrice.forEach(t => t.textContent = dataSubComparePrice);
+
+          // 2. Get subscription ID from that label
+          const subId = label.getAttribute('data-subscription-id');
+          if (!subId) return;
+
+          const toggle = document.querySelector(`.${dataSectionClass} .variant-picker-quinary-tab[data-type="subscription"]`);
+          const isSubActive = toggle && toggle.classList.contains('active');
+
+          // 4. Find the correct selling plan input
+          const input = document.querySelector(`.${dataSectionClass} input[re-sub-widget__selling-plan-input]`);
+          if (!input) return;
+
+          // 5. Apply logic
+          input.value = isSubActive ? subId : '';
+        }  
       }
 
       resetProductFormState() {
@@ -149,6 +248,9 @@ if (!customElements.get('product-info')) {
             document.querySelector(`#${targetId}`)?.focus();
             console.log('targetId', targetId);
             this.rendersubscriptionID(targetId);
+            if (document.querySelector('.product-section--ta')) {
+              this.taVariantUpdate();
+            }
           })
           .catch((error) => {
             if (error.name === 'AbortError') {

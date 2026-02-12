@@ -69,21 +69,58 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   <div class="mx-auto w-full relative" style="max-width: {{ section.settings.max_width }}px;">
+    {% if section.settings.show_shipping_banner %}
+      <div class="max-md:px-5">
+        <div class="flex justify-center gap-2 py-3 px-4 mb-6 rounded-lg border-[#000000] border bg-[#E8FF33]">
+          <span class="min-w-[20px]">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.0822 2.62305L18.2772 15.0847C18.3869 15.2747 18.4446 15.4903 18.4446 15.7097C18.4446 15.9291 18.3869 16.1447 18.2772 16.3347C18.1675 16.5247 18.0097 16.6825 17.8196 16.7922C17.6296 16.9019 17.4141 16.9597 17.1947 16.9597H2.80466C2.58524 16.9597 2.36969 16.9019 2.17967 16.7922C1.98965 16.6825 1.83185 16.5247 1.72215 16.3347C1.61244 16.1447 1.55469 15.9291 1.55469 15.7097C1.55469 15.4903 1.61245 15.2747 1.72216 15.0847L8.91716 2.62305C9.39799 1.78971 10.6005 1.78971 11.0822 2.62305ZM9.99966 12.4997C9.77864 12.4997 9.56668 12.5875 9.4104 12.7438C9.25412 12.9001 9.16632 13.112 9.16632 13.333C9.16632 13.5541 9.25412 13.766 9.4104 13.9223C9.56668 14.0786 9.77864 14.1664 9.99966 14.1664C10.2207 14.1664 10.4326 14.0786 10.5889 13.9223C10.7452 13.766 10.833 13.5541 10.833 13.333C10.833 13.112 10.7452 12.9001 10.5889 12.7438C10.4326 12.5875 10.2207 12.4997 9.99966 12.4997ZM9.99966 6.66638C9.79554 6.66641 9.59854 6.74134 9.44601 6.87698C9.29348 7.01261 9.19604 7.1995 9.17216 7.40221L9.16632 7.49971V10.833C9.16656 11.0454 9.24789 11.2497 9.3937 11.4042C9.5395 11.5586 9.73878 11.6516 9.95082 11.664C10.1629 11.6765 10.3716 11.6075 10.5345 11.4712C10.6974 11.3348 10.8021 11.1415 10.8272 10.9305L10.833 10.833V7.49971C10.833 7.2787 10.7452 7.06674 10.5889 6.91046C10.4326 6.75418 10.2207 6.66638 9.99966 6.66638Z" fill="black"/>
+            </svg>
+          </span>
+          {% assign target_date = '2026-01-20' | date: '%s' %}
+          {% assign today_date = 'now' | date: '%s' %}
+          {% assign diff_seconds = target_date | minus: today_date %}
+          {% assign diff_days = diff_seconds | divided_by: 86400 %}
 
-    <!-- Urgency Banner -->
-    {% if section.settings.show_urgency_banner %}
-      <div class="text-center py-3 px-4 mb-6 rounded-lg" style="background-color: #D30101 !important; color: #ffffff !important;">
-        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1" style="color: #ffffff !important;">{{ section.settings.urgency_heading }}</p>
-        <p class="text-[14px] md:text-[16px] m-0" style="color: rgba(255,255,255,0.9) !important;">{{ section.settings.urgency_subheading }}</p>
+          {% assign today = 'now' | date: '%-d %b' | upcase %}
+          <p class="text-[13px] md:text-[18px] font-medium text-[#000000] !leading-tight">
+            <span class="underline font-bold">Urgent Update: {{ today }}</span>, {{ section.settings.shipping_heading | replace: 'DATEPLACEHOLDER', diff_days }}
+          </p>
+        </div>
       </div>
     {% endif %}
 
-    <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[80px] px-4 md:px-0">
+    <!-- Urgency Banner -->
+    {% if section.settings.show_urgency_banner %}
+      <div
+        class="text-center py-3 px-4 mb-6 rounded-lg"
+        style="background-color: #D30101 !important; color: #ffffff !important;"
+      >
+        <p class="text-[18px] md:text-[22px] font-bold m-0 mb-1" style="color: #ffffff !important;">
+          {{ section.settings.urgency_heading }}
+        </p>
+        <p class="text-[14px] md:text-[16px] m-0" style="color: rgba(255,255,255,0.9) !important;">
+          {{ section.settings.urgency_subheading }}
+        </p>
+      </div>
+    {% endif %}
 
+    <div class="product !grid !grid-cols-1 md:!grid-cols-9 !gap-2 md:!gap-10 lg:!gap-[60px] px-4 md:px-0">
       <!-- Product Images Column -->
       <div class="md:col-span-5">
-        <div class="w-full">
-          {% render 'product-image-slider-vertical', product: product %}
+        <div>
+          <div class="w-full">
+            {% render 'product-image-slider-vertical', product: product, section: section %}
+          </div>
+
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {% when 'testimonial' %}
+                <div class="hidden md:block w-full mt-7">
+                  {% render 'new-lp-featured-product-testimonial', block: block %}
+                </div>
+            {% endcase %}
+          {% endfor %}
         </div>
       </div>
 
@@ -98,10 +135,16 @@
               <div class="mb-2">
                 <div class="flex items-center gap-2">
                   {% if block.settings.image != blank %}
-                    {{ block.settings.image | image_url: width: 56 | image_tag: class: 'w-full max-w-[56px]', sizes: '56px' }}
+                    {{
+                      block.settings.image
+                      | image_url: width: 56
+                      | image_tag: class: 'w-full max-w-[56px]', sizes: '56px'
+                    }}
                   {% endif %}
                   {% if block.settings.heading != blank %}
-                    <div class="text-[16px] font-medium !leading-tight text-[#001C19]">{{ block.settings.heading }}</div>
+                    <div class="text-[16px] font-medium !leading-tight text-[#001C19]">
+                      {{ block.settings.heading }}
+                    </div>
                   {% endif %}
                 </div>
               </div>
@@ -110,14 +153,14 @@
 
           <!-- Heading -->
           {% if section.settings.heading != blank %}
-            <h2 class="text-[20px] lg:text-[22px] font-bold !leading-tight text-[#001C19] !mt-2 !mb-2">
+            <h2 class="text-[24px] lg:text-[24px] font-bold !leading-tight text-[#001C19] !mt-2 !mb-2">
               {{ section.settings.heading }}
             </h2>
           {% endif %}
 
           <!-- Description -->
           {% if section.settings.description != blank %}
-            <div class="text-[14px] md:text-[14px] font-normal !leading-snug text-[#4a5555] !m-0 mb-4">
+            <div class="text-[18px] md:text-[20px] font-medium !leading-tight text-[#001C19] !m-0 mb-4">
               {{ section.settings.description }}
             </div>
           {% endif %}
@@ -132,12 +175,18 @@
           {% endfor %}
 
           {% if has_features %}
-            <div class="flex flex-col gap-2 !my-4 rounded-lg p-3 md:p-4" style="background: linear-gradient(135deg, #f7fcfb 0%, #f0f9f7 100%);">
+            <div
+              class="flex flex-col gap-2 !my-4"
+            >
               {% for block in section.blocks %}
                 {% if block.type == 'feature' %}
                   <div class="flex items-start gap-2">
-                    {{ block.settings.icon | image_url: width: 30 | image_tag: class: 'w-5 h-5 mt-0.5 object-contain flex-shrink-0' }}
-                    <div class="text-[#001C19] text-[15px] md:text-[16px] font-bold !leading-normal">
+                    {{
+                      block.settings.icon
+                      | image_url: width: 30
+                      | image_tag: class: 'w-5 h-5 mt-0.5 object-contain flex-shrink-0'
+                    }}
+                    <div class="text-[#001C19] text-[16px] md:text-[16px] font-semibold !leading-normal">
                       {{ block.settings.description }}
                     </div>
                   </div>
@@ -172,20 +221,96 @@
                   {% endif %}
                 </div>
 
+              {% when 'variant_picker_updated' %}
+                {% render 'product-variant-picker-updated',
+                  product: product,
+                  block: block,
+                  product_form_id: product_form_id
+                %}
+
+                {% if block.settings.description1 != blank or block.settings.description2 != blank %}
+                  <div class="bg-[#DFF4F4] rounded-[10px] grid grid-cols-2 p-3 md:p-4 gap-2 my-3">
+                    <div class="flex flex-col items-center text-center gap-1 md:gap-2">
+                      {% if block.settings.icon1 != blank %}
+                        {{
+                          block.settings.icon1
+                          | image_url: width: 24
+                          | image_tag: class: 'w-full h-fit object-contain max-w-[20px] md:max-w-[24px]'
+                        }}
+                      {% endif %}
+                      {% if block.settings.description1 != blank %}
+                        <div class="font-medium text-[13px] md:text-[14px] !leading-[1] w-full">
+                          {{ block.settings.description1 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-1 md:gap-2">
+                      {% if block.settings.icon2 != blank %}
+                        {{
+                          block.settings.icon2
+                          | image_url: width: 24
+                          | image_tag: class: 'w-full h-fit object-contain max-w-[20px] md:max-w-[24px]'
+                        }}
+                      {% endif %}
+                      {% if block.settings.description2 != blank %}
+                        <div class="font-medium text-[13px] md:text-[14px] !leading-[1] w-full">
+                          {{ block.settings.description2 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+
               {%- when 'ship_by' -%}
-                <div class="flex gap-2 md:gap-4 items-center justify-center pb-4 !my-2 md:!my-4">
+                <div class="flex gap-2 md:gap-4 items-center pb-4 !my-2 md:!my-4">
                   {% if block.settings.icon != blank %}
-                    {{ block.settings.icon | image_url: width: 24 | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px' }}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 24
+                      | image_tag: class: 'w-full max-w-[12px] md:max-w-[24px]', sizes: '24px'
+                    }}
                   {% endif %}
                   {% if block.settings.text != blank %}
-                    {% assign date_day = 'now' | date: '%d' %}
+                    {% assign four_days = 4 | times: 86400 %}
+                    {% assign future = 'now' | date: '%s' | plus: four_days %}
+
+                    {% assign date_day = future | date: '%d' %}
                     {% assign date_month = 'now' | date: '%B' | slice: 0, 3 %}
                     {% assign date_year = 'now' | date: '%Y' %}
-                    {% assign date_string = date_day | append: ' ' | append: date_month | append: ' ' | append: date_year %}
-                    <div class="text-xs md:text-[16px] font-normal !leading-tight text-[#001C19]">
+                    {% assign date_string = date_day
+                      | append: ' '
+                      | append: date_month
+                      | append: ' '
+                      | append: date_year
+                    %}
+                    <div class="text-[16px] md:text-[16px] font-normal !leading-tight text-[#001C19]">
                       {{ block.settings.text | replace: 'DATEPLACEHOLDER', date_string }}
                     </div>
                   {% endif %}
+                  {% if block.settings.info_text != blank %}
+                    {% render 'tooltip', block: block %}
+                  {% endif %}
+                </div>
+
+              {%- when 'collapsible_tab' -%}
+                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                  <details id="Details-{{ block.id }}-{{ section.id }}" class="group">
+                    <summary>
+                      <div class="summary__title">
+                        {% render 'icon-accordion', icon: block.settings.icon %}
+                        <h2 class="h4 accordion__title inline-richtext">
+                          {{ block.settings.heading | default: block.settings.page.title | escape }}
+                        </h2>
+                      </div>
+                      <span>
+                        {% render 'icon-plus-black' %}
+                      </span>
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                      {{ block.settings.content }}
+                      {{ block.settings.page.content }}
+                    </div>
+                  </details>
                 </div>
 
               {%- when 'buy_buttons' -%}
@@ -209,16 +334,24 @@
                     {% if description != blank %}
                       <div class="flex items-center gap-2">
                         {% if icon != blank %}
-                          {{ icon | image_url: width: 28 | image_tag: class: 'w-full h-fit object-contain max-w-[24px] md:max-w-[28px]' }}
+                          {{
+                            icon
+                            | image_url: width: 28
+                            | image_tag: class: 'w-full h-fit object-contain max-w-[24px] md:max-w-[28px]'
+                          }}
                         {% endif %}
                         <div class="text-[12px] font-normal !leading-tight text-[#001C19]">{{ description }}</div>
                       </div>
                     {% endif %}
                   {% endfor %}
                 </div>
+
+              {% when 'testimonial' %}
+                <div class="block md:hidden w-full">
+                  {% render 'new-lp-featured-product-testimonial', block: block %}
+                </div>
             {%- endcase -%}
           {%- endfor -%}
-
         </section>
       </div>
     </div>
@@ -237,6 +370,18 @@
     {
       "type": "header",
       "content": "Urgency Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_banner",
+      "label": "Show Urgency Banner",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "shipping_heading",
+      "label": "Shipping Heading",
+      "default": ", Orders will ship in 2 weeks due to high demand"
     },
     {
       "type": "checkbox",
@@ -353,6 +498,212 @@
       ]
     },
     {
+      "type": "collapsible_tab",
+      "name": "t:sections.main-product.blocks.collapsible_tab.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "t:sections.main-product.blocks.collapsible_tab.settings.heading.default",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "apple",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
+            },
+            {
+              "value": "banana",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
+            },
+            {
+              "value": "bottle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
+            },
+            {
+              "value": "carrot",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
+            },
+            {
+              "value": "dairy",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
+            },
+            {
+              "value": "dairy_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
+            },
+            {
+              "value": "fire",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
+            },
+            {
+              "value": "gluten_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
+            },
+            {
+              "value": "lightning_bolt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
+            },
+            {
+              "value": "lipstick",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
+            },
+            {
+              "value": "nut_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__25.label"
+            },
+            {
+              "value": "paw_print",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__26.label"
+            },
+            {
+              "value": "pepper",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__27.label"
+            },
+            {
+              "value": "perfume",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__28.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__29.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__30.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__31.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__32.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__33.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__34.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__35.label"
+            },
+            {
+              "value": "serving_dish",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__36.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__37.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__38.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__39.label"
+            },
+            {
+              "value": "snowflake",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__40.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__41.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__42.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__43.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
+            }
+          ],
+          "default": "check_mark",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
       "type": "feature",
       "name": "Feature Bullet",
       "settings": [
@@ -366,6 +717,47 @@
           "id": "description",
           "label": "Description",
           "default": "<p>No Rings, Slime, Or Stains</p>"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "image_picker",
+          "id": "stars",
+          "label": "Stars"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Verified"
         }
       ]
     },
@@ -450,6 +842,33 @@
       ]
     },
     {
+      "type": "variant_picker_updated",
+      "name": "Variant Picker Updated",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "richtext",
+          "id": "description1",
+          "label": "Description 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "richtext",
+          "id": "description2",
+          "label": "Description 2"
+        }
+      ]
+    },
+    {
       "type": "ship_by",
       "name": "Ship By",
       "limit": 1,
@@ -464,6 +883,11 @@
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "info_text",
+          "label": "Info Text"
         }
       ]
     },
