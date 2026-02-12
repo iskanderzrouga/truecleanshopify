@@ -161,8 +161,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_b856f90f-e2ac-44ce-bad1-97bc35cfe837.png",
-            "heading": "85% of American homes have hard water. Here's what it's doing to your toilet right now.",
-            "text": "<p>Hard water leaves mineral film with every flush.</p><p>That film turns into rings and pink slime fast.</p><p>You scrub, it comes back in days.</p><p><strong>Swoosh n Shine fixes the cause, not the symptom.</strong></p>",
+            "heading": "1. Hard Water Is Building Up In Your Toilet Every Day",
+            "text": "<p>Hard water leaves mineral film with every flush. That buildup turns into rings and pink slime fast.</p><p>You scrub it off, and it comes back in days. Swoosh n Shine helps stop the cycle at the source.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -181,8 +181,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_1_7553057a-922e-47e1-b43b-beab9775857e.png",
-            "heading": "I'll give you your weekends back",
-            "text": "<p>Before: weekly scrubbing, fumes, and the same stains again.</p><p>After: usually a quick monthly touch-up.</p><p>Chelation has been used in hard-water systems for decades.</p><p><strong>Your weekends stay yours.</strong></p>",
+            "heading": "2. This Gives You Your Weekends Back",
+            "text": "<p>Before this system, most homes scrub constantly and still fight recurring stains.</p><p>With Swoosh n Shine, upkeep drops because each flush helps prevent new buildup. Your weekends stay yours.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -201,8 +201,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_1_2d35492e-26c8-41b0-931b-9365c5f9add8.png",
-            "heading": "Why magnets don't clean toilets",
-            "text": "<p>Magnets do not dissolve calcium or biofilm.</p><p>This formula uses citric-acid chelation plus plant-derived surfactants on every flush.</p><p>It keeps working between flushes.</p><p><strong>Chemistry, not gimmicks.</strong></p>",
+            "heading": "3. Why Magnets Don't Clean Toilets",
+            "text": "<p>Magnets do not dissolve calcium or biofilm.</p><p>This formula uses citric-acid chelation plus plant-derived surfactants on every flush. Chemistry, not gimmicks.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -221,8 +221,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_7.png",
-            "heading": "A formula that won't poison your pets",
-            "text": "<p>Pets drink from toilets. Many cleaners use harsh actives.</p><p>This formula is designed for pet-safe bowl-water dilution.</p><p>No bleach, dyes, or phosphates.</p><p><strong>Cleaner bowl, less worry.</strong></p>",
+            "heading": "4. A Formula That Won't Poison Your Pets",
+            "text": "<p>Pets drink from toilets, and many cleaners rely on harsh ingredients.</p><p>This formula is designed for pet-safe bowl-water dilution with no bleach, dyes, or phosphates.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -241,8 +241,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346.png",
-            "heading": "European water science, inside your bathroom",
-            "text": "<p>This uses proven chelation principles from hard-water regions.</p><p>Each flush keeps minerals dissolved so they rinse away.</p><p>Less bonding to porcelain, fewer rings.</p><p><strong>Less scrubbing over time.</strong></p>",
+            "heading": "5. European Water Science, Inside Your Bathroom",
+            "text": "<p>This approach uses proven chelation principles from hard-water regions.</p><p>Each flush helps keep minerals dissolved so they rinse away instead of forming heavy rings.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -261,8 +261,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_3_5577e125-3cc7-4cf0-97ae-c1190d772bdd.png",
-            "heading": "So simple your kids could install it",
-            "text": "<p>Drops in fast. No tools. No plumber.</p><p>Tank-safe formula built for daily family use.</p><p>Every flush treats the bowl automatically.</p><p><strong>Set it and forget it.</strong></p>",
+            "heading": "6. So Simple Your Kids Could Install It",
+            "text": "<p>Installation takes under a minute with no tools and no plumber.</p><p>The tank-safe formula works automatically on each flush, built for daily family use.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -282,8 +282,8 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_2_8afed8a2-f6cf-4d91-8d86-6c544fb16437.png",
-            "heading": "200,000+ households already stopped scrubbing",
-            "text": "<p>4.85 stars and 5,247+ reviews.</p><p>Most mentioned: hard-water results, easy install, and less scrubbing.</p><p><strong>Real households. Real results.</strong></p>",
+            "heading": "7. 200,000+ Households Already Stopped Scrubbing",
+            "text": "<p>4.85 stars and 5,247+ reviews.</p><p>Customers repeatedly mention hard-water results, easy install, and less scrubbing.</p>",
             "star_text1": "",
             "star_text2": "",
             "review_text1": "",
@@ -302,7 +302,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/off.png",
-            "heading": "Try it risk-free for 90 days. If your toilet isn't the cleanest it's been in years, you pay nothing.",
+            "heading": "8. Try It Risk-Free For 90 Days",
             "text": "<p>Try it risk-free for 90 days.</p><p>1 dispenser + 2 cartridges = up to 6 months.</p><p>Bundle pricing for 1, 2, 3, or 4 devices.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -323,7 +323,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_8.png",
-            "heading": "Your toilet's been losing the hard water fight for years.",
+            "heading": "Your Toilet Has Been Losing The Hard Water Fight For Years",
             "text": "<p>This is the backup your toilet needed.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -343,7 +343,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_4_1b22c5e1-4e4d-4b4c-b0d1-5c2b9944ef39.png",
-            "heading": "Real customer results",
+            "heading": "Real Customer Results",
             "text": "<p>Free US Shipping | Plant-Derived | Pet-Safe | No Bleach | Safe for Tanks | 90-Day Guarantee</p>",
             "stars": "shopify://shop_images/stars.png",
             "star_text1": "<p><strong>4.85 stars</strong> from verified Swoosh n Shine shoppers</p>",
