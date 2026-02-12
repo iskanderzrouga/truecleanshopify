@@ -1,4 +1,4 @@
-<section class="bg-[#fffbe8] p-5 lg:p-[40px]">
+<section class="bg-[#f4f2e6] p-5 lg:p-[40px]">
   <div class="max-w-[1000px] mx-auto w-full">
     <div class="">
       <div class="flex flex-col gap-[20px] md:gap-[30px]">
@@ -160,9 +160,16 @@
             {% endif %}
 
             {% if block.type == 'list' %}
-              <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
+              {% unless listicle_list_rendered %}
+                {% assign listicle_first_list = true %}
+                {% assign listicle_list_rendered = true %}
+              {% else %}
+                {% assign listicle_first_list = false %}
+              {% endunless %}
+              <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px] {% if listicle_first_list %}listicle-intro-block bg-[#eef1e0] rounded-[16px] p-5 md:p-8 border-l-[6px] border-[#c8b84d]{% endif %}"
+              >
                 {% if block.settings.heading != blank %}
-                  <div class="md:hidden text-[#000] text-[36px] font-black leading-[1.12]">
+                  <div class="md:hidden text-[#000] text-[72px] font-black leading-[1.05]">
                     {{ block.settings.heading }}
                   </div>
                 {% endif %}
@@ -186,7 +193,7 @@
                       </div>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="listicle-copy text-[#0a0a0a] text-[17px] md:text-[17px] lg:text-[18px] font-bold leading-[1.32] md:leading-[1.38]">
+                      <div class="listicle-copy text-[#1a1a1a] text-[17px] md:text-[17px] lg:text-[18px] font-medium leading-[1.4] md:leading-[1.42]">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
@@ -329,10 +336,13 @@
     max-width: 58ch;
   }
   .listicle-copy p {
-    margin: 0 0 0.2em;
+    margin: 0 0 0.35em;
   }
   .listicle-copy p:last-child {
     margin-bottom: 0;
+  }
+  .listicle-intro-block {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
   .listicle-copy strong {
     font-weight: 700;
