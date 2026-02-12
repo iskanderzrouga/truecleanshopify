@@ -142,7 +142,7 @@
             "bg": "#fbffe6",
             "show_bg": true,
             "color": "#000000",
-            "text": "<p>SwooshnShine by TrueClean uses real chemistry — not magnets, not bleach — to stop hard water stains before they form. Every flush prevents buildup... kills pink slime... and keeps your bowl clean without scrubbing. No gimmicks.</p>"
+            "text": "<p><strong>TLDR:</strong> TrueClean uses real chemistry — not magnets, not bleach — to stop hard water stains before they form. Every flush prevents buildup... kills pink slime... and keeps your bowl clean without scrubbing. No gimmicks.</p>"
           }
         },
         "list_XffmV4": {
@@ -385,8 +385,8 @@
         "list_jLmy3H"
       ],
       "settings": {
-        "heading": "Your Toilet Isn't Dirty — Your Water Is. 6 Reasons Swoosh n Shine Fixes What Scrubbing Can't",
-        "text": "",
+        "heading": "Your Water Is. 6 Reasons Swoosh n Shine Fixes What Scrubbing Can’t",
+        "text": "<p>Your toilet isn’t dirty —</p>",
         "divider": false,
         "button_text": "Get 35% OFF Today",
         "button_url": "",

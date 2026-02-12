@@ -3,16 +3,16 @@
     <div class="">
       <div class="flex flex-col gap-[20px] md:gap-[30px]">
         {% if section.settings.heading != blank or section.settings.text != blank or section.settings.divider %}
-          <div class="flex flex-col gap-[15px] md:gap-[30px]">
-            {% if section.settings.heading != blank %}
-              <h1 class="text-[30px] lg:text-[50px] !leading-tight text-[#000] font-extrabold">
-                {{ section.settings.heading }}
-              </h1>
-            {% endif %}
+          <div class="flex flex-col gap-[6px] md:gap-[10px]">
             {% if section.settings.text != blank %}
-              <div class="text-[17px] lg:text-[20px] !leading-normal text-[#000] font-normal">
+              <div class="text-[16px] md:text-[18px] lg:text-[20px] !leading-normal text-[#555] font-medium tracking-wide uppercase">
                 {{ section.settings.text }}
               </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+              <h1 class="text-[36px] lg:text-[50px] !leading-tight text-[#000] font-extrabold">
+                {{ section.settings.heading }}
+              </h1>
             {% endif %}
             {% if section.settings.divider %}
               <div class="!block w-full h-[3px] bg-[#7A5EC5]"></div>
@@ -188,7 +188,7 @@
                 <div class="order-3 md:order-1">
                   <div class="flex flex-col gap-[10px] md:gap-[14px] justify-center h-full">
                     {% if block.settings.heading != blank %}
-                      <div class="hidden md:block text-[#000] text-[30px] lg:text-[36px] font-extrabold leading-tight md:leading-tight">
+                      <div class="hidden md:block text-[#000] text-[42px] lg:text-[52px] font-black leading-[1.08] md:leading-[1.08]">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
