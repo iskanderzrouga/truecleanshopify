@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "sticky_add_to_cart_X4JbTJ": {
-      "type": "sticky-add-to-cart",
-      "name": "Sticky Add To Cart",
-      "settings": {
-        "link": "shopify://pages/swooshnshine",
-        "primary_color": "#000000",
-        "secondary_color": "#08421f",
-        "bgcolor": "#00b7a2",
-        "btn_text": "Get up to 35% off ->",
-        "hide_shipping": true
-      }
-    },
     "new_listicle_reasons_TibHVQ": {
       "type": "advert-10-reasons-buy-trueclean",
       "blocks": {
@@ -161,7 +149,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_b856f90f-e2ac-44ce-bad1-97bc35cfe837.png",
-            "heading": "1. Hard Water Is Building Up In Your Toilet Every Day",
+            "heading": "Hard Water Is Building Up In Your Toilet Every Day",
             "text": "<p>Hard water leaves mineral film with every flush. That buildup turns into rings and pink slime fast.</p><p>You scrub it off, and it comes back in days. Swoosh n Shine helps stop the cycle at the source.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -174,14 +162,15 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_dg6Fdw": {
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_1_7553057a-922e-47e1-b43b-beab9775857e.png",
-            "heading": "2. This Gives You Your Weekends Back",
+            "heading": "1. This Gives You Your Weekends Back",
             "text": "<p>Before this system, most homes scrub constantly and still fight recurring stains.</p><p>With Swoosh n Shine, upkeep drops because each flush helps prevent new buildup. Your weekends stay yours.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -194,14 +183,15 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_zTaACM": {
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_1_2d35492e-26c8-41b0-931b-9365c5f9add8.png",
-            "heading": "3. Why Magnets Don't Clean Toilets",
+            "heading": "2. Why Magnets Don't Clean Toilets",
             "text": "<p>Magnets do not dissolve calcium or biofilm.</p><p>This formula uses citric-acid chelation plus plant-derived surfactants on every flush. Chemistry, not gimmicks.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -214,14 +204,15 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_PxKXFA": {
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_7.png",
-            "heading": "4. A Formula That Won't Poison Your Pets",
+            "heading": "3. A Formula That Won't Poison Your Pets",
             "text": "<p>Pets drink from toilets, and many cleaners rely on harsh ingredients.</p><p>This formula is designed for pet-safe bowl-water dilution with no bleach, dyes, or phosphates.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -234,14 +225,15 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_chkYbA": {
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346.png",
-            "heading": "5. European Water Science, Inside Your Bathroom",
+            "heading": "4. European Water Science, Inside Your Bathroom",
             "text": "<p>This approach uses proven chelation principles from hard-water regions.</p><p>Each flush helps keep minerals dissolved so they rinse away instead of forming heavy rings.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -254,14 +246,15 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_fRYfx9": {
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_3_5577e125-3cc7-4cf0-97ae-c1190d772bdd.png",
-            "heading": "6. So Simple Your Kids Could Install It",
+            "heading": "5. So Simple Your Kids Could Install It",
             "text": "<p>Installation takes under a minute with no tools and no plumber.</p><p>The tank-safe formula works automatically on each flush, built for daily family use.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -271,7 +264,7 @@
             "review_name2": "",
             "review_text3": "",
             "review_verified": "",
-            "button_label": "Try Swoosh n Shine risk-free ->",
+            "button_label": "Get Up To 35% Off ->",
             "button_url": "shopify://pages/swooshnshine",
             "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
             "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
@@ -282,7 +275,7 @@
           "type": "list",
           "settings": {
             "image": "shopify://shop_images/Rectangle_240648346_2_8afed8a2-f6cf-4d91-8d86-6c544fb16437.png",
-            "heading": "7. 200,000+ Households Already Stopped Scrubbing",
+            "heading": "6. 200,000+ Households Already Stopped Scrubbing",
             "text": "<p>4.85 stars and 5,247+ reviews.</p><p>Customers repeatedly mention hard-water results, easy install, and less scrubbing.</p>",
             "star_text1": "",
             "star_text2": "",
@@ -295,7 +288,8 @@
             "button_label": "",
             "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_BLwK7W": {
@@ -312,10 +306,10 @@
             "review_name2": "",
             "review_text3": "",
             "review_verified": "",
-            "button_label": "Get up to 35% off ->",
-            "button_url": "shopify://pages/swooshnshine",
-            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_icon": "",
+            "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19"
           }
         },
@@ -333,10 +327,11 @@
             "review_name2": "",
             "review_text3": "",
             "review_verified": "",
-            "button_label": "Start your 90-day trial ->",
-            "button_url": "shopify://pages/swooshnshine",
+            "button_label": "",
+            "button_url": "",
             "btn_bottom_text": "",
-            "btn_bottom_text_color": "#001c19"
+            "btn_bottom_text_color": "#001c19",
+            "btn_bottom_icon": ""
           }
         },
         "list_jLmy3H": {
@@ -357,10 +352,10 @@
             "review_text3": "",
             "review_verifeid_icon": "shopify://shop_images/material-symbols_verified_a39a29c8-c23a-443d-898b-06fa4d2ce0c6.png",
             "review_verified": "<p>Verified Review</p>",
-            "button_label": "Try Swoosh n Shine ->",
-            "button_url": "shopify://pages/swooshnshine",
-            "btn_bottom_icon": "shopify://shop_images/image_6_1.png",
-            "btn_bottom_text": "<p>90-Day Money-Back Guarantee</p>",
+            "button_label": "",
+            "button_url": "",
+            "btn_bottom_icon": "",
+            "btn_bottom_text": "",
             "btn_bottom_text_color": "#001c19"
           }
         }
@@ -432,7 +427,7 @@
         "note_text": "Your toilet's been losing the hard water fight for years. This is the backup it needed.",
         "image": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
         "image_mobile": "shopify://shop_images/72d8935b2b57f0dd5ad7410bc55a1ad0dec15121.jpg",
-        "button_text": "Get up to 35% off ->",
+        "button_text": "",
         "button_url": "shopify://pages/swooshnshine",
         "sub_text": "<p>Free US Shipping | Plant-Derived | Pet-Safe | No Bleach | Safe for Tanks | 90-Day Guarantee</p>",
         "show_background": true,
@@ -441,7 +436,6 @@
     }
   },
   "order": [
-    "sticky_add_to_cart_X4JbTJ",
     "new_listicle_reasons_TibHVQ",
     "new_listicle_offer_zKhPta1"
   ]

@@ -1,4 +1,4 @@
-<section class="bg-[#fff] p-5 lg:p-[40px]">
+<section class="bg-[#fffbe8] p-5 lg:p-[40px]">
   <div class="max-w-[1000px] mx-auto w-full">
     <div class="">
       <div class="flex flex-col gap-[20px] md:gap-[30px]">
@@ -140,7 +140,7 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="listicle-tldr text-[16px] md:text-[18px] font-semibold !leading-[1.5] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  class="listicle-tldr text-[16px] md:text-[18px] font-bold !leading-[1.45] text-[#111111] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
                   style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
@@ -162,7 +162,7 @@
             {% if block.type == 'list' %}
               <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
                 {% if block.settings.heading != blank %}
-                  <div class="md:hidden text-[#000] text-[36px] font-black leading-[1.06]">
+                  <div class="md:hidden text-[#000] text-[52px] font-black leading-[1.02]">
                     {{ block.settings.heading }}
                   </div>
                 {% endif %}
@@ -186,7 +186,7 @@
                       </div>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="listicle-copy text-[#001c19] text-[16px] md:text-[17px] lg:text-[18px] font-semibold leading-[1.4] md:leading-[1.45]">
+                      <div class="listicle-copy text-[#111111] text-[16px] md:text-[17px] lg:text-[18px] font-bold leading-[1.38] md:leading-[1.42]">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
