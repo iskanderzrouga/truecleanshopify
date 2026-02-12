@@ -140,7 +140,7 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="listicle-tldr text-[16px] md:text-[18px] font-bold !leading-[1.45] text-[#111111] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  class="listicle-tldr text-[16px] md:text-[18px] font-normal !leading-[1.45] text-[#111111] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
                   style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
