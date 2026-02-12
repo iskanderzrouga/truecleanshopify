@@ -140,7 +140,7 @@
             {% if block.type == 'description' %}
               {% if block.settings.text != blank %}
                 <div
-                  class="text-[17px] md:text-[20px] font-normal !leading-tight text-[#000] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
+                  class="listicle-tldr text-[16px] md:text-[18px] font-normal !leading-[1.65] text-[#001c19] {% if block.settings.show_bg %} rounded-[10px] px-4 md:px-5 py-2 {% endif %}"
                   style="color: {{ block.settings.color }}; {% if block.settings.show_bg %} background-color: {{ block.settings.bg }}; {% endif %}"
                 >
                   {{ block.settings.text }}
@@ -172,14 +172,14 @@
                   >
                 {% endif %}
                 <div class="">
-                  <div class="flex flex-col gap-[15px] md:gap-[30px] justify-center h-full">
+                  <div class="flex flex-col gap-[12px] md:gap-[18px] justify-center h-full">
                     {% if block.settings.heading != blank %}
                       <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="text-[#000] text-[17px] lg:text-[20px] font-semibold leading-normal md:leading-normal">
+                      <div class="listicle-copy text-[#001c19] text-[16px] lg:text-[18px] font-normal leading-[1.75] md:leading-[1.8]">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}
@@ -314,6 +314,21 @@
 <style>
   #gorgias-chat-container {
     display: none;
+  }
+  .listicle-tldr p {
+    margin: 0;
+  }
+  .listicle-copy {
+    max-width: 62ch;
+  }
+  .listicle-copy p {
+    margin: 0 0 0.85em;
+  }
+  .listicle-copy p:last-child {
+    margin-bottom: 0;
+  }
+  .listicle-copy strong {
+    font-weight: 700;
   }
   @media screen and (max-width: 768px) {
     .fixed-button-bottom.active {
