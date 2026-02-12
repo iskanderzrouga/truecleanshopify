@@ -69,54 +69,6 @@
     .section-{{ section.id }}-padding .product-thumbnail-slider-nav {
       display: none;
     }
-
-    /* Supply includes badge */
-    .pp-supply-includes {
-      text-align: center;
-      background: var(--mint, #EDFCF8);
-      border: 1.5px solid var(--primary, #00BFA6);
-      border-radius: 10px;
-      padding: 10px 16px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text, #0A1F1C);
-      margin-bottom: 4px;
-    }
-
-    /* Price above grid (competitor-style) */
-    .pp-price-above {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-top: 16px;
-      margin-bottom: 4px;
-    }
-
-    .pp-price-above__compare {
-      font-size: 0.95rem;
-      color: #9CA3AF;
-      text-decoration: line-through;
-      font-weight: 400;
-    }
-
-    .pp-price-above__current {
-      font-family: var(--display, inherit);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--dark, #0A1F1C);
-    }
-
-    .pp-saving-line {
-      background: #F0F5E8;
-      color: #3D6B2E;
-      border: 1px solid #D4E4C8;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 7px 14px;
-      border-radius: 30px;
-      margin-bottom: 18px;
-    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -125,15 +77,15 @@
   <section id="buy" class="product-section product-section--ta">
     <div class="container">
       <div class="tc">
-        <h2 class="hl">Get Your <span class="highlight">TrueClean</span></h2>
+        <h2 class="hl">Get Your <span class="highlight">Swoosh n' Shine</span></h2>
       </div>
 
       <div class="product-layout">
         <!-- Left: Product image -->
         <div class="product-visual">
           <img
-            src="https://cdn.shopify.com/s/files/1/0960/0453/8733/files/ChatGPT_Image_Feb_9_2026_08_37_52_PM_1.jpg?v=1770665935"
-            alt="TrueClean kit"
+            src="{{ 'swoosh-pricing-single.png' | asset_url }}"
+            alt="Swoosh n' Shine kit"
             class="product-main-img"
             loading="lazy"
           >
@@ -146,19 +98,14 @@
             <span class="count">4.85 · 5,247 reviews</span>
           </div>
 
-          <h2 class="pp-title">TrueClean Automatic Toilet Cleaner</h2>
-          <p class="pp-tagline">1 device. 1 toilet. Clips in 60 seconds. Treats your water with every flush.</p>
+          <h2 class="pp-title">Swoosh n' Shine Automatic Toilet Cleaner</h2>
+          <p class="pp-tagline">Clips in 60 seconds. Cleans with every flush.</p>
 
           <div class="w-full">
             <div class="product !grid !grid-cols-1">
               <div class="!w-full !max-w-none !px-0 md:!p-0">
                 <section id="ProductInfo-{{ section.id }}" class="product__info-container">
                   {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
-                  <!-- Supply includes badge -->
-                  <div class="pp-supply-includes">
-                    Every device comes with 2 free cartridges (6 months of cleaning) — long enough to experience the results for yourself.
-                  </div>
 
                   <!-- Variant Picker & Buy Buttons -->
                   {%- for block in section.blocks -%}
@@ -173,32 +120,94 @@
                         </div>
 
                       {%- when 'buy_buttons' -%}
-                        <!-- Price display + saving (below variant picker) -->
-                        {% for v in product.variants %}
-                          {% assign title = v.title | downcase | strip %}
-                          {% unless title contains '6 months' %}{% continue %}{% endunless %}
+                        {% for variant in product.variants %}
+                          {% assign variant = product.selected_or_first_available_variant %}
+                          {% assign title = variant.title | downcase | strip %}
+                          {% if title contains '1 toilet' %}
+                            {% assign item_count = 1 %}
+                            {% assign dispensor = 1 %}
+                          {% endif %}
+                          {% if title contains '2 toilet' %}
+                            {% assign item_count = 2 %}
+                            {% assign dispensor = 2 %}
+                          {% endif %}
+                          {% if title contains '3 toilet' %}
+                            {% assign item_count = 3 %}
+                            {% assign dispensor = 3 %}
+                          {% endif %}
+                          {% if title contains '4 toilet' %}
+                            {% assign item_count = 4 %}
+                            {% assign dispensor = 4 %}
+                          {% endif %}
 
-                          {% assign is_default_box = false %}
-                          {% if title contains '4 toilet' and title contains '6 months' %}
-                            {% assign is_default_box = true %}
+                          {% if title contains '3 months' %}
+                            {% assign duration = 3 %}
+                            {% assign dispensor_index = 1 %}
+                          {% endif %}
+                          {% if title contains '6 months' %}
+                            {% assign duration = 6 %}
+                            {% assign dispensor_index = 2 %}
+                          {% endif %}
+                          {% if title contains '1 year' %}
+                            {% assign duration = 12 %}
+                            {% assign dispensor_index = 4 %}
+                          {% endif %}
+                          {% if title contains '2 years' %}
+                            {% assign duration = 24 %}
+                            {% assign dispensor_index = 8 %}
                           {% endif %}
 
                           <div
-                            data-id="{{ v.id }}"
-                            class="product-section--ta-info-box w-full hidden [&.active]:block {% if is_default_box %} active {% endif %}"
+                            data-id="{{ variant.id }}"
+                            class="product-section--ta-info-box w-full hidden [&.active]:flex flex-col {% if forloop.first %} active {% endif %}"
                           >
-                            <div class="pp-price-above">
-                              {% if v.compare_at_price > v.price %}
-                                <span class="pp-price-above__compare">{{ v.compare_at_price | money }}</span>
+                            <div class="pp-price-box">
+                              <div class="pp-order-summary" id="order-summary">
+                                {{ variant.options | join: ' x ' }} of cleaning each
+                              </div>
+                              <div class="pp-includes" id="includes-text">
+                                Includes {{ dispensor }} FREE dispensers +
+                                {{ dispensor | times: dispensor_index }} cleaning cartridges
+                              </div>
+                              <div class="pp-per-toilet">Price per toilet:</div>
+                              <div>
+                                <span class="pp-price-was" id="original-price-each">
+                                  {{- variant.compare_at_price | divided_by: item_count | money -}}
+                                </span>
+                                <span class="pp-price-big" id="price-each">
+                                  {{- variant.price | divided_by: item_count | money -}}
+                                </span>
+                                <span style="font-size:0.9rem; color:var(--text-muted);">/each</span>
+                              </div>
+                              {% if variant.compare_at_price > variant.price %}
+                                {% assign discount = variant.compare_at_price | minus: variant.price %}
+                                {% assign percent_off = discount | times: 100 | divided_by: variant.compare_at_price %}
                               {% endif %}
-                              <span class="pp-price-above__current">{{ v.price | money }}</span>
+
+                              {% if variant.compare_at_price > variant.price %}
+                                <div class="pp-save-pct" id="savings-percent">Save {{ percent_off | round }}%</div>
+                              {% endif %}
                             </div>
-                            {% if v.compare_at_price > v.price %}
-                              {% assign saving_amount = v.compare_at_price | minus: v.price %}
-                              <div class="pp-saving-line">You're Saving {{ saving_amount | money }}</div>
-                            {% endif %}
+
+                            <!-- Total bar -->
+                            <div class="pp-total-bar">
+                              <div>
+                                <div class="pp-total-label">Order Total:</div>
+                                <div class="pp-total-price" id="final-price">{{ variant.price | money }}</div>
+                              </div>
+                              <div style="text-align:right;">
+                                {% if variant.compare_at_price > variant.price %}
+                                  <div class="pp-total-save" id="savings-text">
+                                    You save
+                                    <span>{{ variant.compare_at_price | minus: variant.price | money }}</span>!
+                                  </div>
+                                {% endif %}
+                                <div class="pp-total-ship">Free shipping included</div>
+                              </div>
+                            </div>
                           </div>
                         {% endfor %}
+
                         <div class="flex flex-col gap-4">
                           <div class="w-full">
                             {%- render 'buy-buttons--ta',

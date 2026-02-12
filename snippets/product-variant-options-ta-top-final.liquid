@@ -1,5 +1,88 @@
-{%- comment -%}
-  This snippet is no longer used for rendering variant buttons.
-  The variant picker is now rendered inline in product-variant-picker-ta-final.liquid
-  using the competitor-style 2x2 offer grid.
-{%- endcomment -%}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- for block in section.blocks -%}
+    {% if block.type == 'option1' and block.settings.option_name == value %}
+      {% assign main_block = block %}
+    {% endif %}
+  {% endfor %}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- assign is_default_value = false -%}
+  {%- if default_variant and has_variant_param == false and has_option_values_param == false -%}
+    {%- assign idx = option.position | minus: 1 -%}
+    {%- assign default_value = default_variant.options[idx] -%}
+    {%- if default_value == value -%}
+      {%- assign is_default_value = true -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  {%- assign should_check = false -%}
+  {%- if has_variant_param or has_option_values_param -%}
+    {%- if value.selected -%}
+      {%- assign should_check = true -%}
+    {%- endif -%}
+  {%- elsif is_default_value -%}
+    {%- assign should_check = true -%}
+  {%- endif -%}
+
+  <input
+    type="radio"
+    id="{{ input_id }}"
+    name="{{ input_name | escape }}"
+    value="{{ value | escape }}"
+    form="{{ product_form_id }}"
+    {% if should_check %}
+      checked
+    {% endif %}
+    {% if option_disabled %}
+      class="disabled"
+    {% endif %}
+    {{ input_dataset }}
+  >
+
+  <label class="pp-variant-label !p-0 !m-0 !border-none !bg-transparent" for="{{ input_id }}" style="">
+    <div class="pp-sel-btn toilet-btn h-full flex flex-col items-center justify-center gap-3">
+      <span class="emoji">
+        {%- assign icon_count = main_block.settings.count | default: 1 | plus: 0 -%}
+        {%- for i in (1..icon_count) -%}
+          <img
+            src="{{ 'toilet-icon-teal.png' | asset_url }}"
+            alt="toilet"
+            class="pp-toilet-icon"
+            loading="lazy"
+            width="22"
+            height="22"
+          >
+        {%- endfor -%}
+      </span>
+      {% if main_block.settings.count != blank %}
+        {{ main_block.settings.count }}
+      {% endif %}
+    </div>
+    {% comment %}
+      {{ value -}}
+      {{ label_unavailable }}
+    {% endcomment %}
+  </label>
+{%- endfor -%}

@@ -73,9 +73,7 @@
             src="{{ section.settings.video }}"
             class="w-full h-full object-cover cursor-pointer tc-video"
             playsinline
-            {% if section.settings.mute_video %}
             muted
-            {% endif %}
           ></video>
 
           <div class="absolute inset-0 flex items-center justify-center tc-video-play-btn">
@@ -243,12 +241,6 @@
       "type": "text",
       "id": "video",
       "label": "Video"
-    },
-    {
-      "type": "checkbox",
-      "id": "mute_video",
-      "label": "Mute Video",
-      "default": true
     },
     {
       "type": "range",

@@ -229,28 +229,10 @@
 
 .swoosh-final .guarantee-img {
   filter: none !important;
-  width: 240px !important;
-}
-
-.swoosh-final .social-photo--mobile {
-  display: none;
+  width: 120px !important;
 }
 
 @media (max-width: 768px) {
-  .swoosh-final .social-photo--desktop {
-    display: none;
-  }
-
-  .swoosh-final .social-photo--mobile {
-    display: block;
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
-
-  .swoosh-final .social-photos {
-    grid-template-columns: 1fr;
-  }
-
   .swoosh-final .hero-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -338,39 +320,5 @@
 
   .swoosh-final .container {
     padding: 0 16px;
-  }
-}
-
-/* 5-card problem grid: 3 on top, 2 centered below (6-col trick) */
-.swoosh-final .problem-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.swoosh-final .problem-grid .problem-card:nth-child(1),
-.swoosh-final .problem-grid .problem-card:nth-child(2),
-.swoosh-final .problem-grid .problem-card:nth-child(3) {
-  grid-column: span 2;
-}
-
-.swoosh-final .problem-grid .problem-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.swoosh-final .problem-grid .problem-card:nth-child(5) {
-  grid-column: 4 / span 2;
-}
-
-@media (max-width: 768px) {
-  .swoosh-final .problem-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .swoosh-final .problem-grid .problem-card:nth-child(1),
-  .swoosh-final .problem-grid .problem-card:nth-child(2),
-  .swoosh-final .problem-grid .problem-card:nth-child(3),
-  .swoosh-final .problem-grid .problem-card:nth-child(4),
-  .swoosh-final .problem-grid .problem-card:nth-child(5) {
-    grid-column: 1;
   }
 }
