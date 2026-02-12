@@ -161,10 +161,27 @@
 
             {% if block.type == 'list' %}
               <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-5 md:gap-[30px] lg:gap-[80px] py-2 md:py-[20px]">
-                <div class="">
+                {% if block.settings.heading != blank %}
+                  <div class="md:hidden text-[#000] text-[24px] font-bold leading-tight">
+                    {{ block.settings.heading }}
+                  </div>
+                {% endif %}
+                {% if block.settings.image != blank %}
+                  <div class="order-2 md:order-2 flex justify-center md:justify-end">
+                    <img
+                      class="w-full max-w-[360px] sm:max-w-[430px] md:max-w-[520px]"
+                      src="{{ block.settings.image | image_url : width: 700 }}"
+                      width="auto"
+                      height="auto"
+                      alt=""
+                      loading="lazy"
+                    >
+                  </div>
+                {% endif %}
+                <div class="order-3 md:order-1">
                   <div class="flex flex-col gap-[16px] md:gap-[24px] justify-center h-full">
                     {% if block.settings.heading != blank %}
-                      <div class="text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
+                      <div class="hidden md:block text-[#000] text-[24px] lg:text-[30px] font-bold leading-tight md:leading-tight">
                         {{ block.settings.heading }}
                       </div>
                     {% endif %}
@@ -276,18 +293,6 @@
                     {% endif %}
                   </div>
                 </div>
-                {% if block.settings.image != blank %}
-                  <div class="flex justify-center md:justify-end">
-                    <img
-                      class="w-full max-w-[360px] sm:max-w-[430px] md:max-w-[520px]"
-                      src="{{ block.settings.image | image_url : width: 700 }}"
-                      width="auto"
-                      height="auto"
-                      alt=""
-                      loading="lazy"
-                    >
-                  </div>
-                {% endif %}
               </div>
             {% endif %}
           {% endfor %}
